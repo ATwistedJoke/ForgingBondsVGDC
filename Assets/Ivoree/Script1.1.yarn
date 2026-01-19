@@ -1,0 +1,72 @@
+﻿title: Begin
+---
+<<declare $playerName = "MC">>
+
+<<declare $BestfriendRep = 0>>
+<<declare $BestFriendMugDebt = false>>
+
+<<declare $teaItem = false >>
+<<declare $teaBroken = false>>
+
+The smell of nature always comforted you. 
+Its essence, life, and sound gave you peace.
+You wake to a hand handing you a clay, mishaped mug 
+
+// imaging maybe a scene where character is looking upward? like towards the sky, through meadows of grass and flowers around him
+
+-> Take the liquid
+    <<set $teaItem = true >>
+    <<set $BestfriendRep += 5>>
+-> Ignore the hand
+    <<set $BestfriendRep -= 5>>
+-> Deny respectfully
+    <<set $BestfriendRep += 5>>
+
+<<if $teaItem>>
+"Cheers, to a new story {$playerName}!"
+-> Clink his mug
+    <<set $teaItem = false>>
+    <<set $teaBroken = true>>
+    <<set $BestfriendRep += 5>>
+-> Drink liquid
+    <<set $BestfriendRep -= 5>>
+<<endif>>
+
+<<if $teaBroken && $teaBroken>>
+*you shattered both mugs on impact*
+"W-
+"WHY"
+He looks at his tea-soaked palms and shoes,
+grinning and holding back a laugh
+<<endif>>
+
+
+<<if $BestfriendRep < 0 >>
+"Uh..."
+"You good?" 
+<<endif>>
+
+"We're almost there anyways"
+"Just let me know if you're hungry!" 
+
+//so from a dark ish scene, goes into the Kingdom where its sunny and beautiful 
+
+Lunch is on me!
+
+// the mc now in awe with the city view
+
+The sight of the city is...
+-> Appalling
+    <<set $BestfriendRep += 5 >>
+-> Beautiful
+    <<set $BestfriendRep += 5>>
+-> *say nothing*
+    <<set $BestfriendRep += 5>>
+
+"It'll be a lot ot take in at first,"
+"but no doubt this will be your home!"
+
+<<if $BestfriendRep >= 15 >>
+"I can tell this bond will last as long as your stay here."
+<<endif>>
+===
