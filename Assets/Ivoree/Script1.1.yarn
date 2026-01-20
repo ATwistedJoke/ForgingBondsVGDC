@@ -69,4 +69,5 @@ The sight of the city is...
 <<if $BestfriendRep >= 15 >>
 "I can tell this bond will last as long as your stay here."
 <<endif>>
+<<climb>>
 ===
