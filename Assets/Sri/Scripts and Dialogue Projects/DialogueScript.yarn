@@ -1,9 +1,9 @@
 ﻿title: DialogueTest
 ---
 This is a test for the dialogue system.
-This is a test for choices:
--> Choice 1
-    You chose choice 1
--> Choice 2
-    You chose choice 2
+Do you want to switch scenes:
+-> Remain in this scene
+    The scene didn't switch.
+-> Move to new scene
+    <<load_scene "test2">>
 ===
