@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class SmeltingController : MonoBehaviour
 {
@@ -13,8 +14,11 @@ public class SmeltingController : MonoBehaviour
     private Vector3 rightEdgePosition_World; 
     private float leftEdgeX_World; //Float position of left bounary of bar
     private float rightEdgeX_World;
+    [SerializeField] private TMP_Text scoreText;
     void Start()
     {
+        scoreText.text = "Score: " + score;
+
         RectTransform barContainerTransform = barContainer.GetComponent<RectTransform>();
 
         leftEdgeX_World = barContainerTransform.position.x + barContainerTransform.rect.xMin;
@@ -38,6 +42,7 @@ public class SmeltingController : MonoBehaviour
         if (addScore)
         {
             score++;
+            scoreText.text = "Score: " + score;
         }
         barLeftSpeed += 0.01f; //Bar speeds up over time
     }
