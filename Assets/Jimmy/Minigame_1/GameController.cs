@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -9,15 +10,58 @@ public class GameController : MonoBehaviour
     [SerializeField]private GameObject gold_ore; 
     [SerializeField] private GameObject mythril_ore; 
 
+    public TextMeshPro textbox;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    //void Start()
-    //{
-      //  StartCoroutine(SpawnRandomOre());
+    void Start()
+    {
+    StartCoroutine(SpawnRandomOre());
         
-    //}
+    }
+    void Update()
+    {
+    {
+    //left click down
+    if (Input.GetMouseButtonDown(0))
+    {   
+        //get mouse position comparative to camera position
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        
+        //shoot raycast from mouse position
+        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+
+        //check for collisions and ore property
+        if (hit.collider != null)
+        {
+            Ores ore = hit.collider.GetComponent<Ores>();
+            if (ore != null)
+            {
+                ore.Handle_Click();
+            }
+        }
+    }
+    }
+
+    textbox.text = GetScore().ToString();
+
+    }
+    //getter function for score
+    public int GetScore()
+    {
+        return score;
+    }
+
+    //AddScore(), adds score
+    public void AddScore(int amount)
+    {
+        score += amount;
+    }
+
+
+
     //based on weights, randomly pick an ore
     //from least to most likely (mythril -> gold -> iron)
-     GameObject ChooseOreByRarity()
+    GameObject ChooseOreByRarity()
     {
         float roll = Random.value;
 
@@ -30,7 +74,7 @@ public class GameController : MonoBehaviour
             return mythril_ore;
     }
     
-    //spawn ore randomly around the screen
+    //Spawn ores randomly around the screen
     IEnumerator SpawnRandomOre()
     {
 
