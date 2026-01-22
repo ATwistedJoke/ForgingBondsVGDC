@@ -1,7 +1,9 @@
 {
   "projectFileVersion": 3,
   "sourceFiles": [
-    "Scriptv1.yarn"
+    "ScriptDay0.yarn",
+    "ScriptDay0.1.yarn",
+    "ScriptDay0.2.yarn"
   ],
   "excludeFiles": [
     "**/*~/*",
