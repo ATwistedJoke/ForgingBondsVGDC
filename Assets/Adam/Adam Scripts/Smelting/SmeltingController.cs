@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using TMPro;
 
 public class SmeltingController : MonoBehaviour
@@ -39,17 +40,29 @@ public class SmeltingController : MonoBehaviour
         {
             blackBar.transform.Translate(Vector3.left * barLeftSpeed * Time.deltaTime);
         }
-        if (addScore)
-        {
-            score++;
-            scoreText.text = "Score: " + score;
-        }
         barLeftSpeed += 0.01f; //Bar speeds up over time
     }
     private void OnTriggerEnter2D(Collider2D other) { //Checks when black bar enters scoring area
         addScore = true;
+        StartCoroutine(StartCountdown());
     }
     private void OnTriggerExit2D(Collider2D other) {
         addScore = false;
+    }
+    //must be in green bar for a full second to gain score
+    public IEnumerator StartCountdown(float scoreTimer = 1f) 
+    {
+        while (scoreTimer > 0)
+        {
+            yield return new WaitForSeconds(0.01f);
+            if (!addScore)
+            {
+                yield break;
+            }
+            scoreTimer -= 0.01f;
+        }
+        score++;
+        scoreText.text = "Score: " + score;
+        StartCoroutine(StartCountdown());
     }
 }
