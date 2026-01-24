@@ -349,12 +349,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: startNode
-      value: DialogueCreation
+      value: IntroductionPreTutorial
       objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: yarnProject
       value: 
-      objectReference: {fileID: 7545569452688597077, guid: 47c0030a6018228439cf465f282c4b88, type: 3}
+      objectReference: {fileID: 7545569452688597077, guid: 6ff9374ba91c2b440bac26211fff5d69, type: 3}
     - target: {fileID: 8635081094713202853, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: showDebug
       value: 1
