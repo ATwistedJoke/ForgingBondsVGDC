@@ -9,6 +9,7 @@
 <<declare $mainCharacter = "MC">>
 <<declare $hippeBlacksmith = false>>
 
+
 The opening hall of the Royal Blacksmith Guild is grand, with wood columns and staircases at each side.
 The front desk is made of stone mishaped bricks, with a large wooden counter 
 and a silky blue cloth draped above it. There is also a bell on the counter.
