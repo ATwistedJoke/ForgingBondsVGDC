@@ -1,5 +1,7 @@
 ﻿title: IntroductionPreTutorial
 ---
+<<declare $playerName = "Calkeus">>
+<<declare $mentorName = "Mentor">>
 In the Age of the Hammer and Anvil, when Craft defined a Nation’s power, a looming darkness sought to snuff out the light of their forges.
 But the surrounding nations were not idle. The Kingdom of Pladonia, a beacon of innovation and a stalwart defender of humanity, led the Alliance in waging war against the forces of evil.
 Under the lead of the heroic Steelheart Knight, they sought to protect the vulnerable and reclaim the lost lands of humanity.
@@ -8,11 +10,65 @@ Yet the actions of the hero were not forgotten. To this day, the stories of the 
 Where others would take up their sword or arrow to the call of passion, your heart led you to the way of the hammer.
 In the capital city of Pladonia, you walk to a new beginning. The Royal Blacksmith Guild. Home to the Kingdom’s finest Blacksmiths.
 Today marks the start of your first day on the job.
-“Wow! This place is humongous!” 
+{$playerName}: “Wow! This place is humongous!” 
 The view of the stoic but kind guards outside slowly disappears behind you as the large, wooden doors close.
 Ahead, you are welcomed with a grand entrance hall, draped in luxurious banners of the royal family. Its architecture is carefully cut from the finest stones, equal only to the castle where the Royal Family resides. 
 Walking through the hall fills you with a sense of amazement at how such a building was crafted, so much so that it's only until you reach the front desk that you realize there is no one else in this hall but you. 
-Wha–? Where is everyone?
+{$playerName}: [i]Wha–? Where is everyone?[/i]
 The front desk, covered in blue cloth, had no one behind it to welcome you. Instead, there was only a singular golden bell and what appeared to be three different colored buttons. 
-
+-> Ring the Bell
+    [A voice emerges from below the desk in response]: “Welcome to the Royal Blacksmith Guild. If you are here as a guest, please press the green button. If you are here as an apprentice, please press the orange button. If you are here for a different reason, please press the blue button.”
+-> Press one of the buttons
+    …Nothing happens. After more than enough minutes have passed, you consider that maybe you should have pressed the shiny, golden bell. Reaching out your hand, you decide to give it a try.
+    [A voice emerges from below the desk in response]: “Welcome to the Royal Blacksmith Guild. If you are here as a guest, please press the green button. If you are here as an apprentice, please press the orange button. If you are here for a different reason, please press the blue button.”
+-> Wait for someone to come
+    You choose to wait, hoping for someone to come.
+    ...
+    No one arrives. After more than enough minutes have passed, you consider that maybe you should have pressed the shiny, golden bell. Reaching out your hand, you decide to give it a try.
+    [A voice emerges from below the desk in response]: “Welcome to the Royal Blacksmith Guild. If you are here as a guest, please press the green button. If you are here as an apprentice, please press the orange button. If you are here for a different reason, please press the blue button.”
+You stumble backwards in surprise, caught off guard by the mysterious voice. The hall around you was still empty, but somehow someone spoke when you pressed the bell.
+{$playerName}: [i]It sounded like it came from the desk itself?[/i]
+Approaching the desk once more, you try looking on the other side of the desk to see if someone is hiding underneath it. But once again, you find nothing. 
+It was only then that you recalled the words of the voice, which stated that an apprentice should press the orange button. Following its guidance, you decide that enough time has been wasted and press the mysterious button. 
+???: Thank you! If you are {$playerName}, please make way to the hallway on your right. A scheduled senior has been scheduled to guide you on your first day. If you are not {$playerName}, please press the blue button. 
+A door could be heard opening to your right.
+{$playerName}: "Um…thank you, whoever you are?"
+Hearing no response back, you decide to listen to the voice’s instructions and head down the open hallway. 
+Your steps echo in the large hallway. Ahead, you hear the sound of hammering on steel and the voices of people. 
+Following the noise, you trace it down to a closed room. Inside, you can hear the noises of a forge in use.
+-> Open the door
+    You gently open the door. 
+    Inside, you see an older man overlooking the clumsy work of a younger blacksmith. The man’s eyes appear tired and disappointed, his mouth crooked in frustration.  
+    {$mentorName}: “Kid, are you even thinking about this properly? You do that, and you have to reset a whole month’s worth of progress and…
+    And you did it anyway, just wonderful.” 
+    “Just go grab a bucket, kid, and clean up this mess.”
+    The young blacksmith runs out of the room, passing you with tears in his eyes. 
+-> Leave it alone
+    You choose not to intrude. You should wait for your scheduled senior to find you.
+    But before you could make yourself scarce, you hear an angry shout from within the forge. 
+    {$mentorName}: “Are you trying to burn down this place! What is wrong with you, kid? Grab a bucket, kid, and clean up this mess.”
+    The door in front of you swings open with a loud bang. From inside, a young blacksmith runs out in tears, passing you without delay. 
+{$mentorName}: “Ah, damn it, these apprentices can’t help but act rashly every time. Can they not think before acting for once!”
+The aged apprentice continues to grumble, only looking up from the ruined project after he wipes the sweat from his forehead. 
+You notice his deep eye bags, worn out from stress and lack of sleep. You feel unable to look away from those eyes, captivated by the look of a professional in your field. But as you continue staring, you notice that they are now looking back at you.
+{$mentorName}: "–! By the gods, why are you just standing there and staring at me?"
+-> Sorry, I overheard the commotion that was happening earlier.
+    {$mentorName}: “Aye, that is fair. By any chance, are you new around here? Don’t recognize your face around these parts.”
+    {$playerName}: “Yes, today is my starting day as an official apprentice here. Would you know where I could find my scheduled senior?”
+    {$mentorName}: “Ah, so you're that new apprentice, (MC NAME). I’ll be filling in as your senior for the first few weeks of your job. 
+    {$playerName}: “It’s a pleasure to meet you, sir!”
+-> I was told at the front desk to find my scheduled senior. Would that be you?
+    <<change_affinity "mentor" 1>>
+    {$mentorName}: “Oh…ahem! Yes, that would be me. I’ll be filling in as your senior for the first few weeks of your job.”
+    {$playerName}: “It’s a pleasure to meet you, sir!”
+    {$mentorName}: “You’re quick to the chase, aren’t ya?”
+-> I like your eyes, old man.
+    <<change_affinity "mentor" -1>>
+    {$mentorName}: “Alright, who put you up for this stunt? Was it Olivia? Or was it that dreaded Eliwood?
+    {$playerName}: “Um…who are those people?”
+    {$mentorName}: “Are you new here, kid? Don’t tell me you're the new apprentice?”
+    {$playerName}: “Would you be my scheduled senior?”
+    {$mentorName}: “Curses…”
+{$mentorName}: “Alright then, with that established, would you be willing to share some of your skills with me?”
+{$mentorName}: “I need to judge your proficiency with the craft before I entrust you with any tasks.”
 ===
