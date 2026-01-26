@@ -404,6 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneCommands
   dialogueRunner: {fileID: 969776835}
+  tutorialMinigame: {fileID: 7223744104443120311, guid: 7c8a8517db2c1aa4b9702e03b369a630, type: 3}
 --- !u!114 &969776838
 MonoBehaviour:
   m_ObjectHideFlags: 0

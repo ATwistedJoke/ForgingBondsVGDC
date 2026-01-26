@@ -1,7 +1,8 @@
 ﻿title: IntroductionPreTutorial
 ---
 <<declare $playerName = "Calkeus">>
-<<declare $mentorName = "Mentor">>
+<<declare $mentorName = "Blacksmith">>
+<<declare $redFlagName = "Woman">>
 In the Age of the Hammer and Anvil, when Craft defined a Nation’s power, a looming darkness sought to snuff out the light of their forges.
 But the surrounding nations were not idle. The Kingdom of Pladonia, a beacon of innovation and a stalwart defender of humanity, led the Alliance in waging war against the forces of evil.
 Under the lead of the heroic Steelheart Knight, they sought to protect the vulnerable and reclaim the lost lands of humanity.
@@ -32,7 +33,7 @@ Approaching the desk once more, you try looking on the other side of the desk to
 It was only then that you recalled the words of the voice, which stated that an apprentice should press the orange button. Following its guidance, you decide that enough time has been wasted and press the mysterious button. 
 ???: Thank you! If you are {$playerName}, please make way to the hallway on your right. A scheduled senior has been scheduled to guide you on your first day. If you are not {$playerName}, please press the blue button. 
 A door could be heard opening to your right.
-{$playerName}: "Um…thank you, whoever you are?"
+{$playerName}: “Um…thank you, whoever you are?”
 Hearing no response back, you decide to listen to the voice’s instructions and head down the open hallway. 
 Your steps echo in the large hallway. Ahead, you hear the sound of hammering on steel and the voices of people. 
 Following the noise, you trace it down to a closed room. Inside, you can hear the noises of a forge in use.
@@ -51,14 +52,16 @@ Following the noise, you trace it down to a closed room. Inside, you can hear th
 {$mentorName}: “Ah, damn it, these apprentices can’t help but act rashly every time. Can they not think before acting for once!”
 The aged apprentice continues to grumble, only looking up from the ruined project after he wipes the sweat from his forehead. 
 You notice his deep eye bags, worn out from stress and lack of sleep. You feel unable to look away from those eyes, captivated by the look of a professional in your field. But as you continue staring, you notice that they are now looking back at you.
-{$mentorName}: "–! By the gods, why are you just standing there and staring at me?"
+{$mentorName}: “–! By the gods, why are you just standing there and staring at me?”
 -> Sorry, I overheard the commotion that was happening earlier.
     {$mentorName}: “Aye, that is fair. By any chance, are you new around here? Don’t recognize your face around these parts.”
     {$playerName}: “Yes, today is my starting day as an official apprentice here. Would you know where I could find my scheduled senior?”
+    <<set $mentorName to "Senior Blacksmith">>
     {$mentorName}: “Ah, so you're that new apprentice, (MC NAME). I’ll be filling in as your senior for the first few weeks of your job. 
     {$playerName}: “It’s a pleasure to meet you, sir!”
 -> I was told at the front desk to find my scheduled senior. Would that be you?
     <<change_affinity "mentor" 1>>
+    <<set $mentorName to "Senior Blacksmith">>
     {$mentorName}: “Oh…ahem! Yes, that would be me. I’ll be filling in as your senior for the first few weeks of your job.”
     {$playerName}: “It’s a pleasure to meet you, sir!”
     {$mentorName}: “You’re quick to the chase, aren’t ya?”
@@ -68,7 +71,81 @@ You notice his deep eye bags, worn out from stress and lack of sleep. You feel u
     {$playerName}: “Um…who are those people?”
     {$mentorName}: “Are you new here, kid? Don’t tell me you're the new apprentice?”
     {$playerName}: “Would you be my scheduled senior?”
+    <<set $mentorName to "Senior Blacksmith">>
     {$mentorName}: “Curses…”
 {$mentorName}: “Alright then, with that established, would you be willing to share some of your skills with me?”
 {$mentorName}: “I need to judge your proficiency with the craft before I entrust you with any tasks.”
+<<run_minigame tutorialMinigame IntroductionPostTutorial>>
+===
+
+title: IntroductionPostTutorial
+---
+{$mentorName}: “Welcome to the Royal Blacksmith Guild, apprentice. There are expectations with the job, so I’ll help you out as your senior on what you need to do.”
+{$mentorName}: “As you already know, being a Royal Blacksmith is far different than any regular blacksmithing job. We work with a rare metal not available to the public.”
+{$mentorName}: “It is our work with Pleiotium that holds us in such high status. And what we make with it can change the pages of history depending on how it’s handled.”
+{$mentorName}: “But such a special title is often sought out by nobles desiring glory or status, so sometimes we end up with foolish apprentices like the one we saw back there. Now I ask you, because I don’t know you, what type of royal blacksmith do you hope to be?”
+{$playerName}: “I wish to be the one talked about in history, sir.”
+{$mentorName}: “Aye, that’s good to hear. Now, some advice, I suggest that you start trying to build some connections out there. Most apprentices hole themselves in their forge, but lose sight of the most important things about smithing. The commissioners themselves.” 
+{$mentorName}: “To stop being merely an apprentice and become an official Royal Blacksmith, you are going to need someone who brings out the best of your craft. Carefully consider what you want out of your work, and what commissions feel right to you.”
+{$playerName}: “Thank you, I’ll make sure to remember that.”
+{$mentorName}: “Good. Now, with that said, your first task here should be preparing your own personal forge. Organize and restock on what resources you will need for your work.”
+{$mentorName}: “Once you're done with that, go check the commission board near closing hours to see if anything sounds good to you. You’ll find requests for possible projects there.” 
+{$mentorName}: “I’ll be at my own forge if you have any more questions, so I’ll take my leave first. Get to work, apprentice.” 
+{$playerName}: “Wait! Before you go, could I get your name?”
+{$mentorName}: “It’s not much, but you can call me Isham. I’m one of the head Royal Blacksmiths here. Now get going before you fall behind.
+<<set $mentorName to "Isham">>
+{$playerName}: “Yes, sir!”
+The day passes by quickly, with work on your forge seeming endless. Finally, you manage to clean the old forge up to your liking. 
+The only thing left to do now is to restock fuel for your furnace from the coal bunker. 
+As you load a crate full of coal, you realize how heavy it is to carry. Still, you decide to try to carry it all in one trip. 
+An official Royal Blacksmith needs to be strong for their work. That notion pushes you to make a reckless decision.
+{$playerName}: Just…a bit…further…
+The crate of coal, filled to the brim, blocks your field of view as you trudge through the hallway. 
+Suddenly, just as you think you might be reaching the end, you collide with something heavy in front of you with a large thud. 
+Falling onto your back in surprise, the crate of coal that was in your hands lands onto the floor, its contents spilling all over the place.
+{$redFlagName}: “Oh dear, I’m so sorry. Are you alright?”
+Looking up, you are met with a gentle, smooth hand stemming from what could only be described as both a stunningly gorgeous and odd woman. 
+Donning elegant clothing and jewelry, her status was apparent to any perceiver. She would have looked like any regular, wealthy client the guild often gets if it weren’t for her eyes.
+<<set $redFlagName to "Wealthy Woman">>
+Staring right through you, her pupils devoid of warmth watch your every movement with an intense gaze. Her crimson irises remain firm, refusing to blink until you take her hand.   
+A part of you finds them to be entrancing. The other terrifying. 
+{$redFlagName}: “Is something the matter?”
+{$playerName}: “Oh, no, nothing’s wrong. Thank you.”
+Taking her hand, you snap out of your thoughts as you stand back up. You notice her clothes have become stained from the coal.
+{$playerName}: “I’m so sorry, I wasn’t watching where I was going. Do you need me to wash that for you, ma’am?”
+{$redFlagName}: Oh, this? No, it’s fine. In fact, how about I help you pick up this mess? You look like you need it. 
+-> “No, I can do this myself.”
+    <<change_affinity "red flag" 1>>
+    {$redFlagName}: “Ah, a tough [guy/girl/one], I see. No need to worry, dear, I don’t mind getting a bit dirty now and then.”
+    {$playerName}: “Really, it’s fin—”
+    {$redFlagName}: “Too late! I made up my mind.” 
+    Already on her knees, the woman looks up to you with a mischievous grin as she picks up the coal. 
+    {$playerName}: “Ah…what the hell, let’s just get this picked up quick.”
+-> “Should you even be here?”
+    <<change_affinity "red flag" -1>>
+    {$redFlagName}: “Now do you want me to help you, or are you just going to stand there and ask me these useless questions?”
+    {$playerName}: “I would think that's a legitimate que–”
+    {$redFlagName}: “I’m already down here, you bore. Now, do you want to be here all day getting nothing done, or would you care to help out this lady pick up your spilt coal?” 
+    Already on her knees, the woman looks up to you with a pout as she picks up the coal.
+    {$playerName}: “Ah…what the hell, let’s just get this picked up quick.”
+-> “Thank you, that would be much appreciated.”
+    {$redFlagName}: “No problem, dear, I don’t mind getting a bit dirty now and then.”
+    {$playerName}: “You're more easygoing than I imagined someone of your status.”
+    {$redFlagName}: “Not adhering to expectations is my definition of happiness. It’s only when you are free that you can see the good in what’s around you.” 
+    Both on your knees, the woman looks towards you with a mischievous grin as she picks up the coal alongside you. 
+    {$playerName}: “Now that philosophy is something someone of your status would say.”
+    {$redFlagName}: “Shut it, will you?”
+As the two of you finish picking up the remaining mess, you go to pick up the crate once more.
+{$redFlagName}: “Let me help you carry this so you don’t go bumping into any more people. And this time I’m not taking no for an answer.”
+Before you could respond, the lady had already placed her hands on the other side of a crate. Deciding it's best not to argue any longer, you go along with her whims until you reach your forge.
+{$redFlagName}: “I’ve never seen a royal forge before. I always thought it would look more…impressive?”
+{$playerName}: “Well, I am only an apprentice. I don’t imagine they give those fancy ones to just about anyone.”
+{$redFlagName}: “Don’t sell yourself short. I see in you the potential to become a great Royal Blacksmith.”
+{$playerName}: “And how would you know that?”
+{$redFlagName}: “My trading company has collaborated before with the Royal Blacksmiths, and I would say you remind me just of them.”
+{$playerName}: “That is?”
+{$redFlagName}: “You have the eyes of someone with ambition. That look where you will do anything to become the best at what you do. I like that about you.”
+{$playerName}: “I never thought that way about myself. Do I really like that to others?”
+{$redFlagName}: “Hmmm…I wouldn’t know. I wouldn’t call myself exactly normal, anyway, so you probably don’t have to worry about others seeing that part of you.”
+{$playerName}: “That’s a relief. Oh! I forgot to say, but thank you for the help. Would you mind if I were to ask for your name?”
 ===
