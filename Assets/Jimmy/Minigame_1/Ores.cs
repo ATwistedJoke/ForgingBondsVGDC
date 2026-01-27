@@ -1,9 +1,11 @@
 using Unity.VisualScripting;
 using UnityEditor.Toolbars;
 using UnityEngine;
+using UnityEngine.EventSystems;
+
 
 //functionality for shattering and breaking ore
-public class Ores : MonoBehaviour
+public class Ores : MonoBehaviour, IPointerClickHandler
 {
     public GameController game;
     [SerializeField] private int required_break;
@@ -30,6 +32,8 @@ public class Ores : MonoBehaviour
 
     }
 
+    //called when ores are clicked enough
+    //based on ore type, give increasing points on rarity
     public void Break()
     {
 
@@ -55,5 +59,16 @@ public class Ores : MonoBehaviour
 
         Debug.Log("you probably should've got points rn");
 
+    }
+
+    //this is the way to handle clicks in unity ig
+    public void OnPointerClick(PointerEventData eventData)
+    {   
+        //check if ore is being clicked on 
+         Ores ore = eventData.pointerPress.GetComponent<Ores>();
+             if (ore != null)
+             {
+                 ore.Handle_Click();
+             }
     }
 }

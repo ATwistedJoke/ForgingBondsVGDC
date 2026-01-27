@@ -2,45 +2,50 @@ using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.WSA;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
     [SerializeField] private int score; 
+    [SerializeField] private bool game_playing = true; 
     [SerializeField]private GameObject iron_ore; 
     [SerializeField]private GameObject gold_ore; 
     [SerializeField] private GameObject mythril_ore; 
 
-    public TextMeshPro textbox;
+    public TextMeshProUGUI textbox;
+
+    public RectTransform game_screen; 
+
+    public GameObject minigame_1_panel;
+
+    //placeholder for testing of end of minigame
+    public Button end_game;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-    StartCoroutine(SpawnRandomOre());
+    Start_Minigame_1();
         
     }
+
+    public void Start_Minigame_1()
+    {
+        minigame_1_panel.SetActive(true);
+        StartCoroutine(SpawnRandomOre());
+    }
+
+    public void End_Minigame()
+    {
+        minigame_1_panel.SetActive(false);
+        game_playing = false;
+    }
+
+
     void Update()
     {
-    {
-    //left click down
-    if (Input.GetMouseButtonDown(0))
-    {   
-        //get mouse position comparative to camera position
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        
-        //shoot raycast from mouse position
-        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
-
-        //check for collisions and ore property
-        if (hit.collider != null)
-        {
-            Ores ore = hit.collider.GetComponent<Ores>();
-            if (ore != null)
-            {
-                ore.Handle_Click();
-            }
-        }
-    }
-    }
 
     textbox.text = GetScore().ToString();
 
@@ -78,23 +83,40 @@ public class GameController : MonoBehaviour
     IEnumerator SpawnRandomOre()
     {
 
-        while (true)
+        while (game_playing)
         {
+    
+    //get panel screen width/height
+        float width = game_screen.rect.width;
+        float height = game_screen.rect.height; 
 
     //choose a random position
-    float randomX = Random.value;
-    float randomY = Random.value;
+        float randomX = Random.Range(-width/2, width/2);
+        float randomY = Random.Range(-height/2, height / 2);
 
     GameObject ore_spawn = ChooseOreByRarity();
 
     //choose a random ore, in descending probabilty (iron -> gold -> mythril)
     //create a vector3, based on the camera's axis
-    Vector3 spawnPosition = Camera.main.ViewportToWorldPoint(new Vector3(randomX, randomY, 1f));
+    Vector3 spawnPosition = new Vector3(randomX, randomY, 0f);
 
-    Instantiate(ore_spawn, spawnPosition, Quaternion.identity);
+    Debug.Log(spawnPosition);
 
+    //creates a new_ore, parents it to the panel
+    GameObject new_ore = Instantiate(ore_spawn, game_screen);
+
+    //
+    RectTransform rt = new_ore.GetComponent<RectTransform>();
+    rt.localPosition = new Vector3(randomX, randomY, 0f);
+    rt.localScale = Vector3.one;
+
+    new_ore.transform.SetParent(game_screen, false);
+
+
+    //random time till new ore is spawned
     yield return new WaitForSeconds(Random.value * 2f);
         }
     
     }
+
 }
