@@ -8,6 +8,8 @@ public class HeatIngot : MonoBehaviour
     public float heatSpeed = 2f; //how many seconds to change heat level
     public float coolSpeed = 5f; //how many seconds it takes to cool down
     private float curHeatTime = 0f;
+    public float heatMin = 0f;
+    public float heatMax = 10f;
     private bool currentlyHeating = false;
 
     private SpriteRenderer spriteRenderer;
@@ -48,7 +50,10 @@ public class HeatIngot : MonoBehaviour
                 yield break;
             }
         }
-        heatLevel++;
+        if(heatLevel < heatMax)
+        {
+            heatLevel++;
+        }
         Debug.Log("Heat Level: " + heatLevel);
         changeSprite();
         StartCoroutine(HeatingCooldown());
@@ -67,7 +72,10 @@ public class HeatIngot : MonoBehaviour
                 yield break;
             }
         }
-        heatLevel--;
+        if(heatLevel > heatMin)
+        {
+            heatLevel--;
+        }
         Debug.Log("Heat Level: " + heatLevel);
         changeSprite();
         StartCoroutine(CoolingCooldown());
