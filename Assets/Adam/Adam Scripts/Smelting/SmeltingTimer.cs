@@ -21,7 +21,6 @@ public class SmeltingTimer : MonoBehaviour
         currCountdownValue = startCountdownValue;
         while (currCountdownValue > 0)
         {
-            Debug.Log("Countdown: " + currCountdownValue);
             yield return new WaitForSeconds(1.0f);
             currCountdownValue--;
             timerText.text = "" + currCountdownValue;
