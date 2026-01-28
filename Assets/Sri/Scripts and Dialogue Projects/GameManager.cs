@@ -15,8 +15,15 @@ public class GameManger : MonoBehaviour
     public GameObject resourceMinigame;
     public GameObject smeltingMinigame;
 
+    public GameObject entranceHall;
+    public GameObject hallway;
+    public GameObject personalForge;
+    public GameObject commissionsRoom;
+
+
     int mentorAffinity = 0;
     int redFlagAffinity = 0;
+    int bestFriendAffinity = 0;
 
     public void Awake() {
 
@@ -36,6 +43,11 @@ public class GameManger : MonoBehaviour
             "run_minigame",
             RunMinigame
         );
+
+        dialogueRunner.AddCommandHandler<string>(
+            "change_background",
+            ChangeBackground
+        );
     }
 
     private void LoadScene(string sceneName) 
@@ -43,6 +55,29 @@ public class GameManger : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    private void ChangeBackground(string newBackground)
+    {
+        foreach(GameObject background in GameObject.FindGameObjectsWithTag("background"))
+        {
+            Destroy(background);
+        }
+        
+        switch (newBackground)
+        {
+            case "entrance hall":
+                Instantiate(entranceHall);
+                break;
+            case "hallway":
+                Instantiate(hallway);
+                break;
+            case "personal forge":
+                Instantiate(personalForge);
+                break;
+            case "commissions room":
+                Instantiate(commissionsRoom);
+                break;
+        }
+    }
     private void ChangeAffinity(string character, int modifier)
     {
         if(character == "mentor")
@@ -54,6 +89,11 @@ public class GameManger : MonoBehaviour
         {
             redFlagAffinity += modifier;
             Debug.Log("Affinity for "+ character + " changed to " + redFlagAffinity);
+        }
+        else if(character == "best friend")
+        {
+            bestFriendAffinity += modifier;
+            Debug.Log("Affinity for "+ character + " changed to " + bestFriendAffinity);
         }
     }
 

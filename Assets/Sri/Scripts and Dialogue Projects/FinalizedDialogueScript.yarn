@@ -3,6 +3,8 @@
 <<declare $playerName = "Calkeus">>
 <<declare $mentorName = "Blacksmith">>
 <<declare $redFlagName = "Woman">>
+<<declare $bestFriendName = "Woman">>
+//<<change_background "prologue">>
 In the Age of the Hammer and Anvil, when Craft defined a Nation’s power, a looming darkness sought to snuff out the light of their forges.
 But the surrounding nations were not idle. The Kingdom of Pladonia, a beacon of innovation and a stalwart defender of humanity, led the Alliance in waging war against the forces of evil.
 Under the lead of the heroic Steelheart Knight, they sought to protect the vulnerable and reclaim the lost lands of humanity.
@@ -11,6 +13,7 @@ Yet the actions of the hero were not forgotten. To this day, the stories of the 
 Where others would take up their sword or arrow to the call of passion, your heart led you to the way of the hammer.
 In the capital city of Pladonia, you walk to a new beginning. The Royal Blacksmith Guild. Home to the Kingdom’s finest Blacksmiths.
 Today marks the start of your first day on the job.
+<<change_background "entrance hall">>
 {$playerName}: “Wow! This place is humongous!” 
 The view of the stoic but kind guards outside slowly disappears behind you as the large, wooden doors close.
 Ahead, you are welcomed with a grand entrance hall, draped in luxurious banners of the royal family. Its architecture is carefully cut from the finest stones, equal only to the castle where the Royal Family resides. 
@@ -35,10 +38,12 @@ It was only then that you recalled the words of the voice, which stated that an 
 A door could be heard opening to your right.
 {$playerName}: “Um…thank you, whoever you are?”
 Hearing no response back, you decide to listen to the voice’s instructions and head down the open hallway. 
+//<<change_background "hallway">>
 Your steps echo in the large hallway. Ahead, you hear the sound of hammering on steel and the voices of people. 
 Following the noise, you trace it down to a closed room. Inside, you can hear the noises of a forge in use.
 -> Open the door
     You gently open the door. 
+    <<change_background "personal forge">>
     Inside, you see an older man overlooking the clumsy work of a younger blacksmith. The man’s eyes appear tired and disappointed, his mouth crooked in frustration.  
     {$mentorName}: “Kid, are you even thinking about this properly? You do that, and you have to reset a whole month’s worth of progress and…
     And you did it anyway, just wonderful.” 
@@ -49,6 +54,7 @@ Following the noise, you trace it down to a closed room. Inside, you can hear th
     But before you could make yourself scarce, you hear an angry shout from within the forge. 
     {$mentorName}: “Are you trying to burn down this place! What is wrong with you, kid? Grab a bucket, kid, and clean up this mess.”
     The door in front of you swings open with a loud bang. From inside, a young blacksmith runs out in tears, passing you without delay. 
+    <<change_background "personal forge">>
 {$mentorName}: “Ah, damn it, these apprentices can’t help but act rashly every time. Can they not think before acting for once!”
 The aged apprentice continues to grumble, only looking up from the ruined project after he wipes the sweat from his forehead. 
 You notice his deep eye bags, worn out from stress and lack of sleep. You feel unable to look away from those eyes, captivated by the look of a professional in your field. But as you continue staring, you notice that they are now looking back at you.
@@ -92,13 +98,14 @@ title: IntroductionPostTutorial
 {$mentorName}: “Once you're done with that, go check the commission board near closing hours to see if anything sounds good to you. You’ll find requests for possible projects there.” 
 {$mentorName}: “I’ll be at my own forge if you have any more questions, so I’ll take my leave first. Get to work, apprentice.” 
 {$playerName}: “Wait! Before you go, could I get your name?”
-{$mentorName}: “It’s not much, but you can call me Isham. I’m one of the head Royal Blacksmiths here. Now get going before you fall behind.
 <<set $mentorName to "Isham">>
+{$mentorName}: “It’s not much, but you can call me Isham. I’m one of the head Royal Blacksmiths here. Now get going before you fall behind.
 {$playerName}: “Yes, sir!”
 The day passes by quickly, with work on your forge seeming endless. Finally, you manage to clean the old forge up to your liking. 
 The only thing left to do now is to restock fuel for your furnace from the coal bunker. 
 As you load a crate full of coal, you realize how heavy it is to carry. Still, you decide to try to carry it all in one trip. 
 An official Royal Blacksmith needs to be strong for their work. That notion pushes you to make a reckless decision.
+//<<change_background "hallway">>
 {$playerName}: Just…a bit…further…
 The crate of coal, filled to the brim, blocks your field of view as you trudge through the hallway. 
 Suddenly, just as you think you might be reaching the end, you collide with something heavy in front of you with a large thud. 
@@ -138,6 +145,7 @@ Taking her hand, you snap out of your thoughts as you stand back up. You notice 
 As the two of you finish picking up the remaining mess, you go to pick up the crate once more.
 {$redFlagName}: “Let me help you carry this so you don’t go bumping into any more people. And this time I’m not taking no for an answer.”
 Before you could respond, the lady had already placed her hands on the other side of a crate. Deciding it's best not to argue any longer, you go along with her whims until you reach your forge.
+<<change_background "personal forge">>
 {$redFlagName}: “I’ve never seen a royal forge before. I always thought it would look more…impressive?”
 {$playerName}: “Well, I am only an apprentice. I don’t imagine they give those fancy ones to just about anyone.”
 {$redFlagName}: “Don’t sell yourself short. I see in you the potential to become a great Royal Blacksmith.”
@@ -148,4 +156,24 @@ Before you could respond, the lady had already placed her hands on the other sid
 {$playerName}: “I never thought that way about myself. Do I really like that to others?”
 {$redFlagName}: “Hmmm…I wouldn’t know. I wouldn’t call myself exactly normal, anyway, so you probably don’t have to worry about others seeing that part of you.”
 {$playerName}: “That’s a relief. Oh! I forgot to say, but thank you for the help. Would you mind if I were to ask for your name?”
+<<set $redFlagName to "Judith Sinclair">>
+{$redFlagName}: “My name is Judith Sinclair. It’s a pleasure to meet you, {$playerName}. I hope to see you again soon.” 
+{$playerName}: “It’s nice to meet you, too, {$redFlagName}.”
+You exchange goodbyes with the odd lady who had left just as swiftly as she entered. It was only after you had returned to work, however, that you remembered something important. 
+You had not once given her your name.  
+You feel a shiver roll down your spine as you finish loading the coal into the furnace. You could only hope that she had learned your name through some reasonable way.
+After a few more long hours of hard work, you wipe off the last of your sweat as you finish completing your forge. All that remains is to obtain the Pleiotium and find a worthwhile commission.
+You remember your senior’s words about how it would be a good idea to look at the commission board for possible requests. You decide that, with nothing else left to do for today, you would give it a look before the guild closes.
+//<<change_background "commissions room">>
+Leaving your forge, you enter the Commission's room within the guild. Here, commissions from customers unable to personally request a Royal Blacksmith are instead placed onto a guild board for apprentices to view. 
+The guild will require apprentices to choose from among these requests to complete. Once chosen, an apprentice is obligated to fulfill the request in an allotted time unless there is an exemption to be made.
+The guild will then judge the apprentice's work and the customer’s review to determine their skillset. If judged high enough to be at the skill level of a Royal Blacksmith, the apprentice will have the opportunity to take the Royal Blacksmith Exam for promotion. 
+Walking up to the commission board, you look at the handful of requests pinned to it, littered with a wide variety of trinkets requested. Most of them are simple designs that don’t pique your attention, while others seem long, tedious, and lackluster to do. 
+But one among them stands out to you. A morningstar, one with a blueprint attached to the request so intricately designed that you can’t help but be drawn to it.
+When you read the name of the commissioner, however, your excitement instantly drops. 
+{$playerName}: [i]{$redFlagName}...of course she would request something as odd as this.[/i]
+Reading more into the peculiar request she made, you do not notice the noise of a door opening behind you.
+{$bestFriendName}: “...what am…doing wrong…”
+You turn backwards, startled by the quiet grumbling voice. 
+It is then that you see a familiar face from your past, one that you did not expect to see so soon when you came to the Royal Capital. 
 ===
