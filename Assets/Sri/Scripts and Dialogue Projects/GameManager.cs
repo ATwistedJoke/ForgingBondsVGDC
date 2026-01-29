@@ -20,6 +20,8 @@ public class GameManger : MonoBehaviour
     public GameObject personalForge;
     public GameObject commissionsRoom;
 
+    public string currentBackground;
+
 
     int mentorAffinity = 0;
     int redFlagAffinity = 0;
@@ -66,15 +68,21 @@ public class GameManger : MonoBehaviour
         {
             case "entrance hall":
                 Instantiate(entranceHall);
+                currentBackground = "entrance hall";
                 break;
             case "hallway":
                 Instantiate(hallway);
+                currentBackground = "hallway";
                 break;
             case "personal forge":
                 Instantiate(personalForge);
+                currentBackground = "personal forge";
                 break;
             case "commissions room":
                 Instantiate(commissionsRoom);
+                currentBackground = "commissions room";
+                break;
+            case "empty":
                 break;
         }
     }
@@ -104,6 +112,7 @@ public class GameManger : MonoBehaviour
 
     private IEnumerator RunMinigameCoroutine(string minigameID, string dialogueNode)
     {
+        ChangeBackground("empty");
 
         yield return null;
 
@@ -137,6 +146,8 @@ public class GameManger : MonoBehaviour
         {
             yield return null;
         }
+
+        ChangeBackground(currentBackground);
 
         dialogueRunner.StartDialogue(dialogueNode);
     }
