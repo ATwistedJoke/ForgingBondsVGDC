@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour
     [SerializeField]private GameObject gold_ore; 
     [SerializeField] private GameObject mythril_ore; 
 
-    public TextMeshProUGUI textbox;
+    [SerializeField] private TextMeshProUGUI textbox;
 
     public RectTransform game_screen; 
 
