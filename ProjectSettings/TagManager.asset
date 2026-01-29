@@ -6,6 +6,7 @@ TagManager:
   tags:
   - minigame
   - background
+  - Ores
   layers:
   - Default
   - TransparentFX
