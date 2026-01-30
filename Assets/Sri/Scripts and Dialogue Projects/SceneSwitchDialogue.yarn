@@ -1,0 +1,26 @@
+﻿title: DialogueCreation
+---
+<<load_scene Scene1>>
+<<jump SceneSwitchDialogue>>
+===
+
+title: SceneSwitchDialogue
+---
+This is a test for scene switches.
+-> Stay in this scene
+    The scene did not switch
+-> Move to scene 2
+    <<load_scene Scene2>>
+    <<jump SecondSceneDialogue>>
+===
+
+title: SecondSceneDialogue
+---
+You have now moved to the second scene!
+Do you want to go back to the first one?
+-> Stay in this scene
+    The scene did not switch
+-> Move to scene 1
+    <<load_scene Scene1>>
+    You are back in scene 1
+===
