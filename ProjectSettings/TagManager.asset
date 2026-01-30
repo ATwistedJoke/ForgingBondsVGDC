@@ -4,9 +4,13 @@
 TagManager:
   serializedVersion: 3
   tags:
+  - minigame
+  - background
   - Ores
   - Boundary
   - Bag
+  - Tongs
+  - Fire
   layers:
   - Default
   - TransparentFX
