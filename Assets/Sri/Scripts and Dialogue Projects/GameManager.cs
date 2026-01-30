@@ -16,6 +16,7 @@ public class GameManger : MonoBehaviour
     public GameObject smeltingMinigame;
 
     public GameObject blackBackground;
+    public GameObject kingdom;
     public GameObject entranceHall;
     public GameObject hallway;
     public GameObject personalForge;
@@ -72,6 +73,9 @@ public class GameManger : MonoBehaviour
                 break;
             case "entrance hall":
                 Instantiate(entranceHall);
+                break;
+            case "kingdom":
+                Instantiate(kingdom);
                 break;
             case "hallway":
                 Instantiate(hallway);

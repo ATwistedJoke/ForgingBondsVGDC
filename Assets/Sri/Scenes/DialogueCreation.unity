@@ -453,6 +453,7 @@ MonoBehaviour:
   resourceMinigame: {fileID: 0}
   smeltingMinigame: {fileID: 0}
   blackBackground: {fileID: 615436763202117382, guid: 870922a9e0462114dbf5124a38aaa52f, type: 3}
+  kingdom: {fileID: 2948681017284672885, guid: 2f4052a903252d440b0701525feb5a22, type: 3}
   entranceHall: {fileID: 6892071920074951963, guid: d05780ba17c24284ab4a7e9b2a7d258b, type: 3}
   hallway: {fileID: 0}
   personalForge: {fileID: 1635868174195961038, guid: f7eab52bb6c21d648b54c9c31add70d4, type: 3}
