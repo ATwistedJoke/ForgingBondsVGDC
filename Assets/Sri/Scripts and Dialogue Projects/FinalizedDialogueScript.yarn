@@ -123,7 +123,7 @@ Taking her hand, you snap out of your thoughts as you stand back up. You notice 
 {$playerName}: “I’m so sorry, I wasn’t watching where I was going. Do you need me to wash that for you, ma’am?”
 {$redFlagName}: Oh, this? No, it’s fine. In fact, how about I help you pick up this mess? You look like you need it. 
 -> “No, I can do this myself.”
-    <<change_affinity "red flag" 1>>
+    <<change_affinity "red flag" 1>>        
     {$redFlagName}: “Ah, a tough [guy/girl/one], I see. No need to worry, dear, I don’t mind getting a bit dirty now and then.”
     {$playerName}: “Really, it’s fin—”
     {$redFlagName}: “Too late! I made up my mind.” 
@@ -154,7 +154,7 @@ Before you could respond, the lady had already placed her hands on the other sid
 {$redFlagName}: “My trading company has collaborated before with the Royal Blacksmiths, and I would say you remind me just of them.”
 {$playerName}: “That is?”
 {$redFlagName}: “You have the eyes of someone with ambition. That look where you will do anything to become the best at what you do. I like that about you.”
-{$playerName}: “I never thought that way about myself. Do I really like that to others?”
+{$playerName}: “I never thought that way about myself. Do I really look like that to others?”
 {$redFlagName}: “Hmmm…I wouldn’t know. I wouldn’t call myself exactly normal, anyway, so you probably don’t have to worry about others seeing that part of you.”
 {$playerName}: “That’s a relief. Oh! I forgot to say, but thank you for the help. Would you mind if I were to ask for your name?”
 <<set $redFlagName to "Judith">>
@@ -181,7 +181,7 @@ Entering the room with an uneasy look on her face and a paper in hand, you see M
 <<set $bestFriendName to "Maeve">>
 {$playerName}: “Maeve?”
 {$bestFriendName}: “Eek!”
-“{$playerName}!? Gosh, you scared me. What are you doing here?”
+{$bestFriendName}: “{$playerName}!? Gosh, you scared me. What are you doing here?”
 You fail to suppress a chuckle as you watch your best friend from years before stumble in surprise. 
 {$playerName}: “Sorry, I didn’t mean to scare you. It’s been so long, Maeve.”
 {$bestFriendName}: “Yeah, it has…”
