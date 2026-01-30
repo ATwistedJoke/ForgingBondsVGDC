@@ -15,17 +15,18 @@ public class GameManger : MonoBehaviour
     public GameObject resourceMinigame;
     public GameObject smeltingMinigame;
 
+    public GameObject blackBackground;
     public GameObject entranceHall;
     public GameObject hallway;
     public GameObject personalForge;
-    public GameObject commissionsRoom;
-
-    public string currentBackground;
+    public GameObject commissionsRoomDay;
+    public GameObject commissionsRoomNight;
 
 
     int mentorAffinity = 0;
     int redFlagAffinity = 0;
     int bestFriendAffinity = 0;
+    int loneWolfAffinity = 0;
 
     public void Awake() {
 
@@ -66,21 +67,23 @@ public class GameManger : MonoBehaviour
         
         switch (newBackground)
         {
+            case "black background":
+                Instantiate(blackBackground);
+                break;
             case "entrance hall":
                 Instantiate(entranceHall);
-                currentBackground = "entrance hall";
                 break;
             case "hallway":
                 Instantiate(hallway);
-                currentBackground = "hallway";
                 break;
             case "personal forge":
                 Instantiate(personalForge);
-                currentBackground = "personal forge";
                 break;
-            case "commissions room":
-                Instantiate(commissionsRoom);
-                currentBackground = "commissions room";
+            case "commissions room daytime":
+                Instantiate(commissionsRoomDay);
+                break;
+            case "commissions room nighttime":
+                Instantiate(commissionsRoomNight);
                 break;
             case "empty":
                 break;
@@ -103,6 +106,11 @@ public class GameManger : MonoBehaviour
             bestFriendAffinity += modifier;
             Debug.Log("Affinity for "+ character + " changed to " + bestFriendAffinity);
         }
+        else if(character == "lone wolf")
+        {
+            loneWolfAffinity += modifier;
+            Debug.Log("Affinity for "+ character + " changed to " + loneWolfAffinity);
+        }
     }
 
     private void RunMinigame(string minigameID, string dialogueNode)
@@ -112,8 +120,6 @@ public class GameManger : MonoBehaviour
 
     private IEnumerator RunMinigameCoroutine(string minigameID, string dialogueNode)
     {
-        ChangeBackground("empty");
-
         yield return null;
 
         dialogueRunner.Stop();
@@ -146,8 +152,6 @@ public class GameManger : MonoBehaviour
         {
             yield return null;
         }
-
-        ChangeBackground(currentBackground);
 
         dialogueRunner.StartDialogue(dialogueNode);
     }
