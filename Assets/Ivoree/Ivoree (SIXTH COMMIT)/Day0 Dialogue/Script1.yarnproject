@@ -1,0 +1,16 @@
+{
+  "projectFileVersion": 3,
+  "sourceFiles": [
+    "ScriptDay0.yarn",
+    "ScriptDay0.1.yarn",
+    "ScriptDay0.2.yarn"
+  ],
+  "excludeFiles": [
+    "**/*~/*",
+    "./Samples/Yarn Spinner*/*"
+  ],
+  "localisation": {},
+  "baseLanguage": "en",
+  "compilerOptions": {},
+  "definitionsFiles": []
+}
