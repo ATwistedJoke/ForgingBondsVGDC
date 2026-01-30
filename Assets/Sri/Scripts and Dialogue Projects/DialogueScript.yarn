@@ -1,9 +1,0 @@
-﻿title: DialogueTest
----
-This is a test for the dialogue system.
-Do you want to switch scenes:
--> Remain in this scene
-    The scene didn't switch.
--> Move to new scene
-    <<load_scene "test2">>
-===
