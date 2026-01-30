@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 319348572}
   - component: {fileID: 319348571}
   - component: {fileID: 319348570}
+  - component: {fileID: 319348573}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -154,7 +155,7 @@ Camera:
   m_GameObject: {fileID: 319348569}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -180,7 +181,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -211,6 +212,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &319348573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319348569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
 --- !u!1001 &969776833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -245,18 +290,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2958262986520364887, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2958262986520364888, guid: 52571f68872914e24837210513edea1d, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-    - target: {fileID: 2958262986520364888, guid: 52571f68872914e24837210513edea1d, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-    - target: {fileID: 2958262986520364888, guid: 52571f68872914e24837210513edea1d, type: 3}
-      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2958262987206614837, guid: 52571f68872914e24837210513edea1d, type: 3}
@@ -355,30 +388,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8020628925673895294, guid: 52571f68872914e24837210513edea1d, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 7ca7fd374b21e8c4e89d217cc58d8632, type: 2}
-    - target: {fileID: 8020628925673895294, guid: 52571f68872914e24837210513edea1d, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -8202990761973286169, guid: 7ca7fd374b21e8c4e89d217cc58d8632, type: 2}
-    - target: {fileID: 8020628925673895294, guid: 52571f68872914e24837210513edea1d, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: autoStart
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: startNode
-      value: DialogueCreation
+      value: IntroductionPreTutorial
       objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: yarnProject
       value: 
-      objectReference: {fileID: 7545569452688597077, guid: 47c0030a6018228439cf465f282c4b88, type: 3}
+      objectReference: {fileID: 7545569452688597077, guid: 6ff9374ba91c2b440bac26211fff5d69, type: 3}
     - target: {fileID: 8635081094713202853, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: showDebug
       value: 1
@@ -428,6 +449,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneCommands
   dialogueRunner: {fileID: 969776835}
+  tutorialMinigame: {fileID: 7223744104443120311, guid: 7c8a8517db2c1aa4b9702e03b369a630, type: 3}
+  resourceMinigame: {fileID: 0}
+  smeltingMinigame: {fileID: 0}
+  blackBackground: {fileID: 615436763202117382, guid: 870922a9e0462114dbf5124a38aaa52f, type: 3}
+  kingdom: {fileID: 2948681017284672885, guid: 2f4052a903252d440b0701525feb5a22, type: 3}
+  entranceHall: {fileID: 6892071920074951963, guid: d05780ba17c24284ab4a7e9b2a7d258b, type: 3}
+  hallway: {fileID: 0}
+  personalForge: {fileID: 1635868174195961038, guid: f7eab52bb6c21d648b54c9c31add70d4, type: 3}
+  commissionsRoomDay: {fileID: 7918340211067389841, guid: 776fa389f64d77e4c94825b47f5d555f, type: 3}
+  commissionsRoomNight: {fileID: 6626465194326322519, guid: 967dfd72034095f4fa1368e48432af78, type: 3}
 --- !u!114 &969776838
 MonoBehaviour:
   m_ObjectHideFlags: 0
