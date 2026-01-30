@@ -29,28 +29,18 @@ public class Ore_Fragment : MonoBehaviour
     //
     private void OnCollisionEnter2D(Collision2D collision) {
         //checks each individual tag,  possible, i know very messy and can be shortened
-    //     if (collision.gameObject.CompareTag("Bag")) {
-    //    game.AddScore(20);
-    //    Debug.Log("i am hitting this");
-    //    Destroy(gameObject);
-    //     }
-        if (collision.gameObject.CompareTag("Boundary"))
-        {
-            Destroy(gameObject);  
-            Debug.Log("im died"); 
-        }
-
-}
-    //collector object is 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-        if (collision.gameObject.CompareTag("Bag")) {
+    if (collision.gameObject.CompareTag("Bag")) {
        game.AddScore(20);
        Debug.Log("i am hitting this");
        Destroy(gameObject);
-        }
     }
+
+    if (collision.gameObject.CompareTag("Boundary"))
+        {
+            Destroy(gameObject);   
+        }
+
+}
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Boundary"))

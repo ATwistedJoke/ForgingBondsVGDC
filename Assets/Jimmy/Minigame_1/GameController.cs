@@ -14,14 +14,14 @@ public class GameController : MonoBehaviour
     [SerializeField]private GameObject gold_ore; 
     [SerializeField] private GameObject mythril_ore; 
 
-    //[SerializeField] private TextMeshProUGUI textbox;
-    public float random_time;
+    [SerializeField] private TextMeshProUGUI textbox;
+
     public RectTransform game_screen; 
 
     public GameObject minigame_1_panel;
 
     //placeholder for testing of end of minigame
-    //public Button end_game;
+    public Button end_game;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -47,7 +47,7 @@ public class GameController : MonoBehaviour
     void Update()
     {
 
-    //textbox.text = GetScore().ToString();
+    textbox.text = GetScore().ToString();
 
     }
     //getter function for score
@@ -92,8 +92,7 @@ public class GameController : MonoBehaviour
 
     //choose a random position
         float randomX = Random.Range(-width/2, width/2);
-        //top 2/3 so it doesnt conflict with the bag portion of the screen
-        float randomY = Random.Range(-height/3, height / 3);
+        float randomY = Random.Range(-height/2, height / 2);
 
     GameObject ore_spawn = ChooseOreByRarity();
 
@@ -101,7 +100,7 @@ public class GameController : MonoBehaviour
     //create a vector3, based on the camera's axis
     Vector3 spawnPosition = new Vector3(randomX, randomY, 0f);
 
-    //Debug.Log(spawnPosition);
+    Debug.Log(spawnPosition);
 
     //creates a new_ore, parents it to the panel
     GameObject new_ore = Instantiate(ore_spawn, game_screen);
@@ -115,7 +114,7 @@ public class GameController : MonoBehaviour
 
 
     //random time till new ore is spawned
-    yield return new WaitForSeconds(Random.value * 4f);
+    yield return new WaitForSeconds(Random.value * 2f);
         }
     
     }
