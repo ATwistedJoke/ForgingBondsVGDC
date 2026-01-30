@@ -15,7 +15,6 @@ public class AudioController : MonoBehaviour
             model = new AudioModel();
         }
 
-        // Listen to volume changes like TS applyVolume()
         model.OnVolumeChanged += ApplyVolumeToAll;
     }
 
