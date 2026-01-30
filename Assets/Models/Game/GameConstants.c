@@ -7,9 +7,12 @@ public static class GameConstants
     public const int ATTRACTION_DECREASE = -5;
 
     //Volume Values
-    public const int DEFAULT_VOLUME = 50;
-    public const int VOLUME_MAX = 100;
-    public const int VOLUME_MIN = 0;
+    public const float VOLUME_MIN = 0.0f;
+    public const float VOLUME_MAX = 1.0f;
+
+    public const float DEFAULT_BGM_VOLUME = 0.5f;
+    public const float DEFAULT_SFX_VOLUME = 0.5f;
+}
 
     //Screen size
     public const int SCREEN_WIDTH = 500; //arbitrary val - replace later
