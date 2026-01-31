@@ -1,5 +1,3 @@
-using YourNamespace; // Replace with the correct namespace containing GameConstants
-
 public class AffectionModel
 {
     public int Current { get; private set; }
