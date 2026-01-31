@@ -12,7 +12,7 @@ public static class GameConstants
 
     public const float DEFAULT_BGM_VOLUME = 0.5f;
     public const float DEFAULT_SFX_VOLUME = 0.5f;
-}
+
 
     //Screen size
     public const int SCREEN_WIDTH = 500; //arbitrary val - replace later
