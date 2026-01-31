@@ -23,7 +23,9 @@ public class GameManger : MonoBehaviour
     public GameObject commissionsRoomDay;
     public GameObject commissionsRoomNight;
 
-
+    //Character Handling
+    public GameObject[] spObj; 
+    
     int mentorAffinity = 0;
     int redFlagAffinity = 0;
     int bestFriendAffinity = 0;
