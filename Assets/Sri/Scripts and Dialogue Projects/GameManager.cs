@@ -162,7 +162,9 @@ public class GameManger : MonoBehaviour
         dialogueRunner.StartDialogue(dialogueNode);
     }
 
-
-
-
+    private void SpriteChange(int oIdx, int sIdx)
+    {
+        CharacterManager sp = spObj[oIdx].GetComponent<CharacterManager>(); 
+        sp.ChangeSprite(sIdx); 
+    }
 }
