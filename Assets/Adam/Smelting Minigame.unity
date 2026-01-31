@@ -268,6 +268,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Smelting Minigame
       objectReference: {fileID: 0}
+    - target: {fileID: 1219979253644541762, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219979253644541762, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219979253644541762, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219979253644541762, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219979253644541762, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -445
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219979253644541762, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -350
+      objectReference: {fileID: 0}
     - target: {fileID: 1884829215915858496, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
