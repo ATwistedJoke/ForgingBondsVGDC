@@ -1,3 +1,5 @@
+using YourNamespace; // Replace with the correct namespace containing GameConstants
+
 public class AffectionModel
 {
     public int Current { get; private set; }
@@ -17,7 +19,7 @@ public class AffectionModel
 
     public void Decrease()
     {
-        Current += GameConstants.ATTRACTION_DECREASE;
+        Current -= GameConstants.ATTRACTION_DECREASE;  // subtract the positive number
 
         if (Current < GameConstants.ATTRACTION_MIN)
             Current = GameConstants.ATTRACTION_MIN;
