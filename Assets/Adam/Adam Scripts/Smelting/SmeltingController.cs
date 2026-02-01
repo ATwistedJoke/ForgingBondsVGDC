@@ -11,36 +11,40 @@ public class SmeltingController : MonoBehaviour
     public int score = 0;
     private bool addScore = false;
     public GameObject barContainer; //Contains large bar
-    private Vector3 leftEdgePosition_World; //Vector3 of left boundary of large bar
-    private Vector3 rightEdgePosition_World; 
-    private float leftEdgeX_World; //Float position of left bounary of bar
-    private float rightEdgeX_World;
+    private float barContainerLeftEdgeX; //Float position of left bounary of bar
+    private float barContainerRightEdgeX;
     [SerializeField] private TMP_Text scoreText;
+    public float scoreTime = 1f;
     void Start()
     {
         scoreText.text = "Score: " + score;
 
         RectTransform barContainerTransform = barContainer.GetComponent<RectTransform>();
+        
+        Vector3[] corners = new Vector3[4];
+        
+        barContainerTransform.GetWorldCorners(corners);
 
-        leftEdgeX_World = barContainerTransform.position.x + barContainerTransform.rect.xMin;
-        rightEdgeX_World = barContainerTransform.position.x + barContainerTransform.rect.xMax;
+        float globalWidth = Vector3.Distance(corners[0], corners[3]);
+        float barContainerMidToEdge = globalWidth / 2.0f;
+        barContainerLeftEdgeX = barContainerTransform.position.x - barContainerMidToEdge;
+        barContainerRightEdgeX = barContainerTransform.position.x + barContainerMidToEdge;
 
-        leftEdgePosition_World = new Vector3(leftEdgeX_World, barContainerTransform.position.y, barContainerTransform.position.z);
-        rightEdgePosition_World = new Vector3(rightEdgeX_World, barContainerTransform.position.y, barContainerTransform.position.z);
     }
 
     // Update is called once per frame
     void Update() {
+        Debug.Log(barContainer.transform.localPosition.x);
         //Move right if space is held and black bar would stay in boundary
-        if (Input.GetKey(KeyCode.Space) && blackBar.transform.position.x < rightEdgeX_World)
+        if (Input.GetKey(KeyCode.Space) && blackBar.transform.position.x < barContainerRightEdgeX)
         {
-            blackBar.transform.Translate(Vector3.right * barRightSpeed * Time.deltaTime);
+            blackBar.transform.localPosition += new Vector3(barRightSpeed * Time.deltaTime, 0, 0);
         }
-        else if(blackBar.transform.position.x > leftEdgeX_World)
+        else if(blackBar.transform.position.x > barContainerLeftEdgeX)
         {
-            blackBar.transform.Translate(Vector3.left * barLeftSpeed * Time.deltaTime);
+            blackBar.transform.localPosition -= new Vector3(barLeftSpeed * Time.deltaTime, 0, 0);
         }
-        barLeftSpeed += 0.01f; //Bar speeds up over time
+        //barLeftSpeed -= 0.01f * Time.deltaTime; //Bar speeds up over time
     }
     private void OnTriggerEnter2D(Collider2D other) { //Checks when black bar enters scoring area
         addScore = true;
@@ -52,6 +56,7 @@ public class SmeltingController : MonoBehaviour
     //must be in green bar for a full second to gain score
     public IEnumerator StartCountdown(float scoreTimer = 1f) 
     {
+        scoreTimer = scoreTime;
         while (scoreTimer > 0)
         {
             yield return new WaitForSeconds(0.01f);
