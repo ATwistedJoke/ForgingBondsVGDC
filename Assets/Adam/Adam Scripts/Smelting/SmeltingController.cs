@@ -14,7 +14,7 @@ public class SmeltingController : MonoBehaviour
     private float barContainerLeftEdgeX; //Float position of left bounary of bar
     private float barContainerRightEdgeX;
     [SerializeField] private TMP_Text scoreText;
-    private float check = 0f;
+    public float scoreTime = 1f;
     void Start()
     {
         scoreText.text = "Score: " + score;
@@ -56,6 +56,7 @@ public class SmeltingController : MonoBehaviour
     //must be in green bar for a full second to gain score
     public IEnumerator StartCountdown(float scoreTimer = 1f) 
     {
+        scoreTimer = scoreTime;
         while (scoreTimer > 0)
         {
             yield return new WaitForSeconds(0.01f);

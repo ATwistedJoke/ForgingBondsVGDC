@@ -8,6 +8,7 @@ public class SmeltingTimer : MonoBehaviour
     public float currCountdownValue;
     public float startCountdownValue = 60f;
     public TMP_Text timerText;
+    public GameObject minigamePrefab;
     void Awake()
     {
         timerText = GetComponent<TMP_Text>();
@@ -25,6 +26,6 @@ public class SmeltingTimer : MonoBehaviour
             currCountdownValue--;
             timerText.text = "" + currCountdownValue;
         }
-
+        Destroy(minigamePrefab);
     }
 }
