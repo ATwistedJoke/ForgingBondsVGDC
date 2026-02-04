@@ -6,8 +6,9 @@ public class CraftingOutput : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Transform outputPos;
     public string[][] craftingRecipes = new string[1][];
-    public string[] curTable = new string[9];
+    public GameObject[] curTable;
     public GameObject pickaxe;
+    public DragObject dragObject;
 
     void Start()
     {
@@ -17,43 +18,53 @@ public class CraftingOutput : MonoBehaviour
                 "", "", "", 
                 "", "", ""
                             };
-        Array.Fill(curTable, string.Empty);
+        curTable = new GameObject[9];
     }
 
     public void addItemToTable(GameObject item, int pos)
     {
         if(curTable[pos] != null)
         {
-            //remove current item
+            removeItemFromTable(pos);
         }
-        curTable[pos] = item.name;
+        curTable[pos] = item;
         compareRecipes();
     }
-
+    public void removeItemFromTable(int pos)
+    {
+        GameObject toRemove = curTable[pos];
+        dragObject = toRemove.GetComponent<DragObject>();
+        dragObject.returnToStartPos();
+        curTable[pos] = null;
+    }
     private void compareRecipes()
     {
-        if(compareArrays(craftingRecipes[0], curTable))
+        foreach(string[] recipe in craftingRecipes)
         {
-            Debug.Log("truth!");
-            instantiateCraftedItem();
-        }
-        /*foreach(string[] recipe in craftingRecipes)
-        {
-            Debug.Log("hey");
-            if(compareArrays(recipe, curTable))
+            if(compareArrays(craftingRecipes[0], curTable))
             {
                 instantiateCraftedItem();
+                ClearGrid();
             }
-        }*/
+        }
     }
 
-    private bool compareArrays(string[] recipe, string[] table)
+    private bool compareArrays(string[] recipe, GameObject[] table)
     {
         for(int i = 0;i < 9; i++)
         {
-            if(!recipe[i].Equals(table[i]))
+            if(table[i] == null)
             {
-                return false;
+                if(recipe[i] != "")
+                {
+                    return false;
+                }
+            }
+            else {
+                if(!recipe[i].Equals(table[i].name))
+                {
+                    return false;
+                }
             }
         }
         return true;
@@ -61,14 +72,16 @@ public class CraftingOutput : MonoBehaviour
     private void instantiateCraftedItem()
     {
         GameObject craftedObject = Instantiate(pickaxe, outputPos.position, Quaternion.identity);
-
-        // 2. Set the parent
-        // 'this.transform' refers to the Transform component of the parent object 
-        // to which this script is attached.
-        //childObject.transform.SetParent(this.transform);
-
-        // 3. Reset local position to zero relative to the parent
-        // This is the key step to ensure it's at the parent's exact location.
-        //childObject.transform.localPosition = Vector3.zero;
+    }
+    private void ClearGrid()
+    {
+        foreach(GameObject item in curTable)
+        {
+            if(item != null)
+            {
+                Destroy(item);
+            }
+        }
+        Array.Clear(curTable, 0, 9);
     }
 }

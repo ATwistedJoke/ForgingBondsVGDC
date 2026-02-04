@@ -11,17 +11,32 @@ public class DragObject : MonoBehaviour
     public GameObject[] snapPositions;
     public GameObject output;
     public CraftingOutput craftingOutput;
+    private int pos = -1;
+    public Vector3 startPos;
+
+    void Start()
+    {
+        snapPositions = GameObject.FindGameObjectsWithTag("SnapPoint");
+        output = GameObject.Find("Output");
+        craftingOutput = output.GetComponent<CraftingOutput>();
+        Array.Sort(snapPositions, CompareObNames);
+        
+        if(startPos == null)
+        {
+            startPos = gameObject.transform.position;
+        }
+    }
     void OnMouseDown()
     {
+
         screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
 
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
 
-        snapPositions = GameObject.FindGameObjectsWithTag("SnapPoint");
-        output = GameObject.Find("Output");
-        craftingOutput = output.GetComponent<CraftingOutput>();
-
-        Array.Sort(snapPositions, CompareObNames);
+        if(pos != -1)
+        {
+            craftingOutput.removeItemFromTable(pos);
+        }
     }
 
     void OnMouseDrag()
@@ -50,7 +65,7 @@ public class DragObject : MonoBehaviour
         }
         GameObject closest = snapPositions[0];
         float closestDistance = Vector3.Distance(transform.position, snapPositions[0].transform.position);
-        int pos = 0;
+        pos = 0;
         for(int i = 0;i < snapPositions.Length; i++)
         {
             if (snapPositions[i].transform != null)
@@ -66,28 +81,17 @@ public class DragObject : MonoBehaviour
                 // Log the distance to the console (for debugging)
             }
         }
-        /*
-        foreach(GameObject screenPoint in snapPositions)
-        {
-            if (screenPoint.transform != null)
-            {
-                // Calculate the distance between this object and the target object
-                float distance = Vector3.Distance(transform.position, screenPoint.transform.position);
-                if(distance < closestDistance)
-                {
-                    closestDistance = distance;
-                    closest = screenPoint;
-                }
-                // Log the distance to the console (for debugging)
-            }
-        }
-        */
         if(closestDistance >= 1.5f)
         {
             return gameObject;
         }
         craftingOutput.addItemToTable(gameObject, pos);
         return closest;
+    }
+
+    public void returnToStartPos()
+    {
+        gameObject.transform.position = startPos;
     }
 
     int CompareObNames(GameObject x, GameObject y)
