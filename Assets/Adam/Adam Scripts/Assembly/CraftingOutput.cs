@@ -5,9 +5,10 @@ public class CraftingOutput : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Transform outputPos;
-    public string[][] craftingRecipes = new string[1][];
+    public string[][] craftingRecipes = new string[3][];
     public GameObject[] curTable;
     public GameObject pickaxe;
+    public GameObject stick;
     public DragObject dragObject;
 
     void Start()
@@ -16,7 +17,17 @@ public class CraftingOutput : MonoBehaviour
         craftingRecipes[0] = new string[]{
                 "Charmander", "", "",
                 "", "", "", 
-                "", "", ""
+                "", "", "", "Pickaxe"
+                            };
+        craftingRecipes[1] = new string[]{
+                "Plank", "", "",
+                "Plank", "", "", 
+                "", "", "", "Stick"
+                            };
+        craftingRecipes[2] = new string[]{
+                "Diamond", "Diamond", "Diamond",
+                "", "Stick", "", 
+                "", "Stick", "", "Pickaxe"
                             };
         curTable = new GameObject[9];
     }
@@ -33,17 +44,20 @@ public class CraftingOutput : MonoBehaviour
     public void removeItemFromTable(int pos)
     {
         GameObject toRemove = curTable[pos];
-        dragObject = toRemove.GetComponent<DragObject>();
-        dragObject.returnToStartPos();
+        if(toRemove != null)
+        {
+            dragObject = toRemove.GetComponent<DragObject>();
+            dragObject.returnToStartPos();
+        }
         curTable[pos] = null;
     }
     private void compareRecipes()
     {
         foreach(string[] recipe in craftingRecipes)
         {
-            if(compareArrays(craftingRecipes[0], curTable))
+            if(compareArrays(recipe, curTable))
             {
-                instantiateCraftedItem();
+                instantiateCraftedItem(recipe[9]);
                 ClearGrid();
             }
         }
@@ -61,7 +75,7 @@ public class CraftingOutput : MonoBehaviour
                 }
             }
             else {
-                if(!recipe[i].Equals(table[i].name))
+                if(!recipe[i].Equals(table[i].tag))
                 {
                     return false;
                 }
@@ -69,9 +83,21 @@ public class CraftingOutput : MonoBehaviour
         }
         return true;
     }
-    private void instantiateCraftedItem()
+    private void instantiateCraftedItem(string item)
     {
-        GameObject craftedObject = Instantiate(pickaxe, outputPos.position, Quaternion.identity);
+        if(item == null)
+        {
+            Debug.Log("null item tried to be created :/");
+            return;
+        }
+        if (item.Equals("Stick"))
+        {
+            GameObject craftedObject = Instantiate(stick, outputPos.position, Quaternion.identity);
+        }
+        if (item.Equals("Pickaxe"))
+        {
+            GameObject craftedObject = Instantiate(pickaxe, outputPos.position, Quaternion.identity);
+        }
     }
     private void ClearGrid()
     {

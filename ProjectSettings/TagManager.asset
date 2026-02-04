@@ -7,6 +7,10 @@ TagManager:
   - Tongs
   - Fire
   - SnapPoint
+  - Stick
+  - Diamond
+  - Plank
+  - Pickaxe
   layers:
   - Default
   - TransparentFX
