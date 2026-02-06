@@ -52,25 +52,26 @@ public class Stream : MonoBehaviour
 
     void UpdateStreamPositions()
     {
-        // 1. The start is always attached to the jar
+        // start is always attached to the jar
         stream.SetPosition(0, tipping_point.position);
 
-        // 2. Raycast to find where the liquid SHOULD be hitting
+        //Raycast to find where the liquid SHOULD be hitting
         RaycastHit2D hit = Physics2D.Raycast(tipping_point.position, Vector2.down, maxRange);
         Vector3 targetPos = (hit.collider != null) ? (Vector3)hit.point : tipping_point.position + Vector3.down * maxRange;
 
-        // 3. Animate the end point toward the target (Logic from the video)
+        //Animate the end point toward the target (Logic from the video)
         Vector3 currentEndPos = stream.GetPosition(1);
         Vector3 newEndPos = Vector3.MoveTowards(currentEndPos, targetPos, streamSpeed * Time.deltaTime);
         stream.SetPosition(1, newEndPos);
 
-        // 4. Handle Splash & Filling (Only if the stream has reached the target)
+        //Handle Splash & Filling (Only if the stream has reached the target)
         float distanceToTarget = Vector3.Distance(newEndPos, targetPos);
         if (distanceToTarget < 0.1f && hit.collider != null)
         {
             //if (splashParticles != null && !splashParticles.isPlaying) splashParticles.Play();
             //if (splashParticles != null) splashParticles.transform.position = hit.point;
 
+            //fill mold
             if (hit.collider.CompareTag("Mold"))
             {
                 Debug.Log("hitting mold");
@@ -79,7 +80,6 @@ public class Stream : MonoBehaviour
         }
         else
         {
-
             Debug.Log("I am hitting nothing");
             //if (splashParticles != null) splashParticles.Stop();
         }
@@ -89,7 +89,7 @@ public class Stream : MonoBehaviour
     {
         float angle = crucible.transform.eulerAngles.z;
         if (angle > 180) {angle = 360 - angle;}
-        Debug.Log(angle);
+        //Debug.Log(angle);
         return angle;
     }
 }

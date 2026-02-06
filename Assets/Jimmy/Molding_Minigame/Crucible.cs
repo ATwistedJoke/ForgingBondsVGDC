@@ -20,13 +20,16 @@ public class Crucible : MonoBehaviour
     //rotate left, using A; right, using D
     if (Input.GetKey(KeyCode.A)) tiltInput = 1f;
     if (Input.GetKey(KeyCode.D)) tiltInput = -1f;
+    
 
+    //rotation formula
     crucibleRect.localRotation *= Quaternion.Euler(0, 0, tiltInput * rotationSpeed * Time.deltaTime);
+
+    
     float z = crucibleRect.localEulerAngles.z;
     if (z > 180) z -= 360;
 
     z = Mathf.Clamp(z, -maxTilt, minTilt);
-    crucibleRect.localEulerAngles = new Vector3(0, 0, z);
-
+    crucibleRect.localEulerAngles = new Vector3(0, 0, z);   
 }
 }

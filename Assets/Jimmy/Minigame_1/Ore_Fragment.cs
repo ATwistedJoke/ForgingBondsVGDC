@@ -45,7 +45,7 @@ public class Ore_Fragment : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
-        if (collision.gameObject.CompareTag("Bag")) {
+    if (collision.gameObject.CompareTag("Bag")) {
        game.AddScore(20);
        Debug.Log("i am hitting this");
        Destroy(gameObject);

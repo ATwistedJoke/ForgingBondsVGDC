@@ -8,6 +8,10 @@ TagManager:
   - Boundary
   - Bag
   - Mold
+  - Crucible
+  - Iron
+  - Gold
+  - Mythril
   layers:
   - Default
   - TransparentFX
