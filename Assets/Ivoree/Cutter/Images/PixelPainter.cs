@@ -4,6 +4,11 @@ using System.Collections.Generic;
 
 public class PixelPainter : MonoBehaviour
 {
+	
+    public ScoreManager scoreManager;
+        
+
+
     [Header("Brush Settings")]
     public GameObject paintBlobPrefab; 
     public float pixelSpacing = 0.05f; // Keep this small for a smooth line
@@ -39,5 +44,22 @@ public class PixelPainter : MonoBehaviour
 
         Instantiate(paintBlobPrefab, snapPos, Quaternion.identity);
         lastPaintPosition = transform.position;
+
+
+
+        //updated stuff 
+
+	Instantiate(paintBlobPrefab, snapPos, Quaternion.identity);
+	if (scoreManager == null)
+        {
+            Debug.LogError("CRITICAL: ScoreManager is MISSING! I cannot report the score.");
+        }
+        else
+        {
+            Debug.Log("Painter: Sending data to manager..."); // Proof we tried
+            scoreManager.CheckPixelAt(snapPos);
+        }
+
+	lastPaintPosition = transform.position; 
     }
 }
