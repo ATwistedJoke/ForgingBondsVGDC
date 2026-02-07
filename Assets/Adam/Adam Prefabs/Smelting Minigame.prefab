@@ -681,8 +681,8 @@ MonoBehaviour:
   leftBar: {fileID: 7902690711522993621}
   rightBar: {fileID: 8264939992457519247}
   greenBar: {fileID: 3343793480723242747}
-  greenBarWidthDecrease: 2
-  greenBarMovementSpeed: 80
+  greenBarWidthDecrease: 40
+  greenBarMovementSpeed: 2500
   greenBarCollider: {fileID: 3520005653797141449}
   greenBarRenderer: {fileID: 6204518835278709722}
 --- !u!1 &6765080913770586546

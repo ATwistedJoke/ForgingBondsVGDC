@@ -431,6 +431,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3239345477862610162, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
+      propertyPath: greenBarMovementSpeed
+      value: 2500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3239345477862610162, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
+      propertyPath: greenBarWidthDecrease
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5010267951510513522, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
       propertyPath: m_Name
       value: Smelting Minigame
@@ -474,18 +482,6 @@ PrefabInstance:
     - target: {fileID: 6204518835278709722, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6446029122413644885, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
-      propertyPath: scoreTime
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6446029122413644885, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
-      propertyPath: barLeftSpeed
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 6446029122413644885, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
-      propertyPath: barRightSpeed
-      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
