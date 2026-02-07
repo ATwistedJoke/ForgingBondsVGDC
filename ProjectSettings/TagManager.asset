@@ -8,9 +8,10 @@ TagManager:
   - Fire
   - SnapPoint
   - Stick
-  - Diamond
-  - Plank
-  - Pickaxe
+  - Spike
+  - Morningstar Head
+  - Ball
+  - Morningstar
   layers:
   - Default
   - TransparentFX

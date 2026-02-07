@@ -411,9 +411,69 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1132855432584440718, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1132855432584440718, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1132855432584440718, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1132855432584440718, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1132855432584440718, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5010267951510513522, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
       propertyPath: m_Name
       value: Smelting Minigame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5043962112684785624, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5043962112684785624, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5043962112684785624, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5043962112684785624, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5043962112684785624, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204518835278709722, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204518835278709722, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204518835278709722, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204518835278709722, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204518835278709722, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6446029122413644885, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
       propertyPath: scoreTime

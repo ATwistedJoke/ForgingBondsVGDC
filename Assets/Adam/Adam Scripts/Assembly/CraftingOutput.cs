@@ -5,10 +5,12 @@ public class CraftingOutput : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Transform outputPos;
-    public string[][] craftingRecipes = new string[3][];
+    public string[][] craftingRecipes = new string[4][];
     public GameObject[] curTable;
     public GameObject pickaxe;
     public GameObject stick;
+    public GameObject MorningstarHead;
+    public GameObject Morningstar;
     public DragObject dragObject;
 
     void Start()
@@ -28,6 +30,11 @@ public class CraftingOutput : MonoBehaviour
                 "Diamond", "Diamond", "Diamond",
                 "", "Stick", "", 
                 "", "Stick", "", "Pickaxe"
+                            };
+        craftingRecipes[3] = new string[]{
+                "Spike", "Spike", "Spike",
+                "Spike", "Ball", "Spike", 
+                "Spike", "Spike", "Spike", "Morningstar Head"
                             };
         curTable = new GameObject[9];
     }
@@ -85,6 +92,7 @@ public class CraftingOutput : MonoBehaviour
     }
     private void instantiateCraftedItem(string item)
     {
+        Debug.Log("gm");
         if(item == null)
         {
             Debug.Log("null item tried to be created :/");
@@ -97,6 +105,10 @@ public class CraftingOutput : MonoBehaviour
         if (item.Equals("Pickaxe"))
         {
             GameObject craftedObject = Instantiate(pickaxe, outputPos.position, Quaternion.identity);
+        }
+        if (item.Equals("Morningstar Head"))
+        {
+            GameObject craftedObject = Instantiate(MorningstarHead, outputPos.position, Quaternion.identity);
         }
     }
     private void ClearGrid()
