@@ -421,6 +421,7 @@ MonoBehaviour:
   currCountdownValue: 30
   startCountdownValue: 30
   timerText: {fileID: 0}
+  minigamePrefab: {fileID: 0}
 --- !u!114 &452226378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,6 +719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4908f8446cff243d6be41eae60948ca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DragObject
+  snapPositions: []
 --- !u!61 &993247321
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -898,7 +900,7 @@ GameObject:
   - component: {fileID: 1406620372}
   m_Layer: 0
   m_Name: Tongs Starting Position
-  m_TagString: Untagged
+  m_TagString: SnapPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
