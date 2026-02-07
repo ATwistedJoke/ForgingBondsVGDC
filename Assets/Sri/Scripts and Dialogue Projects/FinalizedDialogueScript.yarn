@@ -363,3 +363,54 @@ It is only when you collapse on your bed that you feel your shoulders loosen fro
 You then fall asleep, unable to keep your eyes open any longer. The Night goes by quickly. Then a day. Then a Week. 
 By the time you know it, it’s already your second week on the job.
 ===
+
+title: PreMinigameWeek2
+---
+The first week at the Royal Blacksmith Guild was incredibly busy. Full of tedious work, new learning opportunities, and introductions to an ensemble of other apprentices, your free time consisted of only sleeping and eating. 
+But all that work is about to pay off, for you have finally finished the preparations you need to begin what is known as the Ritual of Extraction.
+//<<change_background "entrance hall">>
+Entering the Guild with a grin on your face, you walk past the front desk that had given you so much trouble in the past. Turns out it was just an automated voice that Isham and some other Royal Blacksmiths built back in the day to manage the guild’s guests.
+It really is true that laziness is the greatest source of inspiration.
+<<change_background "personal forge">>
+Entering your seniors’ forge, you are met by an already working Isham, hammering away at a new creation while deep in thought. 
+Upon meeting eyes, Isham welcomes you with a voice much friendlier than when you had first arrived. 
+{$mentorName}: “I take it you came here to tell me you are finished?”
+{$playerName}: “Yes, sir! I’m ready to begin.”
+{$mentorName}: "Good. I figured you would say that. I already made preparations for a carriage to take us, so we should make haste today. Go grab your pack, rookie.”
+<<change_background "black background">>
+The Ritual of Extraction, the name given to the unique way of mining Pleiotium ore, is a duty all Royal Blacksmiths and their apprentices must partake in to be accepted by the material they will work with. 
+Unlike regular metal, Pleiotium ore has some semblance of intelligence due to its similarity to that of a living organism. Due to this nature, even after extraction, the metal can still react with its environment. 
+Able to perform actions that could only be described as magical, the wielder can achieve supernatural feats once bonded with their tool made of Pleiotium.
+It is for this reason that Pleiotium is so sought out, valued more than any jewel. But this living nature also comes with its unique challenges, resisting those who dare to use it. Tempered by will and passion, Pleiotium is sensitive to the emotions of those nearby. 
+That is why, from extraction to refinement, only a singular trained Blacksmith is allowed to handle the ore. Having more than one person manage the ore runs the risk of overwhelming it, causing what is known as a Pleioburst. But there is also the issue of the sole Blacksmith being mentally unstable, causing a corruption of the ore that can inflict harm on both the user and those around it without distinction.
+Hence, long ago, the Kingdom of Pladonia outlawed the usage of Pleiotium unless the Blacksmith is personally evaluated and trained. That is the origin of the Royal Blacksmiths and the Guild that manages them.
+Hearing the coachmen call out from outside, you feel the carriage come to a stop. You have arrived at your destination.
+//<<change_background "mines">>
+Leaving the carriage with your senior, you step out onto the mud roads of the mining village of Pleioridge. Overseeing the protection and management of the Royal Pleiotium Mines, the villagers consisted of soldiers and laborers here for work alongside their families. 
+Upon your arrival, a young guide welcomes you with reverence in his eyes. Talking endlessly about how amazing the Royal Blacksmiths are, he only stops when a frustrated Isham cuts him off. Without more delay, you are led down a series of tunnels carved out by miners to where a vein of Pleiotium ore had been discovered. 
+{$mentorName} "Alright, rookie, we’ve arrived. I’m afraid I can’t go any further than this, but I’ll wait back here in case you need any help. Do you remember everything I told you about the Ritual of Extraction?"
+-> “Of course. I’m ready, master.”
+    <<change_affinity "mentor" 1>>
+    {$mentorName}: “Master? Don’t get so attached, (lad, lass, pal), I’m only going to be your senior for just a few weeks.”
+    {$playerName}: “Even then, I’ll still see you as my master.”
+    {$mentorName}: “Just get in there, rookie, and do your thing.” 
+-> “Eh…this seems like a lot of work, are you sure you can’t do it, senior?”
+    {$mentorName}: “I see someone’s in the mood to make jokes.”
+    {$playerName}: “Like in a good or bad way?”
+    {$mentorName}: "“That’s for you to decide.”
+-> “I just want to get this over with.”
+    {$mentorName}: “With an attitude like that, you're just begging to fuck this up.”
+    {$playerName}: “Alright, alright, I won’t mess this up. Trust me.”
+    {$mentorName}: “Are you trying to jinx yourself? Just go, and please be careful.”
+Walking down the tunnel, you enter the brightly illuminated room, ready to challenge your first great hurdle. 
+//<<run_minigame resourceMinigame WeekTwoInteractions>>
+===
+
+title: WeekTwoInteractions
+---
+
+
+
+
+<<run_minigame resourceMinigame WeekTwoInteractions>>
+===
