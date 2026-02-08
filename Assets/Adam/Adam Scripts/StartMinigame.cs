@@ -7,6 +7,10 @@ public class StartMinigame : MonoBehaviour
     public GameObject timer;
     public Transform spawnPoint; 
     public Transform CanvasTransform;
+    public GameObject tutorialVideo;
+    void Start(){
+        tutorialVideo = GameObject.FindGameObjectWithTag("Tutorial Video");
+    }
     public void MinigameStart()
     {
         if(minigame != null && spawnPoint != null)
@@ -25,5 +29,9 @@ public class StartMinigame : MonoBehaviour
             GameObject Timer = Instantiate(timer, CanvasTransform);
             Timer.transform.SetParent(CanvasTransform);
         }
+        if(tutorialVideo != null){
+            Destroy(tutorialVideo);
+        }
+        Destroy(gameObject);
     }
 }
