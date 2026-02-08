@@ -9,6 +9,11 @@ TagManager:
   - Ores
   - Boundary
   - Bag
+  - Mold
+  - Crucible
+  - Iron
+  - Gold
+  - Mythril
   - Tongs
   - Fire
   - SnapPoint
@@ -53,6 +58,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: New Layer 1
+    uniqueID: 1890191263
     locked: 0
   m_RenderingLayers:
   - Default
