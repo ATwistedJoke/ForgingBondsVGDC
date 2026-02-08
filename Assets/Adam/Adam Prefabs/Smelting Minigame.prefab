@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 152586024641013200}
   m_Layer: 0
   m_Name: Smelting Minigame
-  m_TagString: Untagged
+  m_TagString: Minigame
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -587,7 +587,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5010267951510513522}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -422.21722, y: 752.0061, z: 0}
   m_LocalScale: {x: 2.3360376, y: 2.3360376, z: 2.3360376}
   m_ConstrainProportionsScale: 0
@@ -681,8 +681,8 @@ MonoBehaviour:
   leftBar: {fileID: 7902690711522993621}
   rightBar: {fileID: 8264939992457519247}
   greenBar: {fileID: 3343793480723242747}
-  greenBarWidthDecrease: 2
-  greenBarMovementSpeed: 80
+  greenBarWidthDecrease: 40
+  greenBarMovementSpeed: 2500
   greenBarCollider: {fileID: 3520005653797141449}
   greenBarRenderer: {fileID: 6204518835278709722}
 --- !u!1 &6765080913770586546

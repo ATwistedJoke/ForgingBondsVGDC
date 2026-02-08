@@ -22,6 +22,8 @@ TagManager:
   - Morningstar Head
   - Ball
   - Morningstar
+  - Minigame
+  - Tutorial Video
   layers:
   - Default
   - TransparentFX

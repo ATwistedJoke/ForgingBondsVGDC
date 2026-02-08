@@ -13,7 +13,7 @@ public class SmeltBarController : MonoBehaviour
     public BoxCollider2D greenBarCollider;
     public RectTransform greenBarRenderer;
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         greenBar.flexibleWidth -= greenBarWidthDecrease;
         greenBarCollider.size = new Vector2(greenBarRenderer.rect.width, greenBarRenderer.rect.height);

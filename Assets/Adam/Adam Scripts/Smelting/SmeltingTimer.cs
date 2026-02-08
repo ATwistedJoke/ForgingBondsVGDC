@@ -13,6 +13,7 @@ public class SmeltingTimer : MonoBehaviour
     {
         timerText = GetComponent<TMP_Text>();
         timerText.text = "" + startCountdownValue;
+        minigamePrefab = GameObject.FindGameObjectWithTag("Minigame");
         StartCoroutine(StartCountdown());
     }
 
@@ -27,5 +28,6 @@ public class SmeltingTimer : MonoBehaviour
             timerText.text = "" + currCountdownValue;
         }
         Destroy(minigamePrefab);
+        Destroy(gameObject);
     }
 }
