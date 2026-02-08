@@ -211,6 +211,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &664240069
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 664240070}
+  m_Layer: 0
+  m_Name: Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &664240070
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664240069}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.25828, y: -1.07815, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &766523927
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,9 +742,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 417b4b5df302442ccab00b0672946a3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StartMinigame
-  minigame: {fileID: 5010267951510513522, guid: e0a25b1adb7f440429162ae57987946f, type: 3}
+  minigame: {fileID: 2915657588753139884, guid: e98067be8797147f0b86ffd1fa5231a4, type: 3}
   timer: {fileID: 1747932806863241446, guid: 1164b7feb270048269ded1eda4ca8fb2, type: 3}
-  spawnPoint: {fileID: 0}
+  spawnPoint: {fileID: 664240070}
   CanvasTransform: {fileID: 1578887717}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -722,3 +753,4 @@ SceneRoots:
   - {fileID: 368167704}
   - {fileID: 1578887717}
   - {fileID: 766523930}
+  - {fileID: 664240070}
