@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Yarn.Unity;
@@ -24,8 +23,8 @@ public class GameManger : MonoBehaviour
     public GameObject commissionsRoomNight;
 
     //Character Handling
-    public GameObject[] spObj; 
-    
+    public GameObject[] spPrefab = new GameObject[5]; 
+    public GameObject[] sprite = new GameObject[5];
     int mentorAffinity = 0;
     int redFlagAffinity = 0;
     int bestFriendAffinity = 0;
@@ -53,6 +52,26 @@ public class GameManger : MonoBehaviour
         dialogueRunner.AddCommandHandler<string>(
             "change_background",
             ChangeBackground
+        );
+
+        dialogueRunner.AddCommandHandler<int,int,int>(
+            "instance_sprite",
+            InstantiateChar
+        );
+
+        dialogueRunner.AddCommandHandler<int,int>(
+            "change_sprite",
+            SpriteChange
+        );
+
+        dialogueRunner.AddCommandHandler<int,int,int>(
+            "move_sprite",
+            MoveChar
+        );
+
+        dialogueRunner.AddCommandHandler<int>(
+            "destroy_sprite",
+            DestroyChar
         );
     }
 
@@ -162,9 +181,35 @@ public class GameManger : MonoBehaviour
         dialogueRunner.StartDialogue(dialogueNode);
     }
 
+    //Sprite Methods
+    private void InstantiateChar(int idx, int posX, int posY)
+    {
+        sprite[idx] = Instantiate(spPrefab[idx]);
+        sprite[idx].transform.position = new Vector2(posX, posY);  
+    }
     private void SpriteChange(int oIdx, int sIdx)
     {
-        CharacterManager sp = spObj[oIdx].GetComponent<CharacterManager>(); 
-        sp.ChangeSprite(sIdx); 
+        CharacterManager image = sprite[oIdx].GetComponent<CharacterManager>(); 
+        image.ChangeSprite(sIdx); 
+    }
+    private void MoveChar(int idx, int posX, int posY)
+    {
+        Vector3 target = new Vector3(posX,posY,5);
+        GameObject obj = sprite[idx]; 
+        StartCoroutine(MoveOverTime(obj,target,1));
+    }
+    private void DestroyChar(int idx)
+    {
+        Destroy(sprite[idx]);
+        sprite[idx] = null; 
+    }
+
+    private IEnumerator MoveOverTime(GameObject obj, Vector3 target, float spd)
+    {
+        while(obj != null && obj.transform.position != target)
+        {
+            obj.transform.position = Vector3.MoveTowards(obj.transform.position, target, spd*Time.deltaTime); 
+            yield return new WaitForEndOfFrame(); 
+        }
     }
 }

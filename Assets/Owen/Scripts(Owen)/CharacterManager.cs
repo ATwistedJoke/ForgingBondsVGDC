@@ -1,10 +1,10 @@
+using System.Numerics;
 using UnityEngine;
 
 public class CharacterManager : MonoBehaviour
 {
     [SerializeField] public SpriteRenderer rnd; 
-    [SerializeField] public Sprite[] list;
-    public Rigidbody2D rb; 
+    [SerializeField] public Sprite[] list; 
     
     public int currSp; 
 
@@ -24,4 +24,5 @@ public class CharacterManager : MonoBehaviour
     {
         currSp = i; 
     }
+
 }
