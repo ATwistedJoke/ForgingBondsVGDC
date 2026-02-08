@@ -624,7 +624,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 50
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 9141321760507782296, guid: c9407d953a95e4d1894cbef82e07bd48, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -680,10 +680,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baefb21b0d7f443388a325cf962b1856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
-  scoreMapRenderer: {fileID: 362042771}
+  scoreMapRenderer: {fileID: 747588072}
   liveScoreText: {fileID: 41798943}
-  targetColor: {r: 0.99607843, g: 0.85882354, b: 0.4, a: 1}
-  colorTolerance: 0.1
+  targetColor: {r: 0, g: 1, b: 0, a: 1}
+  colorTolerance: 0.05
+  penaltyMultiplier: 1
+  totalTargets: 0
+  goodHits: 0
+  badHits: 0
 --- !u!4 &830511283
 Transform:
   m_ObjectHideFlags: 0

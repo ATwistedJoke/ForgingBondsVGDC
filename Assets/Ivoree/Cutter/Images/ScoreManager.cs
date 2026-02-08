@@ -36,7 +36,7 @@ public class ScoreManager : MonoBehaviour
     public void RecalculateTotal()
     {
         // HARDCODED TOTAL (The "1500" Fix)
-        totalTargets = 1500; 
+        totalTargets = 2000; 
         
         // Reset current score
         goodHits = 0;
