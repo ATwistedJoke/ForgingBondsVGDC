@@ -1,114 +1,109 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    [Header("The Answer Key")]
-    public SpriteRenderer scoreMapRenderer; // Assign your Green/Red image here
+    [Header("1. Assign These")]
+    public SpriteRenderer scoreMapRenderer; 
+    public TextMeshProUGUI liveScoreText;   
+
+    [Header("2. Scoring Rules")]
+    [Tooltip("Click the Eyedropper, then click the Good (Green/Yellow) part.")]
+    public Color targetColor = Color.green; 
     
-    // We use a HashSet to make sure we don't count the same pixel twice
+    [Range(0f, 1f)] public float colorTolerance = 0.2f;
+
+    [Header("3. Penalty Settings")]
+    [Tooltip("How much score do you lose for hitting the wrong color?")]
+    [Range(0f, 5f)] public float penaltyMultiplier = 1.0f; 
+
+    [Header("4. Debug Stats")]
+    public float totalTargets = 1500; // Default hardcoded value
+    public float goodHits = 0;
+    public float badHits = 0;
+    
     private HashSet<Vector2Int> visitedPixels = new HashSet<Vector2Int>();
-    
     private Texture2D scoreTexture;
-    private float totalGoodPixels = 0;
-    private float revealedGoodPixels = 0;
-    private float revealedBadPixels = 0;
 
     void Start()
     {
-        //test stuff
-	Debug.Log("ScoreManager: I am AWAKE and ready."); // Proof script is running
-        
-        if (scoreMapRenderer == null)
-        {
-            Debug.LogError("CRITICAL: You forgot to assign the ScoreMap Image in the Inspector!");
-            return;
-        }
-	
-	//finish test stuff
-	
-	// 1. Get the texture so we can read it
         scoreTexture = scoreMapRenderer.sprite.texture;
-
-        // 2. Hide the map (we don't need to see it, just read it)
-        scoreMapRenderer.enabled = false; 
-
-        // 3. Count how many Green pixels exist in total (This is our "100%")
-        CalculateTotalPossibleScore();
+        RecalculateTotal(); // Sets our hardcoded total
     }
 
-    void CalculateTotalPossibleScore()
+    [ContextMenu("Recalculate Total Score")]
+    public void RecalculateTotal()
     {
-        Color[] pixels = scoreTexture.GetPixels();
-        foreach (Color p in pixels)
-        {
-            // If pixel is very Green
-            if (p.g > 0.8f && p.r < 0.2f) 
-            {
-                totalGoodPixels++;
-            }
-        }
-        Debug.Log($"Game Started! Total Good Pixels to find: {totalGoodPixels}");
+        // HARDCODED TOTAL (The "1500" Fix)
+        totalTargets = 1500; 
+        
+        // Reset current score
+        goodHits = 0;
+        badHits = 0;
+        visitedPixels.Clear();
+        
+        UpdateScoreUI();
+    }
+
+    bool IsMatch(Color c)
+    {
+        float diff = Mathf.Abs(c.r - targetColor.r) + 
+                     Mathf.Abs(c.g - targetColor.g) + 
+                     Mathf.Abs(c.b - targetColor.b);
+        return diff < colorTolerance;
     }
 
     public void CheckPixelAt(Vector2 worldPos)
     {
-        // 1. Convert World Position to Pixel Coordinates
         Vector3 localPos = scoreMapRenderer.transform.InverseTransformPoint(worldPos);
         float textureX = (localPos.x * scoreMapRenderer.sprite.pixelsPerUnit) + (scoreTexture.width / 2);
         float textureY = (localPos.y * scoreMapRenderer.sprite.pixelsPerUnit) + (scoreTexture.height / 2);
-
         Vector2Int pixelCoord = new Vector2Int(Mathf.RoundToInt(textureX), Mathf.RoundToInt(textureY));
 
-        // 2. Safety Check: Are we even on the image?
-        if (pixelCoord.x < 0 || pixelCoord.x >= scoreTexture.width || pixelCoord.y < 0 || pixelCoord.y >= scoreTexture.height) 
-        {
-            // Debug.Log("Missed the image entirely!"); 
-            return;
-        }
-
-        // 3. Duplicate Check: Don't count the same pixel twice!
+        if (pixelCoord.x < 0 || pixelCoord.x >= scoreTexture.width || pixelCoord.y < 0 || pixelCoord.y >= scoreTexture.height) return;
+        
+        // STOP if we already counted this pixel (Good OR Bad)
         if (visitedPixels.Contains(pixelCoord)) return;
 
-        // 4. Read the color
         Color c = scoreTexture.GetPixel(pixelCoord.x, pixelCoord.y);
 
-        // --- THE SCORING LOGIC ---
-        
-        // Check for GREEN (Good)
-        if (c.g > 0.5f && c.r < 0.5f) 
+        // IGNORE INVISIBLE PIXELS (The "Mouse Check" you just did)
+        if (c.a < 0.1f) return;
+
+        // SCORING LOGIC
+        if (IsMatch(c)) 
         {
-            revealedGoodPixels++;
+            // GOOD HIT
+            goodHits++;
             visitedPixels.Add(pixelCoord);
-            
-            // CALCULATE AND PRINT SCORE IMMEDIATELY
-            float currentScore = GetCurrentAccuracy();
-            Debug.Log($"✅ HIT GREEN! Current Accuracy: {currentScore:F2}%");
+            // Debug.Log("✅ Good!"); 
         }
-        // Check for RED (Bad)
-        else if (c.r > 0.5f && c.g < 0.5f)
+        else 
         {
-            revealedBadPixels++;
+            // BAD HIT (It's visible, but not the right color)
+            badHits++;
             visitedPixels.Add(pixelCoord);
-            
-            float currentScore = GetCurrentAccuracy();
-            Debug.Log($"❌ HIT RED! Ouch. Score dropped to: {currentScore:F2}%");
+            // Debug.Log("❌ Bad!");
         }
-        else
-        {
-            // If we hit transparent or empty space, tell us why
-             // Debug.Log($"Hit nothing (Color: {c})");
-        }
+
+        UpdateScoreUI();
     }
 
-
-    public float GetCurrentAccuracy()
+    void UpdateScoreUI()
     {
-        if (totalGoodPixels == 0) return 0;
+        if (totalTargets == 0) return;
 
-        float percentRevealed = (revealedGoodPixels / totalGoodPixels) * 100f;
-        float penalty = (revealedBadPixels / totalGoodPixels) * 100f; // Penalize based on size of object
+        // THE FORMULA: Score = Good - (Bad * Penalty)
+        float currentScore = goodHits - (badHits * penaltyMultiplier);
+        
+        // Convert to Percentage
+        float percent = (currentScore / totalTargets) * 100f;
+        
+        // Clamp it (Cannot go below 0% or above 100%)
+        float finalAccuracy = Mathf.Clamp(percent, 0f, 100f);
 
-        return Mathf.Max(0, percentRevealed - penalty);
+        if (liveScoreText != null)
+            liveScoreText.text = $"Accuracy: {finalAccuracy:F1}%";
     }
 }
