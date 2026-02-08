@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour
     [SerializeField]private GameObject gold_ore; 
     [SerializeField] private GameObject mythril_ore; 
 
-    [SerializeField] private TextMeshProUGUI textbox;
+    //[SerializeField] private TextMeshProUGUI textbox;
 
     public RectTransform game_screen; 
 
@@ -47,7 +47,7 @@ public class GameController : MonoBehaviour
     void Update()
     {
 
-    textbox.text = GetScore().ToString();
+    //textbox.text = GetScore().ToString();
 
     }
     //getter function for score
