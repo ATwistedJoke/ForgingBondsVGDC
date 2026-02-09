@@ -4,8 +4,6 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - minigame
-  - background
   - Ores
   - Boundary
   - Bag
@@ -14,14 +12,6 @@ TagManager:
   - Iron
   - Gold
   - Mythril
-  - Tongs
-  - Fire
-  - SnapPoint
-  - Stick
-  - Spike
-  - Morningstar Head
-  - Ball
-  - Morningstar
   layers:
   - Default
   - TransparentFX
