@@ -20,20 +20,27 @@ public class Mold : MonoBehaviour
     }
     public void Fill(float fill_Amount)
     {
+        if(filled){return;}
         fill_image.fillAmount += fill_Amount;
         
-        if(fill_image.fillAmount >= 100)
+        if(fill_image.fillAmount >= 1)
         {
+            Debug.Log("filled!");
             filled = true;
-            
-
+            ReplaceMold();
         }
+
     }
-
-
     private void ReplaceMold()
     {
         
-
+        if (game != null)
+        {
+            game.OnMoldFilled();
+        }
+        Debug.Log("must delete mold");
+        // Self-destruct so the new one can take its place in the UI
+        //Destroy(gameObject);
+        filled = false;
     }
 }
