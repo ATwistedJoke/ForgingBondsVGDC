@@ -198,7 +198,7 @@ public class GameManger : MonoBehaviour
     {
         Vector3 target = new Vector3(posX,posY,5);
         GameObject obj = sprite[idx]; 
-        StartCoroutine(MoveOverTime(obj,target,1));
+        StartCoroutine(MoveOverTime(obj,target,7));
     }
     private void DestroyChar(int idx)
     {
