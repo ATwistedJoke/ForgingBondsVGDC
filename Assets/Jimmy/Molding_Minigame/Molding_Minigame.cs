@@ -9,17 +9,19 @@ public class Molding_Minigame : MonoBehaviour
     public GameObject crucible;
     public Mold mold;
 
-    public enum OreType { Iron, Gold, Copper }
+    public enum OreType { Iron, Gold, Mythril }
     public Dictionary<OreType, int> crucibleContents;
     public int totalOreCount;
     public GameObject game_container;
+
+     
 
     public void Awake()
     {
     crucibleContents = new Dictionary<OreType, int>(){
     { OreType.Iron, 0 },
     { OreType.Gold, 0 },
-    { OreType.Copper, 0 }
+    { OreType.Mythril, 0 }
     };
     }
 
@@ -37,6 +39,14 @@ public class Molding_Minigame : MonoBehaviour
             crucibleContents[ore] = 1;
         }
     }
+
+    public bool CheckRecipe()
+    {
+
+        var recipe = MoldRecipeGenerator.instance.currentRecipe;
+     return true;   
+    }
+
     void Start_Minigame()
     {   
         game_container.SetActive(true);
