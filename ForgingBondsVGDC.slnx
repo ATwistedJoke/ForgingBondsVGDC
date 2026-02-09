@@ -1,3 +1,5 @@
-<Solution>
+﻿<Solution>
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="Gentleland.Utils.SteampunkUI.csproj" />
+  <Project Path="Gentleland.SteampunkUI.DemoAndExample.csproj" />
 </Solution>
