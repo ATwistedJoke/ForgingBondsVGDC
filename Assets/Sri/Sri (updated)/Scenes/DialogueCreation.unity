@@ -449,7 +449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneCommands
   dialogueRunner: {fileID: 969776835}
-  tutorialMinigame: {fileID: 7223744104443120311, guid: 7c8a8517db2c1aa4b9702e03b369a630, type: 3}
+  tutorialMinigame: {fileID: 563261661555335078, guid: 00621a4c476b9a74b83040e58c14573b, type: 3}
   resourceMinigame: {fileID: 0}
   smeltingMinigame: {fileID: 0}
   blackBackground: {fileID: 615436763202117382, guid: 870922a9e0462114dbf5124a38aaa52f, type: 3}
@@ -459,7 +459,18 @@ MonoBehaviour:
   personalForge: {fileID: 1635868174195961038, guid: f7eab52bb6c21d648b54c9c31add70d4, type: 3}
   commissionsRoomDay: {fileID: 7918340211067389841, guid: 776fa389f64d77e4c94825b47f5d555f, type: 3}
   commissionsRoomNight: {fileID: 6626465194326322519, guid: 967dfd72034095f4fa1368e48432af78, type: 3}
-  spObj: []
+  spPrefab:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  sprite:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &969776838
 MonoBehaviour:
   m_ObjectHideFlags: 0
