@@ -36,11 +36,12 @@ public class Mold : MonoBehaviour
         
         if (game != null)
         {
-            game.OnMoldFilled();
+            Debug.Log("coroutine started");
+            game.StartCoroutine(game.OnMoldFilled(this));
         }
         Debug.Log("must delete mold");
         // Self-destruct so the new one can take its place in the UI
-        //Destroy(gameObject);
+        Destroy(this.gameObject);
         filled = false;
     }
 }
