@@ -11,7 +11,7 @@ public class DragManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public Canvas canvas;
 
     //panel for minigame 
-    public Molding_Minigame gameManager;
+    public Crucible crucible;
     public CanvasGroup canvasGroup; 
 
     private void Awake()
@@ -55,15 +55,15 @@ public class DragManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             {
                 //case for all, use ingredient from basket, while also destroying game object
                 case "Iron": 
-                gameManager.AddOre(Molding_Minigame.OreType.Iron);
+                crucible.AddOre(Molding_Minigame.OreType.Iron);
                 break;
 
                 case "Gold":
-                gameManager.AddOre(Molding_Minigame.OreType.Iron);
+                crucible.AddOre(Molding_Minigame.OreType.Gold);
                 
                 break;
-                case "Milk":
-                gameManager.AddOre(Molding_Minigame.OreType.Iron);
+                case "Mythril":
+                crucible.AddOre(Molding_Minigame.OreType.Mythril);
                 break;
             }
         

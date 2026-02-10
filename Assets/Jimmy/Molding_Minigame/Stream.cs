@@ -74,13 +74,13 @@ public class Stream : MonoBehaviour
             //fill mold
             if (hit.collider.CompareTag("Mold"))
             {
-                Debug.Log("hitting mold");
+                //Debug.Log("hitting mold");
                 mold.Fill(Time.deltaTime /2);
             }
         }
         else
         {
-            Debug.Log("I am hitting nothing");
+            //Debug.Log("I am hitting nothing");
             //if (splashParticles != null) splashParticles.Stop();
         }
     }
