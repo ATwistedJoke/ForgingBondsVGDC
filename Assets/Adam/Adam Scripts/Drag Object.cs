@@ -18,7 +18,7 @@ public class DragObject : MonoBehaviour
     {
         snapPositions = GameObject.FindGameObjectsWithTag("SnapPoint");
         output = GameObject.Find("Output");
-        craftingOutput = output.GetComponent<CraftingOutput>();
+        craftingOutput = output?.GetComponent<CraftingOutput>();
         Array.Sort(snapPositions, CompareObNames);
         
         if(startPos == null)
