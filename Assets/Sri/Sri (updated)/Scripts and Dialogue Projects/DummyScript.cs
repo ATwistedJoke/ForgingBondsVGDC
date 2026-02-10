@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DummyScript : MonoBehaviour
 {
-    [SerializeField] public SpriteRenderer renderer; 
+    [SerializeField] public SpriteRenderer rnd; 
     [SerializeField] public Sprite[] list; 
     public int x; 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -14,7 +14,7 @@ public class DummyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        renderer.sprite = list[x];
+        rnd.sprite = list[x];
     }
 
     public void changeSprite(int x)

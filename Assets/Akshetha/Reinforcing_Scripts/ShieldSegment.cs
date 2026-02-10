@@ -23,7 +23,7 @@ public class ShieldSegment : MonoBehaviour, IPointerClickHandler
             segmentImage = GetComponent<Image>();
         
         if (minigameManager == null)
-            minigameManager = FindObjectOfType<ReinforcingMinigame>();
+            minigameManager = FindAnyObjectByType<ReinforcingMinigame>();
         
         ResetSegment();
     }
