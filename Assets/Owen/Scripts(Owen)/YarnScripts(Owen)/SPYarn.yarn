@@ -1,13 +1,5 @@
 ﻿title: SPYarn
 ---
-<<declare $neutral = 0>>
-<<declare $happy = 1>>
-<<declare $sad = 2>>
-<<declare $angry = 3>>
-<<declare $shocked = 4>>
-<<declare $scared = 5>>
-<<declare $shy = 6>>
-
 Hello!
 This is a script testing the use of Sprites at the current moment. Does that make sense?
 -> Yeah!

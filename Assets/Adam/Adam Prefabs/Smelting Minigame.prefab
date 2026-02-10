@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 152586024641013200}
   m_Layer: 0
   m_Name: Smelting Minigame
-  m_TagString: Minigame
+  m_TagString: minigame
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

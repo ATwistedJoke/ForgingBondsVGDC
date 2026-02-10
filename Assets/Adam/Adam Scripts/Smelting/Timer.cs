@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 
-public class SmeltingTimer : MonoBehaviour
+public class Timer : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public float currCountdownValue;
@@ -13,7 +13,7 @@ public class SmeltingTimer : MonoBehaviour
     {
         timerText = GetComponent<TMP_Text>();
         timerText.text = "" + startCountdownValue;
-        minigamePrefab = GameObject.FindGameObjectWithTag("Minigame");
+        minigamePrefab = GameObject.FindGameObjectWithTag("minigame");
         StartCoroutine(StartCountdown());
     }
 

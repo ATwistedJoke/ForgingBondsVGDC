@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Sri/Sri (updated)/Scenes/Scene2.unity
     guid: 97845d5dfb2353a49ae35fbe2500bf04
+  - enabled: 1
+    path: Assets/Owen/Scenes(Owen)/DialogueScenes(O)/ABCD.unity
+    guid: 841aeacfae66ed54ab3882f4f7c4086b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
