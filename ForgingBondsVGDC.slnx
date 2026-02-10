@@ -4,7 +4,7 @@
   <Project Path="FMODUnityEditor.csproj" />
   <Project Path="FMODUnity.csproj" />
   <Project Path="FMODUnityHaptics.csproj" />
-  <Project Path="FMODUnityResonance.csproj" />
   <Project Path="Gentleland.Utils.SteampunkUI.csproj" />
   <Project Path="Gentleland.SteampunkUI.DemoAndExample.csproj" />
+  <Project Path="FMODUnityResonance.csproj" />
 </Solution>
