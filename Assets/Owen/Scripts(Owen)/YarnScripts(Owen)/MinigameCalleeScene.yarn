@@ -2,7 +2,7 @@
 ---
 Welcome to the Minigame Callee Scene
 Game 1 - Smelting
-<<instance 1>>
+<<load_scene ABCD Titles>>
 ===
 
 title: Titles
