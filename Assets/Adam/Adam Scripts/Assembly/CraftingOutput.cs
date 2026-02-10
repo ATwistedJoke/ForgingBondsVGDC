@@ -5,37 +5,74 @@ public class CraftingOutput : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Transform outputPos;
-    public string[][] craftingRecipes = new string[4][];
+    public string[][] craftingRecipes = new string[10][];
     public GameObject[] curTable;
-    public GameObject pickaxe;
-    public GameObject stick;
     public GameObject MorningstarHead;
     public GameObject Morningstar;
+    public GameObject Bow;
+    public GameObject Crank;
+    public GameObject Stirrup;
+    public GameObject CrossbowBase;
+    public GameObject Crossbow;
+    public GameObject Shaft;
+    public GameObject PleiotiumCylinder;
+    public GameObject Handle;
     public DragObject dragObject;
 
     void Start()
     {
         outputPos = transform;
         craftingRecipes[0] = new string[]{
-                "Charmander", "", "",
-                "", "", "", 
-                "", "", "", "Pickaxe"
+                "", "", "Pleiotium",
+                "", "Pleiotium", "", 
+                "Pommel", "", "", "Handle"
                             };
         craftingRecipes[1] = new string[]{
-                "Plank", "", "",
-                "Plank", "", "", 
-                "", "", "", "Stick"
+                "", "", "",
+                "Pleiotium", "Pleiotium", "Pleiotium", 
+                "", "", "", "Pleiotium Cylinder"
                             };
         craftingRecipes[2] = new string[]{
-                "Diamond", "Diamond", "Diamond",
-                "", "Stick", "", 
-                "", "Stick", "", "Pickaxe"
+                "", "", "Ring",
+                "", "Pleiotium Cylinder", "", 
+                "Ring", "", "", "Shaft"
                             };
         craftingRecipes[3] = new string[]{
                 "Spike", "Spike", "Spike",
                 "Spike", "Ball", "Spike", 
                 "Spike", "Spike", "Spike", "Morningstar Head"
                             };
+        craftingRecipes[4] = new string[]{
+                "", "Chain", "Morningstar Head",
+                "", "Shaft", "", 
+                "Handle", "", "", "Morningstar"
+                            };
+        craftingRecipes[5] = new string[]{
+                "", "Pleiotium", "",
+                "Pleiotium", "", "Pleiotium", 
+                "String", "String", "String", "Bow"
+                            };
+        craftingRecipes[6] = new string[]{
+                "", "Wood", "Wood",
+                "Steel", "Pleiotium", "Steel", 
+                "Steel", "Steel", "Steel", "Crank"
+                            };
+        craftingRecipes[7] = new string[]{
+                "Steel", "Steel", "Steel",
+                "Steel", "", "Steel", 
+                "", "Steel", "", "Stirrup"
+                            };
+        craftingRecipes[8] = new string[]{
+                "", "Pleiotium", "",
+                "Wood", "Wood", "Wood", 
+                "", "", "Wood", "Crossbow Base"
+                            };
+        craftingRecipes[9] = new string[]{
+                "", "", "Crank",
+                "Stirrup", "Bow", "Crossbow Base", 
+                "", "", "", "Crossbow"
+                            };
+        
         curTable = new GameObject[9];
     }
 
@@ -92,23 +129,50 @@ public class CraftingOutput : MonoBehaviour
     }
     private void instantiateCraftedItem(string item)
     {
-        Debug.Log("gm");
         if(item == null)
         {
             Debug.Log("null item tried to be created :/");
             return;
         }
-        if (item.Equals("Stick"))
+        if (item.Equals("Handle"))
         {
-            GameObject craftedObject = Instantiate(stick, outputPos.position, Quaternion.identity);
+            GameObject craftedObject = Instantiate(Handle, outputPos.position, Quaternion.identity);
         }
-        if (item.Equals("Pickaxe"))
+        if (item.Equals("Pleiotium Cylinder"))
         {
-            GameObject craftedObject = Instantiate(pickaxe, outputPos.position, Quaternion.identity);
+            GameObject craftedObject = Instantiate(PleiotiumCylinder, outputPos.position, Quaternion.identity);
         }
         if (item.Equals("Morningstar Head"))
         {
             GameObject craftedObject = Instantiate(MorningstarHead, outputPos.position, Quaternion.identity);
+        }
+        if (item.Equals("Shaft"))
+        {
+            GameObject craftedObject = Instantiate(Shaft, outputPos.position, Quaternion.identity);
+        }
+        if (item.Equals("Morningstar"))
+        {
+            GameObject craftedObject = Instantiate(Morningstar, outputPos.position, Quaternion.identity);
+        }
+        if (item.Equals("Bow"))
+        {
+            GameObject craftedObject = Instantiate(Bow, outputPos.position, Quaternion.identity);
+        }
+        if (item.Equals("Crank"))
+        {
+            GameObject craftedObject = Instantiate(Crank, outputPos.position, Quaternion.identity);
+        }
+        if (item.Equals("Stirrup"))
+        {
+            GameObject craftedObject = Instantiate(Stirrup, outputPos.position, Quaternion.identity);
+        }
+        if (item.Equals("Crossbow Base"))
+        {
+            GameObject craftedObject = Instantiate(CrossbowBase, outputPos.position, Quaternion.identity);
+        }
+        if (item.Equals("Crossbow"))
+        {
+            GameObject craftedObject = Instantiate(Crossbow, outputPos.position, Quaternion.identity);
         }
     }
     private void ClearGrid()

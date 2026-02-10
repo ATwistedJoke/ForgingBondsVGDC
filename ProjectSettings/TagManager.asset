@@ -7,13 +7,29 @@ TagManager:
   - Tongs
   - Fire
   - SnapPoint
-  - Stick
   - Spike
   - Morningstar Head
   - Ball
   - Morningstar
   - Minigame
   - Tutorial Video
+  - Plank
+  - Steel
+  - Bow
+  - Chain
+  - Crank
+  - Crossbow
+  - Crossbow Base
+  - Handle
+  - Shaft
+  - Stirrup
+  - String
+  - Pommel
+  - Ring
+  - Pleiotium
+  - Pleiotium Cylinder
+  - Stick
+  - Wood
   layers:
   - Default
   - TransparentFX
