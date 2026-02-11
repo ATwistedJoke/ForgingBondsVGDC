@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Crucible : MonoBehaviour
 {
     //rotation settings
-    [SerializeField] private float rotationSpeed = 100f;
+    [SerializeField] private float rotationSpeed;
     [SerializeField] private float maxTilt = 90f;
     [SerializeField] private float minTilt = 0f;
 
@@ -19,12 +19,26 @@ public class Crucible : MonoBehaviour
         { Molding_Minigame.OreType.Mythril, 0 }
     };
 
+    public int current_ore1;
+    public int current_ore2;
+    public int current_ore3;
+
+
+    void Update()
+    {
+        HandleRotation();
+        current_ore1 = contents[Molding_Minigame.OreType.Iron];
+        current_ore2 = contents[Molding_Minigame.OreType.Gold];
+        current_ore3 = contents[Molding_Minigame.OreType.Mythril];
+        
+    }
     //adds ore of specific type
     public void AddOre(Molding_Minigame.OreType type)
     {
         contents[type]++;
+        Debug.Log("New total: " + contents[type]);
+        game_manager.totalOreCount++;
     }
-
     //restarts the current crucible contents
     //called when a mold is complete and a new recipe is drawn
     public void ClearContents()
@@ -48,12 +62,12 @@ public class Crucible : MonoBehaviour
             break;
 
             case "Gold": 
-            AddOre(Molding_Minigame.OreType.Iron);
+            AddOre(Molding_Minigame.OreType.Gold);
             Destroy(collision.gameObject);
             break;
 
             case "Mythril": 
-            AddOre(Molding_Minigame.OreType.Iron);
+            AddOre(Molding_Minigame.OreType.Mythril);
             Destroy(collision.gameObject);
             break;
 
@@ -62,11 +76,6 @@ public class Crucible : MonoBehaviour
         }
 
 }
-
-    void Update()
-    {
-        HandleRotation();
-    }
 
     //current logic for rotating the crucible
     //Use A to turn left

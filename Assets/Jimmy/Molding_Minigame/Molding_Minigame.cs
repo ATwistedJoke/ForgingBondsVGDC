@@ -49,14 +49,7 @@ public class Molding_Minigame : MonoBehaviour
 
     }
 
-    // public void AddPoint()
-    // {
-    //     if(mold.GetComponent<Moldfilled && correct_mold == true)
-    //     {
-    //         total_molds++;
-    //     }
-
-    // }
+    //compares current crucible contents with generated recipe ticket
     public bool CheckRecipe()
     {
 
@@ -83,19 +76,16 @@ public class Molding_Minigame : MonoBehaviour
     */
     public IEnumerator OnMoldFilled(Mold filledMold)
     {
-        // if (spawning)
-        // {
-        //     yield break;
-        // }
-
         spawning = true; 
 
         Debug.Log("mold is filled");
         if (filledMold != null && CheckRecipe())
         {
             total_molds++;
+            Debug.Log("correct recipe, total molds incremented");
         }
         crucible.ClearContents();
+        recipeGenerator.GenerateNewRecipe();
 
         if(filledMold != null)
         {
@@ -105,8 +95,8 @@ public class Molding_Minigame : MonoBehaviour
         yield return new WaitForSeconds (spawn_interval);
         SpawnNewMold();
 
-        // spawning = false;
     }
+    
 
     public void SpawnNewMold()
     {
