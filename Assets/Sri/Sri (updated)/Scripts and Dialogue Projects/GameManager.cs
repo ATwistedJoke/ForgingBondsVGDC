@@ -15,6 +15,8 @@ public class GameManger : MonoBehaviour
     public GameObject resourceMinigame;
     public GameObject smeltingMinigame;
 
+    public GameObject[] prefabList; 
+
     public GameObject blackBackground;
     public GameObject kingdom;
     public GameObject entranceHall;
@@ -46,7 +48,7 @@ public class GameManger : MonoBehaviour
             ChangeAffinity
         );
 
-        dialogueRunner.AddCommandHandler<string, string>(
+        dialogueRunner.AddCommandHandler<int, string>(
             "run_minigame",
             RunMinigame
         );
@@ -75,6 +77,7 @@ public class GameManger : MonoBehaviour
             "destroy_sprite",
             DestroyChar
         );
+
     }
 
     private void LoadScene(string sceneName) 
@@ -140,41 +143,27 @@ public class GameManger : MonoBehaviour
         }
     }
 
-    private void RunMinigame(string minigameID, string dialogueNode)
+    private void RunMinigame(int idx, string dialogueNode)
     {
-        StartCoroutine(RunMinigameCoroutine(minigameID, dialogueNode));
+        StartCoroutine(RunMinigameCoroutine(idx, dialogueNode));
     }
 
-    private IEnumerator RunMinigameCoroutine(string minigameID, string dialogueNode)
+    private IEnumerator RunMinigameCoroutine(int idx, string dialogueNode)
     {
         yield return null;
 
         dialogueRunner.Stop();
 
-        GameObject prefabToSpawn = null;
-
-        switch (minigameID)
-        {
-            case "tutorialMinigame":
-                prefabToSpawn = tutorialMinigame;
-                break;
-            case "resourceMinigame":
-                prefabToSpawn = resourceMinigame;
-                break;
-            case "smeltingMinigame":
-                prefabToSpawn = smeltingMinigame;
-                break;
-        }
+        GameObject prefabToSpawn = prefabList[idx];
 
         if(prefabToSpawn == null)
         {
-            Debug.LogError("Minigame not found: " + minigameID);
+            Debug.LogError("Minigame not found");
             yield break;
         }
 
         Instantiate(prefabToSpawn);
         
-
         while(GameObject.FindGameObjectsWithTag("minigame").Length > 0)
         {
             yield return null;

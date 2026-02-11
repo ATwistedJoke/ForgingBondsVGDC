@@ -74,8 +74,12 @@ public class Stream : MonoBehaviour
             //fill mold
             if (hit.collider.CompareTag("Mold"))
             {
-                //Debug.Log("hitting mold");
-                mold.Fill(Time.deltaTime /2);
+                Mold hitMold = hit.collider.GetComponent<Mold>();
+                if (hitMold != null)
+                {
+                Debug.Log("hitting mold");
+                hitMold.Fill(Time.deltaTime / 2f);
+                }
             }
         }
         else

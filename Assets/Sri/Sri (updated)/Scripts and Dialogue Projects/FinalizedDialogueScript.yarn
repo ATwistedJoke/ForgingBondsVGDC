@@ -14,7 +14,7 @@ Yet the actions of the hero were not forgotten. To this day, the stories of the 
 Where others would take up their sword or arrow to the call of passion, your heart led you to the way of the hammer.
 In the capital city of Pladonia, you walk to a new beginning. The Royal Blacksmith Guild. Home to the Kingdom’s finest Blacksmiths.
 Today marks the start of your first day on the job.
-<<run_minigame tutorialMinigame IntroductionPostTutorial>>
+<<run_minigame 0 IntroductionPostTutorial>>
 <<change_background "entrance hall">>
 {$playerName}: “Wow! This place is humongous!” 
 The view of the stoic but kind guards outside slowly disappears behind you as the large, wooden doors close.
@@ -83,7 +83,7 @@ You notice his deep eye bags, worn out from stress and lack of sleep. You feel u
     {$mentorName}: “Curses…”
 {$mentorName}: “Alright then, with that established, would you be willing to share some of your skills with me?”
 {$mentorName}: “I need to judge your proficiency with the craft before I entrust you with any tasks.”
-//<<run_minigame tutorialMinigame IntroductionPostTutorial>>
+<<run_minigame 0 IntroductionPostTutorial>>
 ===
 
 title: IntroductionPostTutorial
@@ -404,7 +404,7 @@ Upon your arrival, a young guide welcomes you with reverence in his eyes. Talkin
     {$playerName}: “Alright, alright, I won’t mess this up. Trust me.”
     {$mentorName}: “Are you trying to jinx yourself? Just go, and please be careful.”
 Walking down the tunnel, you enter the brightly illuminated room, ready to challenge your first great hurdle. 
-//<<run_minigame resourceMinigame WeekTwoInteractions>>
+<<run_minigame 1 WeekTwoInteractions>>
 ===
 
 title: WeekTwoInteractions
@@ -413,5 +413,5 @@ title: WeekTwoInteractions
 
 
 
-<<run_minigame resourceMinigame WeekTwoInteractions>>
+<<run_minigame 2 WeekTwoInteractions>>
 ===
