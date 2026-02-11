@@ -452,6 +452,10 @@ MonoBehaviour:
   tutorialMinigame: {fileID: 563261661555335078, guid: 00621a4c476b9a74b83040e58c14573b, type: 3}
   resourceMinigame: {fileID: 0}
   smeltingMinigame: {fileID: 0}
+  prefabList:
+  - {fileID: 563261661555335078, guid: 00621a4c476b9a74b83040e58c14573b, type: 3}
+  - {fileID: 3133478007704758121, guid: f157ec11b55fdd14fa5d835b1eace767, type: 3}
+  - {fileID: 5018181964906641661, guid: cb14ae3d6312fa34aa7baf33cf301f92, type: 3}
   blackBackground: {fileID: 615436763202117382, guid: 870922a9e0462114dbf5124a38aaa52f, type: 3}
   kingdom: {fileID: 2948681017284672885, guid: 2f4052a903252d440b0701525feb5a22, type: 3}
   entranceHall: {fileID: 6892071920074951963, guid: d05780ba17c24284ab4a7e9b2a7d258b, type: 3}
