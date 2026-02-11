@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem.LowLevel;
 using Unity.VisualScripting;
+using UnityEngine.InputSystem.OSX;
 
 public class Molding_Minigame : MonoBehaviour
 {
@@ -90,15 +91,19 @@ public class Molding_Minigame : MonoBehaviour
         spawning = true; 
 
         Debug.Log("mold is filled");
-        if (CheckRecipe())
+        if (filledMold != null && CheckRecipe())
         {
             total_molds++;
         }
         crucible.ClearContents();
 
+        if(filledMold != null)
+        {
+            Destroy(filledMold.gameObject);
+        }
+
         yield return new WaitForSeconds (spawn_interval);
         SpawnNewMold();
-        Destroy(filledMold.gameObject);
 
         // spawning = false;
     }
