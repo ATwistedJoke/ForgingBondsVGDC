@@ -15,6 +15,8 @@ public class GameManger : MonoBehaviour
     public GameObject resourceMinigame;
     public GameObject smeltingMinigame;
 
+    public GameObject[] prefabList; 
+
     public GameObject blackBackground;
     public GameObject kingdom;
     public GameObject entranceHall;
@@ -74,6 +76,11 @@ public class GameManger : MonoBehaviour
         dialogueRunner.AddCommandHandler<int>(
             "destroy_sprite",
             DestroyChar
+        );
+
+        dialogueRunner.AddCommandHandler<int, string>(
+            "Minigame_Test", 
+            RunMinigameTest
         );
     }
 
@@ -175,6 +182,35 @@ public class GameManger : MonoBehaviour
         Instantiate(prefabToSpawn);
         
 
+        while(GameObject.FindGameObjectsWithTag("minigame").Length > 0)
+        {
+            yield return null;
+        }
+
+        dialogueRunner.StartDialogue(dialogueNode);
+    }
+
+    private void RunMinigameTest(int idx, string dialogueNode)
+    {
+        StartCoroutine(RunMinigameCoroutineTest(idx, dialogueNode));
+    }
+
+    private IEnumerator RunMinigameCoroutineTest(int idx, string dialogueNode)
+    {
+        yield return null;
+
+        dialogueRunner.Stop();
+
+        GameObject prefabToSpawn = prefabList[idx];
+
+        if(prefabToSpawn == null)
+        {
+            Debug.LogError("Minigame not found");
+            yield break;
+        }
+
+        Instantiate(prefabToSpawn);
+        
         while(GameObject.FindGameObjectsWithTag("minigame").Length > 0)
         {
             yield return null;
