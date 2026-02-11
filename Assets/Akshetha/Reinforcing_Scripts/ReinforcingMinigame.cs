@@ -9,7 +9,7 @@ using TMPro;
 public class ReinforcingMinigame : MonoBehaviour
 {
     [Header("Minigame Settings")]
-    [SerializeField] private float totalTimeLimit = 60f; // time
+    [SerializeField] public float totalTimeLimit = 60f; // time
     [SerializeField] private int maxQualityScore = 100; //score
     
     [Header("UI References")]
@@ -37,7 +37,7 @@ public class ReinforcingMinigame : MonoBehaviour
     public Action<int> OnMinigameComplete;
     
     // current state
-    private float currentTime;
+    public float currentTime;
     private int qualityScore = 0;
     private int segmentsCompleted = 0;
     private bool isMinigameActive = false;
