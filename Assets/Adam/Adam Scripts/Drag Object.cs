@@ -49,8 +49,8 @@ public class DragObject : MonoBehaviour
     void OnMouseUp()
     {
         //go to empty parent's position in top right
-        GameObject craftingSlot = findClosestSnapPoint();
-        transform.position = craftingSlot.transform.position;
+        GameObject nextPos = findClosestSnapPoint();
+        transform.position = nextPos.transform.position;
     }
 
     GameObject findClosestSnapPoint()
