@@ -19,11 +19,14 @@ public class Crucible : MonoBehaviour
         { Molding_Minigame.OreType.Mythril, 0 }
     };
 
+    //adds ore of specific type
     public void AddOre(Molding_Minigame.OreType type)
     {
         contents[type]++;
     }
 
+    //restarts the current crucible contents
+    //called when a mold is complete and a new recipe is drawn
     public void ClearContents()
     {
         contents[Molding_Minigame.OreType.Iron] = 0;
@@ -31,11 +34,43 @@ public class Crucible : MonoBehaviour
         contents[Molding_Minigame.OreType.Mythril] = 0;
     }
 
+    //triggered when ore is dropped into the crucible
+    private void OnTriggerEnter2D(Collider2D collision)
+{   
+    if(collision.tag != null) {
+        string tag = collision.tag;
+
+        switch (tag)
+        {
+            case "Iron": 
+            AddOre(Molding_Minigame.OreType.Iron);
+            Destroy(collision.gameObject);
+            break;
+
+            case "Gold": 
+            AddOre(Molding_Minigame.OreType.Iron);
+            Destroy(collision.gameObject);
+            break;
+
+            case "Mythril": 
+            AddOre(Molding_Minigame.OreType.Iron);
+            Destroy(collision.gameObject);
+            break;
+
+
+        }
+        }
+
+}
+
     void Update()
     {
         HandleRotation();
     }
 
+    //current logic for rotating the crucible
+    //Use A to turn left
+    //Use D to turn right
     private void HandleRotation()
     {
         float tiltInput = 0f;
