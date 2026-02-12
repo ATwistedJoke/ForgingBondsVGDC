@@ -1,7 +1,5 @@
 ﻿title: SoTM
 ---
-This is an example of a Yarn Spinner script. Write your dialogue here!
-
 MinigameTest1
 <<run_minigame 0 "PostM1">>
 
@@ -10,7 +8,7 @@ MinigameTest1
 title: PostM1
 ---
 MinigameTest2
-<<run_Minigame 1 "PostM2">>
+<<run_minigame 1 "PostM2">>
 ===
 
 title: PostM2
