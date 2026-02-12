@@ -69,7 +69,7 @@ public class GameManger : MonoBehaviour
             SpriteChange
         );
 
-        dialogueRunner.AddCommandHandler<int,int,int>(
+        dialogueRunner.AddCommandHandler<int,int,int,int>(
             "move_sprite",
             MoveChar
         );
@@ -217,11 +217,11 @@ public class GameManger : MonoBehaviour
         CharacterManager image = sprite[oIdx].GetComponent<CharacterManager>(); 
         image.ChangeSprite(sIdx); 
     }
-    private void MoveChar(int idx, int posX, int posY)
+    private void MoveChar(int idx, int posX, int posY, int speed)
     {
-        Vector3 target = new Vector3(posX,posY,5);
+        Vector3 target = new Vector3(posX,posY,0);
         GameObject obj = sprite[idx]; 
-        StartCoroutine(MoveOverTime(obj,target,7));
+        StartCoroutine(MoveOverTime(obj,target,speed));
     }
     private void DestroyChar(int idx)
     {
@@ -236,6 +236,7 @@ public class GameManger : MonoBehaviour
             obj.transform.position = Vector3.MoveTowards(obj.transform.position, target, spd*Time.deltaTime); 
             yield return new WaitForEndOfFrame(); 
         }
+        Debug.Log("Done");
     }
 
 
