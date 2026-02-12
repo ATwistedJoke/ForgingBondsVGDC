@@ -2,7 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class Timer : MonoBehaviour
+public class TimerJ : MonoBehaviour
 {
     public TextMeshProUGUI textbox;
 
