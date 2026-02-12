@@ -84,7 +84,7 @@ public class Ores : MonoBehaviour, IPointerClickHandler, IPointerUpHandler
     //based on ore type, give increasing points on rarity
     public void Break()
     {
-
+        mouse.SetDefault();
         Destroy(gameObject);
         switch (oreType)
         {

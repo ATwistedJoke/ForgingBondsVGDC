@@ -41,7 +41,7 @@ public class Ore_Fragment : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Boundary"))
         {
-
+            
             Destroy(gameObject);
             
         }
