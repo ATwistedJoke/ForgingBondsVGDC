@@ -37,15 +37,17 @@ public class Molding_Minigame : MonoBehaviour
         
     }
 
-    void Start(){
+    public void Start(){
 
         Start_Minigame();
 
     }
 
-    void End_Minigame()
+    public void End_Minigame()
     {
-        
+        StopAllCoroutines();
+
+        game_container.SetActive(false);
 
     }
 

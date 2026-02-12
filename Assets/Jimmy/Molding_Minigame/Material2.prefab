@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 3935228302133904411}
   - component: {fileID: 2488568410947507616}
   - component: {fileID: 3957910624574650852}
+  - component: {fileID: 6303128390869773509}
+  - component: {fileID: -5662087929962152370}
   m_Layer: 5
   m_Name: Material2
   m_TagString: Gold
@@ -163,3 +165,35 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6303128390869773509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653032720235608383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00a1a83bacc94d34fbb1b7d4965c6073, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaterialSpawner
+  ironprefab: {fileID: 0}
+  goldprefab: {fileID: 0}
+  mythrilprefab: {fileID: 0}
+  drop_point: {fileID: 0}
+  spawn_mat: {fileID: 0}
+--- !u!114 &-5662087929962152370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653032720235608383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ee8e6ec4bd873942b41c02a87e7d03b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Mold
+  fill_image: {fileID: 0}
+  filled: 0
+  game: {fileID: 0}
