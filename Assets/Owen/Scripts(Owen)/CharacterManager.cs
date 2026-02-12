@@ -11,6 +11,7 @@ public class CharacterManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        rnd = GetComponent<SpriteRenderer>(); 
         currSp = 0; 
     }
 
@@ -22,6 +23,7 @@ public class CharacterManager : MonoBehaviour
 
     public void ChangeSprite(int i)
     {
+        Debug.Log("Called");
         currSp = i; 
     }
 

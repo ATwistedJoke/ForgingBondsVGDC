@@ -400,7 +400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: startNode
-      value: WeektwoAfterMinigame
+      value: IntroductionPreTutorial
       objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: yarnProject
@@ -469,11 +469,11 @@ MonoBehaviour:
   banquet: {fileID: 1340978755567365736, guid: 579b819512deaec4e96c321d4c671488, type: 3}
   restaurant: {fileID: 8416151909302401536, guid: 8c11cd426939f9c4b86a3124f2159d43, type: 3}
   spPrefab:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 6407058008519002376, guid: 4bf4961698bbea747be82723004da1d7, type: 3}
+  - {fileID: 5715942496463894622, guid: f37c5a5c2e6feba49b13de29ffbc7eef, type: 3}
+  - {fileID: 423228045699906222, guid: 445bb6286a08007458a789846bed2e86, type: 3}
+  - {fileID: 1685467412405335430, guid: 116a19eae4fad0246917bc1b732241b6, type: 3}
+  - {fileID: 4606421361470099287, guid: 13d5450536b280549bb94e3c7191bfe1, type: 3}
   sprite:
   - {fileID: 0}
   - {fileID: 0}

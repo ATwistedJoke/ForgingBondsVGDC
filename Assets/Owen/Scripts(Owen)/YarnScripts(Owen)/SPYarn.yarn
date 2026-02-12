@@ -30,7 +30,7 @@ Shy
 Neutral 
 
 Let's try moving the sprite and stuff. 
-<<move_sprite 1 7 0>>
+<<move_sprite 1 7 0 10>>
 
 Now that the sprites have cycled manually, let's deleting the sprite. 
 <<destroy_sprite 1>>
