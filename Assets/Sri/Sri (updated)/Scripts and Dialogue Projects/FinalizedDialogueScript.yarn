@@ -5,7 +5,7 @@
 <<declare $redFlagName = "Woman">>
 <<declare $bestFriendName = "Woman">>
 <<declare $loneWolfName = "Stranger">>
-<<change_background "kingdom">>
+<<change_background "map">>
 In the Age of the Hammer and Anvil, when Craft defined a Nation’s power, a looming darkness sought to snuff out the light of their forges.
 But the surrounding nations were not idle. The Kingdom of Pladonia, a beacon of innovation and a stalwart defender of humanity, led the Alliance in waging war against the forces of evil.
 Under the lead of the heroic Steelheart Knight, they sought to protect the vulnerable and reclaim the lost lands of humanity.
@@ -39,7 +39,7 @@ It was only then that you recalled the words of the voice, which stated that an 
 A door could be heard opening to your right.
 {$playerName}: “Um…thank you, whoever you are?”
 Hearing no response back, you decide to listen to the voice’s instructions and head down the open hallway. 
-//<<change_background "hallway">>
+<<change_background "hallway">>
 Your steps echo in the large hallway. Ahead, you hear the sound of hammering on steel and the voices of people. 
 Following the noise, you trace it down to a closed room. Inside, you can hear the noises of a forge in use.
 -> Open the door
@@ -107,7 +107,7 @@ The day passes by quickly, with work on your forge seeming endless. Finally, you
 The only thing left to do now is to restock fuel for your furnace from the coal bunker. 
 As you load a crate full of coal, you realize how heavy it is to carry. Still, you decide to try to carry it all in one trip. 
 An official Royal Blacksmith needs to be strong for their work. That notion pushes you to make a reckless decision.
-//<<change_background "hallway">>
+<<change_background "hallway">>
 {$playerName}: Just…a bit…further…
 The crate of coal, filled to the brim, blocks your field of view as you trudge through the hallway. 
 Suddenly, just as you think you might be reaching the end, you collide with something heavy in front of you with a large thud. 
@@ -363,13 +363,14 @@ Welcomed with the night sky outside, you feel tired from such a long and chaotic
 It is only when you collapse on your bed that you feel your shoulders loosen from stress. Will all days be this eventful? You do not know. 
 You then fall asleep, unable to keep your eyes open any longer. The Night goes by quickly. Then a day. Then a Week. 
 By the time you know it, it’s already your second week on the job.
+<<jump PreMinigameWeek2>>
 ===
 
 title: PreMinigameWeek2
 ---
 The first week at the Royal Blacksmith Guild was incredibly busy. Full of tedious work, new learning opportunities, and introductions to an ensemble of other apprentices, your free time consisted of only sleeping and eating. 
 But all that work is about to pay off, for you have finally finished the preparations you need to begin what is known as the Ritual of Extraction.
-//<<change_background "entrance hall">>
+<<change_background "entrance hall">>
 Entering the Guild with a grin on your face, you walk past the front desk that had given you so much trouble in the past. Turns out it was just an automated voice that Isham and some other Royal Blacksmiths built back in the day to manage the guild’s guests.
 It really is true that laziness is the greatest source of inspiration.
 <<change_background "personal forge">>
@@ -404,14 +405,54 @@ Upon your arrival, a young guide welcomes you with reverence in his eyes. Talkin
     {$playerName}: “Alright, alright, I won’t mess this up. Trust me.”
     {$mentorName}: “Are you trying to jinx yourself? Just go, and please be careful.”
 Walking down the tunnel, you enter the brightly illuminated room, ready to challenge your first great hurdle. 
-<<run_minigame 1 WeekTwoInteractions>>
+<<run_minigame 1 WeekTwoAfterMinigame>>
+===
+
+title: WeektwoAfterMinigame
+---
+Leaving the vein, you carry your haul of Pleiotium out to be met with a worried Isham. 
+{$mentorName}: “How did it go, (lad, lass, pal)?”
+<<resource_result>>
+===
+
+title: resourcegameGood
+---
+........ //for some reason this node starts on line 2
+{$playerName}: “I say it went fairly well. Got myself a good supply.”
+{$mentorName}: “Thank the gods. Nice work, rookie.”
+The departure from the mines in triumph fills you with renewed confidence and excitement. Led back to the carriage, you can’t wait to see how the Pleiotium you harvested will turn out. 
+With no need to stay any longer in the village of Pleioridge, you depart back to the Capital with Isham.
+Your good work has rewarded you with an open schedule. With no overtime needed, you return to the Capital with extra free time ready to be spent.
+<<jump WeekTwoInteractions>>
+===
+
+title: resourcegameMediocre
+---
+........ //for some reason this node starts on line 2
+{$playerName}: “It was okay. I could’ve done better.”
+{$mentorName}: “That’s alright, you don’t always get it right the first time. Just make sure to learn from this experience and do better the next time you come.”
+The departure from the mines leaves you in deep contemplation, wondering how you could improve your technique. Led back to a hut reserved for visiting blacksmiths, you go to sleep early to prepare for tomorrow. 
+Having to work longer than you wish, your return to the capital was delayed by a few more days.
+When it was finally time to leave the village, you couldn’t help but wonder how open your schedule would have been if you had done it right the first time.
+<<jump WeekTwoInteractions>>
+===
+
+title: resourcegameBad
+---
+........ //for some reason this node starts on line 2
+{$playerName}: “It was terrible, I fucked it up. I don’t know why it went so bad, but I should’ve—”
+{$mentorName}: “Calm down, rookie. Just take a breather, and tell me slowly. Did anything dangerous happen with the Pleiotium?”
+{$playerName}: “No…nothing dangerous.”
+{$mentorName}: “Then it’s fine. Learn from this mistake, and apply yourself to be better next time. We will return to correct this, but it will require some overtime. Everything will be okay.”
+The departure from the mines consisted of only silence. Led back to a hut reserved for visiting blacksmiths, you go to sleep early on the verge of tears, swearing you will do better the next time. 
+The work after was harsh, but ultimately better than your initial try. Your return to the capital was delayed due to the overtime, leaving Isham bitter on the ride back about the work he had missed.
+You couldn’t help but wonder how open your schedule would have been if you had done it right the first time.
+<<jump WeekTwoInteractions>>
 ===
 
 title: WeekTwoInteractions
 ---
-
-
-
-
-<<run_minigame 2 WeekTwoInteractions>>
+<<change_background "map">>
+Returning to the guild, you drop off the Pleiotium you harvested at your forge and retire for the weekend. 
+You remember that Maeve had invited you for lunch once you were free. 
 ===

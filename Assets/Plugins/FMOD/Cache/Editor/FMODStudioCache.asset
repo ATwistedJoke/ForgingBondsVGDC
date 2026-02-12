@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639062358622110619
+  lastModified: 639060742928532040
   FileSizes:
   - Name: 
     Value: 902
@@ -116,7 +116,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Themes.bank
   Name: Themes
   StudioPath: bank:/Themes
-  lastModified: 639062358622833473
+  lastModified: 639060742928742090
   FileSizes: []
   Exists: 1
 --- !u!114 &-364393672236400547
@@ -311,7 +311,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639062358621855851
+  lastModified: 639060742928532040
   FileSizes: []
   Exists: 1
 --- !u!114 &7800558351372909233
