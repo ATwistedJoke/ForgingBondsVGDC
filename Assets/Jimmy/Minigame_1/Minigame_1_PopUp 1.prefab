@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 2141733266015050453}
   m_Layer: 5
   m_Name: Minigame_1_PopUp 1
-  m_TagString: Untagged
+  m_TagString: minigame
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -926,9 +926,9 @@ MonoBehaviour:
   iron_ore: {fileID: 1656900888129430583}
   gold_ore: {fileID: 8492665720677237638}
   mythril_ore: {fileID: 7036174755785618885}
-  random_time: 0
   game_screen: {fileID: 7928314819517466421}
   minigame_1_panel: {fileID: 4341378775756151120}
+  end_game: {fileID: 0}
 --- !u!23 &6394115655750403698
 MeshRenderer:
   m_ObjectHideFlags: 0

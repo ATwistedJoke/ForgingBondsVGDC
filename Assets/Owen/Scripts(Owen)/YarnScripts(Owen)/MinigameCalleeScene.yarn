@@ -1,0 +1,11 @@
+﻿title: MinigameCalleeScene
+---
+Welcome to the Minigame Callee Scene
+Game 1 - Smelting
+<<load_scene ABCD Titles>>
+===
+
+title: Titles
+---
+Yo.
+===
