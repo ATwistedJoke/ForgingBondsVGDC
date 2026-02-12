@@ -7,20 +7,29 @@ public class ScoreManager : MonoBehaviour
     [Header("1. Assign These")]
     public SpriteRenderer scoreMapRenderer; 
     public TextMeshProUGUI liveScoreText;   
-    public TextMeshProUGUI timerText; // <--- NEW SLOT! Drag 'TimerText' here
+    public TextMeshProUGUI timerText;
+    public GameObject rulesPopupPanel; 
 
     [Header("2. Game Settings")]
-    public float timeLimit = 30f; // Seconds to complete the level
+    public float timeLimit = 60f; 
+    public float closeDelay = 5.0f; 
+    
+    [Tooltip("At how many seconds should the timer start flashing red?")]
+    public float flashStartTime = 10.0f; 
+    
     [Tooltip("Click Eyedropper -> Click Green part")]
     public Color targetColor = Color.green; 
     [Range(0f, 1f)] public float colorTolerance = 0.2f;
     [Range(0f, 5f)] public float penaltyMultiplier = 1.0f; 
 
     [Header("3. Debug Stats")]
-    public bool gameIsActive = true; // Stops the game when time runs out
+    public bool gameIsActive = false; 
+    public bool isGameOver = false; // <--- NEW FLAG
     public float totalTargets = 1500; 
     public float goodHits = 0;
     public float badHits = 0;
+    
+    private float currentDisplayAccuracy = 0f; 
     
     private HashSet<Vector2Int> visitedPixels = new HashSet<Vector2Int>();
     private Texture2D scoreTexture;
@@ -29,30 +38,69 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         scoreTexture = scoreMapRenderer.sprite.texture;
-        timeRemaining = timeLimit; // Start the clock
-        gameIsActive = true;
         
+	Debug.Log("Corner Alpha: " + scoreTexture.GetPixel(0,0).a);
+	
+	timeRemaining = timeLimit; 
+        
+        // Start Paused (Rules Screen)
+        gameIsActive = false;
+        isGameOver = false; 
+        
+        if (rulesPopupPanel != null) rulesPopupPanel.SetActive(true);
+
         RecalculateTotal(); 
+    }
+
+    public void StartGameButtonHit()
+    {
+        if (rulesPopupPanel != null) rulesPopupPanel.SetActive(false);
+        gameIsActive = true;
+        Debug.Log("Game Started!");
     }
 
     void Update()
     {
-        if (!gameIsActive) return; // Stop updates if game is over
+        // STATE 1: GAME OVER (Flashing Lights)
+        // ================================================================
+        // Only flash if the game is actually OVER (not just paused at start)
 
-        // 1. COUNTDOWN LOGIC
+        if (isGameOver) 
+        {
+            if (liveScoreText != null)
+            {
+                float flash = Mathf.PingPong(Time.unscaledTime * 10, 1);
+                string fullSentence = $"Accuracy: {currentDisplayAccuracy:F1}%";
+                
+                if (flash > 0.5f) 
+                    liveScoreText.text = $"<color=green>{fullSentence}</color>";
+                else 
+                    liveScoreText.text = $"<color=white>{fullSentence}</color>";
+                
+                liveScoreText.ForceMeshUpdate(); 
+            }
+            return; // Stop here, don't run timer logic
+        }
+
+        // STATE 2: PAUSED (Rules Screen)
+        // ================================================================
+        if (!gameIsActive) return;
+
+        // STATE 3: GAME RUNNING
+        // ================================================================
+
+        // A. Timer Logic
         if (timeRemaining > 0)
         {
             timeRemaining -= Time.deltaTime;
         }
         else
         {
-            // TIME'S UP!
             timeRemaining = 0;
-            gameIsActive = false; 
-            Debug.Log("⏰ TIME IS UP!");
+            EndGame(); 
         }
 
-        // 2. UPDATE TIMER UI (Format: 00:00)
+        // B. Update Timer UI
         if (timerText != null)
         {
             int minutes = Mathf.FloorToInt(timeRemaining / 60F);
@@ -60,10 +108,27 @@ public class ScoreManager : MonoBehaviour
             int milliseconds = Mathf.FloorToInt((timeRemaining * 100F) % 100F);
             timerText.text = string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, milliseconds);
             
-            // Optional: Turn red when low on time
-            if (timeRemaining < 5) timerText.color = Color.red;
-            else timerText.color = Color.white;
+            if (timeRemaining <= flashStartTime)
+            {
+                if (Mathf.PingPong(Time.time * 5, 1) > 0.5f) timerText.color = Color.red;
+                else timerText.color = Color.white;
+            }
+            else
+            {
+                timerText.color = Color.white;
+            }
         }
+    }
+
+    void EndGame()
+    {
+        if (isGameOver) return; // Don't run twice
+
+        Debug.Log("🏁 GAME OVER! Flashing lights starting...");
+        gameIsActive = false; 
+        isGameOver = true; // <--- This triggers the top block in Update()
+        
+        Destroy(transform.root.gameObject, closeDelay); 
     }
 
     [ContextMenu("Recalculate Total Score")]
@@ -73,7 +138,7 @@ public class ScoreManager : MonoBehaviour
         goodHits = 0;
         badHits = 0;
         visitedPixels.Clear();
-        UpdateScoreUI();
+        CalculateScore(); 
     }
 
     bool IsMatch(Color c)
@@ -86,7 +151,7 @@ public class ScoreManager : MonoBehaviour
 
     public void CheckPixelAt(Vector2 worldPos)
     {
-        // STOP if game is over (Time ran out)
+        // Prevent painting if game hasn't started OR is already over
         if (!gameIsActive) return; 
 
         Vector3 localPos = scoreMapRenderer.transform.InverseTransformPoint(worldPos);
@@ -112,17 +177,26 @@ public class ScoreManager : MonoBehaviour
             visitedPixels.Add(pixelCoord);
         }
 
-        UpdateScoreUI();
+        CalculateScore();
     }
 
-    void UpdateScoreUI()
+    void CalculateScore()
     {
         if (totalTargets == 0) return;
         float currentScore = goodHits - (badHits * penaltyMultiplier);
         float percent = (currentScore / totalTargets) * 100f;
-        float finalAccuracy = Mathf.Clamp(percent, 0f, 100f);
+        
+        currentDisplayAccuracy = Mathf.Clamp(percent, 0f, 100f);
 
-        if (liveScoreText != null)
-            liveScoreText.text = $"Accuracy: {finalAccuracy:F1}%";
+        if (gameIsActive && liveScoreText != null)
+        {
+            liveScoreText.text = $"Accuracy: {currentDisplayAccuracy:F1}%";
+        }
+
+        // STILL WIN AT 100%
+        if (currentDisplayAccuracy >= 100f && gameIsActive)
+        {
+            EndGame();
+        }
     }
 }
