@@ -349,7 +349,9 @@ public class ReinforcingMinigame : MonoBehaviour
         minigameCanvas.SetActive(false);
         
         OnMinigameComplete?.Invoke(qualityScore);
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        GameObject rem = GameObject.FindGameObjectWithTag("minigame");
+        Destroy(rem);
     }
     
 }
