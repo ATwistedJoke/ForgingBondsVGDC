@@ -5,9 +5,10 @@ using UnityEngine.EventSystems;
 
 
 //functionality for shattering and breaking ore
-public class Ores : MonoBehaviour, IPointerClickHandler
+public class Ores : MonoBehaviour, IPointerClickHandler, IPointerUpHandler
 {
     public GameController game;
+    public MouseManager mouse;
     [SerializeField] private int required_break;
     int current_break = 0;
     public enum OreType { Iron, Gold, Mythril }
@@ -21,7 +22,8 @@ public class Ores : MonoBehaviour, IPointerClickHandler
     [SerializeField] private float horizontalSpread = 100f;
     [SerializeField] private float rotation_speed = 15f;
 
-
+    [SerializeField] private Texture2D pickaxetexture;
+    [SerializeField] private Texture2D pickaxe_on_ore;
 
 
     //ore, with each click, should break apart into fragments
@@ -46,8 +48,13 @@ public class Ores : MonoBehaviour, IPointerClickHandler
         float xForce = Random.Range(-horizontalSpread, horizontalSpread);
         float yForce = fragmentForce;
 
+        Debug.Log("xforce =" + xForce);
+
+        //handle rotation
         rb.linearVelocity = new Vector2(xForce, yForce);
-        rb.angularVelocity = rotation_speed;
+        rb.angularVelocity = Random.Range(-rotation_speed, rotation_speed);
+
+        Debug.Log("angular velocity =" + rb.angularVelocity);
         
     }
 
@@ -59,6 +66,10 @@ public class Ores : MonoBehaviour, IPointerClickHandler
     {
         Debug.Log("registering click");
         SpawnOre_Fragment();
+        //handle mouse cursor change
+        mouse.ChangeCursor();
+
+        //incrementally break ore
         current_break++;
         Debug.Log(current_break);
         if (current_break >= required_break)
@@ -105,6 +116,12 @@ public class Ores : MonoBehaviour, IPointerClickHandler
              if (ore != null)
              {
                  ore.Handle_Click();
+
              }
+    }
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        Debug.Log("up");
+        mouse.SetDefault();
     }
 }

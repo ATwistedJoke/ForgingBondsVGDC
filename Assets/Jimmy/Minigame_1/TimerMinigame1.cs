@@ -2,7 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class Timer : MonoBehaviour
+public class TimerMinigame1 : MonoBehaviour
 {
     public TextMeshProUGUI textbox;
 
@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
 
     public float time = 180f;
 
-    public Molding_Minigame gameManager;
+    public GameController gameManager;
 
     void Start()
     {
