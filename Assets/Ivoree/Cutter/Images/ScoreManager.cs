@@ -7,42 +7,72 @@ public class ScoreManager : MonoBehaviour
     [Header("1. Assign These")]
     public SpriteRenderer scoreMapRenderer; 
     public TextMeshProUGUI liveScoreText;   
+    public TextMeshProUGUI timerText; // <--- NEW SLOT! Drag 'TimerText' here
 
-    [Header("2. Scoring Rules")]
-    [Tooltip("Click the Eyedropper, then click the Good (Green/Yellow) part.")]
+    [Header("2. Game Settings")]
+    public float timeLimit = 30f; // Seconds to complete the level
+    [Tooltip("Click Eyedropper -> Click Green part")]
     public Color targetColor = Color.green; 
-    
     [Range(0f, 1f)] public float colorTolerance = 0.2f;
-
-    [Header("3. Penalty Settings")]
-    [Tooltip("How much score do you lose for hitting the wrong color?")]
     [Range(0f, 5f)] public float penaltyMultiplier = 1.0f; 
 
-    [Header("4. Debug Stats")]
-    public float totalTargets = 1500; // Default hardcoded value
+    [Header("3. Debug Stats")]
+    public bool gameIsActive = true; // Stops the game when time runs out
+    public float totalTargets = 1500; 
     public float goodHits = 0;
     public float badHits = 0;
     
     private HashSet<Vector2Int> visitedPixels = new HashSet<Vector2Int>();
     private Texture2D scoreTexture;
+    private float timeRemaining;
 
     void Start()
     {
         scoreTexture = scoreMapRenderer.sprite.texture;
-        RecalculateTotal(); // Sets our hardcoded total
+        timeRemaining = timeLimit; // Start the clock
+        gameIsActive = true;
+        
+        RecalculateTotal(); 
+    }
+
+    void Update()
+    {
+        if (!gameIsActive) return; // Stop updates if game is over
+
+        // 1. COUNTDOWN LOGIC
+        if (timeRemaining > 0)
+        {
+            timeRemaining -= Time.deltaTime;
+        }
+        else
+        {
+            // TIME'S UP!
+            timeRemaining = 0;
+            gameIsActive = false; 
+            Debug.Log("⏰ TIME IS UP!");
+        }
+
+        // 2. UPDATE TIMER UI (Format: 00:00)
+        if (timerText != null)
+        {
+            int minutes = Mathf.FloorToInt(timeRemaining / 60F);
+            int seconds = Mathf.FloorToInt(timeRemaining % 60F);
+            int milliseconds = Mathf.FloorToInt((timeRemaining * 100F) % 100F);
+            timerText.text = string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, milliseconds);
+            
+            // Optional: Turn red when low on time
+            if (timeRemaining < 5) timerText.color = Color.red;
+            else timerText.color = Color.white;
+        }
     }
 
     [ContextMenu("Recalculate Total Score")]
     public void RecalculateTotal()
     {
-        // HARDCODED TOTAL (The "1500" Fix)
-        totalTargets = 2000; 
-        
-        // Reset current score
+        totalTargets = 1500; 
         goodHits = 0;
         badHits = 0;
         visitedPixels.Clear();
-        
         UpdateScoreUI();
     }
 
@@ -56,35 +86,30 @@ public class ScoreManager : MonoBehaviour
 
     public void CheckPixelAt(Vector2 worldPos)
     {
+        // STOP if game is over (Time ran out)
+        if (!gameIsActive) return; 
+
         Vector3 localPos = scoreMapRenderer.transform.InverseTransformPoint(worldPos);
         float textureX = (localPos.x * scoreMapRenderer.sprite.pixelsPerUnit) + (scoreTexture.width / 2);
         float textureY = (localPos.y * scoreMapRenderer.sprite.pixelsPerUnit) + (scoreTexture.height / 2);
         Vector2Int pixelCoord = new Vector2Int(Mathf.RoundToInt(textureX), Mathf.RoundToInt(textureY));
 
         if (pixelCoord.x < 0 || pixelCoord.x >= scoreTexture.width || pixelCoord.y < 0 || pixelCoord.y >= scoreTexture.height) return;
-        
-        // STOP if we already counted this pixel (Good OR Bad)
         if (visitedPixels.Contains(pixelCoord)) return;
 
         Color c = scoreTexture.GetPixel(pixelCoord.x, pixelCoord.y);
 
-        // IGNORE INVISIBLE PIXELS (The "Mouse Check" you just did)
         if (c.a < 0.1f) return;
 
-        // SCORING LOGIC
         if (IsMatch(c)) 
         {
-            // GOOD HIT
             goodHits++;
             visitedPixels.Add(pixelCoord);
-            // Debug.Log("✅ Good!"); 
         }
         else 
         {
-            // BAD HIT (It's visible, but not the right color)
             badHits++;
             visitedPixels.Add(pixelCoord);
-            // Debug.Log("❌ Bad!");
         }
 
         UpdateScoreUI();
@@ -93,14 +118,8 @@ public class ScoreManager : MonoBehaviour
     void UpdateScoreUI()
     {
         if (totalTargets == 0) return;
-
-        // THE FORMULA: Score = Good - (Bad * Penalty)
         float currentScore = goodHits - (badHits * penaltyMultiplier);
-        
-        // Convert to Percentage
         float percent = (currentScore / totalTargets) * 100f;
-        
-        // Clamp it (Cannot go below 0% or above 100%)
         float finalAccuracy = Mathf.Clamp(percent, 0f, 100f);
 
         if (liveScoreText != null)
