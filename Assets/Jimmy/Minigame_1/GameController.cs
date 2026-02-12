@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
     public RectTransform game_screen; 
 
     public GameObject minigame_1_panel;
-
+    public MouseManager mouse;
     //placeholder for testing of end of minigame
     public Button end_game;
 
@@ -39,8 +39,14 @@ public class GameController : MonoBehaviour
 
     public void End_Minigame()
     {
-        minigame_1_panel.SetActive(false);
+        Destroy(minigame_1_panel);
+        //minigame_1_panel.SetActive(false);
         game_playing = false;
+        StopAllCoroutines();
+        mouse.ResetMouse();
+
+        GameObject rem = GameObject.FindGameObjectWithTag("minigame");
+        Destroy(rem);
     }
 
 

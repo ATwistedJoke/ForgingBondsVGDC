@@ -47,26 +47,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-6729137709743948531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
-  Path: FMOD/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 639061642449626561
-  FileSizes:
-  - Name: 
-    Value: 902
-  Exists: 1
 --- !u!114 &-6100060413213480248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,25 +74,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-5797070549914291313
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Themes.bank
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
-  Path: FMOD/Desktop/Themes.bank
-  Name: Themes
-  StudioPath: bank:/Themes
-  lastModified: 639061642449781833
-  FileSizes: []
-  Exists: 1
---- !u!114 &-5591703990314964125
+--- !u!114 &-2868923221266328789
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,34 +93,7 @@ MonoBehaviour:
     Data3: -2056915808
     Data4: -990016881
   Banks:
-  - {fileID: -5797070549914291313}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-4489795625151477208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/FB minigame
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/FB minigame
-  Guid:
-    Data1: 158400579
-    Data2: 1240320920
-    Data3: -253839744
-    Data4: -8801268
-  Banks:
-  - {fileID: -5797070549914291313}
+  - {fileID: 3106935810046521474}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -186,6 +121,33 @@ MonoBehaviour:
     Data4: -990016881
   Banks:
   - {fileID: -386274078700831708}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2037901565460727606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FB minigame
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/FB minigame
+  Guid:
+    Data1: 158400579
+    Data2: 1240320920
+    Data3: -253839744
+    Data4: -8801268
+  Banks:
+  - {fileID: 3106935810046521474}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -242,17 +204,17 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EventCache
   EditorBanks:
-  - {fileID: -6729137709743948531}
-  - {fileID: 3615150571448114959}
-  - {fileID: -5797070549914291313}
+  - {fileID: 5906792588119158973}
+  - {fileID: 2547793194418772089}
+  - {fileID: 3106935810046521474}
   EditorEvents:
-  - {fileID: -4489795625151477208}
-  - {fileID: -5591703990314964125}
+  - {fileID: -2037901565460727606}
+  - {fileID: -2868923221266328789}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 3615150571448114959}
+  - {fileID: 2547793194418772089}
   StringsBanks:
-  - {fileID: -6729137709743948531}
+  - {fileID: 5906792588119158973}
   cacheVersion: 131858
   cacheTime: 639061642449781833
   SerializableEventsDict:
@@ -260,7 +222,7 @@ MonoBehaviour:
     index: 0
   - key: event:/Forging bonds main theme (FIXED ENDING)
     index: 1
---- !u!114 &3615150571448114959
+--- !u!114 &2547793194418772089
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -276,6 +238,24 @@ MonoBehaviour:
   Name: Master
   StudioPath: bank:/Master
   lastModified: 639061642449614563
+  FileSizes: []
+  Exists: 1
+--- !u!114 &3106935810046521474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Themes.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: FMOD/Desktop/Themes.bank
+  Name: Themes
+  StudioPath: bank:/Themes
+  lastModified: 639061642449781833
   FileSizes: []
   Exists: 1
 --- !u!114 &3808917578779185000
@@ -367,6 +347,26 @@ MonoBehaviour:
   StudioPath: bank:/Themes
   lastModified: 639051253682228920
   FileSizes: []
+  Exists: 1
+--- !u!114 &5906792588119158973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: FMOD/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 639061642449626561
+  FileSizes:
+  - Name: 
+    Value: 902
   Exists: 1
 --- !u!114 &6018063075339293294
 MonoBehaviour:

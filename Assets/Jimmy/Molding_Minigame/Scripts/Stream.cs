@@ -6,7 +6,9 @@ public class Stream : MonoBehaviour
     public RectTransform tipping_point;
     public GameObject crucible;
     public Mold mold;
-    //public ParticleSystem splashParticles; // Add a particle system here!
+
+    public Molding_Minigame game;
+    //public ParticleSystem splashParticles; // Add optional particle system here
 
     [SerializeField] private float maxRange = 1000f; // UI distances are larger
     [SerializeField] private float minPourAngle = 45f;
@@ -18,7 +20,7 @@ public class Stream : MonoBehaviour
     {
         bool shouldPour = CalculatePourAngle() > minPourAngle;
 
-        if (shouldPour && !isPouring)
+        if (shouldPour && !isPouring && game.totalOreCount > 3)
         {
             StartPour();
         }

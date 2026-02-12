@@ -17,18 +17,20 @@ public class Ore_Fragment : MonoBehaviour
          Rigidbody2D rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-        
-    }
-
-    //automatically called in Unity
-
-    //
+//checks each individual tag,  possible, i know very messy and can be shortened
     private void OnCollisionEnter2D(Collision2D collision) {
-        //checks each individual tag,  possible, i know very messy and can be shortened
+ 
+        if (collision.gameObject.CompareTag("Boundary"))
+        {
+            Destroy(gameObject);  
+            Debug.Log("im died"); 
+        }
+
+}
+    //collector object detection
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
     if (collision.gameObject.CompareTag("Bag")) {
        game.AddScore(20);
        Debug.Log("i am hitting this");
@@ -45,7 +47,7 @@ public class Ore_Fragment : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Boundary"))
         {
-
+            
             Destroy(gameObject);
             
         }

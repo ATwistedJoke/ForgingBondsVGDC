@@ -34,7 +34,7 @@ public class Mold : MonoBehaviour
     private void ReplaceMold()
     {
         
-        if (game != null)
+        if (game != null && this != null)
         {
             Debug.Log("coroutine started");
             game.StartCoroutine(game.OnMoldFilled(this));
