@@ -6,7 +6,7 @@
 <<declare $bestFriendName = "Woman">>
 <<declare $loneWolfName = "Stranger">>
 <<change_background "map">>
-<<instance_sprite 0 -8 -20>>
+<<instance_sprite 0 -20 -6>>
 <<instance_sprite 1 0 -20>>
 <<instance_sprite 2 0 -20>>
 <<instance_sprite 3 0 -20>>
@@ -23,7 +23,7 @@ Today marks the start of your first day on the job.
 <<move_sprite 0 -8 -6 50>>
 <<change_sprite 0 3>>
 {$playerName}: “Wow! This place is humongous!” 
-<<move_sprite 0 -8 -20 50>>
+<<move_sprite 0 -20 -6 50>>
 The view of the stoic but kind guards outside slowly disappears behind you as the large, wooden doors close.
 Ahead, you are welcomed with a grand entrance hall, draped in luxurious banners of the royal family. Its architecture is carefully cut from the finest stones, equal only to the castle where the Royal Family resides. 
 Walking through the hall fills you with a sense of amazement at how such a building was crafted, so much so that it's only until you reach the front desk that you realize there is no one else in this hall but you. 
@@ -48,7 +48,7 @@ A door could be heard opening to your right.
 <<move_sprite 0 -8 -6 50>>
 <<change_sprite 0 3>>
 {$playerName}: “Um…thank you, whoever you are?”
-<<move_sprite 0 -8 -20 50>>
+<<move_sprite 0 -20 -6 50>>
 Hearing no response back, you decide to listen to the voice’s instructions and head down the open hallway. 
 <<change_background "hallway">>
 Your steps echo in the large hallway. Ahead, you hear the sound of hammering on steel and the voices of people. 
@@ -109,35 +109,50 @@ You notice his deep eye bags, worn out from stress and lack of sleep. You feel u
 <<change_sprite 1 0>>
 {$mentorName}: “Alright then, with that established, would you be willing to share some of your skills with me?”
 {$mentorName}: “I need to judge your proficiency with the craft before I entrust you with any tasks.”
+<<move_sprite 0 -20 -6 50>>
+<<move_sprite 1 0, -20 50>>
 <<run_minigame 0 IntroductionPostTutorial>>
 ===
 
 title: IntroductionPostTutorial
 ---
+<<move_sprite 1 0, -5 50>>
 {$mentorName}: “Welcome to the Royal Blacksmith Guild, apprentice. There are expectations with the job, so I’ll help you out as your senior on what you need to do.”
 {$mentorName}: “As you already know, being a Royal Blacksmith is far different than any regular blacksmithing job. We work with a rare metal not available to the public.”
 {$mentorName}: “It is our work with Pleiotium that holds us in such high status. And what we make with it can change the pages of history depending on how it’s handled.”
 {$mentorName}: “But such a special title is often sought out by nobles desiring glory or status, so sometimes we end up with foolish apprentices like the one we saw back there. Now I ask you, because I don’t know you, what type of royal blacksmith do you hope to be?”
+<<move_sprite 0 -8 -6 50>>
 {$playerName}: “I wish to be the one talked about in history, sir.”
+<<change_sprite 1 1>>
 {$mentorName}: “Aye, that’s good to hear. Now, some advice, I suggest that you start trying to build some connections out there. Most apprentices hole themselves in their forge, but lose sight of the most important things about smithing. The commissioners themselves.” 
+<<change_sprite 1 0>>
 {$mentorName}: “To stop being merely an apprentice and become an official Royal Blacksmith, you are going to need someone who brings out the best of your craft. Carefully consider what you want out of your work, and what commissions feel right to you.”
+<<change_sprite 0 0>>
 {$playerName}: “Thank you, I’ll make sure to remember that.”
 {$mentorName}: “Good. Now, with that said, your first task here should be preparing your own personal forge. Organize and restock on what resources you will need for your work.”
 {$mentorName}: “Once you're done with that, go check the commission board near closing hours to see if anything sounds good to you. You’ll find requests for possible projects there.” 
 {$mentorName}: “I’ll be at my own forge if you have any more questions, so I’ll take my leave first. Get to work, apprentice.” 
+<<change_sprite 0 3>>
 {$playerName}: “Wait! Before you go, could I get your name?”
 <<set $mentorName to "Isham">>
 {$mentorName}: “It’s not much, but you can call me Isham. I’m one of the head Royal Blacksmiths here. Now get going before you fall behind.
+<<change_sprite 0 1>>
 {$playerName}: “Yes, sir!”
+<<move_sprite 0 -20 -6 50>>
+<<move_sprite 1 0 -20 50>>
 The day passes by quickly, with work on your forge seeming endless. Finally, you manage to clean the old forge up to your liking. 
 The only thing left to do now is to restock fuel for your furnace from the coal bunker. 
 As you load a crate full of coal, you realize how heavy it is to carry. Still, you decide to try to carry it all in one trip. 
 An official Royal Blacksmith needs to be strong for their work. That notion pushes you to make a reckless decision.
 <<change_background "hallway">>
+<<move_sprite 0 -8 -6 50>>
+<<change_sprite 0 4>>
 {$playerName}: Just…a bit…further…
+<<move_sprite 0 -20 -6 50>>
 The crate of coal, filled to the brim, blocks your field of view as you trudge through the hallway. 
 Suddenly, just as you think you might be reaching the end, you collide with something heavy in front of you with a large thud. 
 Falling onto your back in surprise, the crate of coal that was in your hands lands onto the floor, its contents spilling all over the place.
+<<move_sprite 2 0 -6 50>>
 {$redFlagName}: “Oh dear, I’m so sorry. Are you alright?”
 Looking up, you are met with a gentle, smooth hand stemming from what could only be described as both a stunningly gorgeous and odd woman. 
 Donning elegant clothing and jewelry, her status was apparent to any perceiver. She would have looked like any regular, wealthy client the guild often gets if it weren’t for her eyes.
@@ -145,48 +160,62 @@ Donning elegant clothing and jewelry, her status was apparent to any perceiver. 
 Staring right through you, her pupils devoid of warmth watch your every movement with an intense gaze. Her crimson irises remain firm, refusing to blink until you take her hand.   
 A part of you finds them to be entrancing. The other terrifying. 
 {$redFlagName}: “Is something the matter?”
+<<move_sprite 0 -8 -6 50>>
 {$playerName}: “Oh, no, nothing’s wrong. Thank you.”
 Taking her hand, you snap out of your thoughts as you stand back up. You notice her clothes have become stained from the coal.
+<<change_sprite 0 0>>
 {$playerName}: “I’m so sorry, I wasn’t watching where I was going. Do you need me to wash that for you, ma’am?”
 {$redFlagName}: Oh, this? No, it’s fine. In fact, how about I help you pick up this mess? You look like you need it. 
 -> “No, I can do this myself.”
     <<change_affinity "red flag" 1>>        
     {$redFlagName}: “Ah, a tough [guy/girl/one], I see. No need to worry, dear, I don’t mind getting a bit dirty now and then.”
+    <<change_sprite 0 2>>
     {$playerName}: “Really, it’s fin—”
     {$redFlagName}: “Too late! I made up my mind.” 
     Already on her knees, the woman looks up to you with a mischievous grin as she picks up the coal. 
+    <<change_sprite 0 3>>
     {$playerName}: “Ah…what the hell, let’s just get this picked up quick.”
 -> “Should you even be here?”
     <<change_affinity "red flag" -1>>
     {$redFlagName}: “Now do you want me to help you, or are you just going to stand there and ask me these useless questions?”
+    <<change_sprite 0 2>>
     {$playerName}: “I would think that's a legitimate que–”
     {$redFlagName}: “I’m already down here, you bore. Now, do you want to be here all day getting nothing done, or would you care to help out this lady pick up your spilt coal?” 
     Already on her knees, the woman looks up to you with a pout as she picks up the coal.
+    <<change_sprite 0 3>>
     {$playerName}: “Ah…what the hell, let’s just get this picked up quick.”
 -> “Thank you, that would be much appreciated.”
     {$redFlagName}: “No problem, dear, I don’t mind getting a bit dirty now and then.”
+    <<change_sprite 0 3>>
     {$playerName}: “You're more easygoing than I imagined someone of your status.”
     {$redFlagName}: “Not adhering to expectations is my definition of happiness. It’s only when you are free that you can see the good in what’s around you.” 
     Both on your knees, the woman looks towards you with a mischievous grin as she picks up the coal alongside you. 
+    <<change_sprite 0 1>>
     {$playerName}: “Now that philosophy is something someone of your status would say.”
     {$redFlagName}: “Shut it, will you?”
 As the two of you finish picking up the remaining mess, you go to pick up the crate once more.
 {$redFlagName}: “Let me help you carry this so you don’t go bumping into any more people. And this time I’m not taking no for an answer.”
 Before you could respond, the lady had already placed her hands on the other side of a crate. Deciding it's best not to argue any longer, you go along with her whims until you reach your forge.
 <<change_background "personal forge">>
+<<change_sprite 0 0>>
+<<change_sprite 2 0>>
 {$redFlagName}: “I’ve never seen a royal forge before. I always thought it would look more…impressive?”
 {$playerName}: “Well, I am only an apprentice. I don’t imagine they give those fancy ones to just about anyone.”
 {$redFlagName}: “Don’t sell yourself short. I see in you the potential to become a great Royal Blacksmith.”
 {$playerName}: “And how would you know that?”
 {$redFlagName}: “My trading company has collaborated before with the Royal Blacksmiths, and I would say you remind me just of them.”
+<<change_sprite 0 3>>
 {$playerName}: “That is?”
 {$redFlagName}: “You have the eyes of someone with ambition. That look where you will do anything to become the best at what you do. I like that about you.”
 {$playerName}: “I never thought that way about myself. Do I really look like that to others?”
 {$redFlagName}: “Hmmm…I wouldn’t know. I wouldn’t call myself exactly normal, anyway, so you probably don’t have to worry about others seeing that part of you.”
+<<change_sprite 0 0>>
 {$playerName}: “That’s a relief. Oh! I forgot to say, but thank you for the help. Would you mind if I were to ask for your name?”
 <<set $redFlagName to "Judith">>
 {$redFlagName}: “My name is Judith Sinclair. It’s a pleasure to meet you, {$playerName}. I hope to see you again soon.” 
 {$playerName}: “It’s nice to meet you, too, {$redFlagName}.”
+<<move_sprite 0 -20 -6 50>>
+<<move_sprite 2 0 -20 50>>
 You exchange goodbyes with the odd lady who had left just as swiftly as she entered. It was only after you had returned to work, however, that you remembered something important. 
 You had not once given her your name.  
 You feel a shiver roll down your spine as you finish loading the coal into the furnace. You could only hope that she had learned your name through some reasonable way.
