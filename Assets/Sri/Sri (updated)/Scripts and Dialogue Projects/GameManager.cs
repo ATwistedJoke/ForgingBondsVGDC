@@ -11,19 +11,17 @@ public class GameManger : MonoBehaviour
     public DialogueRunner dialogueRunner;
 
     [Header("Minigame Prefabs")]
-    public GameObject tutorialMinigame;
-    public GameObject resourceMinigame;
-    public GameObject smeltingMinigame;
-
     public GameObject[] prefabList; 
 
     public GameObject blackBackground;
-    public GameObject kingdom;
+    public GameObject map;
     public GameObject entranceHall;
     public GameObject hallway;
     public GameObject personalForge;
     public GameObject commissionsRoomDay;
     public GameObject commissionsRoomNight;
+    public GameObject banquet;
+    public GameObject restaurant;
 
     //Character Handling
     public GameObject[] spPrefab = new GameObject[5]; 
@@ -33,6 +31,9 @@ public class GameManger : MonoBehaviour
     int redFlagAffinity = 0;
     int bestFriendAffinity = 0;
     int loneWolfAffinity = 0;
+
+    //store the resource gathering minigame score here. 0 = bad, 1 = mediocre, 2 = good
+    int resourceMinigameScore = 2;
 
     public void Awake() {
 
@@ -78,6 +79,33 @@ public class GameManger : MonoBehaviour
             DestroyChar
         );
 
+        dialogueRunner.AddCommandHandler(
+            "resource_result",
+            ResourceMinigameResult
+        );
+    }
+
+    private IEnumerator ResourceMinigameResult()
+    {
+        yield return null;
+
+        dialogueRunner.Stop();
+
+        if(resourceMinigameScore == 0)
+        {
+            dialogueRunner.StartDialogue("resourcegameBad");
+        }
+        else if(resourceMinigameScore == 1)
+        {
+            dialogueRunner.StartDialogue("resourcegameMediocre");
+        }
+        else if(resourceMinigameScore == 2)
+        {
+            dialogueRunner.StartDialogue("resourcegameGood");
+        }
+
+        //at the end of the dialogue node that we switch to, we have to jump back 
+        // into the main dialogue line that doesn't depend on the minigame score
     }
 
     private void LoadScene(string sceneName) 
@@ -100,8 +128,8 @@ public class GameManger : MonoBehaviour
             case "entrance hall":
                 Instantiate(entranceHall);
                 break;
-            case "kingdom":
-                Instantiate(kingdom);
+            case "map":
+                Instantiate(map);
                 break;
             case "hallway":
                 Instantiate(hallway);
@@ -116,6 +144,12 @@ public class GameManger : MonoBehaviour
                 Instantiate(commissionsRoomNight);
                 break;
             case "empty":
+                break;
+            case "banquet":
+                Instantiate(banquet);
+                break;
+            case "restaurant":
+                Instantiate(restaurant);
                 break;
         }
     }

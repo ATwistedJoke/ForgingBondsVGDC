@@ -394,7 +394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: startNode
-      value: IntroductionPreTutorial
+      value: WeektwoAfterMinigame
       objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: yarnProject
@@ -449,20 +449,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneCommands
   dialogueRunner: {fileID: 969776835}
-  tutorialMinigame: {fileID: 563261661555335078, guid: 00621a4c476b9a74b83040e58c14573b, type: 3}
-  resourceMinigame: {fileID: 0}
-  smeltingMinigame: {fileID: 0}
   prefabList:
   - {fileID: 563261661555335078, guid: 00621a4c476b9a74b83040e58c14573b, type: 3}
   - {fileID: 3133478007704758121, guid: f157ec11b55fdd14fa5d835b1eace767, type: 3}
   - {fileID: 5018181964906641661, guid: cb14ae3d6312fa34aa7baf33cf301f92, type: 3}
   blackBackground: {fileID: 615436763202117382, guid: 870922a9e0462114dbf5124a38aaa52f, type: 3}
-  kingdom: {fileID: 2948681017284672885, guid: 2f4052a903252d440b0701525feb5a22, type: 3}
+  map: {fileID: 4568741467112566366, guid: b659acc32dd1ddd47b2f2e6a6d9631ad, type: 3}
   entranceHall: {fileID: 6892071920074951963, guid: d05780ba17c24284ab4a7e9b2a7d258b, type: 3}
-  hallway: {fileID: 0}
+  hallway: {fileID: 6828469736988516531, guid: 16f6c65b0dd288e4294181b29c16bc46, type: 3}
   personalForge: {fileID: 1635868174195961038, guid: f7eab52bb6c21d648b54c9c31add70d4, type: 3}
   commissionsRoomDay: {fileID: 7918340211067389841, guid: 776fa389f64d77e4c94825b47f5d555f, type: 3}
   commissionsRoomNight: {fileID: 6626465194326322519, guid: 967dfd72034095f4fa1368e48432af78, type: 3}
+  banquet: {fileID: 1340978755567365736, guid: 579b819512deaec4e96c321d4c671488, type: 3}
+  restaurant: {fileID: 8416151909302401536, guid: 8c11cd426939f9c4b86a3124f2159d43, type: 3}
   spPrefab:
   - {fileID: 0}
   - {fileID: 0}
