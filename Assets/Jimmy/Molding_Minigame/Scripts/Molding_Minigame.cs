@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem.LowLevel;
 using Unity.VisualScripting;
+using UnityEngine.InputSystem.OSX;
 
 public class Molding_Minigame : MonoBehaviour
 {
@@ -36,26 +37,21 @@ public class Molding_Minigame : MonoBehaviour
         
     }
 
-    void Start(){
+    public void Start(){
 
         Start_Minigame();
 
     }
 
-    void End_Minigame()
+    public void End_Minigame()
     {
-        
+        StopAllCoroutines();
+
+        game_container.SetActive(false);
 
     }
 
-    // public void AddPoint()
-    // {
-    //     if(mold.GetComponent<Moldfilled && correct_mold == true)
-    //     {
-    //         total_molds++;
-    //     }
-
-    // }
+    //compares current crucible contents with generated recipe ticket
     public bool CheckRecipe()
     {
 
@@ -82,26 +78,27 @@ public class Molding_Minigame : MonoBehaviour
     */
     public IEnumerator OnMoldFilled(Mold filledMold)
     {
-        // if (spawning)
-        // {
-        //     yield break;
-        // }
-
         spawning = true; 
 
         Debug.Log("mold is filled");
-        if (CheckRecipe())
+        if (filledMold != null && CheckRecipe())
         {
             total_molds++;
+            Debug.Log("correct recipe, total molds incremented");
         }
         crucible.ClearContents();
+        recipeGenerator.GenerateNewRecipe();
+
+        if(filledMold != null)
+        {
+            Destroy(filledMold.gameObject);
+        }
 
         yield return new WaitForSeconds (spawn_interval);
         SpawnNewMold();
-        Destroy(filledMold.gameObject);
 
-        // spawning = false;
     }
+    
 
     public void SpawnNewMold()
     {
