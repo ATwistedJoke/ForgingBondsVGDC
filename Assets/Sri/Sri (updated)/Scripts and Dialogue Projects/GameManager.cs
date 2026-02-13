@@ -22,15 +22,18 @@ public class GameManger : MonoBehaviour
     public GameObject commissionsRoomNight;
     public GameObject banquet;
     public GameObject restaurant;
+    public GameObject maeveRoom;
+    public GameObject mines;
 
     //Character Handling
     public GameObject[] spPrefab = new GameObject[5]; 
     public GameObject[] sprite = new GameObject[5];
 
-    int mentorAffinity = 0;
-    int redFlagAffinity = 0;
-    int bestFriendAffinity = 0;
-    int loneWolfAffinity = 0;
+    // int mentorAffinity = 0;
+    // int redFlagAffinity = 0;
+    // int bestFriendAffinity = 0;
+    // int loneWolfAffinity = 0;
+    // int corruptionValue = 0;
 
     //store the resource gathering minigame score here. 0 = bad, 1 = mediocre, 2 = good
     int resourceMinigameScore = 2;
@@ -44,10 +47,10 @@ public class GameManger : MonoBehaviour
             LoadScene // the method to run
         );
 
-        dialogueRunner.AddCommandHandler<string, int>(
-            "change_affinity",
-            ChangeAffinity
-        );
+        // dialogueRunner.AddCommandHandler<string, int>(
+        //     "change_affinity",
+        //     ChangeAffinity
+        // );
 
         dialogueRunner.AddCommandHandler<int, string>(
             "run_minigame",
@@ -83,6 +86,11 @@ public class GameManger : MonoBehaviour
             "resource_result",
             ResourceMinigameResult
         );
+
+        // dialogueRunner.AddCommandHandler<int>(
+        //     "change_corruption",
+        //     ChangeCorruption
+        // );
     }
 
     private IEnumerator ResourceMinigameResult()
@@ -151,31 +159,47 @@ public class GameManger : MonoBehaviour
             case "restaurant":
                 Instantiate(restaurant);
                 break;
+            case "maeve's room":
+                Instantiate(maeveRoom);
+                break;
+            case "mines":
+                Instantiate(mines);
+                break;
         }
     }
-    private void ChangeAffinity(string character, int modifier)
-    {
-        if(character == "mentor")
-        {
-            mentorAffinity += modifier;
-            Debug.Log("Affinity for "+ character + " changed to " + mentorAffinity);
-        }
-        else if(character == "red flag")
-        {
-            redFlagAffinity += modifier;
-            Debug.Log("Affinity for "+ character + " changed to " + redFlagAffinity);
-        }
-        else if(character == "best friend")
-        {
-            bestFriendAffinity += modifier;
-            Debug.Log("Affinity for "+ character + " changed to " + bestFriendAffinity);
-        }
-        else if(character == "lone wolf")
-        {
-            loneWolfAffinity += modifier;
-            Debug.Log("Affinity for "+ character + " changed to " + loneWolfAffinity);
-        }
-    }
+    // private void ChangeAffinity(string character, int modifier)
+    // {
+    //     if(character == "mentor")
+    //     {
+    //         mentorAffinity += modifier;
+    //         Debug.Log("Affinity for "+ character + " changed to " + mentorAffinity);
+    //     }
+    //     else if(character == "red flag")
+    //     {
+    //         redFlagAffinity += modifier;
+    //         Debug.Log("Affinity for "+ character + " changed to " + redFlagAffinity);
+    //     }
+    //     else if(character == "best friend")
+    //     {
+    //         bestFriendAffinity += modifier;
+    //         Debug.Log("Affinity for "+ character + " changed to " + bestFriendAffinity);
+    //     }
+    //     else if(character == "lone wolf")
+    //     {
+    //         loneWolfAffinity += modifier;
+    //         Debug.Log("Affinity for "+ character + " changed to " + loneWolfAffinity);
+    //     }
+    // }
+
+    // private void ChangeCorruption(int modifier)
+    // {
+    //     corruptionValue += modifier;
+    // }
+
+    // private void CheckCorruption()
+    // {
+    //     if(corruptionValue == 1)
+    // }
 
     private void RunMinigame(int idx, string dialogueNode)
     {
