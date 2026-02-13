@@ -114,7 +114,6 @@ You notice his deep eye bags, worn out from stress and lack of sleep. You feel u
 
 title: IntroductionPostTutorial
 ---
-<<move_sprite 1 0, -5 50>>
 {$mentorName}: “Welcome to the Royal Blacksmith Guild, apprentice. There are expectations with the job, so I’ll help you out as your senior on what you need to do.”
 {$mentorName}: “As you already know, being a Royal Blacksmith is far different than any regular blacksmithing job. We work with a rare metal not available to the public.”
 {$mentorName}: “It is our work with Pleiotium that holds us in such high status. And what we make with it can change the pages of history depending on how it’s handled.”

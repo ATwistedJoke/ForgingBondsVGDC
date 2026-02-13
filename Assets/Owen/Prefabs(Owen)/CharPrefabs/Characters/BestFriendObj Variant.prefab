@@ -100,7 +100,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BestFriendObj Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5429328907491359169, guid: bdbd50edcc4fa514a95778f158e33154, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -43,7 +43,7 @@ public class GameController : MonoBehaviour
         //minigame_1_panel.SetActive(false);
         game_playing = false;
         StopAllCoroutines();
-        mouse.ResetMouse();
+        //mouse.ResetMouse();
 
         GameObject rem = GameObject.FindGameObjectWithTag("minigame");
         Destroy(rem);
