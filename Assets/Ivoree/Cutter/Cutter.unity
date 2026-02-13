@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -721,8 +721,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 1302723820812287101, guid: 8fdbaac28bf89be40a29e502bbadeec2, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -797,7 +797,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5729885760818267476, guid: 2c267675e71cb4b30af1aaf479510869, type: 3}
+  m_Sprite: {fileID: 7156663917527736528, guid: dc69277af64945e408de7323bd790672, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -990,7 +990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7195175243547266130, guid: eafe48e3ab69e466c8d38dcbcee76c26, type: 3}
       propertyPath: timeLimit
-      value: 9
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 7195175243547266130, guid: eafe48e3ab69e466c8d38dcbcee76c26, type: 3}
       propertyPath: timerText
