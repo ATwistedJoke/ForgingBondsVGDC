@@ -3,7 +3,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine.UI;
 
-public class ScoreManager : MonoBehaviour
+public class HammeringScoreManager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public TMP_Text scoreText;

@@ -6,13 +6,13 @@ public class RotateHammer : MonoBehaviour
     private bool insideHitbox = false;
     public GameObject skillCheck;
     public GameObject score;
-    public ScoreManager scoreManager;
+    public HammeringScoreManager scoreManager;
     private int streak = 0;
     void Start()
     {
         skillCheck = GameObject.FindGameObjectWithTag("Hitbox");
         score = GameObject.FindGameObjectWithTag("Score");
-        scoreManager = score.GetComponent<ScoreManager>();
+        scoreManager = score.GetComponent<HammeringScoreManager>();
     }
     void OnEnable()
     {

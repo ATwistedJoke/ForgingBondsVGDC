@@ -48,7 +48,8 @@ public class Molding_Minigame : MonoBehaviour
         StopAllCoroutines();
 
         game_container.SetActive(false);
-
+        GameObject rem = GameObject.FindGameObjectWithTag("minigame");
+        Destroy(rem); 
     }
 
     //compares current crucible contents with generated recipe ticket
