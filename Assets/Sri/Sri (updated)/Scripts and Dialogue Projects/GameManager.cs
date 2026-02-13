@@ -87,6 +87,11 @@ public class GameManger : MonoBehaviour
             ResourceMinigameResult
         );
 
+        dialogueRunner.AddCommandHandler<bool>(
+            "MC_Speak",
+            MCSpeak
+        );
+
         // dialogueRunner.AddCommandHandler<int>(
         //     "change_corruption",
         //     ChangeCorruption
@@ -263,6 +268,17 @@ public class GameManger : MonoBehaviour
         Debug.Log("Done");
     }
 
-
-
+    private void MCSpeak(bool speak)
+    {
+        Vector3 target; 
+        if (speak)
+        {
+            target = new Vector3(-7,-6,0);
+        }
+        else
+        {
+            target = new Vector3(-50,-6,0);
+        }
+        StartCoroutine(MoveOverTime(sprite[0],target,50));
+    }
 }

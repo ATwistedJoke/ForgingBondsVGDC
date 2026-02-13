@@ -42,7 +42,6 @@ public class HeatIngot : MonoBehaviour
         curHeatTime = heatSpeed;
         while (curHeatTime > 0)
         {
-            Debug.Log("Countdown: " + curHeatTime);
             yield return new WaitForSeconds(0.2f);
             curHeatTime -= 0.2f;
             if (!currentlyHeating)
@@ -54,7 +53,6 @@ public class HeatIngot : MonoBehaviour
         {
             heatLevel++;
         }
-        Debug.Log("Heat Level: " + heatLevel);
         changeSprite();
         StartCoroutine(HeatingCooldown());
     }
@@ -64,7 +62,6 @@ public class HeatIngot : MonoBehaviour
         curHeatTime = coolSpeed;
         while (curHeatTime > 0)
         {
-            Debug.Log("Countdown: " + curHeatTime);
             yield return new WaitForSeconds(0.2f);
             curHeatTime -= 0.2f;
             if (currentlyHeating)
@@ -76,7 +73,6 @@ public class HeatIngot : MonoBehaviour
         {
             heatLevel--;
         }
-        Debug.Log("Heat Level: " + heatLevel);
         changeSprite();
         StartCoroutine(CoolingCooldown());
     }
@@ -95,5 +91,18 @@ public class HeatIngot : MonoBehaviour
         {
             spriteRenderer.sprite = evolution1;
         }
+    }
+    public int heatScore()
+    {
+        if(heatLevel >= heatMilestone2)
+        {
+            return 2;
+        }
+        else if(heatLevel >= heatMilestone1)
+        {
+            return 1;
+        }
+        return -1;
+        
     }
 }
