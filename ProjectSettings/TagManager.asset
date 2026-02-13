@@ -40,6 +40,13 @@ TagManager:
   - Pleiotium Cylinder
   - Stick
   - Wood
+  - Hammer Event
+  - Diamond
+  - Hammer
+  - Hitbox
+  - Ingot
+  - Score
+  - ScoreBar
   layers:
   - Default
   - TransparentFX
