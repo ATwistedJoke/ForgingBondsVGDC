@@ -6,26 +6,32 @@ public class DragTongs : MonoBehaviour
 {
     private Camera mainCamera;
 
-    [SerializeField]
-    private float dragSpeed = 10f;
-
     private Vector3 objectSize;
+    private bool itemEquipped = false;
+    public Transform spawnPos;
+    public PickUpIron pickUpIron;
 
     void Start()
     {
         mainCamera = Camera.main;
+        pickUpIron = GameObject.FindGameObjectWithTag("Ingot").GetComponent<PickUpIron>();
     }
-
     void Update()
     {
-        followMousePosition();
+        if (itemEquipped)
+        {
+            transform.position = GetWorldPositionFromMouse();
+        }
     }
-
-    private void followMousePosition()
+    private void OnMouseDown()
     {
-        transform.position = GetWorldPositionFromMouse();
+        pickUpIron.setDown();
+        itemEquipped = !itemEquipped;
+        if(spawnPos != null)
+        {
+            transform.position = spawnPos.position;
+        }
     }
-
     private Vector2 GetWorldPositionFromMouse()
     {
         return mainCamera.ScreenToWorldPoint(Input.mousePosition);

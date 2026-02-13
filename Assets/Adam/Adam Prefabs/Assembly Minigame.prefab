@@ -522,7 +522,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6778584138550096073}
   - component: {fileID: 5287789592218774734}
-  - component: {fileID: 1124064040326587656}
+  - component: {fileID: 36594612704684265}
   m_Layer: 0
   m_Name: Output
   m_TagString: Untagged
@@ -604,7 +604,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &1124064040326587656
+--- !u!114 &36594612704684265
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -616,21 +616,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb6317a28aa184ac3ae77638422e407a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CraftingOutput
-  outputPos: {fileID: 6778584138550096073}
-  curTable:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  pickaxe: {fileID: 1009259891266754262, guid: b953e91b0cdf64df8bbcf0d3bd6f53d2, type: 3}
-  stick: {fileID: 8165161482239125014, guid: 3c2fe63c4d7224208b94b6d03893250f, type: 3}
-  MorningstarHead: {fileID: 4578720794020733450, guid: 6a2b0c769413f4c2b90fa15604d92c21, type: 3}
-  Morningstar: {fileID: 517502768647088503, guid: a5dc85ce6a7a548afbd21cc1735e536d, type: 3}
+  outputPos: {fileID: 0}
+  curTable: []
+  pickaxe: {fileID: 0}
+  stick: {fileID: 0}
+  MorningstarHead: {fileID: 0}
+  Morningstar: {fileID: 0}
   dragObject: {fileID: 0}
 --- !u!1 &7235079674263227145
 GameObject:

@@ -14,6 +14,13 @@ TagManager:
   - Morningstar
   - Minigame
   - Tutorial Video
+  - Hammer Event
+  - Diamond
+  - Hammer
+  - Hitbox
+  - Ingot
+  - Score
+  - ScoreBar
   layers:
   - Default
   - TransparentFX
