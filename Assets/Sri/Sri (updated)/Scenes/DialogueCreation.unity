@@ -400,7 +400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: startNode
-      value: PreMinigameWeek2
+      value: IntroductionPreTutorial
       objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: yarnProject
@@ -468,6 +468,8 @@ MonoBehaviour:
   commissionsRoomNight: {fileID: 6626465194326322519, guid: 967dfd72034095f4fa1368e48432af78, type: 3}
   banquet: {fileID: 1340978755567365736, guid: 579b819512deaec4e96c321d4c671488, type: 3}
   restaurant: {fileID: 8416151909302401536, guid: 8c11cd426939f9c4b86a3124f2159d43, type: 3}
+  maeveRoom: {fileID: 8251026384825097727, guid: f119959d3f6651a4e977ff2f04407449, type: 3}
+  mines: {fileID: 8899876282228281533, guid: cf877642148a8994084050709a831dc7, type: 3}
   spPrefab:
   - {fileID: 6407058008519002376, guid: 4bf4961698bbea747be82723004da1d7, type: 3}
   - {fileID: 5715942496463894622, guid: f37c5a5c2e6feba49b13de29ffbc7eef, type: 3}
