@@ -239,6 +239,4 @@ public class GameManger : MonoBehaviour
         Debug.Log("Done");
     }
 
-
-
 }

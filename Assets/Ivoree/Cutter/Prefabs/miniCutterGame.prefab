@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 3074662898049201392}
   m_Layer: 0
   m_Name: miniCutterGame
-  m_TagString: Untagged
+  m_TagString: minigame
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -718,9 +718,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
   scoreMapRenderer: {fileID: 735614373713361793}
   liveScoreText: {fileID: 3660949535173470398}
+  timerText: {fileID: 0}
+  rulesPopupPanel: {fileID: 0}
+  timeLimit: 60
+  closeDelay: 5
+  flashStartTime: 10
   targetColor: {r: 0, g: 1, b: 0, a: 1}
   colorTolerance: 0.05
   penaltyMultiplier: 1
+  gameIsActive: 0
+  isGameOver: 0
   totalTargets: 0
   goodHits: 0
   badHits: 0
