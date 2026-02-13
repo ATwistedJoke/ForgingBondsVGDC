@@ -60,10 +60,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  type1TimeWindow: 2
-  type1PerfectWindow: 0.3
-  type2MinPresses: 5
-  type2MaxPresses: 15
-  type2TimeLimit: 3
+  firsttimeWindow: 5
+  MinPresses: 5
+  MaxPresses2: 15
+  type1TimeLimit: 10
+  timeLimit2: 3
+  currentTime: 0
