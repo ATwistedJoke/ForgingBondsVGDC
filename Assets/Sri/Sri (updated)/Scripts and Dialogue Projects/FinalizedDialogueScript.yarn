@@ -109,8 +109,6 @@ You notice his deep eye bags, worn out from stress and lack of sleep. You feel u
 <<change_sprite 1 0>>
 {$mentorName}: “Alright then, with that established, would you be willing to share some of your skills with me?”
 {$mentorName}: “I need to judge your proficiency with the craft before I entrust you with any tasks.”
-<<move_sprite 0 -20 -6 50>>
-<<move_sprite 1 0, -20 50>>
 <<run_minigame 0 IntroductionPostTutorial>>
 ===
 
@@ -137,8 +135,8 @@ title: IntroductionPostTutorial
 <<set $mentorName to "Isham">>
 {$mentorName}: “It’s not much, but you can call me Isham. I’m one of the head Royal Blacksmiths here. Now get going before you fall behind.
 <<change_sprite 0 1>>
-{$playerName}: “Yes, sir!”
 <<move_sprite 0 -20 -6 50>>
+{$playerName}: “Yes, sir!”
 <<move_sprite 1 0 -20 50>>
 The day passes by quickly, with work on your forge seeming endless. Finally, you manage to clean the old forge up to your liking. 
 The only thing left to do now is to restock fuel for your furnace from the coal bunker. 
@@ -215,8 +213,8 @@ Before you could respond, the lady had already placed her hands on the other sid
 {$redFlagName}: “My name is Judith Sinclair. It’s a pleasure to meet you, {$playerName}. I hope to see you again soon.” 
 {$playerName}: “It’s nice to meet you, too, {$redFlagName}.”
 <<move_sprite 0 -20 -6 50>>
-<<move_sprite 2 0 -20 50>>
 You exchange goodbyes with the odd lady who had left just as swiftly as she entered. It was only after you had returned to work, however, that you remembered something important. 
+<<move_sprite 2 0 -20 50>>
 You had not once given her your name.  
 You feel a shiver roll down your spine as you finish loading the coal into the furnace. You could only hope that she had learned your name through some reasonable way.
 After a few more long hours of hard work, you wipe off the last of your sweat as you finish completing your forge. All that remains is to obtain the Pleiotium and find a worthwhile commission.
