@@ -24,7 +24,7 @@ public class GameManger : MonoBehaviour
     public GameObject restaurant;
     public GameObject maeveRoom;
     public GameObject mines;
-
+    public GameObject market;
     //Character Handling
     public GameObject[] spPrefab = new GameObject[5]; 
     public GameObject[] sprite = new GameObject[5];
@@ -35,8 +35,9 @@ public class GameManger : MonoBehaviour
     // int loneWolfAffinity = 0;
     // int corruptionValue = 0;
 
-    //store the resource gathering minigame score here. 0 = bad, 1 = mediocre, 2 = good
+    //store the minigame score here. 0 = bad, 1 = mediocre, 2 = good
     int resourceMinigameScore = 2;
+    int smeltingMinigameScore = 2;
 
     public void Awake() {
 
@@ -87,6 +88,11 @@ public class GameManger : MonoBehaviour
             ResourceMinigameResult
         );
 
+        dialogueRunner.AddCommandHandler(
+            "smelting_result",
+            SmeltingMinigameResult
+        );
+
         dialogueRunner.AddCommandHandler<bool>(
             "MC_Speak",
             MCSpeak
@@ -115,6 +121,29 @@ public class GameManger : MonoBehaviour
         else if(resourceMinigameScore == 2)
         {
             dialogueRunner.StartDialogue("resourcegameGood");
+        }
+
+        //at the end of the dialogue node that we switch to, we have to jump back 
+        // into the main dialogue line that doesn't depend on the minigame score
+    }
+
+    private IEnumerator SmeltingMinigameResult()
+    {
+        yield return null;
+
+        dialogueRunner.Stop();
+
+        if(smeltingMinigameScore == 0)
+        {
+            dialogueRunner.StartDialogue("smeltinggameBad");
+        }
+        else if(smeltingMinigameScore == 1)
+        {
+            dialogueRunner.StartDialogue("smeltinggameMediocre");
+        }
+        else if(smeltingMinigameScore == 2)
+        {
+            dialogueRunner.StartDialogue("smeltinggameGood");
         }
 
         //at the end of the dialogue node that we switch to, we have to jump back 
@@ -169,6 +198,9 @@ public class GameManger : MonoBehaviour
                 break;
             case "mines":
                 Instantiate(mines);
+                break;
+            case "market":
+                Instantiate(market);
                 break;
         }
     }
