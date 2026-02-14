@@ -261,7 +261,7 @@ PrefabInstance:
       objectReference: {fileID: 825637820137253967}
     - target: {fileID: 1331408178409636711, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
       propertyPath: MinPresses
-      value: 75
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1331408178409636711, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
       propertyPath: timeLimit2
@@ -269,7 +269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1331408178409636711, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
       propertyPath: MaxPresses2
-      value: 150
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 1331408178409636711, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
       propertyPath: totalTimeLimit

@@ -18,9 +18,11 @@ public class CraftingOutput : MonoBehaviour
     public GameObject PleiotiumCylinder;
     public GameObject Handle;
     public DragObject dragObject;
+    public GameObject minigameHeader;
 
     void Start()
     {
+        minigameHeader = GameObject.FindGameObjectWithTag("minigame");
         outputPos = transform;
         craftingRecipes[0] = new string[]{
                 "", "", "Pleiotium",
@@ -134,45 +136,50 @@ public class CraftingOutput : MonoBehaviour
             Debug.Log("null item tried to be created :/");
             return;
         }
+        GameObject craftedObject = null;
         if (item.Equals("Handle"))
         {
-            GameObject craftedObject = Instantiate(Handle, outputPos.position, Quaternion.identity);
+            craftedObject = Instantiate(Handle, outputPos.position, Quaternion.identity);
         }
         if (item.Equals("Pleiotium Cylinder"))
         {
-            GameObject craftedObject = Instantiate(PleiotiumCylinder, outputPos.position, Quaternion.identity);
+            craftedObject = Instantiate(PleiotiumCylinder, outputPos.position, Quaternion.identity);
         }
         if (item.Equals("Morningstar Head"))
         {
-            GameObject craftedObject = Instantiate(MorningstarHead, outputPos.position, Quaternion.identity);
+            craftedObject = Instantiate(MorningstarHead, outputPos.position, Quaternion.identity);
         }
         if (item.Equals("Shaft"))
         {
-            GameObject craftedObject = Instantiate(Shaft, outputPos.position, Quaternion.identity);
+            craftedObject = Instantiate(Shaft, outputPos.position, Quaternion.identity);
         }
         if (item.Equals("Morningstar"))
         {
-            GameObject craftedObject = Instantiate(Morningstar, outputPos.position, Quaternion.identity);
+            craftedObject = Instantiate(Morningstar, outputPos.position, Quaternion.identity);
         }
         if (item.Equals("Bow"))
         {
-            GameObject craftedObject = Instantiate(Bow, outputPos.position, Quaternion.identity);
+            craftedObject = Instantiate(Bow, outputPos.position, Quaternion.identity);
         }
         if (item.Equals("Crank"))
         {
-            GameObject craftedObject = Instantiate(Crank, outputPos.position, Quaternion.identity);
+            craftedObject = Instantiate(Crank, outputPos.position, Quaternion.identity);
         }
         if (item.Equals("Stirrup"))
         {
-            GameObject craftedObject = Instantiate(Stirrup, outputPos.position, Quaternion.identity);
+            craftedObject = Instantiate(Stirrup, outputPos.position, Quaternion.identity);
         }
         if (item.Equals("Crossbow Base"))
         {
-            GameObject craftedObject = Instantiate(CrossbowBase, outputPos.position, Quaternion.identity);
+            craftedObject = Instantiate(CrossbowBase, outputPos.position, Quaternion.identity);
         }
         if (item.Equals("Crossbow"))
         {
-            GameObject craftedObject = Instantiate(Crossbow, outputPos.position, Quaternion.identity);
+            craftedObject = Instantiate(Crossbow, outputPos.position, Quaternion.identity);
+        }
+        if(craftedObject != null)
+        {
+            craftedObject.transform.SetParent(minigameHeader.transform, true);
         }
     }
     private void ClearGrid()
