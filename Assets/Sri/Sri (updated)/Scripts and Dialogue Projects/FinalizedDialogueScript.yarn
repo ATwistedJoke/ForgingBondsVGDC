@@ -69,7 +69,7 @@ Following the noise, you trace it down to a closed room. Inside, you can hear th
     You gently open the door. 
     <<change_background "personal forge">>
     //<<move_sprite 1 0 -6 50>>
-    <<instance_sprite 1 0 -6>>
+    <<instance_sprite 1 0 -4>>
     Inside, you see an older man overlooking the clumsy work of a younger blacksmith. The man’s eyes appear tired and disappointed, his mouth crooked in frustration.  
     <<change_sprite 1 3>>
     {$mentorName}: “Kid, are you even thinking about this properly? You do that, and you have to reset a whole month’s worth of progress and…
@@ -80,7 +80,7 @@ Following the noise, you trace it down to a closed room. Inside, you can hear th
     You choose not to intrude. You should wait for your scheduled senior to find you.
     But before you could make yourself scarce, you hear an angry shout from within the forge. 
     //<<move_sprite 1 0 -8 50>>
-    <<instance_sprite 1 0 -6>>
+    <<instance_sprite 1 0 -4>>
     <<change_sprite 1 3>>
     {$mentorName}: “Are you trying to burn down this place! What is wrong with you, kid? Grab a bucket, kid, and clean up this mess.”
     The door in front of you swings open with a loud bang. From inside, a young blacksmith runs out in tears, passing you without delay. 
@@ -130,7 +130,7 @@ You notice his deep eye bags, worn out from stress and lack of sleep. You feel u
 
 title: IntroductionPostTutorial
 ---
-<<instance_sprite 1 0 -6>>
+<<instance_sprite 1 0 -4>>
 {$mentorName}: “Welcome to the Royal Blacksmith Guild, apprentice. There are expectations with the job, so I’ll help you out as your senior on what you need to do.”
 {$mentorName}: “As you already know, being a Royal Blacksmith is far different than any regular blacksmithing job. We work with a rare metal not available to the public.”
 {$mentorName}: “It is our work with Pleiotium that holds us in such high status. And what we make with it can change the pages of history depending on how it’s handled.”
@@ -167,7 +167,7 @@ The crate of coal, filled to the brim, blocks your field of view as you trudge t
 Suddenly, just as you think you might be reaching the end, you collide with something heavy in front of you with a large thud. 
 Falling onto your back in surprise, the crate of coal that was in your hands lands onto the floor, its contents spilling all over the place.
 //<<move_sprite 2 0 -6 50>>
-<<instance_sprite 2 0 -6>>
+<<instance_sprite 2 0 -4>>
 {$redFlagName}: “Oh dear, I’m so sorry. Are you alright?”
 Looking up, you are met with a gentle, smooth hand stemming from what could only be described as both a stunningly gorgeous and odd woman. 
 Donning elegant clothing and jewelry, her status was apparent to any perceiver. She would have looked like any regular, wealthy client the guild often gets if it weren’t for her eyes.
@@ -255,7 +255,7 @@ Reading more into the peculiar request she made, you do not notice the noise of 
 You turn backwards, startled by the quiet grumbling voice. 
 It is then that you see a familiar face from your past, one that you did not expect to see so soon when you came to the Royal Capital.
 //<<move_sprite 3 0 -6 50>>
-<<instance_sprite 3 0 -6>>
+<<instance_sprite 3 0 -4>>
 Entering the room with an uneasy look on her face and a paper in hand, you see Maeve, a childhood friend of yours from the same village you grew up in.
 <<set $bestFriendName to "Maeve">>
 <<MC_Speak true>>
@@ -363,7 +363,7 @@ An awkward silence follows her words, as both of you realize the wall that had f
         You steel your heart, preparing to respond to her. But before you open your mouth, you catch a glimpse of a pair of familiar crimson eyes in your peripheral vision, staring at you in the darkly lit room. 
         {$redFlagName}: “How cruel, {$playerName}. To reject such a nice lady so brutally. I didn’t know you had it in you.”
 //<<move_sprite 2 4 -6 50>>
-<<instance_sprite 2 4 -6>>
+<<instance_sprite 2 4 -4>>
 Emerging from the shadows, the eccentric merchant from earlier walked with confidence towards the pair with a troublesome grin. Dressed in the same outfit from earlier, the coal stains that had ruined her clothes were now mysteriously gone. 
 {$redFlagName}: “I apologize for overhearing your conversation, but I can only wait for so long to use that board behind you.”
 <<change_sprite 3 4>>
@@ -376,7 +376,7 @@ Emerging from the shadows, the eccentric merchant from earlier walked with confi
     <<change_sprite 2 1>>
     {$redFlagName}: “Oh, don’t be such a bore. I’m simply teasing.”
     Judith then turns her attention back to you, approaching until she is only a couple of feet away from you.
-    <<move_sprite 2 -5 -6 50>>
+    <<move_sprite 2 -5 -4 50>>
     {$redFlagName}: “Assuming you are planning on taking the Royal Blacksmith Exam in the coming weeks, dear, I have come here with a proposal that would interest you greatly.” 
     <<change_sprite 0 0>>
     {$playerName}: “And what would that proposal entail?”
@@ -418,13 +418,13 @@ Emerging from the shadows, the eccentric merchant from earlier walked with confi
 <<change_sprite 0 0>>
 <<change_sprite 2 0>>
 <<change_sprite 3 0>>
-<<move_sprite 3 -4 -6 50>>
+<<move_sprite 3 0 -4 50>>
 Hesitant about how to decide, your saving grace comes from a pair of approaching voices coming from the hallway. 
-<<move_sprite 2 -1 -6 50>>
+<<move_sprite 2 -3 -4 50>>
 That is, until you recognize the voice to be that of your senior blacksmith, Isham. 
 <<MC_Speak false>>
-<<instance_sprite 1 4 -6>>
-<<instance_sprite 4 8 -6>>
+<<instance_sprite 1 4 -4>>
+<<instance_sprite 4 8 -4>>
 {$mentorName}: “...has potential, but I’ll need to see (his/her/their) work more before deciding.”
 {$loneWolfName}: “Thank you for your help, Isham.”
 {$mentorName}: “There’s no need to thank me, Silas. I owe a great debt to your parents. This is the least I could do for their child.”
@@ -476,7 +476,7 @@ Feeling the weight of decisions only piling further, you think of how you could 
 Finishing your conversation with your senior, you notice an impatient Judith awaiting your attention.
 {$redFlagName}: “Well, if you two are done, I believe it is about time I take my leave. Do make sure to consider my proposal, dear. 
 Judith then departs, waving goodbye with a smile that seems dishonest in intention.
-<<destory_sprite 2>>
+<<destroy_sprite 2>>
 After her, Silas announces their departure, leaving with a small but brief goodbye to Isham. As they walk out of the room, you notice them glance back at you briefly, as if about to say something. Watching them falter, you decide to wave them goodbye. 
 <<MC_Speak true>>
 <<change_sprite 0 0>>
@@ -521,7 +521,7 @@ You nod along with your senior, finding his observations to be logically sound. 
     {$mentorName}: “Silas might be off-putting at first impression, but they are a good person once you get to know them. I hope you get to see the side of them once they warm up to you.”
 -> “The one who interests me most is you. What would you desire, Isham?”
     <<set $mentorAffinity = $mentorAffinity + 1>>
-    <<change_sprite 4 6>>
+    <<change_sprite 1 6>>
     {$mentorName}: “It be best, rookie, not to joke around too much. I dislike being made a fool of.”
     Despite his words, you notice that Isham’s ears were red as he turned away from you. Perhaps he did not mind your comment, afterall. 
 <<MC_Speak false>>

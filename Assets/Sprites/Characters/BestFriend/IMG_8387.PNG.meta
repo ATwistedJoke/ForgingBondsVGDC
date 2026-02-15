@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 99f211322fa9bb940b60029db7f14048
+guid: 5dbeb09b284417b44b6d36e3b4f18c11
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6039719164639954472
-    second: lwHappy_0
+      213: 4933725842636244771
+    second: IMG_8387_0
+  - first:
+      213: -4356892663648456612
+    second: IMG_8387_1
+  - first:
+      213: -2970366328422033088
+    second: IMG_8387_2
+  - first:
+      213: 3461324926731681499
+    second: IMG_8387_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lwHappy_0
+      name: IMG_8387_0
       rect:
         serializedVersion: 2
-        x: 50
-        y: 58
+        x: 1090
+        y: 148
         width: 745
-        height: 1449
+        height: 1738
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8d934886b6b9e2ca0800000000000000
-      internalID: -6039719164639954472
+      spriteID: 3278f7d838d187440800000000000000
+      internalID: 4933725842636244771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_8387_1
+      rect:
+        serializedVersion: 2
+        x: 1447
+        y: 1886
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c507abac4353983c0800000000000000
+      internalID: -4356892663648456612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_8387_2
+      rect:
+        serializedVersion: 2
+        x: 1912
+        y: 108
+        width: 762
+        height: 1781
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0499f9ddf8327c6d0800000000000000
+      internalID: -2970366328422033088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_8387_3
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 108
+        width: 770
+        height: 1770
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdefb069ea8190030800000000000000
+      internalID: 3461324926731681499
       vertices: []
       indices: 
       edges: []
@@ -135,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      lwHappy_0: -6039719164639954472
+      IMG_8387_0: 4933725842636244771
+      IMG_8387_1: -4356892663648456612
+      IMG_8387_2: -2970366328422033088
+      IMG_8387_3: 3461324926731681499
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
