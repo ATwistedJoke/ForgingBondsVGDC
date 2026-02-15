@@ -1,0 +1,4 @@
+repository "2d game/ForgingBondsVGDC@1374429883700@cloud"
+  path "/"
+    br "/main"
+    co "/main"
