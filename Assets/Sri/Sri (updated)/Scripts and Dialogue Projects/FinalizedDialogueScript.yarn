@@ -1111,41 +1111,64 @@ Who do you wish to spend more time with?
     ...
     That is, if you can find him.
     Not sure where, even after checking his forge, you decide to wait by the commission's board to read any new requests that might have appeared. As you are looking, Isham eventually enters the room.
+    <<instance_sprite 1 0 -4>>
     {$mentorName}: “Haven’t found a commission you like yet, {$playerName}?”
+    <<MC true>>
+    <<change_sprite 0 3>>
     {$playerName}: “Ah, senior! No, haven’t seen any new ones appear yet. I was actually waiting for you to ask something about something I saw.”
+    <<MC false>>
+    <<change_sprite 1 4>>
     {$mentorName}: “Oh? Something troubling you, rookie?”
     <<if $readBlueprint == true>>
+    <<MC true>>
     -> “When I was looking for you earlier about my keys, I saw a blueprint on your table. I ended up reading it.”
         <<set $mentorAffinity = $mentorAffinity - 1>>
+        <<change_sprite 1 7>>
         {$mentorName}: “Next time you go looking for me, I expect you to respect my privacy and not look at things you ought not.”
     -> “Silas told me about your blueprint. Do you mind me asking what it means to you?”
         <<set $mentorAffinity = $mentorAffinity - 2>>
+        <<change_sprite 1 7>>
         {$mentorName}: “Silas told you that? Why would they do that?”
         {$playerName}: “Well, I may have entered your forge and seen it.”
         {$mentorName}: “Then why the hell did you not start with that?”
+    <<MC false>>
     <<endif>>
     <<if $readBlueprint == false>>
+    <<MC true>>
     ->“When I was looking for you earlier about my keys, I entered your room and saw a blueprint on your table. Do you mind me asking what that was?”
         <<set $mentorAffinity = $mentorAffinity + 1>>
+        <<change_sprite 1 0>>
         {$mentorName}: “That? An old blueprint of mine, nothing worth talking about.”
     -> “Silas told me about your blueprint. Do you mind me asking what it means to you?”
         <<set $mentorAffinity = $mentorAffinity - 2>>
+        <<change_sprite 1 7>>
         {$mentorName}: “Silas told you that? Why would they do that?”
         {$playerName}: “Well, I may have entered your forge and seen it.”
         {$mentorName}: “Then why the hell did you not start with that?”
+    <<MC false>>
     <<endif>>
+    <<change_sprite 1 0>>
     Isham shakes his head, looking distant as he thinks of what to say.
     {$mentorName}: “That blueprint holds the schematic I made of a warhammer I promised to give to Silas’s father. He had been a mentor to me when I was only an apprentice, despite him being a Hunter.”
+    <<change_sprite 1 7>>
     {$mentorName}: “However, I was unable to develop the weapon in time for the man before his death. Killed by an Iron Monster alongside Silas’s mother, the poor kid was left orphaned in their early teens.”
+    <<change_sprite 1 0>>
     {$mentorName}: “Now all I want to do is perfect it, make it so powerful that no monster will stand a chance against it.”
     {$mentorName}: “Yet I am lacking. I am unable to channel what is needed to make the weapon work properly, so all I can do is redesign it over and over until it will work…a fool’s dream.”
+    <<change_sprite 1 6>>
     {$mentorName}: “...aye, that’s enough now. You heard enough of my story.”
     Unable to hold your stares of admiration, Isham looks away with his ears red in embarrassment.
+    <<MC true>>
     {$playerName}: “There’s no need to be embarrassed, senior. I totally respect your dream!”
+    <<MC false>>
     {$mentorName}: “Just…go. It’s the weekend, why are you still here?”
+    <<MC true>>
     {$playerName}: “To see you, master!”
+    <<MC false>>
+    <<change_sprite 1 6>>
     {$mentorName}: “I told you, rookie, don’t call me. You make me sound ancient.”
     Laughing over the banter between mentor and student, your bond with Isham grows. That night in the guild was filled with giggling joy until finally the two of you stopped cracking jokes with each other and left to go home.
+    <<destroy 1>>
 -> None of Them
 <<else>>
 Unfortunately, working overtime at the mines has reduced the amount of time you have left in the day.
