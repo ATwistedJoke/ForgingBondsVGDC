@@ -27,11 +27,18 @@ public class ReinforcingMinigame : MonoBehaviour
     
     [Header("Challenge Settings")]
     [SerializeField] private float firsttimeWindow = 5f; // press & release
-    [SerializeField] private int MinPresses = 5;
-    [SerializeField] private int MaxPresses2 = 15;
+    [SerializeField] private int minPresses = 5;
+    [SerializeField] private int maxPresses2 = 15;
     [SerializeField] private float type1TimeLimit = 10f;
 
     [SerializeField] private float timeLimit2 = 3f;
+    
+    [Header("Added third minigame")]
+    //
+    [SerializeField] private float minTime = 2.5f;
+    [SerializeField] private float maxTime = 4.5f;
+    [SerializeField] private float mercy = 0.3f; 
+    [SerializeField] private float pressure = 8f;
     
     // call back to gamemanager
     public Action<int> OnMinigameComplete;
@@ -52,6 +59,13 @@ public class ReinforcingMinigame : MonoBehaviour
     private float type1PressTime;
     private int type2PressCount;
     private int type2RequiredPresses;
+    
+    // hold + release state
+    private bool type3IsHolding = false;
+    private float type3HoldStartTime = 0f;
+    private float type3CurrentHoldDuration = 0f;
+    private bool type3HasReleased = false;
+    private float targetHoldTime = 0f; //later set
     
     public void Start()
     {
@@ -101,10 +115,10 @@ public class ReinforcingMinigame : MonoBehaviour
 
     
 
-    //
+    //rand
     private void StartRandomChallenge()
     {
-        currentChallengeType = UnityEngine.Random.Range(1, 3);
+        currentChallengeType = UnityEngine.Random.Range(1, 4);
         
         isChallengeActive = true;
         challengePanel.SetActive(true);
@@ -113,20 +127,23 @@ public class ReinforcingMinigame : MonoBehaviour
         {
             StartType1Challenge();
         }
-        else
+        else if (currentChallengeType == 2)
         {
             StartType2Challenge();
         }
+        else
+        {
+            StartType3Challenge();
+        }
     }
     
-//hold and release
-    
+    //hold and release
     private void StartType1Challenge()
     {
         challengeTimer = type1TimeLimit;
         type1SuccessfulPresses = 0;
         challengeInstructionText.text = $"Press SPACE when the color changes\n{type1SuccessfulPresses}/{type1RequiredPresses} successful presses\nTime left: {challengeTimer:F1}s";
-        StartCoroutine(Type1ProgressAnimation()); //ask adam
+        StartCoroutine(Type1ProgressAnimation());
         StartCoroutine(Type1TimerCountdown()); 
     }
     
@@ -166,7 +183,6 @@ public class ReinforcingMinigame : MonoBehaviour
     {
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            Debug.Log("b");
             float barProgress = challengeProgressBar.fillAmount;
             
             float perfectStart = 0.45f;
@@ -191,7 +207,7 @@ public class ReinforcingMinigame : MonoBehaviour
     
     private void UpdateGame1Text()
     {
-        challengeInstructionText.text = $"Press SPACE when the color changes \n{type1SuccessfulPresses}/{type1RequiredPresses} successful presses\nTime left: {challengeTimer:F1}s";
+        challengeInstructionText.text = $"Press SPACE when the color changes \n{type1SuccessfulPresses}/{type1RequiredPresses} successful presses\n\nOnly {challengeTimer:F1}s left";
     }
 
     private IEnumerator Type1TimerCountdown()
@@ -216,7 +232,7 @@ public class ReinforcingMinigame : MonoBehaviour
     //smashorpass
     private void StartType2Challenge()
     {
-        type2RequiredPresses = UnityEngine.Random.Range(MinPresses, MaxPresses2 + 1);
+        type2RequiredPresses = UnityEngine.Random.Range(minPresses, maxPresses2 + 1);
         type2PressCount = 0;
         challengeTimer = timeLimit2;
                 
@@ -225,7 +241,7 @@ public class ReinforcingMinigame : MonoBehaviour
         if (challengeProgressBar != null)
         {
             challengeProgressBar.fillAmount = 0f;
-            challengeProgressBar.color = Color.yellow;
+            challengeProgressBar.color = Color.orange;
         }
         StartCoroutine(Type2TimerCountdown());
     }
@@ -263,12 +279,116 @@ public class ReinforcingMinigame : MonoBehaviour
     
     private void UpdateGame2Text()
     {
-        challengeInstructionText.text = $"MASH SPACEBAR!!!\n{type2PressCount}/{type2RequiredPresses} presses\nTime left: {challengeTimer:F1}s";
+        challengeInstructionText.text = $"MASH SPACEBAR!!!\n{type2PressCount}/{type2RequiredPresses} presses\n\nOnly {challengeTimer:F1}s left";
         
         if (challengeProgressBar != null)
         {
             challengeProgressBar.fillAmount = (float)type2PressCount / type2RequiredPresses;
         }
+    }
+    
+
+
+    //new part starts here
+    private void StartType3Challenge()
+    {
+        type3IsHolding = false;
+        type3HoldStartTime = 0f;
+        type3CurrentHoldDuration = 0f;
+        type3HasReleased = false;
+        challengeTimer = pressure;
+
+        targetHoldTime = UnityEngine.Random.Range(minTime, maxTime);
+
+        challengeInstructionText.text = $"Hold SPACE for {targetHoldTime:F1}s\n\nOnly {challengeTimer:F1}s left";
+        
+        if (challengeProgressBar != null)
+        {
+            challengeProgressBar.fillAmount = 0f;
+            challengeProgressBar.color = Color.yellow;
+        }
+        
+        StartCoroutine(Type3TimerCountdown());
+    }
+    
+    private IEnumerator Type3TimerCountdown()
+    {
+        while (isChallengeActive && currentChallengeType == 3 && challengeTimer > 0)
+        {
+            challengeTimer -= Time.deltaTime;
+            UpdateGame3Text();
+            yield return null;
+        }
+
+
+        if (challengeTimer <= 0 && isChallengeActive && currentChallengeType == 3)
+        {
+            FailChallenge();
+        }
+    }
+    
+    private void HandleType3Input()
+    {
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && !type3HasReleased)
+        {
+            type3IsHolding = true;
+            type3HoldStartTime = Time.time;
+        }
+        
+        if (type3IsHolding && Keyboard.current.spaceKey.isPressed)
+        {
+            type3CurrentHoldDuration = Time.time - type3HoldStartTime;
+            UpdateGame3Text();
+            
+            if (challengeProgressBar != null)
+            {
+                float progress = Mathf.Clamp01(type3CurrentHoldDuration / targetHoldTime);
+                challengeProgressBar.fillAmount = progress;
+                
+                float minTarget = targetHoldTime - mercy;
+                float maxTarget = targetHoldTime + mercy;
+                
+                //color change part 
+                if (type3CurrentHoldDuration >= minTarget && type3CurrentHoldDuration <= maxTarget)
+                {
+                    challengeProgressBar.color = Color.green;
+                }
+                else if (type3CurrentHoldDuration > maxTarget)
+                {
+                    challengeProgressBar.color = Color.blue;
+                }
+                else
+                {
+                    challengeProgressBar.color = Color.purple;
+                }
+            }
+        }
+
+        //track release
+        if (Keyboard.current.spaceKey.wasReleasedThisFrame && type3IsHolding && !type3HasReleased)
+        {
+            type3IsHolding = false;
+            type3HasReleased = true;
+            
+            //check for fail
+            float minTarget = targetHoldTime - mercy;
+            float maxTarget = targetHoldTime + mercy;
+            
+            if (type3CurrentHoldDuration >= minTarget && type3CurrentHoldDuration <= maxTarget)
+            {
+                CompleteChallenge(true);
+            }
+            else
+            {
+                FailChallenge();
+            }
+        }
+    }
+    
+    private void UpdateGame3Text()
+    {
+        string holdText = type3IsHolding ? $"Holding: {type3CurrentHoldDuration:F2}s" : "Press SPACE to start";
+        challengeInstructionText.text = $"Hold SPACE for exactly {targetHoldTime:F1}s\n{holdText}\n\nOnly {challengeTimer:F1}s left";
     }
     
     
@@ -281,6 +401,10 @@ public class ReinforcingMinigame : MonoBehaviour
         else if (currentChallengeType == 2)
         {
             HandleType2Input();
+        }
+        else if (currentChallengeType == 3)
+        {
+            HandleType3Input();
         }
     }
     
