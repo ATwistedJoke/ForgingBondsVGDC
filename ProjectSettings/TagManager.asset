@@ -47,6 +47,7 @@ TagManager:
   - Ingot
   - Score
   - ScoreBar
+  - Ring2
   layers:
   - Default
   - TransparentFX

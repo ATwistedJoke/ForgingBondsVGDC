@@ -961,7 +961,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -750, y: -40}
+  m_AnchoredPosition: {x: -690.69, y: -40}
   m_SizeDelta: {x: 900, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2932874994272635355
@@ -1293,7 +1293,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -1285.4851, y: 0, z: 813.8126, w: -49.519897}
+  m_margin: {x: -1154.8384, y: 48.992584, z: 683.16583, w: -49.519897}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1315,7 +1315,7 @@ MonoBehaviour:
   ingot: {fileID: 0}
   heatIngot: {fileID: 0}
   scoreBar: {fileID: 0}
-  maxScore: 100
+  maxScore: 600
 --- !u!1 &7264994251770033154
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,7 +1351,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 784.33, y: 442.15}
+  m_AnchoredPosition: {x: 726, y: 387}
   m_SizeDelta: {x: 351.34, y: 195.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4939828765517386080
@@ -1466,8 +1466,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22454d25a4444dffb36d88c2525ed05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SmeltingTimer
-  currCountdownValue: 30
-  startCountdownValue: 30
+  currCountdownValue: 60
+  startCountdownValue: 60
   timerText: {fileID: 0}
   minigamePrefab: {fileID: 0}
 --- !u!1 &7304869905123039463

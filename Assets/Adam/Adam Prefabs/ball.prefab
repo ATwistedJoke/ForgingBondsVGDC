@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4676475485018894354}
   m_Layer: 0
   m_Name: ball
-  m_TagString: Spike
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,9 +27,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2736686952004651619}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.07, y: -3.27, z: 0}
-  m_LocalScale: {x: 0.19990405, y: 0.19990405, z: 0.19990405}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.7402, y: -1.5894, z: 0}
+  m_LocalScale: {x: 0.9214178, y: 0.9214178, z: 0.9214178}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -3603556060819865620, guid: 059f546dda9ee445d9da199f360362f5, type: 3}
+  m_Sprite: {fileID: -3603556060819865620, guid: 472b7c7f92c0348a493db82956a61c98, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -143,5 +143,5 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.20656183}
-  m_Radius: 3.6071923
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.8249493
