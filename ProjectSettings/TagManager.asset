@@ -4,8 +4,6 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - minigame
-  - background
   - Ores
   - Boundary
   - Bag
@@ -14,32 +12,6 @@ TagManager:
   - Iron
   - Gold
   - Mythril
-  - Tongs
-  - Fire
-  - SnapPoint
-  - Spike
-  - Morningstar Head
-  - Ball
-  - Morningstar
-  - Minigame
-  - Tutorial Video
-  - Plank
-  - Steel
-  - Bow
-  - Chain
-  - Crank
-  - Crossbow
-  - Crossbow Base
-  - Handle
-  - Shaft
-  - Stirrup
-  - String
-  - Pommel
-  - Ring
-  - Pleiotium
-  - Pleiotium Cylinder
-  - Stick
-  - Wood
   layers:
   - Default
   - TransparentFX

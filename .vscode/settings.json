@@ -67,7 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "ForgingBondsVGDC.slnx",
-    "C_Cpp.errorSquiggles": "disabled",
-    "claudeCodeChat.permissions.yoloMode": false
+    "dotnet.defaultSolution": "ForgingBondsVGDC.slnx"
 }

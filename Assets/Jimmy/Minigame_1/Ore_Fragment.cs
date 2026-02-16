@@ -35,14 +35,8 @@ public class Ore_Fragment : MonoBehaviour
        game.AddScore(20);
        Debug.Log("i am hitting this");
        Destroy(gameObject);
-    }
-
-    if (collision.gameObject.CompareTag("Boundary"))
-        {
-            Destroy(gameObject);   
         }
-
-}
+    }
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Boundary"))
