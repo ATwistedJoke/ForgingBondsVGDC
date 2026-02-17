@@ -37,7 +37,7 @@ public class CraftingOutput : MonoBehaviour
         craftingRecipes[2] = new string[]{
                 "", "", "Ring",
                 "", "Pleiotium Cylinder", "", 
-                "Ring", "", "", "Shaft"
+                "Ring2", "", "", "Shaft"
                             };
         craftingRecipes[3] = new string[]{
                 "Spike", "Spike", "Spike",
@@ -155,7 +155,7 @@ public class CraftingOutput : MonoBehaviour
         }
         if (item.Equals("Morningstar"))
         {
-            craftedObject = Instantiate(Morningstar, outputPos.position, Quaternion.identity);
+            Destroy(minigameHeader);
         }
         if (item.Equals("Bow"))
         {
@@ -175,7 +175,7 @@ public class CraftingOutput : MonoBehaviour
         }
         if (item.Equals("Crossbow"))
         {
-            craftedObject = Instantiate(Crossbow, outputPos.position, Quaternion.identity);
+            Destroy(minigameHeader);
         }
         if(craftedObject != null)
         {
