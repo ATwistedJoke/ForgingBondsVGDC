@@ -1167,7 +1167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Timer
   textbox: {fileID: 2722228734915027173}
   TimerOn: 0
-  time: 30
+  time: 60
   gameManager: {fileID: 3872884014977027678}
 --- !u!222 &6843895194031140744
 CanvasRenderer:

@@ -15,7 +15,7 @@ public class HammeringScoreManager : MonoBehaviour
     void Start()
     {
         scoreText = GetComponent<TMP_Text>();
-        scoreText.text = "Score: 0/100";
+        scoreText.text = "Score: 0/" + maxScore;
         scoreBar = GameObject.FindGameObjectWithTag("ScoreBar").GetComponent<Image>();
         ingot = GameObject.FindGameObjectWithTag("Ingot");
         heatIngot = ingot.GetComponent<HeatIngot>();
@@ -26,7 +26,7 @@ public class HammeringScoreManager : MonoBehaviour
     {
         int newScore = score + heatIngot.heatScore() * increment;
         score = newScore;
-        scoreText.text = "Score: " + score + "/100";
+        scoreText.text = "Score: " + score + "/" + maxScore;
         float fillPercentage = score / maxScore;
         scoreBar.fillAmount = fillPercentage;
     }
