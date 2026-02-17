@@ -79,7 +79,7 @@ public class GameManger : MonoBehaviour
         );
 
         dialogueRunner.AddCommandHandler<int>(
-            "destroy_sprite",
+            "destroy",
             DestroyChar
         );
 
@@ -94,7 +94,7 @@ public class GameManger : MonoBehaviour
         );
 
         dialogueRunner.AddCommandHandler<bool>(
-            "MC_Speak",
+            "MC",
             MCSpeak
         );
 

@@ -29,10 +29,10 @@ Where others would take up their sword or arrow to the call of passion, your hea
 In the capital city of Pladonia, you walk to a new beginning. The Royal Blacksmith Guild. Home to the Kingdom’s finest Blacksmiths.
 Today marks the start of your first day on the job.
 <<change_background "entrance hall">>
-<<MC_Speak true>>
+<<MC true>>
 <<change_sprite 0 3>>
 {$playerName}: “Wow! This place is humongous!” 
-<<MC_Speak false>>
+<<MC false>>
 The view of the stoic but kind guards outside slowly disappears behind you as the large, wooden doors close.
 Ahead, you are welcomed with a grand entrance hall, draped in luxurious banners of the royal family. Its architecture is carefully cut from the finest stones, equal only to the castle where the Royal Family resides. 
 Walking through the hall fills you with a sense of amazement at how such a building was crafted, so much so that it's only until you reach the front desk that you realize there is no one else in this hall but you. 
@@ -57,11 +57,11 @@ Approaching the desk once more, you try looking on the other side of the desk to
 It was only then that you recalled the words of the voice, which stated that an apprentice should press the orange button. Following its guidance, you decide that enough time has been wasted and press the mysterious button. 
 ???: Thank you! If you are {$playerName}, please make way to the hallway on your right. A scheduled senior has been scheduled to guide you on your first day. If you are not {$playerName}, please press the blue button. 
 A door could be heard opening to your right.
-<<MC_Speak true>>
+<<MC true>>
 <<change_sprite 0 3>>
 {$playerName}: “Um…thank you, whoever you are?”
 Hearing no response back, you decide to listen to the voice’s instructions and head down the open hallway. 
-<<MC_Speak false>>
+<<MC false>>
 <<change_background "hallway">>
 Your steps echo in the large hallway. Ahead, you hear the sound of hammering on steel and the voices of people. 
 Following the noise, you trace it down to a closed room. Inside, you can hear the noises of a forge in use.
@@ -90,7 +90,7 @@ The aged apprentice continues to grumble, only looking up from the ruined projec
 You notice his deep eye bags, worn out from stress and lack of sleep. You feel unable to look away from those eyes, captivated by the look of a professional in your field. But as you continue staring, you notice that they are now looking back at you.
 <<change_sprite 1 4>>
 {$mentorName}: “–! By the gods, why are you just standing there and staring at me?”
-<<MC_Speak true>>
+<<MC true>>
 -> Sorry, I overheard the commotion that was happening earlier.
     <<change_sprite 1 0>>
     {$mentorName}: “Aye, that is fair. By any chance, are you new around here? Don’t recognize your face around these parts.”
@@ -121,8 +121,8 @@ You notice his deep eye bags, worn out from stress and lack of sleep. You feel u
     <<change_sprite 1 7>>
     {$mentorName}: “Curses…”
 <<change_sprite 1 0>>
-<<MC_Speak false>>
-<<destroy_sprite 1>>
+<<MC false>>
+<<destroy 1>>
 {$mentorName}: “Alright then, with that established, would you be willing to share some of your skills with me?”
 {$mentorName}: “I need to judge your proficiency with the craft before I entrust you with any tasks.”
 <<run_minigame 0 IntroductionPostTutorial>>
@@ -135,7 +135,7 @@ title: IntroductionPostTutorial
 {$mentorName}: “As you already know, being a Royal Blacksmith is far different than any regular blacksmithing job. We work with a rare metal not available to the public.”
 {$mentorName}: “It is our work with Pleiotium that holds us in such high status. And what we make with it can change the pages of history depending on how it’s handled.”
 {$mentorName}: “But such a special title is often sought out by nobles desiring glory or status, so sometimes we end up with foolish apprentices like the one we saw back there. Now I ask you, because I don’t know you, what type of royal blacksmith do you hope to be?”
-<<MC_Speak true>>
+<<MC true>>
 {$playerName}: “I wish to be the one talked about in history, sir.”
 <<change_sprite 1 1>>
 {$mentorName}: “Aye, that’s good to hear. Now, some advice, I suggest that you start trying to build some connections out there. Most apprentices hole themselves in their forge, but lose sight of the most important things about smithing. The commissioners themselves.” 
@@ -151,18 +151,18 @@ title: IntroductionPostTutorial
 <<set $mentorName to "Isham">>
 {$mentorName}: “It’s not much, but you can call me Isham. I’m one of the head Royal Blacksmiths here. Now get going before you fall behind.
 <<change_sprite 0 1>>
-<<MC_Speak false>>
+<<MC false>>
 {$playerName}: “Yes, sir!”
-<<destroy_sprite 1>>
+<<destroy 1>>
 The day passes by quickly, with work on your forge seeming endless. Finally, you manage to clean the old forge up to your liking. 
 The only thing left to do now is to restock fuel for your furnace from the coal bunker. 
 As you load a crate full of coal, you realize how heavy it is to carry. Still, you decide to try to carry it all in one trip. 
 An official Royal Blacksmith needs to be strong for their work. That notion pushes you to make a reckless decision.
 <<change_background "hallway">>
-<<MC_Speak true>>
+<<MC true>>
 <<change_sprite 0 4>>
 {$playerName}: Just…a bit…further…
-<<MC_Speak false>>
+<<MC false>>
 The crate of coal, filled to the brim, blocks your field of view as you trudge through the hallway. 
 Suddenly, just as you think you might be reaching the end, you collide with something heavy in front of you with a large thud. 
 Falling onto your back in surprise, the crate of coal that was in your hands lands onto the floor, its contents spilling all over the place.
@@ -175,7 +175,7 @@ Donning elegant clothing and jewelry, her status was apparent to any perceiver. 
 Staring right through you, her pupils devoid of warmth watch your every movement with an intense gaze. Her crimson irises remain firm, refusing to blink until you take her hand.   
 A part of you finds them to be entrancing. The other terrifying. 
 {$redFlagName}: “Is something the matter?”
-<<MC_Speak true>>
+<<MC true>>
 {$playerName}: “Oh, no, nothing’s wrong. Thank you.”
 Taking her hand, you snap out of your thoughts as you stand back up. You notice her clothes have become stained from the coal.
 <<change_sprite 0 0>>
@@ -208,14 +208,14 @@ Taking her hand, you snap out of your thoughts as you stand back up. You notice 
     <<change_sprite 0 1>>
     {$playerName}: “Now that philosophy is something someone of your status would say.”
     {$redFlagName}: “Shut it, will you?”
-<<MC_Speak false>>
+<<MC false>>
 As the two of you finish picking up the remaining mess, you go to pick up the crate once more.
 {$redFlagName}: “Let me help you carry this so you don’t go bumping into any more people. And this time I’m not taking no for an answer.”
 Before you could respond, the lady had already placed her hands on the other side of a crate. Deciding it's best not to argue any longer, you go along with her whims until you reach your forge.
 <<change_background "personal forge">>
 <<change_sprite 0 0>>
 <<change_sprite 2 0>>
-<<MC_Speak true>>
+<<MC true>>
 {$redFlagName}: “I’ve never seen a royal forge before. I always thought it would look more…impressive?”
 {$playerName}: “Well, I am only an apprentice. I don’t imagine they give those fancy ones to just about anyone.”
 {$redFlagName}: “Don’t sell yourself short. I see in you the potential to become a great Royal Blacksmith.”
@@ -231,10 +231,10 @@ Before you could respond, the lady had already placed her hands on the other sid
 <<set $redFlagName to "Judith">>
 {$redFlagName}: “My name is Judith Sinclair. It’s a pleasure to meet you, {$playerName}. I hope to see you again soon.” 
 {$playerName}: “It’s nice to meet you, too, {$redFlagName}.”
-<<MC_Speak false>>
+<<MC false>>
 You exchange goodbyes with the odd lady who had left just as swiftly as she entered. It was only after you had returned to work, however, that you remembered something important. 
 //<<move_sprite 2 0 -20 50>>
-<<destroy_sprite 2>>
+<<destroy 2>>
 You had not once given her your name.  
 You feel a shiver roll down your spine as you finish loading the coal into the furnace. You could only hope that she had learned your name through some reasonable way.
 After a few more long hours of hard work, you wipe off the last of your sweat as you finish completing your forge. All that remains is to obtain the Pleiotium and find a worthwhile commission.
@@ -246,11 +246,11 @@ The guild will then judge the apprentice's work and the customer’s review to d
 Walking up to the commission board, you look at the handful of requests pinned to it, littered with a wide variety of trinkets requested. Most of them are simple designs that don’t pique your attention, while others seem long, tedious, and lackluster to do. 
 But one among them stands out to you. A morningstar, one with a blueprint attached to the request so intricately designed that you can’t help but be drawn to it.
 When you read the name of the commissioner, however, your excitement instantly drops. 
-<<MC_Speak true>>
+<<MC true>>
 {$playerName}: [i]{$redFlagName}...of course she would request something as odd as this.[/i]
 <<change_sprite 0 3>>
 Reading more into the peculiar request she made, you do not notice the noise of a door opening behind you.
-<<MC_Speak false>>
+<<MC false>>
 {$bestFriendName}: “...what am…doing wrong…”
 You turn backwards, startled by the quiet grumbling voice. 
 It is then that you see a familiar face from your past, one that you did not expect to see so soon when you came to the Royal Capital.
@@ -258,13 +258,13 @@ It is then that you see a familiar face from your past, one that you did not exp
 <<instance_sprite 3 0 -4>>
 Entering the room with an uneasy look on her face and a paper in hand, you see Maeve, a childhood friend of yours from the same village you grew up in.
 <<set $bestFriendName to "Maeve">>
-<<MC_Speak true>>
+<<MC true>>
 {$playerName}: “Maeve?”
-<<MC_Speak false>>
+<<MC false>>
 {$bestFriendName}: “Eek!”
 {$bestFriendName}: “{$playerName}!? Gosh, you scared me. What are you doing here?”
 You fail to suppress a chuckle as you watch your best friend from years before stumble in surprise. 
-<<MC_Speak true>>
+<<MC true>>
 <<change_sprite 0 1>>
 {$playerName}: “Sorry, I didn’t mean to scare you. It’s been so long, Maeve.”
 <<change_sprite 3 2>>
@@ -368,6 +368,7 @@ Emerging from the shadows, the eccentric merchant from earlier walked with confi
 {$redFlagName}: “I apologize for overhearing your conversation, but I can only wait for so long to use that board behind you.”
 <<change_sprite 3 4>>
 {$bestFriendName}: “{$playerName}, who is this person?”
+<<MC true>>
 -> “They helped me earlier today when I dropped a crate of coal.”
     <<change_sprite 2 1>>
     {$redFlagName}: “You have nothing to worry about, little lioness. There’s nothing between me and your (man/woman/partner).”
@@ -422,7 +423,7 @@ Emerging from the shadows, the eccentric merchant from earlier walked with confi
 Hesitant about how to decide, your saving grace comes from a pair of approaching voices coming from the hallway. 
 <<move_sprite 2 -3 -4 50>>
 That is, until you recognize the voice to be that of your senior blacksmith, Isham. 
-<<MC_Speak false>>
+<<MC false>>
 <<instance_sprite 1 4 -4>>
 <<instance_sprite 4 8 -4>>
 {$mentorName}: “...has potential, but I’ll need to see (his/her/their) work more before deciding.”
@@ -433,9 +434,9 @@ That is, until you recognize the voice to be that of your senior blacksmith, Ish
 Entering the room, your senior stops in surprise, only noticing the company you had after he called your name. 
 {$mentorName}: “Are they bothering you, (lad, lass, pal)? They wouldn’t dare to take advantage of a rookie apprentice, would they?”
 <<change_sprite 0 3>>
-<<MC_Speak true>>
+<<MC true>>
 {$playerName}: “No, no, I know these people, sir. They are simply here to place their commission at the guild.”
-<<MC_Speak false>>
+<<MC false>>
 <<change_sprite 1 0>>
 {$mentorName}: “Ah, my apologies, there have been similar accidents before at our guild that warrant this type of precaution.”
 Watching your companions exchange greetings with your senior, you notice the person behind Isham watching you quietly in anticipation.
@@ -445,7 +446,7 @@ Watching your companions exchange greetings with your senior, you notice the per
 {$mentorName}: “I’m hoping to find an apprentice skilled enough to handle their commission, and I thought of the work you had shown me earlier today.”
 Feeling the weight of decisions only piling further, you think of how you could buy yourself more time without rejecting a possible offer. But before you could respond, Silas broke the silence.
 {$loneWolfName}: “Smith, do you truly believe you are good enough for the job?”
-<<MC_Speak true>>
+<<MC true>>
 -> “I do not doubt my skills, dear customer. I will do my best on whichever commission I choose.”
     <<set $loneWolfAffinity = $loneWolfAffinity + 1>>
     <<set $mentorAffinity = $mentorAffinity + 1>>
@@ -471,40 +472,40 @@ Feeling the weight of decisions only piling further, you think of how you could 
 {$mentorName}: “Awkward, they might be, I truly do believe the kid will go on to do great things. Consider them an option if you don’t already have one in mind.”
 <<change_sprite 0 4>>
 {$playerName}: “It’s only my first day, I want to take my time gathering the resources I need before making such a big decision.”
-<<MC_Speak false>>
+<<MC false>>
 {$mentorName}: “Wise choice. It’s good not to be too hasty with the craft we do.”
 Finishing your conversation with your senior, you notice an impatient Judith awaiting your attention.
 {$redFlagName}: “Well, if you two are done, I believe it is about time I take my leave. Do make sure to consider my proposal, dear. 
 Judith then departs, waving goodbye with a smile that seems dishonest in intention.
-<<destroy_sprite 2>>
+<<destroy 2>>
 After her, Silas announces their departure, leaving with a small but brief goodbye to Isham. As they walk out of the room, you notice them glance back at you briefly, as if about to say something. Watching them falter, you decide to wave them goodbye. 
-<<MC_Speak true>>
+<<MC true>>
 <<change_sprite 0 0>>
 {$playerName}: “Have a good night!”
 {$loneWolfName}: “...you too.”
-<<destroy_sprite 4>>
+<<destroy 4>>
 Silas then departs in a hurry, but you notice on the corner of their lips a small smile form. 
 With their departure, you turn your attention to the one who has been waiting all this time for you.
 <<change_sprite 0 4>>
 {$playerName}: “It feels as if a storm came and went. I’m sorry, Maeve, for having you wait so long.”
-<<MC_Speak false>>
+<<MC false>>
 <<change_sprite 3 0>>
 {$bestFriendName}: “There is no need, I know that work can get hectic.”
 {$bestFriendName}: “I’ll leave you be now, but I hope that later we can meet outside of work. There is so much we need to talk about.”
 Exchanging goodbyes, you wave to Maeve as she exits the room with an anxious look on her face. You wonder what could be upsetting her so dearly.
-<<destroy_sprite 3>>
+<<destroy 3>>
 <<change_sprite 1 1>>
 {$mentorName}: “By the gods, how did you get so popular already? Most apprentices take months if not years to find someone worth their time, but it looks like you already found yourself some worthwhile options.”
-<<MC_Speak true>>
+<<MC true>>
 {$playerName}: “You really think so?”
-<<MC_Speak false>>
+<<MC false>>
 <<change_sprite 1 0>>
 {$mentorName}: “Why of course. I’ve seen Lady Sinclair here with other Royal Blacksmiths before, so I’m surprised she is searching for an apprentice this time.”
 {$mentorName}: “Still, she is a rising name in the merchant world, so not only will you get paid well, but you will also be recognized among many other future patrons if you perform to her liking.” 
 {$mentorName}: “And that friend of yours, Maeve, might not have much fame now, but I recognize that sword of hers. If she inherited that from whom I think, then she will be a worthy commissioner in her future endeavors.”
 You nod along with your senior, finding his observations to be logically sound. Although the benefits of each commissioner were apparent, you can’t help but feel like you’re missing something.
 {$mentorName}: “With that said, I understand that this makes it all the harder to decide. But out of all the options, is there anyone who interests you the most so far?”
-<<MC_Speak true>>
+<<MC true>>
 -> “I’m not sure, I would like to get to know them all better first.”
     {$mentorName}: “A dull but wise decision, there is still time before a decision must be made.”
 -> “I know Maeve like the back of my hand. Sure, we haven’t talked in a while, but I know that if there’s anyone out there who could do her commission right, it’s me.”
@@ -524,10 +525,10 @@ You nod along with your senior, finding his observations to be logically sound. 
     <<change_sprite 1 6>>
     {$mentorName}: “It be best, rookie, not to joke around too much. I dislike being made a fool of.”
     Despite his words, you notice that Isham’s ears were red as he turned away from you. Perhaps he did not mind your comment, afterall. 
-<<MC_Speak false>>
+<<MC false>>
 <<change_sprite 1 0>>
 Finishing your conversation, Isham then excuses himself to close down the guild for the day. You wave goodbye and end your first day of the job.
-<<destroy_sprite 1>>
+<<destroy 1>>
 <<change_background "black background">>
 Welcomed with the night sky outside, you feel tired from such a long and chaotic day. You decide to venture back to your new home, ready to fall asleep.
 It is only when you collapse on your bed that you feel your shoulders loosen from stress. Will all days be this eventful? You do not know. 
@@ -544,11 +545,17 @@ But all that work is about to pay off, for you have finally finished the prepara
 Entering the Guild with a grin on your face, you walk past the front desk that had given you so much trouble in the past. Turns out it was just an automated voice that Isham and some other Royal Blacksmiths built back in the day to manage the guild’s guests.
 It really is true that laziness is the greatest source of inspiration.
 <<change_background "personal forge">>
+<<instance_sprite 1 0 -4>>
 Entering your seniors’ forge, you are met by an already working Isham, hammering away at a new creation while deep in thought. 
+<<change_sprite 1 1>>
 Upon meeting eyes, Isham welcomes you with a voice much friendlier than when you had first arrived. 
 {$mentorName}: “I take it you came here to tell me you are finished?”
+<<MC true>>
 {$playerName}: “Yes, sir! I’m ready to begin.”
+<<MC false>>
+<<change_sprite 1 0>>
 {$mentorName}: "Good. I figured you would say that. I already made preparations for a carriage to take us, so we should make haste today. Go grab your pack, rookie.”
+<<destroy 1>>
 <<change_background "map">>
 The Ritual of Extraction, the name given to the unique way of mining Pleiotium ore, is a duty all Royal Blacksmiths and their apprentices must partake in to be accepted by the material they will work with. 
 Unlike regular metal, Pleiotium ore has some semblance of intelligence due to its similarity to that of a living organism. Due to this nature, even after extraction, the metal can still react with its environment. 
@@ -560,20 +567,33 @@ Hearing the coachmen call out from outside, you feel the carriage come to a stop
 <<change_background "mines">>
 Leaving the carriage with your senior, you step out onto the mud roads of the mining village of Pleioridge. Overseeing the protection and management of the Royal Pleiotium Mines, the villagers consisted of soldiers and laborers here for work alongside their families. 
 Upon your arrival, a young guide welcomes you with reverence in his eyes. Talking endlessly about how amazing the Royal Blacksmiths are, he only stops when a frustrated Isham cuts him off. Without more delay, you are led down a series of tunnels carved out by miners to where a vein of Pleiotium ore had been discovered. 
+<<instance_sprite 1 0 -4>>
+<<MC true>>
 {$mentorName}: "Alright, rookie, we’ve arrived. I’m afraid I can’t go any further than this, but I’ll wait back here in case you need any help. Do you remember everything I told you about the Ritual of Extraction?"
 -> “Of course. I’m ready, master.”
     <<set $mentorAffinity = $mentorAffinity + 1>>
+    <<change_sprite 1 4>>
     {$mentorName}: “Master? Don’t get so attached, (lad, lass, pal), I’m only going to be your senior for just a few weeks.”
+    <<chane_sprite 0 0>>
     {$playerName}: “Even then, I’ll still see you as my master.”
+    <<change_sprite 1 6>>
     {$mentorName}: “Just get in there, rookie, and do your thing.” 
 -> “Eh…this seems like a lot of work, are you sure you can’t do it, senior?”
+    <<change_sprite 0 4>>
     {$mentorName}: “I see someone’s in the mood to make jokes.”
+    <<change_sprite 0 3>>
     {$playerName}: “Like in a good or bad way?”
     {$mentorName}: “That’s for you to decide.”
 -> “I just want to get this over with.”
+    <<change_sprite 0 2>>
+    <<change_sprite 1 7>>
+    <<set $mentorAffinity = $mentorAffinity - 1>>
     {$mentorName}: “With an attitude like that, you're just begging to fuck this up.”
+    <<change_sprite 0 4>>
     {$playerName}: “Alright, alright, I won’t mess this up. Trust me.”
     {$mentorName}: “Are you trying to jinx yourself? Just go, and please be careful.”
+<<destory_sprite 1>>
+<<MC false>>
 Walking down the tunnel, you enter the brightly illuminated room, ready to challenge your first great hurdle. 
 <<run_minigame 1 WeekTwoAfterMinigame>>
 ===
@@ -581,6 +601,7 @@ Walking down the tunnel, you enter the brightly illuminated room, ready to chall
 title: WeekTwoAfterMinigame
 ---
 Leaving the vein, you carry your haul of Pleiotium out to be met with a worried Isham. 
+<<instance_sprite 1 0 -4>>
 {$mentorName}: “How did it go, (lad, lass, pal)?”
 <<resource_result>>
 ===
@@ -588,8 +609,13 @@ Leaving the vein, you carry your haul of Pleiotium out to be met with a worried 
 title: resourcegameGood
 ---
 ........ //for some reason this node starts on line 2
+<<change_sprite 0 1>>
+<<MC true>>
 {$playerName}: “I say it went fairly well. Got myself a good supply.”
+<<change_sprite 1 1>>
 {$mentorName}: “Thank the gods. Nice work, rookie.”
+<<destroy 1>>
+<<MC false>>
 The departure from the mines in triumph fills you with renewed confidence and excitement. Led back to the carriage, you can’t wait to see how the Pleiotium you harvested will turn out. 
 With no need to stay any longer in the village of Pleioridge, you depart back to the Capital with Isham.
 Your good work has rewarded you with an open schedule. With no overtime needed, you return to the Capital with extra free time ready to be spent.
@@ -600,8 +626,12 @@ Your good work has rewarded you with an open schedule. With no overtime needed, 
 title: resourcegameMediocre
 ---
 ........ //for some reason this node starts on line 2
+<<change_sprite 0 0>>
+<<MC true>>
 {$playerName}: “It was okay. I could’ve done better.”
 {$mentorName}: “That’s alright, you don’t always get it right the first time. Just make sure to learn from this experience and do better the next time you come.”
+<<destroy 1>>
+<<MC false>>
 The departure from the mines leaves you in deep contemplation, wondering how you could improve your technique. Led back to a hut reserved for visiting blacksmiths, you go to sleep early to prepare for tomorrow. 
 Having to work longer than you wish, your return to the capital was delayed by a few more days.
 When it was finally time to leave the village, you couldn’t help but wonder how open your schedule would have been if you had done it right the first time.
@@ -612,6 +642,8 @@ When it was finally time to leave the village, you couldn’t help but wonder ho
 title: resourcegameBad
 ---
 ........ //for some reason this node starts on line 2
+<<change_sprite 1 4>>
+<<MC true>>
 {$playerName}: “It was terrible, I fucked it up. I don’t know why it went so bad, but I should’ve—”
 {$mentorName}: “Calm down, rookie. Just take a breather, and tell me slowly. Did anything dangerous happen with the Pleiotium?”
 {$playerName}: “No…nothing dangerous.”
@@ -619,6 +651,7 @@ title: resourcegameBad
 The departure from the mines consisted of only silence. Led back to a hut reserved for visiting blacksmiths, you go to sleep early on the verge of tears, swearing you will do better the next time. 
 The work after was harsh, but ultimately better than your initial try. Your return to the capital was delayed due to the overtime, leaving Isham bitter on the ride back about the work he had missed.
 You couldn’t help but wonder how open your schedule would have been if you had done it right the first time.
+<<MC false>>
 <<set $weekOneResult = 0>>
 <<jump WeekTwoInteractions>>
 ===
@@ -636,18 +669,28 @@ Do you wish to make up with Maeve?
     <<change_background "restaurant">>
     Departing upon hearing her response, you head to the address given after cleaning yourself up from the mines.
     The restaurant was a humble store with casual dining options, providing a nice, cozy atmosphere for customers. 
+    <<instance_sprite 3 0 -4>>
     You see Maeve seated at a table for two, beckoning you to come with a waving hand. Taking your seat, you notice Maeve smiling at you, no uneasiness on her face as there was before.
+    <<change_sprite 3 1>>
     {$bestFriendName}: “Thank you for coming. I know you’ve been busy, but I wanted to tell you about our folks back from the village.”
+    <<MC true>>
     {$playerName}: “Oh, how’s everyone been? I haven’t seen them in a while since I came to the capital.”
+    <<MC false>>
+    <<change_sprite 3 0>>
     {$bestFriendName}:“Your parents are doing well. They actually asked me to find out if you managed to become an apprentice when I told them I was going to the capital next.”
+    <<MC true>>
     {$playerName}: “I would appreciate it if you ever stop by there again to tell them I’m doing well for myself here and that I miss them dearly. I still can’t believe the village hasn’t managed to establish a proper route yet for mailing.”
+    <<MC false>>
     {$bestFriendName}: “Our backwater home will rather watch all their children leave than even try to get with the times. That old man, Otto, still complains about how the new generations are spoiled, not having to fear being attacked on the roads by monsters like they did in the past.”
     Laughing over Maeve’s story, the two of you reminisce over the past over a delightful lunch.  
+    <<change_sprite 3 4>>
     {$bestFriendName}: “...wow, so you’re telling me you even have to do the mining yourself?”    
+    <<change_sprite 3 0>>
     {$playerName}: “It’s grueling, but rewarding work. I can’t wait to get started with smelting it.”
     {$bestFriendName}: “It’s nice that you’ve been enjoying your work. I wish I could say I’ve been the same with the knight order.”
     {$playerName}: “I’ve been meaning to ask about that, actually. You seem to have something upsetting you.”
     {$bestFriendName}: “It’s just…you ever have that experience where you finally are where you want to be, but as time passes, you start to doubt if you really belong?”
+    <<MC true>>
     -> “No, I’m sorry, I can’t say for sure that I have.”
         {$bestFriendName}: “Sorry, I didn’t mean to spring that up on you. There’s been a lot on my mind lately.”
         {$playerName}: “No, it’s okay, Maeve. I’ll always be here to listen to your troubles.”
@@ -655,18 +698,26 @@ Do you wish to make up with Maeve?
         After finishing lunch, the two of you depart after paying the check and saying goodbye, promising to see each other sometime in the future.
     -> “All the time, it’s something I struggle to overcome time and time again. I find that thinking back to why I came here and what I want out of myself is what helps me the most.”
         <<set $bestFriendAffinity = $bestFriendAffinity + 1>>
+        <<change_sprites 3 4>>
         {$bestFriendName}: “I never knew you had those thoughts, {$playerName}. You always seemed so engrossed in your work that I never knew you had doubts.”
         {$playerName}: “Likewise, Maeve. I remembered you pledging to me under the oak tree that you were going to surpass the Steelheart Knight. I still hope to see that Knight one day in action.”
+        <<change_sprite 3 5>>
         {$bestFriendName}: “You still remember that!?”
+        <<change_sprite 3 1>>
+        <<change_sprite 0 1>>
         In sync, the two of you begin laughing as you recall and joke about the passionate lines of the young Maeve. Her mood seems uplifted by your camaraderie and humor.  
         {$bestFriendName}: “Thank you, {$playerName}. We should meet again. This was fun.”
         After finishing lunch, the two of you depart with friendly goodbyes, promising to see each other sometime in the future. 
     -> “It’s just something you have to get over with.”
         <<set $bestFriendAffinity = $bestFriendAffinity - 1>>
+        <<change_sprite 3 3>>
         {$bestFriendName}: “Get over it? Really?”
+        <<change_sprite 0 2>>
         {$playerName}: “Did I say something wrong?”
         Almost yelling out in anger, Maeve stops herself as she notices the onlookers peeking at their table. Not wanting to ruin the mood further, the two of you continue eating in an awkward silence of your own devising.
         After paying the check, the two of you depart with a brief and formal goodbye, unsure when you will see each other again.
+    <<destroy 3>>
+    <<MC false>>
 -> No
     <<set $bestFriendAffinity = $bestFriendAffinity - 3>>
     You decide you'd rather spend your time elsewhere. She can wait for her turn.
@@ -676,18 +727,28 @@ Wanting to catch up with an old friend, you let Maeve know your availability in 
 <<change_background "restaurant">>
 Departing upon hearing her response, you head to the address given after cleaning yourself up from the mines.
 The restaurant was a humble store with casual dining options, providing a nice, cozy atmosphere for customers. 
+<<instance_sprite 3 0 -4>>
 You see Maeve seated at a table for two, beckoning you to come with a waving hand. Taking your seat, you notice Maeve smiling at you, no uneasiness on her face as there was before.
+<<change_sprite 3 1>>
 {$bestFriendName}: “Thank you for coming. I know you’ve been busy, but I wanted to tell you about our folks back from the village.”
+<<MC true>>
 {$playerName}: “Oh, how’s everyone been? I haven’t seen them in a while since I came to the capital.”
+<<MC false>>
+<<change_sprite 3 0>>
 {$bestFriendName}:“Your parents are doing well. They actually asked me to find out if you managed to become an apprentice when I told them I was going to the capital next.”
+<<MC true>>
 {$playerName}: “I would appreciate it if you ever stop by there again to tell them I’m doing well for myself here and that I miss them dearly. I still can’t believe the village hasn’t managed to establish a proper route yet for mailing.”
+<<MC false>>
 {$bestFriendName}: “Our backwater home will rather watch all their children leave than even try to get with the times. That old man, Otto, still complains about how the new generations are spoiled, not having to fear being attacked on the roads by monsters like they did in the past.”
 Laughing over Maeve’s story, the two of you reminisce over the past over a delightful lunch.  
+<<change_sprite 3 4>>
 {$bestFriendName}: “...wow, so you’re telling me you even have to do the mining yourself?”    
+<<change_sprite 3 0>>
 {$playerName}: “It’s grueling, but rewarding work. I can’t wait to get started with smelting it.”
 {$bestFriendName}: “It’s nice that you’ve been enjoying your work. I wish I could say I’ve been the same with the knight order.”
 {$playerName}: “I’ve been meaning to ask about that, actually. You seem to have something upsetting you.”
 {$bestFriendName}: “It’s just…you ever have that experience where you finally are where you want to be, but as time passes, you start to doubt if you really belong?”
+<<MC true>>
 -> “No, I’m sorry, I can’t say for sure that I have.”
     {$bestFriendName}: “Sorry, I didn’t mean to spring that up on you. There’s been a lot on my mind lately.”
     {$playerName}: “No, it’s okay, Maeve. I’ll always be here to listen to your troubles.”
@@ -695,47 +756,72 @@ Laughing over Maeve’s story, the two of you reminisce over the past over a del
     After finishing lunch, the two of you depart after paying the check and saying goodbye, promising to see each other sometime in the future.
 -> “All the time, it’s something I struggle to overcome time and time again. I find that thinking back to why I came here and what I want out of myself is what helps me the most.”
     <<set $bestFriendAffinity = $bestFriendAffinity + 1>>
+    <<change_sprites 3 4>>
     {$bestFriendName}: “I never knew you had those thoughts, {$playerName}. You always seemed so engrossed in your work that I never knew you had doubts.”
     {$playerName}: “Likewise, Maeve. I remembered you pledging to me under the oak tree that you were going to surpass the Steelheart Knight. I still hope to see that Knight one day in action.”
+    <<change_sprite 3 5>>
     {$bestFriendName}: “You still remember that!?”
+    <<change_sprite 3 1>>
+    <<change_sprite 0 1>>
     In sync, the two of you begin laughing as you recall and joke about the passionate lines of the young Maeve. Her mood seems uplifted by your camaraderie and humor.  
     {$bestFriendName}: “Thank you, {$playerName}. We should meet again. This was fun.”
     After finishing lunch, the two of you depart with friendly goodbyes, promising to see each other sometime in the future. 
 -> “It’s just something you have to get over with.”
     <<set $bestFriendAffinity = $bestFriendAffinity - 1>>
+    <<change_sprite 3 3>>
     {$bestFriendName}: “Get over it? Really?”
+    <<change_sprite 0 2>>
     {$playerName}: “Did I say something wrong?”
     Almost yelling out in anger, Maeve stops herself as she notices the onlookers peeking at their table. Not wanting to ruin the mood further, the two of you continue eating in an awkward silence of your own devising.
     After paying the check, the two of you depart with a brief and formal goodbye, unsure when you will see each other again.
+<<destroy 3>>
+<<MC false>>
 <<endif>>
 <<change_background "market">>
 With time still left in the day, you decide to head to the market in the town square to pick up some needed food for home. 
 The capital market was famous for its wide variety of stalls and fresh produce. It was also well known for its large crowds, which you now find yourself struggling to navigate through.
 Shifting through the waves of people, you finally stop at an open stall parked in front of a large merchant hall in the background. You begin viewing the catalogue of fresh vegetables for what you want for dinner.
 It is then, however, that you feel a hand press onto your shoulders. Turning around, you are met with a familiar face you were hoping to avoid today.
+<<instance_sprite 2 0 -4>>
 {$redFlagName}: “It’s been a while, {$playerName}. How are you doing?”
+<<MC true>>
 {$playerName}: “Oh, hello, Lady Sinclair. I am currently getting groceries right now.”
+<<MC false>>
 {$redFlagName}: “Really now? And you chose the one place in this market right in front of my building?”
 Looking back at the large merchant hall designed with intricate architecture, you realize just how rich Judith must be.
 {$redFlagName}: “So, I take it you have considered my proposal?”
+<<MC true>>
 {$playerName}: “I am considering it, but I currently need to smelt the ore that I extracted before I can start any project.”
+<<MC false>>
 {$redFlagName}: “Now that sounds interesting, would you mind if I were to watch you work?”
+<<MC true>>
 {$playerName}: “The process is confidential, unfortunately. I won’t be able to show you, but I can tell you what I can say once I’m finished.” 
+<<MC false>>
 {$redFlagName}: “That’s truly a shame. I’ve taken a liking to you, you know?”
+<<MC true>>
 {$playerName}: “I have to ask, why me? The morningstar you posted as a commission is so intricate that even a Royal Blacksmith would have trouble with it, much less an apprentice. And now, for some reason, you believe that I am capable, despite not once seeing my work.” 
+<<MC false>>  
 {$redFlagName}: “You wish for the truth? Fine. I’ll admit, I actually have seen your work before. It was on your first day when you were showing your work to Isham. I witnessed it by accident when I was leaving another forge, disappointed in my lack of options. The door was left open, and I heard a commotion inside. Curious, I peeked inside, and it was then that I was instantly captivated.”
+<<change_sprite 2 5>>
 {$redFlagName}: "The potential I saw, dear, it was something to admire. You do not know the gift you have.”
 Her words, ominously sincere, speak with fervent desire as she gazes upon you with her passionate red eyes. You have been taught not to fall for such honeyed words of a merchant, ensuring your loyalty is only to your craft. Yet still, why do her words feed some unconscious desire of yours for validation?
+<<MC true>>
 -> “Your kindness, Lady Sinclair, is something I will never forget. I hope I can be worthy of your words.”
     <<set $redFlagAffinity = $redFlagAffinity + 1>> 
+    <<change_sprite 2 1>>
     {$redFlagName}: “Now, that’s more like it. I’m glad to see you are starting to recognize your own potential. There’s no more need to keep questioning it, dear, all you have to do is embrace it.”
 -> "I hardly think I’m worthy of such compliments, Lady Sinclair, but I’m happy to hear such words.”
+    <<change_sprite 2 0>>
     {$redFlagName}: “I told you before, it’s because I trust that you have what it takes to fulfill exactly what I want. There’s no need to keep questioning it, dear.”
 -> “You are dodging my question. What is the real reason?”
     <<set $redFlagAffinity = $redFlagAffinity - 1>> 
+    <<change_sprite 2 3>>
     {$redFlagName}: “Did you not listen to what I had to say, or are you simply hard of thinking? I admire the potential of your craft and wish to seize your talent for my commissions. I wish to invest in your skills and capitalize on them before the noble society realizes it.”
+<<change_sprite 2 0>>
+<<MC false>>
 {$redFlagName}: “Now, before I go, I wish to leave you with an invitation. I will be hosting a gallery of Pleiotium equipment crafted from some of the most famous Blacksmiths this kingdom has to offer tomorrow. I do hope you can attend.” 
 {$redFlagName}: “It would be a great opportunity for you to cultivate your craft as an apprentice. Not only could you witness the art of famous blacksmiths to learn from, but you will also be introduced to the most influential nobles in the kingdom. No apprentice could hope for more.”
+<<destroy 2>>
 Saying goodbye to the departing Judith, you leave the market in deep thought about the enticing offer she had presented. Her demeanor towards you, while weird, does offer a lot of benefits if you explore this relationship. Unsure yet if you should attend, you head back home for the day to rest and contemplate.
 <<change_background "black background">>
 On the second day of the weekend, you realize you had forgotten the keys to your forge at work. Deciding it would be better to save yourself from the shame it would bring to be late to work, you decide to go back to the guild to find it.
@@ -756,36 +842,62 @@ Not seeing your senior, you head back to the door to exit. But just as you were 
     Exiting the room before any misunderstandings could happen, you wonder how important the blueprint is to Isham. Is it something worth bringing up to your senior, or will it be a secret best left forgotten?
 <<change_background "hallway">>
 However, on your way out, you meet eyes with Silas, the one Isham recommended for a commision. Standing still in the hallway in surprise, neither of you speaks until finally Silas opens their mouth.
+<<instance_sprite 4 0 -4>>
 {$loneWolfName}: “Excuse me, what were you doing in Isham’s forge?”
+<<MC true>>
+<<change_sprite 0 3>>
 {$playerName}: “I was just looking for him. I wanted to ask more about smelting before I start this coming week.”
+<<change_sprite 0 0>>
+<<MC false>>
 {$loneWolfName}: “He is currently busy…did you see anything in there?”
+<<MC true>>
 -> Tell the Truth
     <<set $loneWolfAffinity = $loneWolfAffinity + 1>>
     {$loneWolfName}: “That blueprint…he cares deeply about it.”
     {$playerName}: “If you don’t mind me asking, what is it?”
     {$loneWolfName}: “I cannot say, he does not like speaking of it. Besides, this is not my conversation to have.”
+    <<MC false>>
     It seems Silas will not talk about the matter. Perhaps you could ask Isham about this when you are free? 
 -> Lie
     <<set $loneWolfAffinity = $loneWolfAffinity - 1>>
     Silas looks at you with discerning eyes, as if they already know of your deceit.
+    <<change_sprite 4 4>>
     {$loneWolfName}: “Isham doesn’t like it when apprentices poke through his stuff. I suggest you respect that privacy as someone receiving tutelage from him.”
+    <<change_sprite 0 4>>
     {$playerName}: “I’ll make sure to remember that…”
+    <<change_sprite 0 0>>
+    <<change_sprite 4 0>>
     Silas only nods, but you notice in their eyes that they do not trust your words.
+    <<MC false>>
     Perhaps it would be best to change the conversation before this gets any worse.
+<<MC true>>
 {$playerName}: “I’m curious, though, why are you here on the weekend, Silas? Are you also here for Isham?”
+<<MC false>>
 {$loneWolfName}: “Indeed. I am to go on a hunt soon, and hoped to ask Isham if he could help me identify remnants that were reported to be left behind. Though I am unsure if he will accept something so last-minute.”
 {$playerName}: “Would any blacksmith work for the job?”
+<<change_sprite 4 4>>
 {$loneWolfName}: “Yes, but I…do not know anyone else.”
 {$playerName}:“No one?
+<<change_sprite 4 0>>
 {$loneWolfName}: “Yes.”
 {$playerName}: “Well…you know me now.”
+<<change_sprite 4 1>>
 {$loneWolfName}: “Would you help me in this hunt for a named Iron Monster?”
+<<change_sprite 0 3>>
+<<MC true>>
 {$playerName}: “Yes, I would be glad to–wait, sorry, a what now?”
+<<MC false>>
 {$loneWolfName}: "A named Iron Monster called the—”
+<<MC true>>
 {$playerName}: “Those walking disasters? The ones told in tales to scare children?”
+<<MC false>>
 {$loneWolfName}: “Indeed.”
+<<change_sprite 0 4>>
+<<MC true>>
 {$playerName}: “I’ll have to uh…consider the risks first before I join you on that.”
+<<MC false>>
 {$loneWolfName}: “You need not worry, a blacksmith would not be involved in combat. I only need one to identify the unique metal remnant left behind. That way, I can help hunt the monster successfully.”
+<<destroy 4>>
 Thanking them for the reassurance, you swiftly exchange goodbyes with Silas as you depart from the guild. Sure, you became a blacksmith to help the kingdom, but hunting a named Iron Monster? You find that to be something way out of your league. That is…unless helping Silas really is that easy? 
 <<if $weekOneResult >= 2>>
 Due to the result of your efforts, you have earned enough spare time on your weekend to meet with someone for the start of next week.
@@ -797,14 +909,19 @@ Who do you wish to spend more time with?
     The manor, elaborately designed and grandiose in stature, was a sight to behold as you were led to the banquet hall inside. Within, you hear the sounds of eloquent music play from the instruments of skilled musicians as nobles danced in their luxurious outfits.
     The showcase would begin shortly after the ball had concluded.
     Watching the party, you find Judith approaching you with a smile.
+    <<instance_sprite 2 0 -4>>
+    <<change_sprite 2 1>>
     {$redFlagName}: “Why, it is so good to you have come, {$playerName}.”
+    <<change_sprite 2 0>>
     {$redFlagName}: “Come, the showcase will begin shortly. Let me introduce you to some acquaintances of mine.”
     From barons to merchants to even a marquis, Judith spared no effort to parade you to her confidants, bragging about your skill and potential.
     The showcase shortly began afterwards, with the works of famous Royal blacksmiths being presented in a flaunting of wealth to its guests. Lady Sinclair wasted no effort in making sure no equipment went unnoticed. 
     {$redFlagName}: “Do you see, dear, of what Pleiotium can achieve? Nobles of high birth, who are so proud of their lineage, step aside to spectate in the background of those with true power. Wealth and nobility may make you appear powerful, but it is truly skill that has made this kingdom flourish.”
     {$redFlagName}: “This land would have been reduced to nothing if it were not for the Steelheart Knight, who, both smith and knight, single-handedly saved the kingdom. So why is it that instead of meritocracy, we still serve under a feudal government that practices nepotism on the regular?”
+    <<MC true>>
     -> “If that is what you believe, Lady Sinclair, why did you introduce me to these nobles?”
         <<set $redFlagAffinity = $redFlagAffinity + 1>>
+        <<change_sprite 2 1>>
         {$redFlagName}: “Ever the astute one, dear. I like that about you.”
         {$redFlagName}: “To answer your question, (MC Name), I befriend those with power to ensure I too can gain strength. Whether it be like-minded merchants or Nobles blinded by greed, they can be easily used to ensure that what I desire can be achieved. Only then can real change be brought.”
         Judith speaks of social revolution and a change to the current system, but her words fail to hide the ambition for power behind them. Still, her words carry a passion captivating to listen to. Perhaps it is merely just a quirk of hers to speak so oddly of power?
@@ -820,8 +937,11 @@ Who do you wish to spend more time with?
         Judith backs away from the conversation, choosing to instead garner your interest with the equipment she has on display. Her words and smile are enchanting, but you can’t help but feel that a part of her is disappointed. 
     -> “This sounds too close to treason, Lady Sinclair. I suggest you stop now.”
         <<set $redFlagAffinity = $redFlagAffinity - 2>>
+        <<change_sprite 2 3>>
         {$redFlagName}: “A loyal dog to the end. I suppose I should have expected that from a royal smith. Forgive me for getting too passionate earlier with my words.”
         Judith backs away from the conversation, choosing to instead garner your interest with the equipment she has on display. Her words and smile are enchanting, not a single sign of anger in her demeanor. Perhaps your comment was something she had already expected?     
+    <<MC false>>
+    <<destroy 2>>
     Judith spent the rest of the showcase introducing you to the Royal Blacksmiths attending the showcase. No longer will you be some nobody apprentice, but a name to be respected. Judith was right, she can make you famous. Now it is merely up to you to decide if you wish to chase this glory. 
     Departing from the manor, you look back at it as you take the arranged carriage Juidth prepared for you. Will you be returning here again? And if so, will your dream become a reality with Judith’s help?
 -> Maeve
@@ -840,55 +960,88 @@ Who do you wish to spend more time with?
         Perhaps it is time to leave. It would be better if this were forgotten. 
     <<change_background "black background">>
     Carrying the cake to Maeve’s home, you knock on her door to announce your arrival.
+    <<instance_sprite 3 0 -4>>
+    <<change_sprite 3 4>>
     {$bestFriendName}: “{$playerName}? What are you here for?”
+    <<MC true>>
     {$playerName}: “I brought cake, just as you liked. Would it alright if I were to enter?”
+    <<MC false>>
+    <<change_sprite 3 1>>
     {$bestFriendName}: “Why yes, of course. Come in.”
     <<change_background "maeve's room">>
+    <<change_sprite 3 0>>
     {$bestFriendName}: “I didn’t expect you to come by so late in the day. Is there something you wish to talk about?”
     <<if $corruption >= 1>>
+    <<MC true>>
     -> “I wanted to spend time with you if that is okay with you?”
         <<set $bestFriendAffinity = $bestFriendAffinity + 1>>
+        <<change_sprite 3 5>>
         {$bestFriendName}: “Of course, you're welcome anytime!”
     -> “Got some free cake, and remembered how much you loved to gorge on this stuff.”
+        <<change_sprite 3 0>>
         {$bestFriendName}: “Really funny, {$playerName}. You can just say you wanted to spend time with me, no need to be scared.”
     -> “How do you feel about…bracelets?”
         <<set $corruption = $corruption + 1>>
+        <<change_sprite 3 4>>
         {$bestFriendName}: “What do you mean by that? Are you okay, {$playerName}? You don’t look well.”
         {$playerName}: “Huh..oh no, I’m okay. Sorry about that, I don’t know what overcame me.”
         {$bestFriendName}: “It’s alright, you should come in. Let’s have some cake together.”
+    <<change_sprite 3 0>>
+    <<MC false>>
     <<endif>>
     <<if $corruption == 0>>
+    <<MC true>>
     -> “I wanted to spend time with you if that is okay with you?”
         <<set $bestFriendAffinity = $bestFriendAffinity + 1>>
+        <<change_sprite 3 5>>
         {$bestFriendName}: “Of course, you're welcome anytime!”
     -> “Got some free cake, and remembered how much you loved to gorge on this stuff.”
+        <<change_sprite 3 0>>
         {$bestFriendName}: “Really funny, {$playerName}. You can just say you wanted to spend time with me, no need to be scared.”
+    <<change_sprite 3 0>>
+    <<MC false>>
     <<endif>>
     Entering her house, you look around in curiosity.
     {$bestFriendName}: “Sorry, I wasn’t expecting any guests, so I didn’t have time to get tidy. I haven’t made dinner yet, so if you don’t mind, would you mind waiting for me for a bit while I finish that up?”
+    <<MC true>>
     {$playerName}: “Can I help you with cooking?”
+    <<MC false>>
     {$bestFriendName}: “Sure! Come here, and help me cut these.”
     Cooking together, your heart feels at ease being by her side. Without any trouble, the dish came along great as you set the table for dinner.
     Having a pleasant dinner with Maeve, you feel yourself growing closer to her as the two of you talk over food.
+    <<change_sprite 3 3>>
     Then, before dessert, Maeve’s face grew distant as something in her mind began to bother her.
+    <<MC true>>
     {$playerName}: “Would you mind me asking what is bothering you right now?”
+    <<MC false>>
+    <<change_sprite 3 2>>
     {$bestFriendName}: “Sorry, I don’t mean to keep doing this. It’s just both hard not to think about and twice as hard to talk about.”
     {$bestFriendName}: “I was…recently on an expedition with the Knights’ order. We were to intercept and eradicate a pack of invading Iron Monsters when we came across a village being raided. It was there that I learned that merely using a sword was not enough to protect the people.”
     Closing her eyes, Maeve stops before going any further. It seems that whatever happened still weighs heavily on her.
     {$bestFriendName}: “I failed that day. I ended up visiting our village after that event on leave until I recuperated. I decided that after that, I needed to be someone who can not only swing a sword to fight, but also use a shield to protect.”
+    <<MC true>>
     -> “I’ll always be here for you, Maeve, when you need someone to talk to.”
         <<set $bestFriendAffinity = $bestFriendAffinity + 1>>
+        <<change_sprite 3 5>>
         {$bestFriendName}: “Thank you, that means a lot.”
     -> “I’m so sorry, I had no clue this was happening to you.”
+        <<change_sprite 3 0>>
         {$bestFriendName}: “It’s fine, there’s nothing you could have done to fix it. It’s just something I have learn to overcome one day.”
     -> Remain silent
         <<set $bestFriendAffinity = $bestFriendAffinity - 1>>
         Nothing is said between the two of you, but you could see the disappointment written all over her face. Maeve must have wished for you to have said some reassurance, but it was now too late for that. 
+    <<MC false>>
+    <<change_sprite 3 0>>
     Eating the gifted chocolate cake, the two of you talked for a bit longer before it got too late. When night struck, you decided it was about time to head back home and departed with a goodbye to Maeve. Just as you were about to leave, however, Maeve stops you on your way out.
     {$bestFriendName}: “{$playerName}, I wanted to ask you for a favor.”
+    <<MC true>>
     {$playerName}: “Sure, what is it?”
+    <<MC false>>
     {$bestFriendName}: “I know you have a lot of other options regarding commissions that would be far better than mine, especially like that of the merchant lady from last week. But if it isn’t a burden, could you at least consider making mine? I feel like this shield was meant to be made by you.”
+    <<MC true>>
     {$playerName}: “I’ll definitely consider it, Maeve. I will make sure to tell you if I can accept.”
+    <<MC false>>
+    <<destroy 3>>
     Seeing Maeve respond with a happy nod, you depart from home before it gets any later.
     With an old friendship rekindled, maybe this reunion is the opportunity needed to advance this relationship to be more than just childhood friends. 
     Best friends? Perhaps even more? Who knows? All you know is that you're happy to be talking with Maeve once more.
@@ -896,15 +1049,22 @@ Who do you wish to spend more time with?
     <<set $loneWolfAffinity = $loneWolfAffinity + 1>>
     <<change_background "map">>
     Against what any rational apprentice would choose, you decide that you would join Silas on their hunt.
+    <<instance_sprite 4 0 -4>>
+    <<change_sprite 4 1>>
     Unable to find Isham before their departure, Silas was thankful for your help with the metal identification.
+    <<change_sprite 4 0>>
     You venture to Stalwart Lake, where a group of other hunters reported they last saw the named Iron Monster called the Brass Vermin.
     A rat-like creature standing at around eight-feet tall, it supposedly had claws long and sharp enough to cut down trees. Hunters of lesser renown injured and tracked it down until they came across Stalwart Lake. There, a piece of metal suspected to be a piece of its flesh was found.
     To ensure that the lake is safe for any fishers and visitors, Silas departed to join the hunt for the Brass Vermin, where they will need your help to identify the metal and whether it is a part of the Iron Monster or not.
     {$loneWolfName}: “An Iron Monster is nothing more than a beast simply harder to pierce with regular weapons. Any hunter with a weapon made of Pleiotium could handle them with ease. A named Iron Monster, however, have intellect matching its power. An inexperienced hunter could easily fall prey to its trap.”
     Riding within a carriage, Silas explains to you what they know about the Iron Monsters as you head to your destination.
+    <<MC true>>
     {$playerName}: “How come the Royal Knights are not called to handle this Brassed Vermin than?”
+    <<MC false>>
     {$loneWolfName}: “If the Knights were called for every monster, the kingdom would never have an army big enough to fight back the army of the Young Iron King if he ever invaded.”
+    <<MC true>>
     {$playerName}: “Wasn’t that ancient demon just a myth?”
+    <<MC false>>
     {$loneWolfName}: “Who knows. The named Iron Monsters seem to believe in it enough. Same as those cultists that appear every now and then from within. That’s enough for the kingdom to believe it to be possible.”
     {$loneWolfName}: “That is why Hunters are needed, to handle the individual monster that splinters from the hordes. Just like this Brassed Vermin. We don’t know its intentions, but it cannot be allowed to exist so close to civilization.”
     {$loneWolfName}: “It appears we are here. Get ready, I will need your help shortly.”
@@ -912,8 +1072,11 @@ Who do you wish to spend more time with?
     Exiting the carriage, Silas leads you to the location marked on a map that was handed to them by one of the local hunters. There, you find what looks to be a shard of a rich, warm, and metallic yellow-brown metal.
     {$loneWolfName}: “Does it match the description?”
     {$playerName}: “The colors match…let me get a closer look.”
+    <<MC true>>
+    <<change_sprite 0 0>>
     -> Bite it
         <<set $loneWolfAffinity = $loneWolfAffinity - 1>>
+        <<change_sprite 4 4>>
         You choose to take a bite out of it to test the metal. The results…are not so great.
         {$playerName}: “Yep...not gold.”
         {$loneWolfName}: “Is that all? What about it being brass?”
@@ -923,16 +1086,22 @@ Who do you wish to spend more time with?
     -> Use a Magnet
         You choose to use a magnet to test whether the metal is iron-based. After testing, you can confirm whether or not this Iron Monster really is made of Iron or something else.
         {$playerName}: “It appears this metal is not iron. And I can tell by touch it is not gold either. It could still be bronze or copper, however.”
+        <<change_sprite 4 4>>
         {$loneWolfName}: “How different are these metals?”
         {$playerName}: “Very, it will take me a bit more time testing it to make sure whether it is brass or not.”
+        <<change_sprite 4 0>>
         {$loneWolfName}: “I understand.”
     -> Use a File
         <<set $loneWolfAffinity = $loneWolfAffinity + 1>>
         Using a metal file to scratch a small, clean groove into the surface, you examine the exposed, shiny metal within to identify whether it is brass or some other metal.
         {$playerName}: “It appears this is indeed brass. I can share with you some ways in handling brass if that will help kill this vermin.”
+        <<change_sprite 4 1>>
         {$loneWolfName}: “That would be much appreciated, thank you.”
+    <<MC false>>
+    <<change_sprite 4 0>>
     After that, Silas only asked if you could take the metal back for further examination in case their hunt failed. Complying with their words, you head back to the carriage that would depart for the capital.
     Waving goodbye to Silas before they begin their hunt, you watch as they silently enter the woods, bow in hand. Not knowing whether this may be the last time you see the Hunter known as Silas, you return to the Capital in anxious worry.
+    <<destroy 4>>
     Silas told you that a hunt could last up to days if not weeks, so the next time you will see them will be a while. Perhaps you should prepare a gift for them once they return? You decide you will ask Isham about this when you return.
     When you returned to the capital, night had already long settled.  
 -> Isham
@@ -942,41 +1111,64 @@ Who do you wish to spend more time with?
     ...
     That is, if you can find him.
     Not sure where, even after checking his forge, you decide to wait by the commission's board to read any new requests that might have appeared. As you are looking, Isham eventually enters the room.
+    <<instance_sprite 1 0 -4>>
     {$mentorName}: “Haven’t found a commission you like yet, {$playerName}?”
+    <<MC true>>
+    <<change_sprite 0 3>>
     {$playerName}: “Ah, senior! No, haven’t seen any new ones appear yet. I was actually waiting for you to ask something about something I saw.”
+    <<MC false>>
+    <<change_sprite 1 4>>
     {$mentorName}: “Oh? Something troubling you, rookie?”
     <<if $readBlueprint == true>>
+    <<MC true>>
     -> “When I was looking for you earlier about my keys, I saw a blueprint on your table. I ended up reading it.”
         <<set $mentorAffinity = $mentorAffinity - 1>>
+        <<change_sprite 1 7>>
         {$mentorName}: “Next time you go looking for me, I expect you to respect my privacy and not look at things you ought not.”
     -> “Silas told me about your blueprint. Do you mind me asking what it means to you?”
         <<set $mentorAffinity = $mentorAffinity - 2>>
+        <<change_sprite 1 7>>
         {$mentorName}: “Silas told you that? Why would they do that?”
         {$playerName}: “Well, I may have entered your forge and seen it.”
         {$mentorName}: “Then why the hell did you not start with that?”
+    <<MC false>>
     <<endif>>
     <<if $readBlueprint == false>>
+    <<MC true>>
     ->“When I was looking for you earlier about my keys, I entered your room and saw a blueprint on your table. Do you mind me asking what that was?”
         <<set $mentorAffinity = $mentorAffinity + 1>>
+        <<change_sprite 1 0>>
         {$mentorName}: “That? An old blueprint of mine, nothing worth talking about.”
     -> “Silas told me about your blueprint. Do you mind me asking what it means to you?”
         <<set $mentorAffinity = $mentorAffinity - 2>>
+        <<change_sprite 1 7>>
         {$mentorName}: “Silas told you that? Why would they do that?”
         {$playerName}: “Well, I may have entered your forge and seen it.”
         {$mentorName}: “Then why the hell did you not start with that?”
+    <<MC false>>
     <<endif>>
+    <<change_sprite 1 0>>
     Isham shakes his head, looking distant as he thinks of what to say.
     {$mentorName}: “That blueprint holds the schematic I made of a warhammer I promised to give to Silas’s father. He had been a mentor to me when I was only an apprentice, despite him being a Hunter.”
+    <<change_sprite 1 7>>
     {$mentorName}: “However, I was unable to develop the weapon in time for the man before his death. Killed by an Iron Monster alongside Silas’s mother, the poor kid was left orphaned in their early teens.”
+    <<change_sprite 1 0>>
     {$mentorName}: “Now all I want to do is perfect it, make it so powerful that no monster will stand a chance against it.”
     {$mentorName}: “Yet I am lacking. I am unable to channel what is needed to make the weapon work properly, so all I can do is redesign it over and over until it will work…a fool’s dream.”
+    <<change_sprite 1 6>>
     {$mentorName}: “...aye, that’s enough now. You heard enough of my story.”
     Unable to hold your stares of admiration, Isham looks away with his ears red in embarrassment.
+    <<MC true>>
     {$playerName}: “There’s no need to be embarrassed, senior. I totally respect your dream!”
+    <<MC false>>
     {$mentorName}: “Just…go. It’s the weekend, why are you still here?”
+    <<MC true>>
     {$playerName}: “To see you, master!”
+    <<MC false>>
+    <<change_sprite 1 6>>
     {$mentorName}: “I told you, rookie, don’t call me. You make me sound ancient.”
     Laughing over the banter between mentor and student, your bond with Isham grows. That night in the guild was filled with giggling joy until finally the two of you stopped cracking jokes with each other and left to go home.
+    <<destroy 1>>
 -> None of Them
 <<else>>
 Unfortunately, working overtime at the mines has reduced the amount of time you have left in the day.

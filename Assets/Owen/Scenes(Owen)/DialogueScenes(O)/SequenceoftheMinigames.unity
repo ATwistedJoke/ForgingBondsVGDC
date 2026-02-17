@@ -322,6 +322,9 @@ MonoBehaviour:
   commissionsRoomNight: {fileID: 0}
   banquet: {fileID: 0}
   restaurant: {fileID: 0}
+  maeveRoom: {fileID: 0}
+  mines: {fileID: 0}
+  market: {fileID: 0}
   spPrefab:
   - {fileID: 0}
   - {fileID: 0}
