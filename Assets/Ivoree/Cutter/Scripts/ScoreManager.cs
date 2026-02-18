@@ -2,69 +2,87 @@ using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
 
+[System.Serializable]
+public struct PaintStage
+{
+    public string stageName;       
+    public Sprite paintableSprite; // NEW: The visual grey outline they actually look at
+    public Sprite scoreMapSprite;  // The hidden green/red answer key for math
+    public Sprite prizeSprite;     // The colored image you steal the color from
+    public Color targetColor;      
+    public float totalTargets;     
+}
+
 public class ScoreManager : MonoBehaviour
 {
     [Header("1. Assign These")]
-    public SpriteRenderer scoreMapRenderer; 
+    public SpriteRenderer paintableRenderer; // NEW: Drag your 'greyShield' object here!
+    public SpriteRenderer scoreMapRenderer;  // Drag your 'ScoreMap' object here!
     public TextMeshProUGUI liveScoreText;   
     public TextMeshProUGUI timerText;
     public GameObject rulesPopupPanel; 
+    
+    [Tooltip("Drag your PixelPainter script here")]
+    public PixelPainter pixelPainter; 
+    
+    [Tooltip("Create an Empty GameObject to hold the paint, and drag it here!")]
+    public Transform paintContainer; 
 
-    [Header("2. Game Settings")]
+    [Header("2. Stages Setup")]
+    public PaintStage[] stages;
+    private int currentStageIndex = 0;
+
+    [Header("3. Game Settings")]
     public float timeLimit = 60f; 
     public float closeDelay = 5.0f; 
-    
-    [Tooltip("At how many seconds should the timer start flashing red?")]
     public float flashStartTime = 10.0f; 
-    
-    [Tooltip("Click Eyedropper -> Click Green part")]
-    public Color targetColor = Color.green; 
     [Range(0f, 1f)] public float colorTolerance = 0.2f;
     [Range(0f, 5f)] public float penaltyMultiplier = 1.0f; 
 
-    [Header("3. Debug Stats")]
+    [Header("4. Debug Stats")]
     public bool gameIsActive = false; 
-    public bool isGameOver = false; // <--- NEW FLAG
-    public float totalTargets = 1500; 
+    public bool isGameOver = false; 
     public float goodHits = 0;
     public float badHits = 0;
     
     private float currentDisplayAccuracy = 0f; 
-    
     private HashSet<Vector2Int> visitedPixels = new HashSet<Vector2Int>();
     private Texture2D scoreTexture;
     private float timeRemaining;
+    
+    [Header("Cursor Settings")]
+    public Texture2D brushCursor; 
+    public Vector2 hotspot = new Vector2(0, 0);
+
+    private Vector2 lastProcessedPos; 
 
     void Start()
     {
-        scoreTexture = scoreMapRenderer.sprite.texture;
-        
-	Debug.Log("Corner Alpha: " + scoreTexture.GetPixel(0,0).a);
-	
-	timeRemaining = timeLimit; 
-        
-        // Start Paused (Rules Screen)
+        timeRemaining = timeLimit; 
         gameIsActive = false;
         isGameOver = false; 
         
         if (rulesPopupPanel != null) rulesPopupPanel.SetActive(true);
 
-        RecalculateTotal(); 
+        if (stages.Length > 0)
+        {
+            SetupStage(0);
+        }
     }
 
     public void StartGameButtonHit()
     {
         if (rulesPopupPanel != null) rulesPopupPanel.SetActive(false);
+
+        Cursor.SetCursor(brushCursor, hotspot, CursorMode.Auto);
+        Cursor.visible = true; 
+        
         gameIsActive = true;
         Debug.Log("Game Started!");
     }
 
     void Update()
     {
-        // STATE 1: GAME OVER (Flashing Lights)
-        // ================================================================
-        // Only flash if the game is actually OVER (not just paused at start)
-
         if (isGameOver) 
         {
             if (liveScoreText != null)
@@ -72,24 +90,16 @@ public class ScoreManager : MonoBehaviour
                 float flash = Mathf.PingPong(Time.unscaledTime * 10, 1);
                 string fullSentence = $"Accuracy: {currentDisplayAccuracy:F1}%";
                 
-                if (flash > 0.5f) 
-                    liveScoreText.text = $"<color=green>{fullSentence}</color>";
-                else 
-                    liveScoreText.text = $"<color=white>{fullSentence}</color>";
+                if (flash > 0.5f) liveScoreText.text = $"<color=green>{fullSentence}</color>";
+                else liveScoreText.text = $"<color=white>{fullSentence}</color>";
                 
                 liveScoreText.ForceMeshUpdate(); 
             }
-            return; // Stop here, don't run timer logic
+            return; 
         }
 
-        // STATE 2: PAUSED (Rules Screen)
-        // ================================================================
         if (!gameIsActive) return;
 
-        // STATE 3: GAME RUNNING
-        // ================================================================
-
-        // A. Timer Logic
         if (timeRemaining > 0)
         {
             timeRemaining -= Time.deltaTime;
@@ -97,10 +107,9 @@ public class ScoreManager : MonoBehaviour
         else
         {
             timeRemaining = 0;
-            EndGame(); 
+            AdvanceStage(); 
         }
 
-        // B. Update Timer UI
         if (timerText != null)
         {
             int minutes = Mathf.FloorToInt(timeRemaining / 60F);
@@ -120,39 +129,87 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    void SetupStage(int index)
+    {
+        currentStageIndex = index;
+        PaintStage currentStage = stages[index];
+
+        // 1. Swap ALL THREE images instantly
+        if (paintableRenderer != null) paintableRenderer.sprite = currentStage.paintableSprite;
+        if (scoreMapRenderer != null) scoreMapRenderer.sprite = currentStage.scoreMapSprite;
+        
+        if (pixelPainter != null && pixelPainter.prizeLayer != null)
+        {
+            pixelPainter.prizeLayer.sprite = currentStage.prizeSprite;
+        }
+
+        // 2. Update the texture we read the math from
+        scoreTexture = scoreMapRenderer.sprite.texture;
+
+        // 3. Reset scores
+        goodHits = 0;
+        badHits = 0;
+        currentDisplayAccuracy = 0f;
+        visitedPixels.Clear();
+
+        if (liveScoreText != null) liveScoreText.text = $"Accuracy: 0.0%";
+	timeRemaining = timeLimit;
+	
+        Debug.Log($"Starting Stage: {currentStage.stageName}");
+    }
+
+    void AdvanceStage()
+    {
+        Debug.Log("Stage Complete!");
+
+        if (paintContainer != null)
+        {
+            foreach (Transform child in paintContainer)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+        if (currentStageIndex + 1 >= stages.Length)
+        {
+            EndGame();
+        }
+        else
+        {
+            SetupStage(currentStageIndex + 1); 
+        }
+    }
+
     void EndGame()
     {
-        if (isGameOver) return; // Don't run twice
+        if (isGameOver) return; 
 
-        Debug.Log("🏁 GAME OVER! Flashing lights starting...");
+        Debug.Log("🏁 GAME OVER!");
         gameIsActive = false; 
-        isGameOver = true; // <--- This triggers the top block in Update()
+        isGameOver = true; 
+        
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         
         Destroy(transform.root.gameObject, closeDelay); 
     }
 
-    [ContextMenu("Recalculate Total Score")]
-    public void RecalculateTotal()
-    {
-        totalTargets = 1500; 
-        goodHits = 0;
-        badHits = 0;
-        visitedPixels.Clear();
-        CalculateScore(); 
-    }
-
     bool IsMatch(Color c)
     {
-        float diff = Mathf.Abs(c.r - targetColor.r) + 
-                     Mathf.Abs(c.g - targetColor.g) + 
-                     Mathf.Abs(c.b - targetColor.b);
+        if (stages.Length == 0) return false;
+        
+        Color target = stages[currentStageIndex].targetColor;
+
+        float diff = Mathf.Abs(c.r - target.r) + 
+                     Mathf.Abs(c.g - target.g) + 
+                     Mathf.Abs(c.b - target.b);
         return diff < colorTolerance;
     }
 
     public void CheckPixelAt(Vector2 worldPos)
     {
-        // Prevent painting if game hasn't started OR is already over
         if (!gameIsActive) return; 
+        if (Vector2.Distance(worldPos, lastProcessedPos) < 0.05f) return;
+        lastProcessedPos = worldPos;
 
         Vector3 localPos = scoreMapRenderer.transform.InverseTransformPoint(worldPos);
         float textureX = (localPos.x * scoreMapRenderer.sprite.pixelsPerUnit) + (scoreTexture.width / 2);
@@ -163,8 +220,9 @@ public class ScoreManager : MonoBehaviour
         if (visitedPixels.Contains(pixelCoord)) return;
 
         Color c = scoreTexture.GetPixel(pixelCoord.x, pixelCoord.y);
-
         if (c.a < 0.1f) return;
+
+	Debug.Log($"I see Color: {c}. I am looking for: {stages[currentStageIndex].targetColor}");
 
         if (IsMatch(c)) 
         {
@@ -182,9 +240,13 @@ public class ScoreManager : MonoBehaviour
 
     void CalculateScore()
     {
-        if (totalTargets == 0) return;
+        if (stages.Length == 0) return;
+        
+        float total = stages[currentStageIndex].totalTargets;
+        if (total == 0) return;
+
         float currentScore = goodHits - (badHits * penaltyMultiplier);
-        float percent = (currentScore / totalTargets) * 100f;
+        float percent = (currentScore / total) * 100f;
         
         currentDisplayAccuracy = Mathf.Clamp(percent, 0f, 100f);
 
@@ -193,10 +255,9 @@ public class ScoreManager : MonoBehaviour
             liveScoreText.text = $"Accuracy: {currentDisplayAccuracy:F1}%";
         }
 
-        // STILL WIN AT 100%
         if (currentDisplayAccuracy >= 100f && gameIsActive)
         {
-            EndGame();
+            AdvanceStage();
         }
     }
 }
