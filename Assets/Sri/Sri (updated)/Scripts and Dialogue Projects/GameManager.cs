@@ -25,6 +25,10 @@ public class GameManger : MonoBehaviour
     public GameObject maeveRoom;
     public GameObject mines;
     public GameObject market;
+    public GameObject lake;
+    public GameObject capitalStreets;
+    public GameObject judithsHome;
+
     //Character Handling
     public GameObject[] spPrefab = new GameObject[5]; 
     public GameObject[] sprite = new GameObject[5];
@@ -202,6 +206,16 @@ public class GameManger : MonoBehaviour
             case "market":
                 Instantiate(market);
                 break;
+            case "lake":
+                Instantiate(lake);
+                break;
+            case "capital streets":
+                Instantiate(capitalStreets);
+                break;
+            case "Judith's home":
+                Instantiate(judithsHome);
+                break;
+            
         }
     }
     // private void ChangeAffinity(string character, int modifier)
