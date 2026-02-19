@@ -535,6 +535,9 @@ MonoBehaviour:
   maeveRoom: {fileID: 8251026384825097727, guid: f119959d3f6651a4e977ff2f04407449, type: 3}
   mines: {fileID: 8899876282228281533, guid: cf877642148a8994084050709a831dc7, type: 3}
   market: {fileID: 2762722766935775714, guid: e45f47df37dcb714798fa865b53a5860, type: 3}
+  lake: {fileID: 4079262541650156315, guid: 6ac8b4502898b4048a56a2dee85035a5, type: 3}
+  capitalStreets: {fileID: 0}
+  judithsHome: {fileID: 0}
   spPrefab:
   - {fileID: 6407058008519002376, guid: 4bf4961698bbea747be82723004da1d7, type: 3}
   - {fileID: 5715942496463894622, guid: f37c5a5c2e6feba49b13de29ffbc7eef, type: 3}

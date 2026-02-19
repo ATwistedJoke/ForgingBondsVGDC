@@ -1,12 +1,12 @@
 using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Yarn.Unity;
 
-public class GameManger : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
+    public static GameManager instance{get; private set;}
     // Drag and drop your Dialogue Runner into this variable.
     public DialogueRunner dialogueRunner;
 
@@ -25,6 +25,10 @@ public class GameManger : MonoBehaviour
     public GameObject maeveRoom;
     public GameObject mines;
     public GameObject market;
+    public GameObject lake;
+    public GameObject capitalStreets;
+    public GameObject judithsHome;
+
     //Character Handling
     public GameObject[] spPrefab = new GameObject[5]; 
     public GameObject[] sprite = new GameObject[5];
@@ -39,9 +43,17 @@ public class GameManger : MonoBehaviour
     int resourceMinigameScore = 2;
     int smeltingMinigameScore = 2;
 
-    public void Awake() {
+    public InMemoryVariableStorage variableStore;  
 
+    public void Awake() {
+        if(instance != null && instance != this)
+        {
+            Destroy(this);  
+        }
+        instance = this; 
         DontDestroyOnLoad(dialogueRunner);
+
+        variableStore = FindAnyObjectByType<InMemoryVariableStorage>(); 
         
         dialogueRunner.AddCommandHandler<string>(
             "load_scene",     // the name of the command
@@ -202,6 +214,16 @@ public class GameManger : MonoBehaviour
             case "market":
                 Instantiate(market);
                 break;
+            case "lake":
+                Instantiate(lake);
+                break;
+            case "capital streets":
+                Instantiate(capitalStreets);
+                break;
+            case "Judith's home":
+                Instantiate(judithsHome);
+                break;
+            
         }
     }
     // private void ChangeAffinity(string character, int modifier)
@@ -267,6 +289,19 @@ public class GameManger : MonoBehaviour
         dialogueRunner.StartDialogue(dialogueNode);
     }
 
+    //Result Handling
+    public void GiveResult(int result, int threshold)
+    {
+        if(result >= threshold)
+        {
+            variableStore.SetValue("$resultTest", 1);
+        }
+        else
+        {
+            variableStore.SetValue("$resultTest", 0);
+        }
+    }
+
     //Sprite Methods
     private void InstantiateChar(int idx, int posX, int posY)
     {
@@ -280,9 +315,10 @@ public class GameManger : MonoBehaviour
     }
     private void MoveChar(int idx, int posX, int posY, int speed)
     {
-        Vector3 target = new Vector3(posX,posY,0);
+        sprite[idx].GetComponentInChildren<CharacterManager>().Move(posX, posY, speed);
+        /*Vector3 target = new Vector3(posX,posY,0);
         GameObject obj = sprite[idx]; 
-        StartCoroutine(MoveOverTime(obj,target,speed));
+        StartCoroutine(MoveOverTime(obj,target,speed));*/
     }
     private void DestroyChar(int idx)
     {
