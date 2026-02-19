@@ -43,6 +43,9 @@ public class GameManger : MonoBehaviour
     int resourceMinigameScore = 2;
     int smeltingMinigameScore = 2;
 
+    private InMemoryVariableStorage variableStorage; 
+    private float yarnVar; 
+
     public void Awake() {
 
         DontDestroyOnLoad(dialogueRunner);
@@ -279,6 +282,21 @@ public class GameManger : MonoBehaviour
         }
 
         dialogueRunner.StartDialogue(dialogueNode);
+    }
+
+    //Result Handling
+    void GiveResult(int result)
+    {
+        variableStorage.TryGetValue("$resultTest", out yarnVar);
+        Debug.Log(yarnVar);
+        if(result >= 0)
+        {
+            variableStorage.SetValue("$resultTest", 1);
+        }
+        else
+        {
+            variableStorage.SetValue("$resultTest", 0);
+        }
     }
 
     //Sprite Methods

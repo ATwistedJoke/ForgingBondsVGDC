@@ -14,6 +14,7 @@
 <<declare $readBlueprint to false>>
 <<declare $weekOneResult = 0>>
 <<declare $weekTwoResult = 0>>
+<<declare $resultTest = 0>>
 <<change_background "map">>
 <<instance_sprite 0 -20 -6>>
 //<<instance_sprite 1 0 -20>>
@@ -1630,6 +1631,8 @@ Who do you wish to spend more time with?
     //<<change_background "Judith's home">>
     Stepping into the manor, you are greeted by maids and butlers lined up for your arrival. Welcoming you, they lead you to the dining room, already prepared with lavish dishes.
     Seated at the center, Judith welcomes you with a smile as she ushers you to take a seat.
+    <<instance_sprite 3 0 -4>>
+    <<change_sprite 3 1>>
     {$redFlagName}: “I’m glad you have decided to come. I so wanted to see you.”
     {$playerName}: “The pleasure is mine, Lady Sinclair. This food looks amazing.”
     {$redFlagName}: “I’m glad it’s to your liking. Come, let us feast before we speak of today’s activity.”
