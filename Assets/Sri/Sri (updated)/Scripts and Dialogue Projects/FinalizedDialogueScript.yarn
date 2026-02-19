@@ -21,6 +21,7 @@
 //<<instance_sprite 2 0 -20>>
 //<<instance_sprite 3 0 -20>>
 //<<instance_sprite 4 0 -20>>
+
 In the Age of the Hammer and Anvil, when Craft defined a Nation’s power, a looming darkness sought to snuff out the light of their forges.
 But the surrounding nations were not idle. The Kingdom of Pladonia, a beacon of innovation and a stalwart defender of humanity, led the Alliance in waging war against the forces of evil.
 Under the lead of the heroic Steelheart Knight, they sought to protect the vulnerable and reclaim the lost lands of humanity.
@@ -420,13 +421,13 @@ Emerging from the shadows, the eccentric merchant from earlier walked with confi
 <<change_sprite 0 0>>
 <<change_sprite 2 0>>
 <<change_sprite 3 0>>
-<<move_sprite 3 0 -4 50>>
-Hesitant about how to decide, your saving grace comes from a pair of approaching voices coming from the hallway. 
-<<move_sprite 2 -3 -4 50>>
-That is, until you recognize the voice to be that of your senior blacksmith, Isham. 
 <<MC false>>
-<<instance_sprite 1 4 -4>>
-<<instance_sprite 4 8 -4>>
+Hesitant about how to decide, your saving grace comes from a pair of approaching voices coming from the hallway. 
+<<move_sprite 3 -6 -4 50>>
+<<move_sprite 2 -2 -3 50>>
+That is, until you recognize the voice to be that of your senior blacksmith, Isham. 
+<<instance_sprite 1 2 -4>>
+<<instance_sprite 4 6 -4>>
 {$mentorName}: “...has potential, but I’ll need to see (his/her/their) work more before deciding.”
 {$loneWolfName}: “Thank you for your help, Isham.”
 {$mentorName}: “There’s no need to thank me, Silas. I owe a great debt to your parents. This is the least I could do for their child.”

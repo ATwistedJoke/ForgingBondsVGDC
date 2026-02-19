@@ -1,12 +1,12 @@
 using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Yarn.Unity;
 
-public class GameManger : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
+    public static GameManager instance{get; private set;}
     // Drag and drop your Dialogue Runner into this variable.
     public DialogueRunner dialogueRunner;
 
@@ -43,12 +43,17 @@ public class GameManger : MonoBehaviour
     int resourceMinigameScore = 2;
     int smeltingMinigameScore = 2;
 
-    private InMemoryVariableStorage variableStorage; 
-    private float yarnVar; 
+    public InMemoryVariableStorage variableStore;  
 
     public void Awake() {
-
+        if(instance != null && instance != this)
+        {
+            Destroy(this);  
+        }
+        instance = this; 
         DontDestroyOnLoad(dialogueRunner);
+
+        variableStore = FindAnyObjectByType<InMemoryVariableStorage>(); 
         
         dialogueRunner.AddCommandHandler<string>(
             "load_scene",     // the name of the command
@@ -285,17 +290,15 @@ public class GameManger : MonoBehaviour
     }
 
     //Result Handling
-    void GiveResult(int result)
+    public void GiveResult(int result, int threshold)
     {
-        variableStorage.TryGetValue("$resultTest", out yarnVar);
-        Debug.Log(yarnVar);
-        if(result >= 0)
+        if(result >= threshold)
         {
-            variableStorage.SetValue("$resultTest", 1);
+            variableStore.SetValue("$resultTest", 1);
         }
         else
         {
-            variableStorage.SetValue("$resultTest", 0);
+            variableStore.SetValue("$resultTest", 0);
         }
     }
 
@@ -312,9 +315,10 @@ public class GameManger : MonoBehaviour
     }
     private void MoveChar(int idx, int posX, int posY, int speed)
     {
-        Vector3 target = new Vector3(posX,posY,0);
+        sprite[idx].GetComponentInChildren<CharacterManager>().Move(posX, posY, speed);
+        /*Vector3 target = new Vector3(posX,posY,0);
         GameObject obj = sprite[idx]; 
-        StartCoroutine(MoveOverTime(obj,target,speed));
+        StartCoroutine(MoveOverTime(obj,target,speed));*/
     }
     private void DestroyChar(int idx)
     {
