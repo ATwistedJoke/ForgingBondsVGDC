@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.WSA;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System.Runtime.CompilerServices;
 
 public class GameController : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class GameController : MonoBehaviour
     [SerializeField]private GameObject iron_ore; 
     [SerializeField]private GameObject gold_ore; 
     [SerializeField] private GameObject mythril_ore; 
+    [SerializeField] private float slight_offset = 50f;
+
 
     //[SerializeField] private TextMeshProUGUI textbox;
 
@@ -97,8 +100,10 @@ public class GameController : MonoBehaviour
         float height = game_screen.rect.height; 
 
     //choose a random position
-        float randomX = Random.Range(-width/2, width/2);
-        float randomY = Random.Range(-height/2, height / 2);
+        float randomX = Random.Range((-width/2) + slight_offset, (width/2) - slight_offset);
+
+        //top 70% of the game
+        float randomY = Random.Range((-height/2) + (height * 0.3f), (height / 2) - slight_offset);
 
     GameObject ore_spawn = ChooseOreByRarity();
 
