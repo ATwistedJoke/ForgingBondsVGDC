@@ -325,6 +325,9 @@ MonoBehaviour:
   maeveRoom: {fileID: 0}
   mines: {fileID: 0}
   market: {fileID: 0}
+  lake: {fileID: 0}
+  capitalStreets: {fileID: 0}
+  judithsHome: {fileID: 0}
   spPrefab:
   - {fileID: 0}
   - {fileID: 0}
@@ -337,6 +340,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  variableStore: {fileID: 0}
 --- !u!4 &264612025 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7985477256237130417, guid: 52571f68872914e24837210513edea1d, type: 3}

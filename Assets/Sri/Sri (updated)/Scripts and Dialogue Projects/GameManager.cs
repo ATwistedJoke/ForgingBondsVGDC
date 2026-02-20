@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour
     //Character Handling
     public GameObject[] spPrefab = new GameObject[5]; 
     public GameObject[] sprite = new GameObject[5];
+    private int MCAppearance; 
+    private int xPosition = 0; 
+    private int yPosition = -4; 
 
     // int mentorAffinity = 0;
     // int redFlagAffinity = 0;
@@ -75,18 +78,21 @@ public class GameManager : MonoBehaviour
             ChangeBackground
         );
 
-        dialogueRunner.AddCommandHandler<int,int,int>(
-            "instance_sprite",
+        dialogueRunner.AddCommandHandler<int>(
+            "sp",
             InstantiateChar
         );
-
+        dialogueRunner.AddCommandHandler<int, int, int>(
+            "place",
+            InstantiatePlace
+        );
         dialogueRunner.AddCommandHandler<int,int>(
-            "change_sprite",
+            "cs",
             SpriteChange
         );
 
         dialogueRunner.AddCommandHandler<int,int,int,int>(
-            "move_sprite",
+            "mv",
             MoveChar
         );
 
@@ -108,6 +114,11 @@ public class GameManager : MonoBehaviour
         dialogueRunner.AddCommandHandler<bool>(
             "MC",
             MCSpeak
+        );
+
+        dialogueRunner.AddCommandHandler<int>(
+            "Appearance",
+            SetAppearance
         );
 
         // dialogueRunner.AddCommandHandler<int>(
@@ -296,13 +307,22 @@ public class GameManager : MonoBehaviour
     }
 
     //Sprite Methods
-    private void InstantiateChar(int idx, int posX, int posY)
+    private void InstantiateChar(int idx)
     {
+        if(idx == 0){ idx = MCAppearance; }
         sprite[idx] = Instantiate(spPrefab[idx]);
-        sprite[idx].transform.position = new Vector2(posX, posY);  
+        sprite[idx].transform.position = new Vector2(xPosition, yPosition);  
+    }
+
+    private void InstantiatePlace(int idx, int posX, int posY)
+    {
+        if(idx == 0){ idx = MCAppearance; }
+        sprite[idx] = Instantiate(spPrefab[idx]);
+        sprite[idx].transform.position = new Vector2(posX, posY);
     }
     private void SpriteChange(int oIdx, int sIdx)
     {
+        if(oIdx == 0){ oIdx = MCAppearance; }
         CharacterManager image = sprite[oIdx].GetComponent<CharacterManager>(); 
         image.ChangeSprite(sIdx); 
     }
@@ -312,6 +332,7 @@ public class GameManager : MonoBehaviour
     }
     private void DestroyChar(int idx)
     {
+        if(idx == 0){ idx = MCAppearance; }
         Destroy(sprite[idx]);
         sprite[idx] = null; 
     }
@@ -326,17 +347,20 @@ public class GameManager : MonoBehaviour
         Debug.Log("Done");
     }
 
+    private void SetAppearance(int idx)
+    {
+        MCAppearance = idx; 
+    }
     private void MCSpeak(bool speak)
     {
-        Vector3 target; 
         if (speak)
         {
-            target = new Vector3(-7,-6,0);
+            sprite[MCAppearance].GetComponentInChildren<CharacterManager>().Move(-7, -6, 100);
         }
         else
         {
-            target = new Vector3(-50,-6,0);
+            sprite[MCAppearance].GetComponentInChildren<CharacterManager>().Move(-30, -6, 100);
         }
-        StartCoroutine(MoveOverTime(sprite[0],target,50));
+        
     }
 }
