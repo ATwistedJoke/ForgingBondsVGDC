@@ -290,16 +290,9 @@ public class GameManager : MonoBehaviour
     }
 
     //Result Handling
-    public void GiveResult(int result, int threshold)
+    public void GiveResult(int result)
     {
-        if(result >= threshold)
-        {
-            variableStore.SetValue("$resultTest", 1);
-        }
-        else
-        {
-            variableStore.SetValue("$resultTest", 0);
-        }
+        variableStore.SetValue("$resultTest", result);
     }
 
     //Sprite Methods
@@ -316,9 +309,6 @@ public class GameManager : MonoBehaviour
     private void MoveChar(int idx, int posX, int posY, int speed)
     {
         sprite[idx].GetComponentInChildren<CharacterManager>().Move(posX, posY, speed);
-        /*Vector3 target = new Vector3(posX,posY,0);
-        GameObject obj = sprite[idx]; 
-        StartCoroutine(MoveOverTime(obj,target,speed));*/
     }
     private void DestroyChar(int idx)
     {

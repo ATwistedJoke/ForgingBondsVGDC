@@ -14,7 +14,7 @@
 <<declare $readBlueprint to false>>
 <<declare $weekOneResult = 0>>
 <<declare $weekTwoResult = 0>>
-<<declare $resultTest = 0>>
+<<declare $result = 0>>
 <<change_background "map">>
 <<instance_sprite 0 -20 -6>>
 //<<instance_sprite 1 0 -20>>
@@ -127,9 +127,20 @@ You notice his deep eye bags, worn out from stress and lack of sleep. You feel u
 <<destroy 1>>
 {$mentorName}: “Alright then, with that established, would you be willing to share some of your skills with me?”
 {$mentorName}: “I need to judge your proficiency with the craft before I entrust you with any tasks.”
-<<run_minigame 0 IntroductionPostTutorial>>
+<<run_minigame 0 ResultTesting>>
 ===
 
+title: ResultTesting
+---
+<<if $resultTest <= 0>>
+    NAY!
+<<elseif $resultTest == 1>>
+    YAY!
+<<else>>
+    YEAH!
+<<endif>>
+<<jump IntroductionPostTutorial>>
+===
 title: IntroductionPostTutorial
 ---
 <<instance_sprite 1 0 -4>>

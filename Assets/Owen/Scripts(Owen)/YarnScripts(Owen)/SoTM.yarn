@@ -8,7 +8,6 @@ We haven't yet fully implemented our completed Minigames into our main Dialogue 
 
 title: Selection
 ---
-Choose a Minigame
 {$resultTest}
 -> Mining - Jimmy
     <<jump MiningMinigame>>
@@ -37,7 +36,7 @@ title: MiningMinigame
 
 title: SmeltingMinigame
 ---
-<<run_minigame 1 Selection>>
+<<run_minigame 1 Results>>
 ===
 
 title: HammeringMinigame
@@ -47,7 +46,7 @@ title: HammeringMinigame
 
 title: ReinforcingMinigame
 ---
-<<run_minigame 3 Selection>>
+<<run_minigame 3 Results>>
 ===
 
 title: MoldingMinigame
@@ -68,4 +67,16 @@ title: AssemblyMinigameCrossBow
 title: EtchingMinigame
 ---
 <<run_minigame 7 Selection>>
+===
+
+title: Results
+---
+<<if $resultTest <= 0>>
+    BOO!
+<<elseif $resultTest == 1>>
+    YAY!
+<<else>>
+    YEAH!
+<<endif>>
+<<jump Selection>>
 ===
