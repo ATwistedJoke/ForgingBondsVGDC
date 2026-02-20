@@ -1,12 +1,12 @@
 using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Yarn.Unity;
 
-public class GameManger : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
+    public static GameManager instance{get; private set;}
     // Drag and drop your Dialogue Runner into this variable.
     public DialogueRunner dialogueRunner;
 
@@ -32,6 +32,9 @@ public class GameManger : MonoBehaviour
     //Character Handling
     public GameObject[] spPrefab = new GameObject[5]; 
     public GameObject[] sprite = new GameObject[5];
+    private int MCAppearance; 
+    private int xPosition = 0; 
+    private int yPosition = -4; 
 
     // int mentorAffinity = 0;
     // int redFlagAffinity = 0;
@@ -43,9 +46,17 @@ public class GameManger : MonoBehaviour
     int resourceMinigameScore = 2;
     int smeltingMinigameScore = 2;
 
-    public void Awake() {
+    public InMemoryVariableStorage variableStore;  
 
+    public void Awake() {
+        if(instance != null && instance != this)
+        {
+            Destroy(this);  
+        }
+        instance = this; 
         DontDestroyOnLoad(dialogueRunner);
+
+        variableStore = FindAnyObjectByType<InMemoryVariableStorage>(); 
         
         dialogueRunner.AddCommandHandler<string>(
             "load_scene",     // the name of the command
@@ -67,18 +78,21 @@ public class GameManger : MonoBehaviour
             ChangeBackground
         );
 
-        dialogueRunner.AddCommandHandler<int,int,int>(
-            "instance_sprite",
+        dialogueRunner.AddCommandHandler<int>(
+            "sp",
             InstantiateChar
         );
-
+        dialogueRunner.AddCommandHandler<int, int, int>(
+            "place",
+            InstantiatePlace
+        );
         dialogueRunner.AddCommandHandler<int,int>(
-            "change_sprite",
+            "cs",
             SpriteChange
         );
 
         dialogueRunner.AddCommandHandler<int,int,int,int>(
-            "move_sprite",
+            "mv",
             MoveChar
         );
 
@@ -100,6 +114,11 @@ public class GameManger : MonoBehaviour
         dialogueRunner.AddCommandHandler<bool>(
             "MC",
             MCSpeak
+        );
+
+        dialogueRunner.AddCommandHandler<int>(
+            "Appearance",
+            SetAppearance
         );
 
         // dialogueRunner.AddCommandHandler<int>(
@@ -281,25 +300,39 @@ public class GameManger : MonoBehaviour
         dialogueRunner.StartDialogue(dialogueNode);
     }
 
-    //Sprite Methods
-    private void InstantiateChar(int idx, int posX, int posY)
+    //Result Handling
+    public void GiveResult(int result)
     {
+        variableStore.SetValue("$resultTest", result);
+    }
+
+    //Sprite Methods
+    private void InstantiateChar(int idx)
+    {
+        if(idx == 0){ idx = MCAppearance; }
         sprite[idx] = Instantiate(spPrefab[idx]);
-        sprite[idx].transform.position = new Vector2(posX, posY);  
+        sprite[idx].transform.position = new Vector2(xPosition, yPosition);  
+    }
+
+    private void InstantiatePlace(int idx, int posX, int posY)
+    {
+        if(idx == 0){ idx = MCAppearance; }
+        sprite[idx] = Instantiate(spPrefab[idx]);
+        sprite[idx].transform.position = new Vector2(posX, posY);
     }
     private void SpriteChange(int oIdx, int sIdx)
     {
+        if(oIdx == 0){ oIdx = MCAppearance; }
         CharacterManager image = sprite[oIdx].GetComponent<CharacterManager>(); 
         image.ChangeSprite(sIdx); 
     }
     private void MoveChar(int idx, int posX, int posY, int speed)
     {
-        Vector3 target = new Vector3(posX,posY,0);
-        GameObject obj = sprite[idx]; 
-        StartCoroutine(MoveOverTime(obj,target,speed));
+        sprite[idx].GetComponentInChildren<CharacterManager>().Move(posX, posY, speed);
     }
     private void DestroyChar(int idx)
     {
+        if(idx == 0){ idx = MCAppearance; }
         Destroy(sprite[idx]);
         sprite[idx] = null; 
     }
@@ -314,17 +347,20 @@ public class GameManger : MonoBehaviour
         Debug.Log("Done");
     }
 
+    private void SetAppearance(int idx)
+    {
+        MCAppearance = idx; 
+    }
     private void MCSpeak(bool speak)
     {
-        Vector3 target; 
         if (speak)
         {
-            target = new Vector3(-7,-6,0);
+            sprite[MCAppearance].GetComponentInChildren<CharacterManager>().Move(-7, -6, 100);
         }
         else
         {
-            target = new Vector3(-50,-6,0);
+            sprite[MCAppearance].GetComponentInChildren<CharacterManager>().Move(-30, -6, 100);
         }
-        StartCoroutine(MoveOverTime(sprite[0],target,50));
+        
     }
 }
