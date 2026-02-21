@@ -14,12 +14,14 @@
 <<declare $readBlueprint to false>>
 <<declare $weekOneResult = 0>>
 <<declare $weekTwoResult = 0>>
+<<declare $resultTest = 0>>
 <<change_background "map">>
 <<instance_sprite 0 -20 -6>>
 //<<instance_sprite 1 0 -20>>
 //<<instance_sprite 2 0 -20>>
 //<<instance_sprite 3 0 -20>>
 //<<instance_sprite 4 0 -20>>
+
 In the Age of the Hammer and Anvil, when Craft defined a Nation’s power, a looming darkness sought to snuff out the light of their forges.
 But the surrounding nations were not idle. The Kingdom of Pladonia, a beacon of innovation and a stalwart defender of humanity, led the Alliance in waging war against the forces of evil.
 Under the lead of the heroic Steelheart Knight, they sought to protect the vulnerable and reclaim the lost lands of humanity.
@@ -419,13 +421,13 @@ Emerging from the shadows, the eccentric merchant from earlier walked with confi
 <<change_sprite 0 0>>
 <<change_sprite 2 0>>
 <<change_sprite 3 0>>
-<<move_sprite 3 0 -4 50>>
-Hesitant about how to decide, your saving grace comes from a pair of approaching voices coming from the hallway. 
-<<move_sprite 2 -3 -4 50>>
-That is, until you recognize the voice to be that of your senior blacksmith, Isham. 
 <<MC false>>
-<<instance_sprite 1 4 -4>>
-<<instance_sprite 4 8 -4>>
+Hesitant about how to decide, your saving grace comes from a pair of approaching voices coming from the hallway. 
+<<move_sprite 3 -6 -4 50>>
+<<move_sprite 2 -2 -3 50>>
+That is, until you recognize the voice to be that of your senior blacksmith, Isham. 
+<<instance_sprite 1 2 -4>>
+<<instance_sprite 4 6 -4>>
 {$mentorName}: “...has potential, but I’ll need to see (his/her/their) work more before deciding.”
 {$loneWolfName}: “Thank you for your help, Isham.”
 {$mentorName}: “There’s no need to thank me, Silas. I owe a great debt to your parents. This is the least I could do for their child.”
@@ -1206,60 +1208,99 @@ title: postSmeltingWeekThree
 title: smeltinggameBad
 ---
 <<set $mentorAffinity = $mentorAffinity - 1>>
+<<instance_sprite 1 0 -4>>
+<<MC true>>
+<<change_sprite 0 0>>
 {$playerName}: “...Fuck.”
+<<MC  false>>
 {$mentorName}: “Looks like this week will be a long one.”
 {$mentorName}: “Ready yourself, rookie. You will start again. ”
+<<MC true>>
 {$playerName}: “Yes, sir!”
+<<MC  false>>
 The work after was long, but ultimately, you achieved a proper smelting of the ore. 
 Having to work longer than you wish, your schedule has been shortened. Hindering your free time, you will have to think carefully from now on about what commission you wish to take.
 <<set $weekTwoResult = 0>>
+<<destroy 1>>
 <<jump weekThreeInteractions>>
 ===
 
 title: smeltinggameMediocre
 ---
+<<MC true>>
+<<instance_sprite 1 0 -4>>
 {$playerName}: “It’s…finished.”
+<<MC false>>
+<<change_sprite  1 0>>
 {$mentorName}: “Not bad, rookie. The smelting could use fine-tuning, but you did well for a first timer.”
 Discussing with Isham on what could be improved, the two of you shortly went back to work to finish the smelting necessary for your project.
 Having to work longer than you wish, your schedule has been shortened. Hindering your free time, you will have to think carefully from now on about what commission you wish to take.
 <<set $weekTwoResult = 1>>
+<<destroy 1>>
 <<jump weekThreeInteractions>>
 ===
 
 title: smeltinggameGood
 ---
 <<set $mentorAffinity = $mentorAffinity + 1>>
+<<instance_sprite 1 0 -4>>
+<<MC true>>
 {$playerName}: “I…I did it!”
+<<MC false>>
+<<change_sprite 1 1>>
 {$mentorName}: “You're a bloody natural at this, {$playerName}. I’ve never seen an apprentice make such fine smelted ore before!”
 Unable to contain your excitement, the two of you celebrate over the results of your effort. 
 Your hard work has earned you an open schedule this week. You will be able to spend more time with your possible commissioners before your choice must be made.
 <<set $weekTwoResult = 2>>
+<<destroy 1>>
 <<jump weekThreeInteractions>>
 ===
 
 title: weekThreeInteractions
 ---
+<<instance_sprite 1 0 -4>>
+<<change_sprite 1 5>>
 Putting away the now smelted bars of Pleiotium, you start to close up your forge when Isham returns with a worried look. 
+<<MC true>>
 {$playerName}: “What’s wrong?”
+<<MC false>>
 {$mentorName}: “Lady Sinclair returned. She’s asking to speak with you in the commission’s room. Is everything alright?”
+<<MC true>>
+<<change_sprite 0 2>>
 {$playerName}: “No…I don’t think so?”
+<<MC false>>
 {$mentorName}: “Her actions are odd. Why is she so obsessed with you?”
+<<MC true>>
+<<change_sprite 0 0>>
 {$playerName}: “To be honest, I’m still not even sure. I’ll be fine, though, senior. There’s no need to worry.”
+<<MC false>>
 {$mentorName}: “Just be careful, don’t fall for whatever tricks she might use.”
+<<destroy 1>>
 Leaving the forge, you make your way across the hallway towards where Judith is awaiting your meeting.
 <<change_background "commissions room daytime">>
+<<instance_sprite 2 0 -4>>
 {$redFlagName}: “Congratulations, dear, I heard you have successfully completed smelting your ore. Have you considered my request?”
+<<MC true>>
+<<change_sprite 0 2>>
 {$playerName}: “I have…questions how you already know that, but for now, I already told you, I want to wait a bit before deciding.”
+<<MC false>>
 {$redFlagName}: “Fine, fine, I just wanted to know.”
+<<MC true>>
+<<change_sprite 0 0>>
 {$playerName}: “How come you are here?”
+<<MC false>>
 {$redFlagName}: “So demanding. You’re overthinking again, dear. I’m only here with the hopes to further explain the importance of the morningstar I wish to be made by you. Would you mind taking a seat with me here while I explain?”
-Sitting down next to Judith in a corner of the commisions room, you notice she moves her chair closer to you to be by your side.
+Sitting down next to Judith in a corner of the commissions room, you notice she moves her chair closer to you to be by your side.
+<<change_sprite 2 2>>
 {$redFlagName}: “This morningstar…is meant to serve as a memento of my late father. He passed away serving the kingdom as a Knight and I hoped to honor him with his weapon. But I never managed to find it after the Iron Crusade. It was lost along with his body.”
+<<change_sprite 2 0>>
 {$redFlagName}: “That’s why I am hoping to rebuild it. It won’t be the real thing, sure, but I can remember enough about his weapon from my childhood to create a blueprint similar to it. That way, I can still remember his face when I grow old. But for that to happen, I need a blacksmith capable enough to recreate it, and that’s when I found you.”
 {$redFlagName}: “So…what do you say? Think you can be that blacksmith for me? Help me, and I'll help you. Wouldn’t you want that type of relationship with me?”
 Judith leans closer to you, placing her hand onto yours. You look into her crimson eyes, unsure of her intentions. She is inviting you…but to what?
+<<MC true>>
 -> Lean in, close your eyes, and let her guide you.
     <<set $redFlagAffinity = $redFlagAffinity + 2>>
+    <<change_sprite 0 4>>
     No words were spoken. You feel her soft, warm lips connect with yours, tenacious with vigor, as if she would not let you go now that she finally has you. You drown in the sensation of passion, your mind a fog, and your heart aflame. 
     Did you finally lose your mind? A relationship like this with a customer? You could be fired, your dream shattered. She could be using you, hoping to leave you ruined by the end. 
     You pull back, confused about how weak-minded you are. Will she protect you if something were to happen? Is this something you wish to continue? 
@@ -1269,6 +1310,7 @@ Judith leans closer to you, placing her hand onto yours. You look into her crims
     Before she can say anything else, you leave the room in haste, back to your forge.
 -> Take your hand back. You don’t want to do this with her.
     <<set $redFlagAffinity = $redFlagAffinity - 1>>
+    <<change_sprite 2 3>>
     {$playerName}: “I’m sorry, this doesn’t feel right.”
     {$redFlagName}: “No, it is alright, I misjudged the situation. I just hope this doesn’t impact your thinking of me, dear.”
     {$playerName}: “I think I need some time alone to think, Lady Sinclair. I’m sorry, but I will have to excuse myself.” 
@@ -1276,12 +1318,18 @@ Judith leans closer to you, placing her hand onto yours. You look into her crims
 -> Remember your uncle’s words. A good joke always cheers up a grief-stricken lady. Do something that matches the mood.
     <<set $redFlagAffinity = $redFlagAffinity - 2>>
     {$playerName}: “Are you an anvil? Because I sure want to hammer…you.”
+    <<change_sprite 2 0>>
     {$redFlagName}: …
+    {$playerName}: ... 
+    <<change_sprite 2 8>>
     {$redFlagName}: “Is this your attempt at flirting?”
+    <<change_sprite 0 4>>
     {$playerName}: “I don’t know what I’m doing, I don’t even know what I want!”
     {$redFlagName}: “Right…how about we take this slower. Let me help you.”
     {$playerName}: “Thank you, but I…I think I need some time alone to uh…sorry, I just…”
     {$playerName}: “I need to go.” 
+<<MC false>>
+<<destroy 2>>
 Before she can say anything else, you leave the room in haste, back to your forge.
 <<change_background "personal forge">>
 Hunched over your anvil, you cradle your head as your brain races through a chaotic stream of thoughts. 
@@ -1293,61 +1341,92 @@ She is inviting you to her manor, stating that she wishes to see you. The time o
 You shudder, realizing that maybe Isham was right about Lady Sinclair. She is definitely dangerous…the question is whether you are into this or not?
 The sound of your head banging could be heard from across the guild. 
 It does not take long for Isham to knock on your door.
+<<instance_sprite 1 0 -4>>
+<<change_sprite 1 5>>
 {$mentorName}: “Are you okay, {$playerName}? It sounded like you were trying to forge your own head into paste. 
+<<MC true>>
 {$playerName}: “I met with Judith…I was hoping I could clear more of my thoughts, but all it did was make things more confusing.”
+<<MC false>>
 {$mentorName}: “You didn’t do anything stupid, did you?”
 {$playerName}: “I…I think I did, senior.”
+<<change_sprite 1 0>>
 {$mentorName}: “Come, rookie, let’s talk about this over some food. What’s a restaurant you like that’s nearby? It will be my treat today.
+<<MC true>>
 {$playerName}: “Well…there is one place, I know.”
+<<MC false>>
+<<destroy 1>>
 <<change_background "restaurant">>
 Entering the restaurant Maeve had shown you last week, you take a seat with Isham to talk about your meeting with Judith.
+<<instance_sprite 1 0 -4>>
 {$mentorName}: “So, what happened between the two of you that got you acting like this?”
+<<MC true>>
 -> “I think I fell in love with her.”
     <<set $mentorAffinity = $mentorAffinity - 1>>
+    <<change_sprite 1 5>>
     {$mentorName}: “Really?”
     {$playerName}: “Maybe?”
+    <<change_sprite 1 7>>
     {$mentorName}: “Dear lords. You truly are one helpless apprentice.”
     {$playerName}: “So can you help me?”
     {$mentorName}: “With what, buying her roses and chocolate?”
     {$playerName}: “No, I mean, like, can you give me advice?”
     {$mentorName}: “Don’t.”
+    <<change_sprite 0 2>>
     {$playerName}: “Don’t what?”
+    <<change_sprite 1 0>>
     {$mentorName}: “Don’t do this. Look…I know how this goes. I had a friend, his name was Jakob, and he started talking with a woman who could only be described as a breathtaking beauty. But she had those crazy eyes, and that poor man’s heart never recovered after she cheated on him. Now he’s a lonely drunk, stripped of his dreams and motivation.”
+    <<change_sprite 1 7>>
     {$mentorName}: “Lady Sinclair…she has those eyes. So I’m telling you, run.” 
+    <<change_sprite 0 0>>
     {$playerName}: “Surely it can’t be that bad.”
     {$mentorName}: “It can and it will.”
     Shaking his head in disappointment, Isham returns to the food with an upset look.
+    <<change_sprite 1 0>>
     {$mentorName}: “At least the food here is pretty good, your friend knows what’s up. Why don’t you date her instead? She will be so much better than that crazy merchant.”
     {$playerName}: “We aren’t like that.”
     {$mentorName}: “Shame.”
 -> “I made a huge embarrassment of myself in front of her.”
     {$mentorName}: “So what?”
+    <<change_sprite 0 2>>
     {$playerName}: “What do you mean, so what?”
     {$mentorName}: “What I mean is, why bother. You’re going to be a great smith, rookie, I can already tell. Rich merchants like her come and go, but skills like yours are rare.”
+    <<change_sprite 0 0>>
     {$playerName}: “What if I offend her and she ostracizes me from high society? How would I be able to make a living?”
     {$mentorName}: “Are you in this for the money?”
     {$playerName}: “I mean…I still need money to live.”
     {$mentorName}: “Yes, but do you care about growing rich quickly or not?”
     {$playerName}: “Not really?”
     {$mentorName}: “Then you're fine, you may not have much at the start if she really does want retribution, but I ensure that in the near future, you will become a force no kingdom can disregard.”
+    <<change_sprite 0 2>>
     {$playerName}: “Why does everyone keep saying that? Am I really that good?”
     {$mentorName}: “Now? Not really, but in the future? I’m sure of it. You got potential, {$playerName}, don’t sell yourself short.”
+    <<change_sprite 0 1>>
     {$playerName}: “Thank you, that means a lot.”
     Looking content, Isham returns to the food in a pleasant mood.
+    <<change_sprite 0 1>>
     {$mentorName}: “The food here is pretty good. Tell your friend I said thanks.”
 -> “She’s hitting on me, and it’s really creeping me out. Can you help me, Isham?”
     <<set $mentorAffinity = $mentorAffinity + 1>>
+    <<change_sprite 1 7>>
     {$mentorName}: “Is this true?”
     {$playerName}: “Yes…I think she was trying to seduce me. I don’t know why she is behaving like this.”
     {$mentorName}: “How dare she? Do you want me to ban her from the guild? It will be hard, but the king—”
+    <<change_sprite 0 3>>
     {$playerName}: “No, no! Don’t do that…”
     {$playerName}: “It wasn’t serious enough for something like that.”
+    <<change_sprite 1 5>>
     {$mentorName}: “Are you sure, {$playerName}? If this is truly bothering you, I want to help as your senior.”
+    <<change_sprite 0 0>>
     {$playerName}: “It’s fine…I want to overcome this on my own. If I want to become a Royal Blacksmith, I can’t rely on your help to handle these cases every time. This is something I need to handle.”
+    <<change_sprite 1 0>>
     {$mentorName}: “You're a good smith, {$playerName}. Just please tell me if something like this happens again. I will do everything in my power to protect you if the need arises.”
+    <<change_sprite 0 1>>
     {$playerName}: “Thank you, Isham.”
     Looking content, Isham returns to the food with a smile. 
+    <<change_sprite 1 1>>
     {$mentorName}: “The food here is pretty good. Tell your friend she has good taste.”
+<<MC false>>
+<<destroy 1>>
 <<change_background "black background">>
 After paying the check, the two of you return back to the guild to finish the rest of your work that day. 
 You have a hard time falling asleep that night. A mess of emotions keeps you up later than you wish, leaving you feeling dead tired by the next morning.
@@ -1356,83 +1435,147 @@ Thankfully, this day went by calmly. Judith did not come by again to visit. It s
 Locking the door to your forge, you decide that a pair of new gloves is in order for when you begin the shaping of the metal. It seems you will be taking another trip to the market.
 <<change_background "market">>
 Going through the rows of stalls in search of a proper artisan, you hear a familiar voice arguing with another. Curious, you approach the conversation where you see an injured Silas trying to bargain with a merchant of medicine. 
+<<instance_sprite 4 0 -4>>
 With a leg wrapped in bloody bandages, the hunter struggled to stand as they haggle down the price of herbs.
 However, you know for a fact that the Merchant they are up against is one famous for never backing down. Should you provide a helping hand to the prideful hunter?
+<<MC true>>
 -> No need to intervene. Let Silas finish their business first.
     Standing by, you witness Silas attempt and fail to lower the price. It seems that their awkward demeanor did no good in convincing the Merchant to budge. 
+    <<change_sprite 4 3>>
     After some time, a dejected Silas ends up buying the product at full price, emptying their pockets of the last remaining gold they have. 
+    <<change_sprite 4 4>>
     Silas then turns around, and they see that you have been watching this entire time. Despite trying to remain stoic, their flushed face gives away the embarrassment they must be feeling. 
+    <<change_sprite 4 9>>
     {$loneWolfName}: “How long have you been watching?”
     {$playerName}: “Almost the whole thing.”
     {$loneWolfName}: “I see. Then I must go now. It was good to see —”
     Before Silas can retreat, however, they end up stumbling with a grimace on their face. Looking down at their leg, you notice one of their bandages become darkened in blood due to a reopened wound. 
 -> Help Silas haggle against the Merchant.
     <<set $loneWolfAffinity = $loneWolfAffinity + 1>>
+    <<change_sprite 4 4>>
     Stepping up, you approach the two, much to the surprise of Silas, to point out to the Merchant a fallacy in his products.
+    <<change_sprite 4 0>>
     This Merchant might have the skills to outwit a loner hunter like Silas, but against a blacksmith, they would have a better time trying to teach a pig how to fly than win that battle.
     Within time and a bitter exchange of cursing, the Merchant eventually relents, no longer trying to rip off the naive Silas for the rest of their gold. Walking away from the stand, you can’t hide a big smile on your face as you walk away in victory.
+    <<change_sprite 0 1>>
     {$playerName}: “Three gold coins for a bundle of herbs? The nerve of that man to make a straight face over such a scam.”
+    <<change_sprite 4 4>>
     {$loneWolfName}: “How did you know?”
+    <<change_sprite 0 2>>
     {$playerName}: “Experience and gut feeling…probably? The guild is rough with their manners, but they teach you how to stand your ground. Run into enough customers to know which ones are rotten.”
+    <<change_sprite 0 0>>
+    <<change_sprite 4 0>>
     Walking away from the stand with the limping Silas, you notice a bandage of theirs has become darkened in blood due to a reopened wound. 
 -> Offer to pay for the herbs yourself.
     <<set $loneWolfAffinity = $loneWolfAffinity - 1>>
+    <<change_sprite 4 4>>
     Stepping up, you approach the two, announcing your intentions to buy the herbs at their price for the surprised Silas.
     The Merchant, happy to oblige, reads out the price, much to your dismay. It was bloody expensive!
+    <<change_sprite 4 7>>
     Before you could bring out your gold, however, Silas raises their hand to stop you.
     {$loneWolfName}: “That will not be necessary. I’ll be taking my leave now.”
     Limping away from the stand, Silas ignores the pleas of the merchant as they attempt to retreat out of shame. 
     Catching up to the injured hunter, you notice one of their bandages has become darkened in blood due to a reopened wound. 
+<<MC false>>
+<<change_sprite 4 0>>
+<<change_sprite 0 2>>
+<<MC true>>
 {$playerName}: “How did your leg end up like that?”
+<<MC false>>
 {$loneWolfName}: “At the hunt…I found and fought the named Iron Monster. It truly was a fearsome beast. While I was victorious, it still managed to land its claws onto me in its dying breath, leaving one of my legs wounded.”
+<<MC true>>
 {$playerName}: “Are you okay? Do you want me to help you walk?”
+<<MC false>>
 {$loneWolfName}: “It is nothing serious. There is no need to worry. I will not be done in by a rat of all things…not yet.”
+<<MC true>>
 {$playerName}: “Yet?”
+<<MC false>>
+<<change_sprite 4 4>>
 {$loneWolfName}: “That…was a slip of the tongue.”
+<<MC true>>
 {$playerName}: “Are you on some tragic path of revenge that you have been hiding from your peers?”
+<<MC false>>
 {$loneWolfName}: “...”
+<<change_sprite 4 9>>
 {$loneWolfName}: “No…?”
+<<MC true>>
 {$playerName}: “Does Isham know?”
+<<MC false>>
 {$loneWolfName}: “Was it that easy to guess?”
+<<MC true>>
 {$playerName}: “I mean, the ‘not yet’ kinda gave it away.”
+<<MC false>>
 {$loneWolfName}: “Then Isham probably knows…”
+<<MC true>>
+<<change_sprite 0 0>>
 {$playerName}: “Look, I’m not going to press you any more on this, but if you want to talk about this, I am more than free to listen.”
 Silas remains quiet, but you can see that they appreciate the gesture. 
 Exiting the market, you notice Silas grimacing more the farther you walk. Yet still, not once have they asked for assistance. 
 {$playerName}: “Are you sure you don’t want my help?”
+<<MC false>>
 {$loneWolfName}: “It is alright…I will be fine. I told Isham already, and he has arranged a carriage that will arrive soon. You can leave now.”
+<<MC true>>
 {$playerName}: “Will that be okay?”
+<<MC false>>
+<<destroy 4>>
 Nodding their head, Silas waves you goodbye as you hesitate to leave. Something about their statement felt off…but being any more pushy than this may have you ending up being another Judith. The thought makes you shiver.
-//<<change_background "capital street">>
+//<<change_background "capital streets">>
 Walking back to your home, you notice someone standing outside your home with a large pole in their hands. 
 Cautiously, you approach the strange person, ready to run if anything looks off. But all you were met with was the spaced-out look of your friend, Maeve, as she stood waiting for you.
+<<instance_sprite 3 0 -4>>
+<<MC true>>
 {$playerName}: “Maeve? What are you doing here with that pole?”
+<<MC false>>
+<<change_sprite 3 3>>
+<<change_sprite 0 3>>
 {$bestFriendName}: “Huh? Oh, {$playerName}, you’re back? You came back later than I expected.”
+<<change_sprite 3 0>>
 {$bestFriendName}: “I wanted to ask, will you be free tomorrow? I wanted to go on a fishing trip, and was hoping to invite you.”
+<<MC true>>
+<<change_sprite 0 0>>
 {$playerName}: “A fishing trip? Me? I have never gone fishing before.”
+<<MC false>>
+<<change_sprite 3 1>>
 {$bestFriendName}: “Which will make it all the more fun for me to teach you.”
+<<MC true>>
 {$playerName}: “Sure, alright, I’ll go. Do you know a place?”
+<<MC false>>
+<<change_sprite 3 0>>
 {$bestFriendName}: “Sure do, I heard they just reopened Stalwart Lake to visitors after a nasty Iron Monster was slain there. It’s a popular fishing spot, so it's usually packed. But I think we have a chance of getting a nice area for ourselves if we leave for it quickly.”
+<<MC true>>
 {$playerName}: “Funny how things work out that way. Alright, what time do we leave?”
+<<MC false>>
 {$bestFriendName}: “Before sunrise.”
+<<MC true>>
+<<change_sprite 0 4>>
 {$playerName}: “Damn it.”
-//<<change_background "lake">>
+<<MC false>>
+<<destroy 3>>
+<<change_background "lake">>
 And so, with an early wakeup, the two of you departed the next morning for Stalwart Lake by carriage. Renting a boat, the two of you head out onto the water and find a nice, quiet area to fish. 
+<<instance_sprite 3 0 -4>>
 Maeve turned out to be quite a good teacher, showing you the ropes of how to handle a fishing pole with the patience of a monk. Surprisingly, you even managed to catch a large trout thanks to her help.
 {$bestFriendName}: “I could’ve never imagined doing this back home. It feels almost strange that it's actually me here.”
+<<MC true>>
+<<change_sprite 0 0>>
 {$playerName}: “Tell me about it, each week I’ve been finding myself thinking that every time.”
+<<MC false>>
 {$bestFriendName}: “And this week?”
+<<MC true>>
 -> “Especially this week, found myself falling in love with a crazy chick that’s also way out of my league.”
     <<set $bestFriendAffinity = $bestFriendAffinity - 2>>
     <<set $corruption = $corruption + 2>>
+    <<change_sprite 3 4>>
     {$bestFriendName}: “...”
     {$bestFriendName}: “What…?”
     {$playerName}: “You may not believe it, but I truly think she is the one.”
+    <<change_sprite 3 3>>
     {$bestFriendName}: “Is it Lady Sinclair?”
     {$playerName}: “Yeah, how did you know?”
     {$bestFriendName}: “You shouldn’t, {$playerName}. That witch is not to be trusted.”
     {$playerName}: “I’ve been hearing that a lot, but I think I can fix her. I mean, if not a blacksmith, who else–”
     {$bestFriendName}: “Shut up. You just don’t know. She is suspicious!”
+    <<change_sprite 0 2>>
     {$playerName}: “Oh…okay?”
     {$bestFriendName}: “I investigated her. Her records are too perfect. Nobles and merchants are all alike, having a couple of skeletons in the closet that the kingdom is vaguely aware of. She? Nothing. Only good stuff, only the great stuff. Clean money, ethical charities, and an overall upstanding citizen. All of it is suspicious!”
     {$playerName}: “Is this…supposed to be bad?”
@@ -1442,6 +1585,7 @@ Maeve turned out to be quite a good teacher, showing you the ropes of how to han
     {$bestFriendName}: “Can we pretend…you never said this?”
     {$playerName}: “Why?”
     {$bestFriendName}: “I don’t like this conversation.”
+    <<change_sprite 0 0>>
     {$playerName}: “Alright…sure we can do that.”
     Sitting awkwardly in the boat, you are unsure what to say to calm down the random outburst your best friend just had. Just what is her deal? What does she know of Lady Sinclair?
     <<if $corruption >= 1>>
@@ -1451,26 +1595,245 @@ Maeve turned out to be quite a good teacher, showing you the ropes of how to han
 -> “For sure, I have a filthy rich stalker hitting on me at work and then had lunch with my mentor about her right afterwards.”
     <<set $bestFriendAffinity = $bestFriendAffinity + 1>>
     <<set $corruption = $corruption + 1>>
+    <<change_sprite 3 4>>
     {$bestFriendName}: “A what…?”
     {$playerName}: “Yeah, she’s incredibly pushy, constantly finding me at different places. It’s honestly getting really creepy.”
+    <<change_sprite 3 3>>
     {$bestFriendName}: “Are you in danger? Do you want me to deal with her?”
     {$playerName}: “No, no. I’m fine, really. The merchant I’m dealing with is odd, yes, but she isn’t going to kill me or anything like that.”
     {$bestFriendName}: “That witch…I’m sorry this is happening. I should have warned you.”
+    <<change_sprite 0 2>>
     {$playerName}: “About what?”
+    <<change_sprite 3 0>>
     {$bestFriendName}: “Her records…she is suspiciously clean. Clean money, ethical charities, and a friend to many. There isn’t a single flaw. Nobles and merchants are all alike, having a couple of skeletons in the closet that the kingdom is vaguely aware of. She, on the other hand? Nothing could be found. It was too perfect. 
     {$bestFriendName}: “I’m glad you told me before anything could have happened to you. Just swear to me, do not go looking for her anymore. She’s dangerous.”
+    <<change_sprite 0 3>>
     {$playerName}: “Alright…alright, I promised.”
+    <<change_sprite 0 0>>
     Looking at the waters, you consider your friend’s words. Just why is she so paranoid about Judith? What could a merchant of the rank of baron reasonably do without getting caught immediately by the Royal Knights?
     <<if $corruption >= 1>>
     A glint appears under the calm ripple of the water. Unbeknownst to the two on the boat, a sunken bracelet shines with renewed luster, glowing slowly brighter.
     <<endif>>
 -> “Eh…could have been worse.”
     {$bestFriendName}: “Ha…I feel you on that one. Never know what life is going to throw at you.”
+<<MC false>>
 Drifting on the calm water of the lake, you think once more about the coming decision you will have to make regarding your commission. 
 <<if $weekTwoResult >= 2>>
-//if special was earned insert interactions here
+With time running out, you should carefully consider how you want to spend the rest of it between your available options.
+Due to the result of your efforts, you have earned enough spare time to spend it with one more person.
+Who do you wish to spend more time with?
+-> Judith 
+    <<set $redFlagAffinity = $redFlagAffinity + 1>>
+    Telling Maeve that you intend to head back now, the two of you row the boat back to shore to dock. Only after you return to the capital do you depart with Maeve, waving her goodbye.
+    <<change_background "black background">>
+    Against better judgment, you decide to take up Judith’s invitation and visit her manor.
+    With anxious footsteps, you step out of the arranged carriage she prepared in front of the gates of the main entrance.  
+    What did she want out of this invite? What will she do with you? These thoughts both leave you nervous and excited as you enter the open gates.
+    //<<change_background "Judith's home">>
+    Stepping into the manor, you are greeted by maids and butlers lined up for your arrival. Welcoming you, they lead you to the dining room, already prepared with lavish dishes.
+    Seated at the center, Judith welcomes you with a smile as she ushers you to take a seat.
+    <<instance_sprite 3 0 -4>>
+    <<change_sprite 3 1>>
+    {$redFlagName}: “I’m glad you have decided to come. I so wanted to see you.”
+    {$playerName}: “The pleasure is mine, Lady Sinclair. This food looks amazing.”
+    {$redFlagName}: “I’m glad it’s to your liking. Come, let us feast before we speak of today’s activity.”
+    {$playerName}: “And what is that?”
+    {$redFlagName}: “Why, dear, our moment to grow closer as commissioner and smith through deep conversation. No need to think of anything perverted.”
+    {$playerName}: “Perverted?”
+    {$redFlagName}: “That…nevermind. Let us dine on tonight’s fateful encounter.”
+    The food, an elaborate oyster dish paired with other exotic seafood, melts in your mouth like butter as you stuff your belly full.
+    While eating your food, you notice Judith move her hand next to yours, just like she did back in the guild. You decide you will entertain her advance, wondering what she will propose next.
+    {$redFlagName}: “If you don’t mind…would you like to stay at my place tonight. I have drinks prepared for your stay that I very much wish to share.”
+    Dropping your fork in surprise, even your denseness could tell what this proposal meant. The question is, do you accept?
+    -> Accept
+        <<set $redFlagAffinity = $redFlagAffinity + 3>>
+        {$playerName}: “Sure…yeah, I can stay.”
+        {$redFlagName}: “Wonderful. I’ll have the servants prepare our room now. Come, let us finish our dinner before we resume upstairs.”
+        Without wasting a moment, you finish the last of your dish in a hurry to the pleasure of Judith.
+        After that, the two of you make your way upstairs to Judith’s room, prepared with scented candles, wine glasses, and a rose-covered bed.
+        Have you secured your one-way ticket to riches, glory, and love? Or have you merely fallen for a trap designed to corrupt you? 
+        That worry no longer matters tonight.
+        Your bond with Judith grows that night behind those closed doors.
+        Tonight, you will not be returning home.
+    -> Reject
+        <<set $redFlagAffinity = $redFlagAffinity - 1>>
+        {$playerName}: “I…realized this was a mistake. I’m sorry, I don’t know why I came here.”
+        Standing up from the table, a disappointed Judith simply shakes her head as she points towards the exit.
+        {$redFlagName}: “That is a shame. I was under the assumption that we would be sharing a pleasant night. But if that’s how you feel, then you can simply leave. I hope we can meet again later, when you are up to it.” 
+        Leaving the room, you choose not to look back at Judith. Any more, and you worry your heart would be swayed by impulsion to make a mistake you know you would regret.
+        The return home is cold and lonely, only serving to bitter your feelings over the decision. 
+-> Maeve
+    <<set $bestFriendAffinity = $bestFriendAffinity + 1>>
+    You decide that you wish to spend more time on this fishing trip with Maeve. It would be a shame to end it so early. 
+    {$playerName}: “Alright, let’s make this a competition. Whoever catches less fish by the end of today owes the other dinner.”
+    {$bestFriendName}: “Think you can beat me? Alright, you’re on, {$playerName}.”
+    Focusing intently on the ripples of water, the two of you watch the shadows below the water in excited anticipation for something to take the hook.
+    An hour passes, and now the two of you are sitting bored. Nothing has taken the bait. The result was tied at zero to zero. 
+    {$bestFriendName}: “Not even a single tug. Any luck, {$playerName}?”
+    {$playerName}: “Nope…nothing at all.”
+    {$bestFriendName}: “Damn…”
+    Despite not a single catch, you wouldn’t say you are not content with the situation. In fact, the weather outside made for a relaxing time. The cool, pleasant breeze, combined with the soft, warm rays of the sun, made for a comfortable ride on the boat that could put one to sleep. 
+    {$bestFriendName}: “That day, the weather was just like this.”
+    {$playerName}: “What do you mean?”
+    {$bestFriendName}: “Before we heard word of the invasion, I was in a caravan with a group of other knights. A messenger came to warn us of a local town being sacked by monsters.”
+    {$bestFriendName}: “When we arrived, it was a nightmare. I knew what I signed up for, but seeing it for the first time was different from what I imagined. When we entered combat with them, I noticed a little girl rise out of the rubble of their home. I yelled at her to run, but she could only focus on trying to find her mother. Those cries still haunt me.”
+    {$bestFriendName}: “I think about that moment a lot. If only I had not injured myself in combat, I could have reached that girl in time. If only I thought of rescuing the survivors first, I would have been able to reach that girl.”
+    {$bestFriendName}: “I just can’t seem to rid these thoughts from my mind. At times like these, I miss my master more than ever. I just feel more alone than ever since she passed, and now my dream feels like it has already crumbled before it started. How could I ever hope to be like the Steelheart Knight if I can’t even save a child?”
+    {$bestFriendName}: “I just don’t know what to do anymore…”
+    -> Hug her
+        <<set $bestFriendAffinity = $bestFriendAffinity + 2>>
+        Embracing Maeve, the two of you share a somber moment of peace as you hold onto each other.
+        {$bestFriendName}: “Thank you.”
+        After some time, you suddenly notice her pounding heartbeat and rising temperature. Letting go after embarrassment, the two of you shyly smile at each other before returning to the fishing. It was not an awkward silence that resumed, but a happy one.
+    -> Remain Silent
+        Unsure of how to help, you remain silent to listen to whatever Maeve has left to say. But there are no other words. The two of you simply share this quiet moment with one another before you both return to fishing.
+    <<if $corruption >= 3>>
+    Waiting idly for a hook, you finally achieve what you have been waiting for this past hour when a sudden tug is felt on your line.
+    However, when you try to reel it in, the tug only becomes stronger, threatening to pull you off the boat. 
+    At first, Maeve only watches with interest. But as she notices the strength of whatever was lurking under the waters, she quickly comes to hold onto the line with you from behind. 
+    Finally, with the strength of your combined power, the two of you finally manage to pull the hooked creature out of the waters. Except…it wasn’t a creature.
+    It was a black, obsidian bracelet. 
+    The very same one from the market. 
+    -> Reel it in
+        <<set $corruption = $corruption + 2>>
+        Why are you doing this?
+        You pull in the bracelet, unable to stop thinking about this question. 
+        You thought you were over with it; that desire was just some weird memory long gone. But now, you feel that same unconscious hunger flare once more, compelling you to act this way.
+        A distant laughter could be heard, pleased with your choice.
+        {$bestFriendName}: “...hey! {$playerName}? What are you doing?”
+        Brought back to yourself, you look back at the worried Maeve in surprise, unsure of what to explain.
+        {$playerName}: “What do you mean…I was pulling in the bracelet?”
+        {$bestFriendName}: “Bracelet? {$playerName}, there was nothing on your hook this entire time?”
+        Looking back at your line, you notice what Maeve said was right. The bracelet was gone, vanishing into thin air like it never existed. Just what is happening to you?
+        {$playerName}: “I think we should head back.”
+        Maeve did not disagree, realizing the severity of the situation. Returning to the capital, she offers to walk you back home, where the two of you talk freely as if nothing had happened. Maybe that was for the best, for this was the only way you could silence those intrusive thoughts of yours. 
+        Thoughts that want to see what would happen if Maeve were to wear that bracelet. 
+    -> Cut your line
+        {$bestFriendName}: “{$playerName}? What are you doing?”
+        {$playerName}: “The right thing.”
+        {$bestFriendName}: “You do know that these are rented, right?”
+        {$playerName}: “Oh…sorry. I’ll cover for this.”
+        {$playerName}: “Would you be okay if we head back? I suddenly don’t feel that well.”
+        Maeve did not disagree, finding the situation to be weird. Returning to the capital, she offers to walk you back home, where the two of you talk freely as if nothing had happened. Maybe it was for the best this way. You don’t want to even think about that bracelet ever again.
+    <<endif>>
+-> Silas
+    <<set $loneWolfAffinity = $loneWolfAffinity + 1>>
+    Telling Maeve that you intend to head back now, the two of you row the boat back to shore to dock. Only after you return to the capital do you depart with Maeve, waving her goodbye.
+    Before you return home, however, you decide it would be a good idea to check on the injured Silas. 
+    <<change_background "entrance hall">>
+    Unsure of how to find them, you go to the guild to ask Isham about their location.
+    {$mentorName}: “Why do you need to know where they live?”
+    {$playerName}: “I’m worried about their leg. Wanted to stop by and bring them a gift.”
+    {$mentorName}: “Injured? Why haven’t I heard of this?”
+    {$playerName}: “But they told me you arranged a carriage for them.”
+    {$mentorName}: “Damn that child. I should’ve known something was wrong when they only wrote me a letter of their return.”
+    {$mentorName}: “I’ll have to skip my showcase tonight, so can you send word to Duke Argent for me of my cancellation?”
+    {$playerName}: “Skip? But you’ve been working so hard for this! Let me check on Silas for you. I’ll make sure they are okay.”
+    <<set $mentorAffinity = $mentorAffinity + 1>>
+    {$mentorName}: “You’ll really do that for me? I owe you, {$playerName}. Here, let me get something for you to take.”
+    Leaving the room, Isham returns shortly with a red bottle in his hands and a piece of paper with it.
+    {$mentorName}: “Here, take this to Silas if they look like they need it. The instructions will tell you what you need to do if its serious.”
+    {$playerName}: “Is this a recovery potion? I thought these things costed a fortune to make?”
+    {$mentorName}: “Aye, won myself that in a competition way back in the day. Now go, take it to the address I’ll give you. Silas stays there by themselves, so you don’t need to worry about anyone else.”
+    {$playerName}: “Will do. I’ll update you tomorrow!”
+    {$mentorName}: “Thank you, {$playerName}.”
+    //<<change_background "capital streets">>
+    Departing from the guild, you quickly cut through the capital streets towards the outskirts of the city. 
+    Past the walls and into the surrounding forest, you approach the secluded hut of Silas. Made of simple wooden walls and a thatch roof, the place seemed to humble for a hunter that wields a pleiotium weapon. 
+    <<change_background "black background">>
+    You knock on the door. 
+    There is no response. 
+    -> Open the door.
+        //<<change_bakground "Silas's home">>
+        You carefully open the door.
+        Inside, in a corner of the room, you see Silas lying on a bed. Barely cognizant of their surroundings, they were drenched in sweat and looked to be in terrible pain as they moaned in agony.
+        It looks like the worst has happened. The hunter is now suffering from an infection in their injured leg, risking potentially even death if left untreated.
+        Rushing to their bedside, you force Silas to slowly drink the potion Isham gave you. 
+        Following the instructions Isham wrote for you, you work on nursing Silas as you witness the miracle of rejuvenation heal the injuries on their leg. 
+        Silas might not feel the effect immediately, but with proper care, their leg will be spared from a terrible fate if the infection had festered. 
+        You spend the rest of the day staying by Silas’s side, holding their hand until they can fall asleep. Throughout, you hear Silas whisper quiet pleas to their diseased parents and Isham until they eventually close their eyes.  
+        The hunter, once prideful and strong, now looked innocent as they slept peacefully next to you. The contrast would have been endearing to you, if not for your own exhaustion catching up to you.
+        Barely able to keep your eyes open, you end up falling asleep next to the sleeping Silas on your chair. 
+        …
+        You awake in the dead of night, now haggard and in pain. The awkward sleeping position you slept in is now killing your back. Thankfully, Silas did not appear to have awoken. It would have been awfully hard to explain why you were sleeping by their side. Leaving their hut, you walk back to your home inside the walls of the capital, hoping that you can at least catch some hours of sleep. 
+        Far from your sight, however, the hunter carefully removes their blankets.
+        {$loneWolfName}: “What was that about…”
+        It appears your kind gesture had not gone unnoticed.
+    -> Leave it alone.
+        Deciding it would be rude to barge into the hut, you decide to leave the potion on the step of their door. 
+        Isham may have given you the address of their home, but who knows how that paranoid hunter would feel about you barging in on them. You already know they did not like people who cannot respect others’ privacy.
+        Better not create another problem with Silas.
+-> Isham
+    <<set $mentorAffinity = $mentorAffinity + 1>>
+    Telling Maeve that you intend to head back now, the two of you row the boat back to shore to dock. Only after you return to the capital do you depart with Maeve, waving her goodbye.
+    You decide then that you now wish to see Isham. 
+    He had been busy finishing a project of his earlier, but he should be done by now. Perhaps he will have time to spare for an outing with the two of you again. 
+    <<change_background "entrance hall">>
+    Entering the guild, you find Isham in the entrance hall discussing with a servant of a noble house over something important. Waiting until the two are done, you approach Isham to ask what is occurring.
+    {$mentorName}: “Ah, right, I didn’t really give you the details. I have been invited to Duke Argent’s showcase to sell my latest invention there.”
+    {$playerName}: “Oh…so you will be busy today?”
+    {$mentorName}: “Are you upset?”
+    {$playerName}: “Well, I was hoping to spend more time with you.”
+    {$mentorName}: “O-Oh, really? Well…if you wish, do you want to come with me as an assistant?” 
+    {$mentorName}: “It might be boring, but it could be a good experience for you to learn how the business is conducted.”
+    {$playerName}: “I would love to go!”
+    And so, the two of you headed to the Dukes’ manor together to present Isham’s newly designed weapon, the Fosite.
+    <<change_background "banquet">>
+    The event, meant to honor the Royal Blacksmiths who help keep the kingdom safe, was designed to take place in three parts. It would go first from tabling with the blacksmiths attending, then a dance for the nobles attending, and then finally an auction for those interested in buying the presented items. 
+    Once inside, you bring the case carrying the unique axe to the table that Isham will be presenting at. The Fosite, the name Isham had gifted it, was molded to have the enchantment of liquefaction, able to turn what it cuts into water. 
+    Both efficient for lumberjacks and for fighting iron monsters, the table was quickly surrounded by nobles situated near the forests or the Badlands.
+    There were even nobles who simply came just to greet Isham himself, hoping to talk to him about his next big project. Your senior, steadfast in his ways, refused to even entertain the idea of the possibility of being swayed by gold. 
+    The only thing that would motivate him to make something, in his words, is a tool that could help bring about a better future for the kingdom. 
+    Curious, you decide to ask Isham when he is free about something that he had not spoken of often before.
+    {$playerName}: “How many pleiotium tools have you made before, Isham?”
+    {$mentorName}: “Hmm. A total of 32 creations, counting this year’s Fosite. My rate of production as a smith is about two each year.”
+    -> “I think I can create more than that in a year.”
+        {$mentorName}: “Very funny. I hope to see you try.” 
+        {$playerName}: “You bet!”
+    -> “Do you ever grow tired of making these tools to sell to nobles?”
+        <<set $mentorAffinity = $mentorAffinity + 1>>
+        {$mentorName}: “Often. If there were better options, I would do it in a heartbeat. But if I want my tools to have the greatest impact, they have to go to the ones responsible for managing the lands. Making weapons only for the knights serves to protect the people, yes, but it does not make life easier for the common man.”
+        {$mentorName}: “Nobles, however, can distribute these tools on a larger scale to improve their lands, which in turn makes the lives of those living under them easier. At least for the nobles who actually give a damn.”
+        {$playerName}: “Never thought of it that way. I always thought of the nobles as greedy.”
+        {$mentorName}: “A noble that is both smart and greedy will know that a happy populace is a successful one. A dumb one will only line their pockets until those underneath them have had enough.”
+    -> “How much do these nobles pay for your tools? You must be filthy rich by now!”
+        <<set $mentorAffinity = $mentorAffinity - 1>>
+        {$mentorName}: “Don’t place too much importance on gold, rookie. I would rather see my craft used to its fulfilment than it go to some rich collector that lets it go to waste.”
+        {$playerName}: “That doesn’t really answer my question?”
+        {$mentorName}: “I don’t feel like answering.”
+    Watching as the nobles transition to the segment of the event, you move with Isham to the snack table as you watch them dance in the center hall. This strange culture of nobility, where they must include a dance in every event, was something you truly could not understand. Are they really that bored that they seek to dance at every waking moment?
+    Not long after, the auction begins to the buzzing anticipation of nobles and merchants alike. The list this year was highly competitive, but a clear standout had to be that of Isham’s Fosite. If not for your seniors’ weird clause that the buyer must be someone of moral background, it could have soared to prices unimaginable.
+    At the end of the auction, the two of you soon depart from the manor with a bag containing hundreds of gold coins. Yet for some reason, your senior did not look pleased with his success.
+    {$playerName}: “Is something the matter?”
+    {$mentorName}: “Ever the curious one, huh. Don’t worry, I’m just feeling a bit lost right now, that’s all.”
+    {$playerName}: “Lost? You?”
+    {$mentorName}: “Aye, even me. It might sound strange, but I wish I could do something more for the kingdom than just sell tools to nobles.”
+    {$mentorName}: “I feel at this rate I might die an old man of little accomplishment. A good smith, yes, but a great one?” 
+    {$mentorName}: “...”
+    {$mentorName}: “Sorry, I don’t know what overcame me.” 
+    {$playerName}: “No, it’s okay. I understand what you mean, sir.”
+    Eventually parting ways, you feel content that you have learned something new about Isham today. 
+    Perhaps there is a way to help him achieve his dream.
+-> None of them
 <<else>>
 It would be nice to have more time to spend with others, but unfortunately, working overtime with smelting has reduced the amount you have left in the day. 
 Having to end the fishing trip early, you exchange goodbyes to Maeve as you head back to land. Traveling back to the capital, you spend the remaining time you have finishing the last of your work before you announce your decision on a commission.
 <<endif>> 
+With that, the week has come to an end.
+And now, with careful consideration, it is time to make a decision.
+<<jump DecisionDay>>
+===
+
+title: DecisionDay
+---
+Whose commission do you take?
+-> Judith
+    <<set $redFlagAffinity = $redFlagAffinity + 2>>
+-> Maeve
+    <<set $bestFriendAffinity = $bestFriendAffinity + 2>>
+-> Silas
+    <<set $loneWolfAffinity = $loneWolfAffinity + 2>>
+-> Isham
+    <<set $mentorAffinity = $mentorAffinity + 2>>
+-> None of them
 ===
