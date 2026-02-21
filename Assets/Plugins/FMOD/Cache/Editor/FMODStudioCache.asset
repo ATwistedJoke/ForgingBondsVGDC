@@ -35,10 +35,10 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639068627694668702
+  lastModified: 639072194499924288
   FileSizes:
   - Name: 
-    Value: 902
+    Value: 994
   Exists: 1
 --- !u!114 &-7856220074041311463
 MonoBehaviour:
@@ -55,7 +55,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639068627694668702
+  lastModified: 639072194499912807
   FileSizes: []
   Exists: 1
 --- !u!114 &-7677494005361612881
@@ -100,7 +100,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Themes.bank
   Name: Themes
   StudioPath: bank:/Themes
-  lastModified: 639068627694814179
+  lastModified: 639064034832301411
   FileSizes: []
   Exists: 1
 --- !u!114 &-7012430986418271165
@@ -290,21 +290,25 @@ MonoBehaviour:
   - {fileID: -7989202825351334509}
   - {fileID: -7856220074041311463}
   - {fileID: -7511608834827293449}
+  - {fileID: 7654971557409298311}
   EditorEvents:
   - {fileID: 6285572130539231245}
   - {fileID: -7012430986418271165}
+  - {fileID: 4206096203355044973}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7856220074041311463}
   StringsBanks:
   - {fileID: -7989202825351334509}
   cacheVersion: 131858
-  cacheTime: 639068627694814179
+  cacheTime: 639072194501996065
   SerializableEventsDict:
   - key: event:/FB minigame
     index: 0
   - key: event:/Forging bonds main theme (FIXED ENDING)
     index: 1
+  - key: event:/HammerHitMetal
+    index: 2
 --- !u!114 &2547793194418772089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,6 +384,33 @@ MonoBehaviour:
   Banks:
   - {fileID: 5779108154280034512}
   IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4206096203355044973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/HammerHitMetal
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/HammerHitMetal
+  Guid:
+    Data1: 783849422
+    Data2: 1074819203
+    Data3: -1027982419
+    Data4: -1497336820
+  Banks:
+  - {fileID: 7654971557409298311}
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
@@ -532,6 +563,24 @@ MonoBehaviour:
   Name: Master
   StudioPath: bank:/Master
   lastModified: 639060742928532040
+  FileSizes: []
+  Exists: 1
+--- !u!114 &7654971557409298311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: FMOD/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 639072194501996065
   FileSizes: []
   Exists: 1
 --- !u!114 &7800558351372909233

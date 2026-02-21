@@ -416,6 +416,7 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - SFX
   - Themes
   BanksToLoad: []
   LiveUpdatePort: 9264
