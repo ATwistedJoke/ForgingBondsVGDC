@@ -48,6 +48,7 @@ public class Molding_Minigame : MonoBehaviour
         StopAllCoroutines();
 
         game_container.SetActive(false);
+        GameManager.instance.GiveResult(total_molds);
         GameObject rem = GameObject.FindGameObjectWithTag("minigame");
         Destroy(rem); 
     }
@@ -116,6 +117,19 @@ public class Molding_Minigame : MonoBehaviour
         }
 
 
-        }
+    }
 
+    private int CalculateResult(int input)
+    {
+        int result = 0; 
+        if(input >= 5)
+        {
+            result++; 
+            if(input >= 10)
+            {
+                result++; 
+            }
+        }
+        return result; 
+    }
 }
