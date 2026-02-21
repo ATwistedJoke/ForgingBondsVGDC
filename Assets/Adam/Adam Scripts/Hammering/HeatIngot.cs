@@ -17,10 +17,6 @@ public class HeatIngot : MonoBehaviour
     public float heatMilestone1 = 2f;
     public float heatMilestone2 = 5f; //Used for ranges of heat levels
     public float heatMilestone3 = 12f;
-    public Sprite evolution1;
-    public Sprite evolution2;
-    public Sprite evolution3;
-    public Sprite evolution4;
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -83,19 +79,19 @@ public class HeatIngot : MonoBehaviour
     {
         if(heatLevel >= heatMilestone3)
         {
-            spriteRenderer.sprite = evolution4;
+            spriteRenderer.color = Color.red;
         }
         else if(heatLevel >= heatMilestone2)
         {
-            spriteRenderer.sprite = evolution3;
+            spriteRenderer.color = Color.orange;
         }
         else if(heatLevel >= heatMilestone1)
         {
-            spriteRenderer.sprite = evolution2;
+            spriteRenderer.color = Color.yellow;
         }
         else
         {
-            spriteRenderer.sprite = evolution1;
+            spriteRenderer.color = Color.white;
         }
     }
     public int heatScore()
