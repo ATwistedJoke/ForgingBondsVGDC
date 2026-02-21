@@ -438,6 +438,7 @@ public class ReinforcingMinigame : MonoBehaviour
     
     private void FailChallenge()
     {
+        currentTime -= 10; 
         CompleteChallenge(false);
     }
     
