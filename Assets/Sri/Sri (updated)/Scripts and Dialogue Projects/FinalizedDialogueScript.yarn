@@ -15,8 +15,17 @@
 <<declare $weekOneResult = 0>>
 <<declare $weekTwoResult = 0>>
 <<declare $result = 0>>
-<<change_background "map">>
+<<declare $route = 0>>
 
+// Route Numbers: 
+// 0 - None
+// 1 - Judith
+// 2 - Maeve
+// 3 - Isham
+// 4 - Silas
+
+
+<<change_background "map">>
 In the Age of the Hammer and Anvil, when Craft defined a Nation’s power, a looming darkness sought to snuff out the light of their forges.
 But the surrounding nations were not idle. The Kingdom of Pladonia, a beacon of innovation and a stalwart defender of humanity, led the Alliance in waging war against the forces of evil.
 Under the lead of the heroic Steelheart Knight, they sought to protect the vulnerable and reclaim the lost lands of humanity.
@@ -133,9 +142,9 @@ You notice his deep eye bags, worn out from stress and lack of sleep. You feel u
 
 title: ResultTesting
 ---
-<<if $resultTest <= 0>>
+<<if $result <= 0>>
     NAY!
-<<elseif $resultTest == 1>>
+<<elseif $result == 1>>
     YAY!
 <<else>>
     YEAH!
@@ -1968,11 +1977,79 @@ title: DecisionDay
 Whose commission do you take?
 -> Judith
     <<set $redFlagAffinity = $redFlagAffinity + 2>>
+    <<$route = 1>>
+
 -> Maeve
     <<set $bestFriendAffinity = $bestFriendAffinity + 2>>
+
 -> Silas
     <<set $loneWolfAffinity = $loneWolfAffinity + 2>>
+
 -> Isham
     <<set $mentorAffinity = $mentorAffinity + 2>>
+
 -> None of them
+    <<$route = 0>>
+<<jump Week4>>
+===
+
+title: Week4PreMinigame
+---
+<<if $route == 1>>
+Judith
+<<endif>>
+===
+title: Week4Result
+---
+<<if $route == 1>>
+Judith
+<<endif>>
+===
+
+title: Week4PostMinigame
+---
+<<if $route == 1>>
+Judith
+<<endif>>
+===
+
+title: Week5PreMinigame
+---
+<<if $route == 1>>
+Judith
+<<endif>>
+===
+title: Week5Result
+---
+<<if $route == 1>>
+Judith
+<<endif>>
+===
+
+title: Week5PostMinigame
+---
+<<if $route == 1>>
+Judith
+<<endif>>
+===
+
+title: Week6PreMinigame
+---
+<<if $route == 1>>
+Judith
+<<endif>>
+===
+
+title: Week6Result
+---
+<<if $route == 1>>
+Judith
+<<endif>>
+===
+
+title: Week6PostMinigame
+---
+<<if $route == 1>>
+Judith
+<<endif>>
 ===
