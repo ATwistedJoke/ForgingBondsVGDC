@@ -11,7 +11,7 @@ public class PickUpIron : MonoBehaviour
     {
         tongs = GameObject.FindGameObjectWithTag("Tongs");
         tongsTransform = tongs.transform;
-        posInTongs = new Vector3(-8f, 5f, 0);
+        posInTongs = new Vector3(0f, 5f, 0);
     }
     // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D other)
