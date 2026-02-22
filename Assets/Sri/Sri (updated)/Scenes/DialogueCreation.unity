@@ -673,7 +673,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54c7b4a00f07f874282afe02a9ba579c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FMODEvents
-  <SFX>k__BackingField: []
+  <SFX>k__BackingField:
+  - Guid:
+      Data1: 1834349575
+      Data2: 1141047549
+      Data3: 1254214051
+      Data4: -1535705617
+    Path: event:/MetalPipe
+  <music>k__BackingField:
+    Guid:
+      Data1: 290664653
+      Data2: 1257602660
+      Data3: 1538575287
+      Data4: 1179551674
+    Path: event:/MusicTracks/CurrentGameTheme
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

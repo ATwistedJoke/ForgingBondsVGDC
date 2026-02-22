@@ -5,17 +5,24 @@ using FMOD.Studio;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instnace {get; private set;}
+    public static AudioManager instance {get; private set;}
 
     private List<EventInstance> eventInstances; 
 
+    private EventInstance musicEventInstance; 
+
+    private void Start()
+    {
+        InitializeMusic(FMODEvents.instnace.music);
+    }
+
     private void Awake()
     {
-        if(instnace != null)
+        if(instance != null)
         {
             Debug.LogError("More than one Audio Manager in scene"); 
         }
-        instnace = this; 
+        instance = this; 
 
         eventInstances = new List<EventInstance>(); 
     }
@@ -25,11 +32,22 @@ public class AudioManager : MonoBehaviour
         RuntimeManager.PlayOneShot(sound, worldPos);
     }
 
-    public EventInstance CreateGameInstnace(EventReference eventReference)
+    public EventInstance CreateGameInstance(EventReference eventReference)
     {
         EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference); 
         eventInstances.Add(eventInstance); 
         return eventInstance;
+    }
+
+    public void SetMusicArea(float value)
+    {
+        musicEventInstance.setParameterByName("CurrentTheme", value);
+    }
+
+    private void InitializeMusic(EventReference musicEventReference)
+    {
+        musicEventInstance = CreateGameInstance(musicEventReference);
+        musicEventInstance.start(); 
     }
 
     private void Cleanup()
@@ -37,7 +55,7 @@ public class AudioManager : MonoBehaviour
         foreach(EventInstance eventInstance in eventInstances)
         {
             eventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE); 
-        }
+        } 
     }
 
     private void OnDestroy()

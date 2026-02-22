@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
         dialogueRunner.AddCommandHandler<int>("Appearance", SetAppearance);
         dialogueRunner.AddCommandHandler("SFX", PlayAudio);
         dialogueRunner.AddCommandHandler<int,int>("Voice", VoiceLine);
+        dialogueRunner.AddCommandHandler<float>("Theme", ChangeTheme);
         // dialogueRunner.AddCommandHandler<int>("change_corruption",ChangeCorruption);
     }
 
@@ -308,11 +309,16 @@ public class GameManager : MonoBehaviour
     //Audio Implementation
     public void PlayAudio()
     {
-        AudioManager.instnace.PlayOneShot(FMODEvents.instnace.SFX[0], transform.position);
+        AudioManager.instance.PlayOneShot(FMODEvents.instnace.SFX[0], transform.position);
     }
 
     public void VoiceLine(int idx, int line)
     {
         sprite[idx].GetComponentInChildren<CharacterManager>().PlayLine(line);
+    }
+
+    public void ChangeTheme(float f)
+    {
+        AudioManager.instance.SetMusicArea(f);
     }
 }
