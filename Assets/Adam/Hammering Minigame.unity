@@ -312,6 +312,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hammering Minigame
       objectReference: {fileID: 0}
+    - target: {fileID: 5156330950496423598, guid: 2f8d62db11700a642a04152a8a3ee710, type: 3}
+      propertyPath: currCountdownValue
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5156330950496423598, guid: 2f8d62db11700a642a04152a8a3ee710, type: 3}
+      propertyPath: startCountdownValue
+      value: 120
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
