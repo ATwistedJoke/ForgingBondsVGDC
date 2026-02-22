@@ -53,6 +53,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1983971605005913658, guid: bdbd50edcc4fa514a95778f158e33154, type: 3}
+      propertyPath: obj
+      value: 
+      objectReference: {fileID: 6407058008519002376}
+    - target: {fileID: 1983971605005913658, guid: bdbd50edcc4fa514a95778f158e33154, type: 3}
       propertyPath: rnd
       value: 
       objectReference: {fileID: 1966724596482248494}
@@ -146,5 +150,10 @@ Transform:
 --- !u!212 &1966724596482248494 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 2046806360006715110, guid: bdbd50edcc4fa514a95778f158e33154, type: 3}
+  m_PrefabInstance: {fileID: 516931077712701896}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6407058008519002376 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6901470950252093632, guid: bdbd50edcc4fa514a95778f158e33154, type: 3}
   m_PrefabInstance: {fileID: 516931077712701896}
   m_PrefabAsset: {fileID: 0}

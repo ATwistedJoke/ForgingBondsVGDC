@@ -1535,8 +1535,8 @@ MonoBehaviour:
   - {fileID: 1156340022475166029}
   - {fileID: 376057344986951974}
   firsttimeWindow: 2
-  MinPresses: 75
-  MaxPresses2: 150
+  MinPresses: 25
+  MaxPresses2: 60
   type1TimeLimit: 30
   timeLimit2: 30
   currentTime: 0
@@ -1989,6 +1989,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5013116266554283570}
     m_Modifications:
+    - target: {fileID: 3311807247502518063, guid: eacfeb16abfa5004c9f48b0a2a912b1e, type: 3}
+      propertyPath: MinPresses
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311807247502518063, guid: eacfeb16abfa5004c9f48b0a2a912b1e, type: 3}
+      propertyPath: MaxPresses2
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 6113422880323022564, guid: eacfeb16abfa5004c9f48b0a2a912b1e, type: 3}
       propertyPath: m_TagString
       value: minigame

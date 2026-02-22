@@ -325,8 +325,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3074662898049201392}
   m_Layer: 0
-  m_Name: miniCutterGame
-  m_TagString: minigame
+  m_Name: miniCutterGame (Shield)
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -720,17 +720,25 @@ MonoBehaviour:
   liveScoreText: {fileID: 3660949535173470398}
   timerText: {fileID: 0}
   rulesPopupPanel: {fileID: 0}
+  pixelPainter: {fileID: 0}
+  paintContainer: {fileID: 0}
+  stages:
+  - stageName: Shield Outline
+    scoreMapSprite: {fileID: 9141321760507782296, guid: c9407d953a95e4d1894cbef82e07bd48, type: 3}
+    prizeSprite: {fileID: -1857066140087164170, guid: f21e1c073ce3c40c88ca62225b673817, type: 3}
+    targetColor: {r: 0, g: 1, b: 0, a: 0}
+    totalTargets: 1500
   timeLimit: 60
   closeDelay: 5
   flashStartTime: 10
-  targetColor: {r: 0, g: 1, b: 0, a: 1}
   colorTolerance: 0.05
   penaltyMultiplier: 1
   gameIsActive: 0
   isGameOver: 0
-  totalTargets: 0
   goodHits: 0
   badHits: 0
+  brushCursor: {fileID: 0}
+  hotspot: {x: 0, y: 0}
 --- !u!1 &8914863508327944863
 GameObject:
   m_ObjectHideFlags: 0

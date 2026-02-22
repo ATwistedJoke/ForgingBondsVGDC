@@ -70,4 +70,14 @@ public class SmeltingController : MonoBehaviour
         scoreText.text = "Score: " + score;
         StartCoroutine(StartCountdown());
     }
+
+    void OnDestroy()
+    {
+        int result = 0; 
+        for(int i = 0; i < score; i+= 20)
+        {
+            result++; 
+        }
+        GameManager.instance.GiveResult(result);
+    }
 }

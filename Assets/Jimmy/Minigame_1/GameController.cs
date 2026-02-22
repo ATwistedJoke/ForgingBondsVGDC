@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.WSA;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System.Runtime.CompilerServices;
 
 public class GameController : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class GameController : MonoBehaviour
     [SerializeField]private GameObject iron_ore; 
     [SerializeField]private GameObject gold_ore; 
     [SerializeField] private GameObject mythril_ore; 
+    [SerializeField] private float slight_offset = 50f;
+
 
     //[SerializeField] private TextMeshProUGUI textbox;
 
@@ -44,7 +47,7 @@ public class GameController : MonoBehaviour
         game_playing = false;
         StopAllCoroutines();
         //mouse.ResetMouse();
-
+        GameManager.instance.GiveResult(CalculateResult(score)); 
         GameObject rem = GameObject.FindGameObjectWithTag("minigame");
         Destroy(rem);
     }
@@ -75,11 +78,11 @@ public class GameController : MonoBehaviour
     GameObject ChooseOreByRarity()
     {
         float roll = Random.value;
-
+        
         // 70% Iron, 25% Gold, 5% Mythril
         if (roll < 0.7f)
             return iron_ore;
-        else if (roll < 0.95f)
+        else if (roll < 0.90f)
             return gold_ore;
         else
             return mythril_ore;
@@ -97,8 +100,10 @@ public class GameController : MonoBehaviour
         float height = game_screen.rect.height; 
 
     //choose a random position
-        float randomX = Random.Range(-width/2, width/2);
-        float randomY = Random.Range(-height/2, height / 2);
+        float randomX = Random.Range((-width/2) + slight_offset, (width/2) - slight_offset);
+
+        //top 70% of the game
+        float randomY = Random.Range((-height/2) + (height * 0.3f), (height / 2) - slight_offset);
 
     GameObject ore_spawn = ChooseOreByRarity();
 
@@ -120,9 +125,22 @@ public class GameController : MonoBehaviour
 
 
     //random time till new ore is spawned
-    yield return new WaitForSeconds(Random.value * 2f);
+    yield return new WaitForSeconds(Random.value * 5f);
         }
     
     }
 
+    private int CalculateResult(int input)
+    {
+        int result = 0; 
+        if(input >= 50)
+        {
+            result++; 
+            if(input >= 70)
+            {
+                result++; 
+            }
+        }
+        return result; 
+    }
 }

@@ -26,15 +26,15 @@ public class ReinforcingGameManager : MonoBehaviour
     {
         if (finalScore >= 80)
         {
-            //change scene
+            GameManager.instance.GiveResult(2);
         }
         else if (finalScore >= 50)
         {
-            //do smth
+            GameManager.instance.GiveResult(1);
         }
         else
         {
-            //bad
+            GameManager.instance.GiveResult(0); 
         }
     }
     

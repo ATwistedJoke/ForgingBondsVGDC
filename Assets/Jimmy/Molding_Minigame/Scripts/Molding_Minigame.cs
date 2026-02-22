@@ -7,6 +7,8 @@ using UnityEngine.InputSystem.OSX;
 
 public class Molding_Minigame : MonoBehaviour
 {
+    public enum WeaponType { Arrow, Morningstar}
+    public WeaponType currentWeaponChoice; 
     public enum OreType { Iron, Gold, Mythril }
     public int total_molds = 0;
 
@@ -15,7 +17,8 @@ public class Molding_Minigame : MonoBehaviour
     public int totalOreCount;
 
 
-    public Mold mold;
+    public Mold arrow_mold;
+    public Mold morningstar_mold;
     public Crucible crucible;
     public GameObject game_container;    
     public RecipeGenerator recipeGenerator;
@@ -25,21 +28,18 @@ public class Molding_Minigame : MonoBehaviour
 
 
     private Mold current_mold;
-    void Start_Minigame()
+    void Start_Minigame(WeaponType type)
     {   
         game_container.SetActive(true);
-
-        if(mold != null)
-        {
-            SpawnNewMold();
-
-        }
+        currentWeaponChoice = type;
+        
+    SpawnNewMold();
         
     }
 
     public void Start(){
 
-        Start_Minigame();
+        Start_Minigame(currentWeaponChoice);
 
     }
 
@@ -48,6 +48,7 @@ public class Molding_Minigame : MonoBehaviour
         StopAllCoroutines();
 
         game_container.SetActive(false);
+        GameManager.instance.GiveResult(total_molds);
         GameObject rem = GameObject.FindGameObjectWithTag("minigame");
         Destroy(rem); 
     }
@@ -104,18 +105,35 @@ public class Molding_Minigame : MonoBehaviour
     public void SpawnNewMold()
     {
         Debug.Log("mold shold print");
-
-        if(mold != null)
+        Mold prefabToSpawn;
+        
+        if(currentWeaponChoice == WeaponType.Arrow)
         {
-        Mold new_mold = Instantiate(mold, game_container.transform);
-        Debug.Log("spawned at " + game_container.transform);
-
-        current_mold = new_mold.GetComponent<Mold>();
-
-        current_mold.game = this;
+            prefabToSpawn = arrow_mold;
+        }
+        else
+        {
+            prefabToSpawn = morningstar_mold;
+        }
+        if (prefabToSpawn != null)
+        {
+            Mold new_mold = Instantiate(prefabToSpawn, game_container.transform);
+            current_mold = new_mold.GetComponent<Mold>();
+            current_mold.game = this;
         }
 
-
+    }
+    private int CalculateResult(int input)
+    {
+        int result = 0; 
+        if(input >= 5)
+        {
+            result++; 
+            if(input >= 10)
+            {
+                result++; 
+            }
         }
-
+        return result; 
+    }
 }
