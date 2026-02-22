@@ -1,7 +1,10 @@
 using System;
 using System.Collections;
+using FMODUnity;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Yarn;
 using Yarn.Unity;
 
 public class GameManager : MonoBehaviour
@@ -36,12 +39,6 @@ public class GameManager : MonoBehaviour
     private int xPosition = 0; 
     private int yPosition = -4; 
 
-    // int mentorAffinity = 0;
-    // int redFlagAffinity = 0;
-    // int bestFriendAffinity = 0;
-    // int loneWolfAffinity = 0;
-    // int corruptionValue = 0;
-
     //store the minigame score here. 0 = bad, 1 = mediocre, 2 = good
     int resourceMinigameScore = 2;
     int smeltingMinigameScore = 2;
@@ -62,69 +59,25 @@ public class GameManager : MonoBehaviour
             "load_scene",     // the name of the command
             LoadScene // the method to run
         );
-
         // dialogueRunner.AddCommandHandler<string, int>(
         //     "change_affinity",
         //     ChangeAffinity
         // );
-
-        dialogueRunner.AddCommandHandler<int, string>(
-            "run_minigame",
-            RunMinigame
-        );
-
-        dialogueRunner.AddCommandHandler<string>(
-            "change_background",
-            ChangeBackground
-        );
-
-        dialogueRunner.AddCommandHandler<int>(
-            "sp",
-            InstantiateChar
-        );
-        dialogueRunner.AddCommandHandler<int, int, int>(
-            "place",
-            InstantiatePlace
-        );
-        dialogueRunner.AddCommandHandler<int,int>(
-            "cs",
-            SpriteChange
-        );
-
-        dialogueRunner.AddCommandHandler<int,int,int,int>(
-            "mv",
-            MoveChar
-        );
-
-        dialogueRunner.AddCommandHandler<int>(
-            "destroy",
-            DestroyChar
-        );
-
-        dialogueRunner.AddCommandHandler(
-            "resource_result",
-            ResourceMinigameResult
-        );
-
-        dialogueRunner.AddCommandHandler(
-            "smelting_result",
-            SmeltingMinigameResult
-        );
-
-        dialogueRunner.AddCommandHandler<bool>(
-            "MC",
-            MCSpeak
-        );
-
-        dialogueRunner.AddCommandHandler<int>(
-            "Appearance",
-            SetAppearance
-        );
-
-        // dialogueRunner.AddCommandHandler<int>(
-        //     "change_corruption",
-        //     ChangeCorruption
-        // );
+        dialogueRunner.AddCommandHandler<int, string>("run_minigame", RunMinigame);
+        dialogueRunner.AddCommandHandler<string>("change_background", ChangeBackground);
+        dialogueRunner.AddCommandHandler<int>("sp", InstantiateChar);
+        dialogueRunner.AddCommandHandler<int, int, int>("place", InstantiatePlace);
+        dialogueRunner.AddCommandHandler<int,int>("cs", SpriteChange);
+        dialogueRunner.AddCommandHandler<int,int,int,int>("mv", MoveChar);
+        dialogueRunner.AddCommandHandler<int>("destroy", DestroyChar);
+        dialogueRunner.AddCommandHandler("resource_result", ResourceMinigameResult);
+        dialogueRunner.AddCommandHandler("smelting_result", SmeltingMinigameResult);
+        dialogueRunner.AddCommandHandler<bool>("MC",MCSpeak);
+        dialogueRunner.AddCommandHandler<int>("Appearance", SetAppearance);
+        dialogueRunner.AddCommandHandler("SFX", PlayAudio);
+        dialogueRunner.AddCommandHandler<int,int>("Voice", VoiceLine);
+        dialogueRunner.AddCommandHandler<float>("Theme", ChangeTheme);
+        // dialogueRunner.AddCommandHandler<int>("change_corruption",ChangeCorruption);
     }
 
     private IEnumerator ResourceMinigameResult()
@@ -337,16 +290,6 @@ public class GameManager : MonoBehaviour
         sprite[idx] = null; 
     }
 
-    private IEnumerator MoveOverTime(GameObject obj, Vector3 target, float spd)
-    {
-        while(obj != null && obj.transform.position != target)
-        {
-            obj.transform.position = Vector3.MoveTowards(obj.transform.position, target, spd*Time.deltaTime); 
-            yield return new WaitForEndOfFrame(); 
-        }
-        Debug.Log("Done");
-    }
-
     private void SetAppearance(int idx)
     {
         MCAppearance = idx; 
@@ -361,6 +304,21 @@ public class GameManager : MonoBehaviour
         {
             sprite[MCAppearance].GetComponentInChildren<CharacterManager>().Move(-30, -6, 100);
         }
-        
+    }
+
+    //Audio Implementation
+    public void PlayAudio()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instnace.SFX[0], transform.position);
+    }
+
+    public void VoiceLine(int idx, int line)
+    {
+        sprite[idx].GetComponentInChildren<CharacterManager>().PlayLine(line);
+    }
+
+    public void ChangeTheme(float f)
+    {
+        AudioManager.instance.SetMusicArea(f);
     }
 }

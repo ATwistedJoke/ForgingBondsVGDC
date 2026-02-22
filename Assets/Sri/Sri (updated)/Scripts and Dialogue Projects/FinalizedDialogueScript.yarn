@@ -137,7 +137,8 @@ You notice his deep eye bags, worn out from stress and lack of sleep. You feel u
 <<destroy 1>>
 {$mentorName}: “Alright then, with that established, would you be willing to share some of your skills with me?”
 {$mentorName}: “I need to judge your proficiency with the craft before I entrust you with any tasks.”
-<<run_minigame 0 ResultTesting>>
+//<<run_minigame 0 ResultTesting>>
+<<jump IntroductionPostTutorial>>
 ===
 
 title: ResultTesting
@@ -618,11 +619,13 @@ Upon your arrival, a young guide welcomes you with reverence in his eyes. Talkin
 <<destory_sprite 1>>
 <<MC false>>
 Walking down the tunnel, you enter the brightly illuminated room, ready to challenge your first great hurdle. 
+<<Theme 1>>
 <<run_minigame 1 WeekTwoAfterMinigame>>
 ===
 
 title: WeekTwoAfterMinigame
 ---
+<<Theme 0>>
 Leaving the vein, you carry your haul of Pleiotium out to be met with a worried Isham. 
 <<sp 1>>
 {$mentorName}: “How did it go, (lad, lass, pal)?”
@@ -1213,16 +1216,13 @@ Entering your forge, you load the coal once more into your cauldron, lighting th
 Isham checks in now and then, offering advice when you need it. But he never sticks around long, not wanting to interrupt your focus while you prepare your forge.
 Then the time finally comes, and your preparations are completed. The smelting can begin.
 <<run_minigame 2 postSmeltingWeekThree>>
-//{$redFlagName}:
-//{$bestFriendName}:
-//{$mentorName}:
-//{$loneWolfName}:
-//{$playerName}:
+<<Theme 1>>
 ===
 
 title: postSmeltingWeekThree
 ---
 <<change_background "personal forge">>
+<<Theme 0>>
 <<smelting_result>>
 ===
 

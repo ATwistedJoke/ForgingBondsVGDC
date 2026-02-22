@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9086485354850655695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MusicTracks/MainTheme
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/MusicTracks/MainTheme
+  Guid:
+    Data1: 863173421
+    Data2: 1191744933
+    Data3: -1625324622
+    Data4: 1753204888
+  Banks:
+  - {fileID: -7511608834827293449}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 79340
 --- !u!114 &-8966997423266671208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35,10 +62,10 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639068627694668702
+  lastModified: 639072987384178700
   FileSizes:
   - Name: 
-    Value: 902
+    Value: 1630
   Exists: 1
 --- !u!114 &-7856220074041311463
 MonoBehaviour:
@@ -55,7 +82,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639068627694668702
+  lastModified: 639072987384148240
   FileSizes: []
   Exists: 1
 --- !u!114 &-7677494005361612881
@@ -100,10 +127,10 @@ MonoBehaviour:
   Path: FMOD/Desktop/Themes.bank
   Name: Themes
   StudioPath: bank:/Themes
-  lastModified: 639068627694814179
+  lastModified: 639072987422630644
   FileSizes: []
   Exists: 1
---- !u!114 &-7012430986418271165
+--- !u!114 &-6985813191398771141
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,24 +139,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Forging bonds main theme (FIXED ENDING)
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Forging bonds main theme (FIXED ENDING)
-  Guid:
-    Data1: 1557292212
-    Data2: 1299978944
-    Data3: -2056915808
-    Data4: -990016881
-  Banks:
-  - {fileID: -7511608834827293449}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/CurrentGameTheme/CurrentTheme
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: CurrentTheme
+  StudioPath: 
+  Min: 0
+  Max: 4
+  Default: 0
+  ID:
+    data1: 2738509776
+    data2: 1686200952
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - CurrentTheme(Main)
+  - CurrentTheme(Minigame)
+  - CurrentTheme(Sad)
+  - CurrentTheme(BestFriend)
+  - CurrentTheme(RedFlag)
+  Exists: 1
 --- !u!114 &-6100060413213480248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +180,51 @@ MonoBehaviour:
   Banks:
   - {fileID: 6018063075339293294}
   IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3447312381394319404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MentorBank.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: FMOD/Desktop/MentorBank.bank
+  Name: MentorBank
+  StudioPath: bank:/MentorBank
+  lastModified: 639072908853620006
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-3228070068050214767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MetalPipe
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/MetalPipe
+  Guid:
+    Data1: 1834349575
+    Data2: 1141047549
+    Data3: 1254214051
+    Data4: -1535705617
+  Banks:
+  - {fileID: 7654971557409298311}
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
@@ -211,6 +285,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-2238988659520491078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MCMBank.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: FMOD/Desktop/MCMBank.bank
+  Name: MCMBank
+  StudioPath: bank:/MCMBank
+  lastModified: 639072865524243715
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-2037901565460727606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,6 +330,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-538622580758335435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mentor/Angry0(M)
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Mentor/Angry0(M)
+  Guid:
+    Data1: 1536446989
+    Data2: 1074390604
+    Data3: -1110149980
+    Data4: 1647995769
+  Banks:
+  - {fileID: -3447312381394319404}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-482890028987261957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mentor/Confused1(M)
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Mentor/Confused1(M)
+  Guid:
+    Data1: -1448398965
+    Data2: 1138742055
+    Data3: -237798235
+    Data4: 284928442
+  Banks:
+  - {fileID: -3447312381394319404}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-386274078700831708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,6 +402,33 @@ MonoBehaviour:
   lastModified: 639060742928742090
   FileSizes: []
   Exists: 1
+--- !u!114 &-368458866398036289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mentor/Confused2(M)
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Mentor/Confused2(M)
+  Guid:
+    Data1: -1314953910
+    Data2: 1206733144
+    Data3: 1675237790
+    Data4: -985655944
+  Banks:
+  - {fileID: -3447312381394319404}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-364393672236400547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,21 +463,68 @@ MonoBehaviour:
   - {fileID: -7989202825351334509}
   - {fileID: -7856220074041311463}
   - {fileID: -7511608834827293449}
+  - {fileID: 7654971557409298311}
+  - {fileID: 8273670539844600714}
+  - {fileID: 8184313345184155707}
+  - {fileID: 5545812114955795361}
+  - {fileID: -2238988659520491078}
+  - {fileID: -3447312381394319404}
+  - {fileID: 455027067487062142}
   EditorEvents:
-  - {fileID: 6285572130539231245}
-  - {fileID: -7012430986418271165}
+  - {fileID: 4206096203355044973}
+  - {fileID: -3228070068050214767}
+  - {fileID: -538622580758335435}
+  - {fileID: 2958647514727370143}
+  - {fileID: 7860492720065442495}
+  - {fileID: -9086485354850655695}
+  - {fileID: -368458866398036289}
+  - {fileID: -482890028987261957}
+  - {fileID: 6406745500517316191}
+  - {fileID: 4217805316651361398}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7856220074041311463}
   StringsBanks:
   - {fileID: -7989202825351334509}
   cacheVersion: 131858
-  cacheTime: 639068627694814179
+  cacheTime: 639072987422630644
   SerializableEventsDict:
-  - key: event:/FB minigame
+  - key: event:/HammerHitMetal
     index: 0
-  - key: event:/Forging bonds main theme (FIXED ENDING)
+  - key: event:/MetalPipe
     index: 1
+  - key: event:/Mentor/Angry0(M)
+    index: 2
+  - key: event:/Mentor/Angry1(M)
+    index: 3
+  - key: event:/Mentor/Angry2(M)
+    index: 4
+  - key: event:/MusicTracks/MainTheme
+    index: 5
+  - key: event:/Mentor/Confused2(M)
+    index: 6
+  - key: event:/Mentor/Confused1(M)
+    index: 7
+  - key: event:/Mentor/Confused3(M)
+    index: 8
+--- !u!114 &455027067487062142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/RedFlagBank.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: FMOD/Desktop/RedFlagBank.bank
+  Name: RedFlagBank
+  StudioPath: bank:/RedFlagBank
+  lastModified: 639072865524410062
+  FileSizes: []
+  Exists: 1
 --- !u!114 &2547793194418772089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,6 +543,33 @@ MonoBehaviour:
   lastModified: 639069701535589134
   FileSizes: []
   Exists: 1
+--- !u!114 &2958647514727370143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mentor/Angry1(M)
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Mentor/Angry1(M)
+  Guid:
+    Data1: 2078941664
+    Data2: 1318567269
+    Data3: 290373544
+    Data4: 402473518
+  Banks:
+  - {fileID: -3447312381394319404}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &3106935810046521474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,6 +633,61 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &4206096203355044973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/HammerHitMetal
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/HammerHitMetal
+  Guid:
+    Data1: 783849422
+    Data2: 1074819203
+    Data3: -1027982419
+    Data4: -1497336820
+  Banks:
+  - {fileID: 7654971557409298311}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4217805316651361398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MusicTracks/CurrentGameTheme
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/MusicTracks/CurrentGameTheme
+  Guid:
+    Data1: 290664653
+    Data2: 1257602660
+    Data3: 1538575287
+    Data4: 1179551674
+  Banks:
+  - {fileID: -7511608834827293449}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -6985813191398771141}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &5360457080811665694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,6 +715,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &5545812114955795361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MCFBank.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: FMOD/Desktop/MCFBank.bank
+  Name: MCFBank
+  StudioPath: bank:/MCFBank
+  lastModified: 639072865524314082
+  FileSizes: []
+  Exists: 1
 --- !u!114 &5779108154280034512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,7 +789,7 @@ MonoBehaviour:
   lastModified: 639064034832301411
   FileSizes: []
   Exists: 1
---- !u!114 &6285572130539231245
+--- !u!114 &6406745500517316191
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -479,17 +799,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/FB minigame
+  m_Name: event:/Mentor/Confused3(M)
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/FB minigame
+  Path: event:/Mentor/Confused3(M)
   Guid:
-    Data1: 158400579
-    Data2: 1240320920
-    Data3: -253839744
-    Data4: -8801268
+    Data1: 194397425
+    Data2: 1272149123
+    Data3: -689573216
+    Data4: -2028382221
   Banks:
-  - {fileID: -7511608834827293449}
-  IsStream: 1
+  - {fileID: -3447312381394319404}
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
@@ -534,6 +854,24 @@ MonoBehaviour:
   lastModified: 639060742928532040
   FileSizes: []
   Exists: 1
+--- !u!114 &7654971557409298311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: FMOD/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 639072839923792576
+  FileSizes: []
+  Exists: 1
 --- !u!114 &7800558351372909233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -553,6 +891,69 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 902
+  Exists: 1
+--- !u!114 &7860492720065442495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mentor/Angry2(M)
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Mentor/Angry2(M)
+  Guid:
+    Data1: -686693141
+    Data2: 1182980024
+    Data3: 521487267
+    Data4: -2124785875
+  Banks:
+  - {fileID: -3447312381394319404}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8184313345184155707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/LoneWolfBank.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: FMOD/Desktop/LoneWolfBank.bank
+  Name: LoneWolfBank
+  StudioPath: bank:/LoneWolfBank
+  lastModified: 639072865524469256
+  FileSizes: []
+  Exists: 1
+--- !u!114 &8273670539844600714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/BestFriendBank.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: FMOD/Desktop/BestFriendBank.bank
+  Name: BestFriendBank
+  StudioPath: bank:/BestFriendBank
+  lastModified: 639072865524447396
+  FileSizes: []
   Exists: 1
 --- !u!114 &8807834426625404065
 MonoBehaviour:
