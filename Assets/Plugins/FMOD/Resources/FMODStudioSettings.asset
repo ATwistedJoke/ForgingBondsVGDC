@@ -416,6 +416,12 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - BestFriendBank
+  - LoneWolfBank
+  - MCFBank
+  - MCMBank
+  - MentorBank
+  - RedFlagBank
   - SFX
   - Themes
   BanksToLoad: []
