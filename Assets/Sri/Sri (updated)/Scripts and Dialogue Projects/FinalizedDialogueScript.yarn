@@ -630,7 +630,43 @@ title: WeekTwoAfterMinigame
 Leaving the vein, you carry your haul of Pleiotium out to be met with a worried Isham. 
 <<sp 1>>
 {$mentorName}: “How did it go, (lad, lass, pal)?”
-<<resource_result>>
+//<<resource_result>>
+<<if $result == 2>>
+        <<cs 0 1>>
+        <<MC true>>
+        {$playerName}: “I say it went fairly well. Got myself a good supply.”
+        <<cs 1 1>>
+        {$mentorName}: “Thank the gods. Nice work, rookie.”
+        <<destroy 1>>
+        <<MC false>>
+        The departure from the mines in triumph fills you with renewed confidence and excitement. Led back to the carriage, you can’t wait to see how the Pleiotium you harvested will turn out. 
+        With no need to stay any longer in the village of Pleioridge, you depart back to the Capital with Isham.
+        Your good work has rewarded you with an open schedule. With no overtime needed, you return to the Capital with extra free time ready to be spent.
+        <<set $weekOneResult = 2>>
+<<elseif $result == 1>>
+    <<MC true>>
+    {$playerName}: “It was okay. I could’ve done better.”
+    {$mentorName}: “That’s alright, you don’t always get it right the first time. Just make sure to learn from this experience and do better the next time you come.”
+    <<destroy 1>>
+    <<MC false>>
+    The departure from the mines leaves you in deep contemplation, wondering how you could improve your technique. Led back to a hut reserved for visiting blacksmiths, you go to sleep early to prepare for tomorrow. 
+    Having to work longer than you wish, your return to the capital was delayed by a few more days.
+    When it was finally time to leave the village, you couldn’t help but wonder how open your schedule would have been if you had done it right the first time.
+    <<set $weekOneResult = 1>>
+<<else>>
+    <<cs 1 4>>
+    <<MC true>>
+    {$playerName}: “It was terrible, I fucked it up. I don’t know why it went so bad, but I should’ve—”
+    {$mentorName}: “Calm down, rookie. Just take a breather, and tell me slowly. Did anything dangerous happen with the Pleiotium?”
+    {$playerName}: “No…nothing dangerous.”
+    {$mentorName}: “Then it’s fine. Learn from this mistake, and apply yourself to be better next time. We will return to correct this, but it will require some overtime. Everything will be okay.”
+    <<MC false>>
+    The departure from the mines consisted of only silence. Led back to a hut reserved for visiting blacksmiths, you go to sleep early on the verge of tears, swearing you will do better the next time. 
+    The work after was harsh, but ultimately better than your initial try. Your return to the capital was delayed due to the overtime, leaving Isham bitter on the ride back about the work he had missed.
+    You couldn’t help but wonder how open your schedule would have been if you had done it right the first time.
+<<set $weekOneResult = 0>>
+<<endif>>
+<<jump WeekTwoInteractions>>
 ===
 
 title: resourcegameGood

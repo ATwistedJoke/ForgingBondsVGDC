@@ -333,7 +333,7 @@ public class GameManager : MonoBehaviour
     //Audio Implementation
     public void PlayAudio()
     {
-        AudioManager.instance.PlayOneShot(FMODEvents.instnace.SFX[0], transform.position);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.SFX[0], transform.position);
     }
 
     public void VoiceLine(int idx, int line)
