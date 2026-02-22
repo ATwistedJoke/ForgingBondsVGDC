@@ -47,6 +47,87 @@ MonoBehaviour:
   - Name: 
     Value: 902
   Exists: 1
+--- !u!114 &-8742709820036154862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/HammerHitMetal
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/HammerHitMetal
+  Guid:
+    Data1: 783849422
+    Data2: 1074819203
+    Data3: -1027982419
+    Data4: -1497336820
+  Banks:
+  - {fileID: 7654971557409298311}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-8716332474154158634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/ButtonClick
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/ButtonClick
+  Guid:
+    Data1: -333294326
+    Data2: 1211820382
+    Data3: 213849754
+    Data4: -1442103599
+  Banks:
+  - {fileID: 7654971557409298311}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-8267163053685216174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/PlaceMetal
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/PlaceMetal
+  Guid:
+    Data1: 956276679
+    Data2: 1297501822
+    Data3: -1646097225
+    Data4: -229664031
+  Banks:
+  - {fileID: 7654971557409298311}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7989202825351334509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,11 +143,38 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639072987384178700
+  lastModified: 639073049058972705
   FileSizes:
   - Name: 
-    Value: 1630
+    Value: 2534
   Exists: 1
+--- !u!114 &-7856892253812996306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/MetalPipe
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/MetalPipe
+  Guid:
+    Data1: 1834349575
+    Data2: 1141047549
+    Data3: 1254214051
+    Data4: -1535705617
+  Banks:
+  - {fileID: 7654971557409298311}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7856220074041311463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,7 +190,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639072987384148240
+  lastModified: 639073049058937279
   FileSizes: []
   Exists: 1
 --- !u!114 &-7677494005361612881
@@ -112,6 +220,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-7521127821538679814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/WoodPlace
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/WoodPlace
+  Guid:
+    Data1: -1533413558
+    Data2: 1167010800
+    Data3: 1816962481
+    Data4: -1441309307
+  Banks:
+  - {fileID: 7654971557409298311}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7511608834827293449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +262,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Themes.bank
   Name: Themes
   StudioPath: bank:/Themes
-  lastModified: 639072987422630644
+  lastModified: 639073039855456698
   FileSizes: []
   Exists: 1
 --- !u!114 &-6985813191398771141
@@ -186,6 +321,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-3477185789875360831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/RockFalling
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/RockFalling
+  Guid:
+    Data1: -1467178298
+    Data2: 1247714362
+    Data3: -998805833
+    Data4: -714928353
+  Banks:
+  - {fileID: 7654971557409298311}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3447312381394319404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,10 +363,10 @@ MonoBehaviour:
   Path: FMOD/Desktop/MentorBank.bank
   Name: MentorBank
   StudioPath: bank:/MentorBank
-  lastModified: 639072908853620006
+  lastModified: 639073039854240689
   FileSizes: []
   Exists: 1
---- !u!114 &-3228070068050214767
+--- !u!114 &-3284986357842748084
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,14 +376,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/MetalPipe
+  m_Name: event:/SoundEffects/RockHit
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/MetalPipe
+  Path: event:/SoundEffects/RockHit
   Guid:
-    Data1: 1834349575
-    Data2: 1141047549
-    Data3: 1254214051
-    Data4: -1535705617
+    Data1: 1836195931
+    Data2: 1162349138
+    Data3: -703789676
+    Data4: -2123343272
   Banks:
   - {fileID: 7654971557409298311}
   IsStream: 0
@@ -285,6 +447,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-2426891881911344165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/PickUpObject
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/PickUpObject
+  Guid:
+    Data1: 1772513549
+    Data2: 1303107814
+    Data3: -1345766217
+    Data4: 1122805101
+  Banks:
+  - {fileID: 7654971557409298311}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2238988659520491078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +489,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/MCMBank.bank
   Name: MCMBank
   StudioPath: bank:/MCMBank
-  lastModified: 639072865524243715
+  lastModified: 639073039854195201
   FileSizes: []
   Exists: 1
 --- !u!114 &-2037901565460727606
@@ -377,6 +566,33 @@ MonoBehaviour:
     Data4: 284928442
   Banks:
   - {fileID: -3447312381394319404}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-442678076921335784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/DoorOpen
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/DoorOpen
+  Guid:
+    Data1: 1020098212
+    Data2: 1094494664
+    Data3: 1938393732
+    Data4: 1669131334
+  Banks:
+  - {fileID: 7654971557409298311}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -471,8 +687,6 @@ MonoBehaviour:
   - {fileID: -3447312381394319404}
   - {fileID: 455027067487062142}
   EditorEvents:
-  - {fileID: 4206096203355044973}
-  - {fileID: -3228070068050214767}
   - {fileID: -538622580758335435}
   - {fileID: 2958647514727370143}
   - {fileID: 7860492720065442495}
@@ -481,32 +695,123 @@ MonoBehaviour:
   - {fileID: -482890028987261957}
   - {fileID: 6406745500517316191}
   - {fileID: 4217805316651361398}
+  - {fileID: -7856892253812996306}
+  - {fileID: -8716332474154158634}
+  - {fileID: -2426891881911344165}
+  - {fileID: 8382882985611957131}
+  - {fileID: -7521127821538679814}
+  - {fileID: -3284986357842748084}
+  - {fileID: 6272384257766069530}
+  - {fileID: 8677001714744330403}
+  - {fileID: 1547496731153142109}
+  - {fileID: 7275810303364414364}
+  - {fileID: 5762960961365480776}
+  - {fileID: 1195727572553647814}
+  - {fileID: -442678076921335784}
+  - {fileID: -3477185789875360831}
+  - {fileID: -8267163053685216174}
+  - {fileID: -8742709820036154862}
+  - {fileID: 5734112416077042889}
+  - {fileID: 7330696976648129203}
+  - {fileID: 5622599682489221661}
+  - {fileID: 4219003572289409064}
+  - {fileID: 2099490041192757258}
+  - {fileID: 291955427091809007}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7856220074041311463}
   StringsBanks:
   - {fileID: -7989202825351334509}
   cacheVersion: 131858
-  cacheTime: 639072987422630644
+  cacheTime: 639073049081107937
   SerializableEventsDict:
-  - key: event:/HammerHitMetal
-    index: 0
-  - key: event:/MetalPipe
-    index: 1
   - key: event:/Mentor/Angry0(M)
-    index: 2
+    index: 0
   - key: event:/Mentor/Angry1(M)
-    index: 3
+    index: 1
   - key: event:/Mentor/Angry2(M)
-    index: 4
+    index: 2
   - key: event:/MusicTracks/MainTheme
-    index: 5
+    index: 3
   - key: event:/Mentor/Confused2(M)
-    index: 6
+    index: 4
   - key: event:/Mentor/Confused1(M)
-    index: 7
+    index: 5
   - key: event:/Mentor/Confused3(M)
+    index: 6
+  - key: event:/MusicTracks/CurrentGameTheme
+    index: 7
+  - key: event:/SoundEffects/MetalPipe
     index: 8
+  - key: event:/SoundEffects/ButtonClick
+    index: 9
+  - key: event:/SoundEffects/PickUpObject
+    index: 10
+  - key: event:/SoundEffects/WoodFiling
+    index: 11
+  - key: event:/SoundEffects/WoodPlace
+    index: 12
+  - key: event:/SoundEffects/RockHit
+    index: 13
+  - key: event:/SoundEffects/CracklingFire
+    index: 14
+  - key: event:/SoundEffects/MetalScratch
+    index: 15
+  - key: event:/SoundEffects/RockBreak
+    index: 16
+  - key: event:/SoundEffects/Footsteps
+    index: 17
+  - key: event:/SoundEffects/LavaFlow
+    index: 18
+  - key: event:/SoundEffects/FireWoosh
+    index: 19
+  - key: event:/SoundEffects/DoorOpen
+    index: 20
+  - key: event:/SoundEffects/RockFalling
+    index: 21
+  - key: event:/SoundEffects/PlaceMetal
+    index: 22
+  - key: event:/SoundEffects/HammerHitMetal
+    index: 23
+  - key: event:/SoundEffects/BellRing
+    index: 24
+  - key: event:/SoundEffects/StringPluck
+    index: 25
+  - key: event:/SoundEffects/PlaceObject(Neutral)
+    index: 26
+  - key: event:/SoundEffects/Crank
+    index: 27
+  - key: event:/SoundEffects/WoodHit
+    index: 28
+  - key: event:/SoundEffects/DoorSlam
+    index: 29
+--- !u!114 &291955427091809007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/DoorSlam
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/DoorSlam
+  Guid:
+    Data1: 736066812
+    Data2: 1190821807
+    Data3: -1274984550
+    Data4: 1085309769
+  Banks:
+  - {fileID: 7654971557409298311}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &455027067487062142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,9 +827,90 @@ MonoBehaviour:
   Path: FMOD/Desktop/RedFlagBank.bank
   Name: RedFlagBank
   StudioPath: bank:/RedFlagBank
-  lastModified: 639072865524410062
+  lastModified: 639073039854255785
   FileSizes: []
   Exists: 1
+--- !u!114 &1195727572553647814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/FireWoosh
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/FireWoosh
+  Guid:
+    Data1: 1204127375
+    Data2: 1169052705
+    Data3: 2079844240
+    Data4: 1875913236
+  Banks:
+  - {fileID: 7654971557409298311}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1547496731153142109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/RockBreak
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/RockBreak
+  Guid:
+    Data1: 949611115
+    Data2: 1181773210
+    Data3: 967463046
+    Data4: -1198023873
+  Banks:
+  - {fileID: 7654971557409298311}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2099490041192757258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/WoodHit
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/WoodHit
+  Guid:
+    Data1: 1976443641
+    Data2: 1295154826
+    Data3: -1605350481
+    Data4: 1792012603
+  Banks:
+  - {fileID: 7654971557409298311}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &2547793194418772089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -633,33 +1019,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &4206096203355044973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/HammerHitMetal
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/HammerHitMetal
-  Guid:
-    Data1: 783849422
-    Data2: 1074819203
-    Data3: -1027982419
-    Data4: -1497336820
-  Banks:
-  - {fileID: 7654971557409298311}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &4217805316651361398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -685,6 +1044,33 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters:
   - {fileID: -6985813191398771141}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4219003572289409064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/Crank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/Crank
+  Guid:
+    Data1: 1403710443
+    Data2: 1236467070
+    Data3: 416600735
+    Data4: -964673946
+  Banks:
+  - {fileID: 7654971557409298311}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -730,9 +1116,90 @@ MonoBehaviour:
   Path: FMOD/Desktop/MCFBank.bank
   Name: MCFBank
   StudioPath: bank:/MCFBank
-  lastModified: 639072865524314082
+  lastModified: 639073039854169981
   FileSizes: []
   Exists: 1
+--- !u!114 &5622599682489221661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/PlaceObject(Neutral)
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/PlaceObject(Neutral)
+  Guid:
+    Data1: 846362076
+    Data2: 1229703931
+    Data3: 1433616264
+    Data4: -1594138379
+  Banks:
+  - {fileID: 7654971557409298311}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5734112416077042889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/BellRing
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/BellRing
+  Guid:
+    Data1: 1788064978
+    Data2: 1184284575
+    Data3: 996132017
+    Data4: 836031351
+  Banks:
+  - {fileID: 7654971557409298311}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5762960961365480776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/LavaFlow
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/LavaFlow
+  Guid:
+    Data1: 1394610820
+    Data2: 1106543990
+    Data3: 1238242186
+    Data4: 632633755
+  Banks:
+  - {fileID: 7654971557409298311}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &5779108154280034512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -789,6 +1256,33 @@ MonoBehaviour:
   lastModified: 639064034832301411
   FileSizes: []
   Exists: 1
+--- !u!114 &6272384257766069530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/CracklingFire
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/CracklingFire
+  Guid:
+    Data1: -1580020131
+    Data2: 1176681419
+    Data3: -201252949
+    Data4: -817875021
+  Banks:
+  - {fileID: 7654971557409298311}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &6406745500517316191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -836,6 +1330,33 @@ MonoBehaviour:
   - Name: 
     Value: 902
   Exists: 1
+--- !u!114 &7275810303364414364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/Footsteps
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/Footsteps
+  Guid:
+    Data1: 336375922
+    Data2: 1183187838
+    Data3: 1877863354
+    Data4: -480509728
+  Banks:
+  - {fileID: 7654971557409298311}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &7287223274858954727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -854,6 +1375,33 @@ MonoBehaviour:
   lastModified: 639060742928532040
   FileSizes: []
   Exists: 1
+--- !u!114 &7330696976648129203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/StringPluck
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/StringPluck
+  Guid:
+    Data1: -61000996
+    Data2: 1184789119
+    Data3: 1071425409
+    Data4: 583230141
+  Banks:
+  - {fileID: 7654971557409298311}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &7654971557409298311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -869,7 +1417,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639072839923792576
+  lastModified: 639073049081107937
   FileSizes: []
   Exists: 1
 --- !u!114 &7800558351372909233
@@ -934,7 +1482,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/LoneWolfBank.bank
   Name: LoneWolfBank
   StudioPath: bank:/LoneWolfBank
-  lastModified: 639072865524469256
+  lastModified: 639073039854146621
   FileSizes: []
   Exists: 1
 --- !u!114 &8273670539844600714
@@ -952,9 +1500,63 @@ MonoBehaviour:
   Path: FMOD/Desktop/BestFriendBank.bank
   Name: BestFriendBank
   StudioPath: bank:/BestFriendBank
-  lastModified: 639072865524447396
+  lastModified: 639073039854136519
   FileSizes: []
   Exists: 1
+--- !u!114 &8382882985611957131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/WoodFiling
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/WoodFiling
+  Guid:
+    Data1: 638121771
+    Data2: 1171852626
+    Data3: 281173682
+    Data4: 1453113146
+  Banks:
+  - {fileID: 7654971557409298311}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8677001714744330403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/MetalScratch
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/MetalScratch
+  Guid:
+    Data1: -2047144352
+    Data2: 1257498555
+    Data3: 2074691968
+    Data4: 1537055033
+  Banks:
+  - {fileID: 7654971557409298311}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &8807834426625404065
 MonoBehaviour:
   m_ObjectHideFlags: 0
