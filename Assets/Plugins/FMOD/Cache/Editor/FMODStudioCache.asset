@@ -1,5 +1,59 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9212603541481803218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mentor/Confused2(M)
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Mentor/Confused2(M)
+  Guid:
+    Data1: -1314953910
+    Data2: 1206733144
+    Data3: 1675237790
+    Data4: -985655944
+  Banks:
+  - {fileID: -3471478279186377720}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-8984646911763158769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mentor/Angry0(M)
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Mentor/Angry0(M)
+  Guid:
+    Data1: 1536446989
+    Data2: 1074390604
+    Data3: -1110149980
+    Data4: 1647995769
+  Banks:
+  - {fileID: -3471478279186377720}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-8966997423266671208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35,10 +89,28 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639060742928532040
+  lastModified: 639073097870898173
   FileSizes:
   - Name: 
-    Value: 902
+    Value: 2534
+  Exists: 1
+--- !u!114 &-7898127390779193475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MCMBank.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: FMOD/Desktop/MCMBank.bank
+  Name: MCMBank
+  StudioPath: bank:/MCMBank
+  lastModified: 639073097870732593
+  FileSizes: []
   Exists: 1
 --- !u!114 &-7856220074041311463
 MonoBehaviour:
@@ -55,7 +127,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639060742928532040
+  lastModified: 639068627694668702
   FileSizes: []
   Exists: 1
 --- !u!114 &-7677494005361612881
@@ -100,10 +172,10 @@ MonoBehaviour:
   Path: FMOD/Desktop/Themes.bank
   Name: Themes
   StudioPath: bank:/Themes
-  lastModified: 639060742928742090
+  lastModified: 639073097871819142
   FileSizes: []
   Exists: 1
---- !u!114 &-7012430986418271165
+--- !u!114 &-7253708879028448395
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,17 +185,134 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Forging bonds main theme (FIXED ENDING)
+  m_Name: event:/SoundEffects/WoodFiling
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Forging bonds main theme (FIXED ENDING)
+  Path: event:/SoundEffects/WoodFiling
   Guid:
-    Data1: 1557292212
-    Data2: 1299978944
-    Data3: -2056915808
-    Data4: -990016881
+    Data1: 638121771
+    Data2: 1171852626
+    Data3: 281173682
+    Data4: 1453113146
   Banks:
-  - {fileID: -7511608834827293449}
-  IsStream: 1
+  - {fileID: -6570674763206450901}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6874441698275954826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/BestFriendBank.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: FMOD/Desktop/BestFriendBank.bank
+  Name: BestFriendBank
+  StudioPath: bank:/BestFriendBank
+  lastModified: 639073097870732593
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-6774969871271357898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/Crank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/Crank
+  Guid:
+    Data1: 1403710443
+    Data2: 1236467070
+    Data3: 416600735
+    Data4: -964673946
+  Banks:
+  - {fileID: -6570674763206450901}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6739838340105520006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/DoorOpen
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/DoorOpen
+  Guid:
+    Data1: 1020098212
+    Data2: 1094494664
+    Data3: 1938393732
+    Data4: 1669131334
+  Banks:
+  - {fileID: -6570674763206450901}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6570674763206450901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: FMOD/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 639073097871174692
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-6391940457666413527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/PlaceObject(Neutral)
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/PlaceObject(Neutral)
+  Guid:
+    Data1: 846362076
+    Data2: 1229703931
+    Data3: 1433616264
+    Data4: -1594138379
+  Banks:
+  - {fileID: -6570674763206450901}
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
@@ -157,6 +346,214 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-6058780088729892131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MusicTracks/CurrentGameTheme
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/MusicTracks/CurrentGameTheme
+  Guid:
+    Data1: 290664653
+    Data2: 1257602660
+    Data3: 1538575287
+    Data4: 1179551674
+  Banks:
+  - {fileID: -7511608834827293449}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 3868475963429479733}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-5809872620928187754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/BellRing
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/BellRing
+  Guid:
+    Data1: 1788064978
+    Data2: 1184284575
+    Data3: 996132017
+    Data4: 836031351
+  Banks:
+  - {fileID: -6570674763206450901}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4511901276797460539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/Footsteps
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/Footsteps
+  Guid:
+    Data1: 336375922
+    Data2: 1183187838
+    Data3: 1877863354
+    Data4: -480509728
+  Banks:
+  - {fileID: -6570674763206450901}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4351042897390280974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/MetalPipe
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/MetalPipe
+  Guid:
+    Data1: 1834349575
+    Data2: 1141047549
+    Data3: 1254214051
+    Data4: -1535705617
+  Banks:
+  - {fileID: -6570674763206450901}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4270232179743604124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/RockFalling
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/RockFalling
+  Guid:
+    Data1: -1467178298
+    Data2: 1247714362
+    Data3: -998805833
+    Data4: -714928353
+  Banks:
+  - {fileID: -6570674763206450901}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3928647008323320394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/DoorSlam
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/DoorSlam
+  Guid:
+    Data1: 736066812
+    Data2: 1190821807
+    Data3: -1274984550
+    Data4: 1085309769
+  Banks:
+  - {fileID: -6570674763206450901}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3716526653123230666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/MetalScratch
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/MetalScratch
+  Guid:
+    Data1: -2047144352
+    Data2: 1257498555
+    Data3: 2074691968
+    Data4: 1537055033
+  Banks:
+  - {fileID: -6570674763206450901}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3471478279186377720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MentorBank.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: FMOD/Desktop/MentorBank.bank
+  Name: MentorBank
+  StudioPath: bank:/MentorBank
+  lastModified: 639073097870908276
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-2868923221266328789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +608,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-2401195293710295506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/HammerHitMetal
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/HammerHitMetal
+  Guid:
+    Data1: 783849422
+    Data2: 1074819203
+    Data3: -1027982419
+    Data4: -1497336820
+  Banks:
+  - {fileID: -6570674763206450901}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2164740359138327302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/ButtonClick
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/ButtonClick
+  Guid:
+    Data1: -333294326
+    Data2: 1211820382
+    Data3: 213849754
+    Data4: -1442103599
+  Banks:
+  - {fileID: -6570674763206450901}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2037901565460727606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,6 +683,33 @@ MonoBehaviour:
   Banks:
   - {fileID: 3106935810046521474}
   IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-708001467316692645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mentor/Angry1(M)
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Mentor/Angry1(M)
+  Guid:
+    Data1: 2078941664
+    Data2: 1318567269
+    Data3: 290373544
+    Data4: 402473518
+  Banks:
+  - {fileID: -3471478279186377720}
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
@@ -274,6 +752,33 @@ MonoBehaviour:
   lastModified: 639051253661819420
   FileSizes: []
   Exists: 1
+--- !u!114 &-25744746497835865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/RockBreak
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/RockBreak
+  Guid:
+    Data1: 949611115
+    Data2: 1181773210
+    Data3: 967463046
+    Data4: -1198023873
+  Banks:
+  - {fileID: -6570674763206450901}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,21 +795,166 @@ MonoBehaviour:
   - {fileID: -7989202825351334509}
   - {fileID: -7856220074041311463}
   - {fileID: -7511608834827293449}
+  - {fileID: -6874441698275954826}
+  - {fileID: 7390791046133822515}
+  - {fileID: 3022335190212552305}
+  - {fileID: -7898127390779193475}
+  - {fileID: -3471478279186377720}
+  - {fileID: 3020038978146422170}
+  - {fileID: -6570674763206450901}
   EditorEvents:
-  - {fileID: 6285572130539231245}
-  - {fileID: -7012430986418271165}
+  - {fileID: -8984646911763158769}
+  - {fileID: -9212603541481803218}
+  - {fileID: 6485726863194318807}
+  - {fileID: -708001467316692645}
+  - {fileID: 3810873332172666993}
+  - {fileID: 8723200181455534050}
+  - {fileID: -4351042897390280974}
+  - {fileID: -2164740359138327302}
+  - {fileID: 5121749691975476493}
+  - {fileID: -7253708879028448395}
+  - {fileID: 1166376874863879193}
+  - {fileID: 9145935597373180690}
+  - {fileID: 7944761708346232446}
+  - {fileID: -3716526653123230666}
+  - {fileID: -25744746497835865}
+  - {fileID: -4511901276797460539}
+  - {fileID: 4797502220256453894}
+  - {fileID: 36345489327250644}
+  - {fileID: -6739838340105520006}
+  - {fileID: -4270232179743604124}
+  - {fileID: 8056444454885003644}
+  - {fileID: -2401195293710295506}
+  - {fileID: -5809872620928187754}
+  - {fileID: 4620867803443199911}
+  - {fileID: -6391940457666413527}
+  - {fileID: -6774969871271357898}
+  - {fileID: 3356845993902520179}
+  - {fileID: -3928647008323320394}
+  - {fileID: 3935745365859005762}
+  - {fileID: -6058780088729892131}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7856220074041311463}
   StringsBanks:
   - {fileID: -7989202825351334509}
   cacheVersion: 131858
-  cacheTime: 639060742928742090
+  cacheTime: 639073097871819142
   SerializableEventsDict:
-  - key: event:/FB minigame
+  - key: event:/Mentor/Angry0(M)
     index: 0
-  - key: event:/Forging bonds main theme (FIXED ENDING)
+  - key: event:/Mentor/Confused2(M)
     index: 1
+  - key: event:/Mentor/Confused1(M)
+    index: 2
+  - key: event:/Mentor/Angry1(M)
+    index: 3
+  - key: event:/Mentor/Angry2(M)
+    index: 4
+  - key: event:/Mentor/Confused3(M)
+    index: 5
+  - key: event:/SoundEffects/MetalPipe
+    index: 6
+  - key: event:/SoundEffects/ButtonClick
+    index: 7
+  - key: event:/SoundEffects/PickUpObject
+    index: 8
+  - key: event:/SoundEffects/WoodFiling
+    index: 9
+  - key: event:/SoundEffects/WoodPlace
+    index: 10
+  - key: event:/SoundEffects/RockHit
+    index: 11
+  - key: event:/SoundEffects/CracklingFire
+    index: 12
+  - key: event:/SoundEffects/MetalScratch
+    index: 13
+  - key: event:/SoundEffects/RockBreak
+    index: 14
+  - key: event:/SoundEffects/Footsteps
+    index: 15
+  - key: event:/SoundEffects/LavaFlow
+    index: 16
+  - key: event:/SoundEffects/FireWoosh
+    index: 17
+  - key: event:/SoundEffects/DoorOpen
+    index: 18
+  - key: event:/SoundEffects/RockFalling
+    index: 19
+  - key: event:/SoundEffects/PlaceMetal
+    index: 20
+  - key: event:/SoundEffects/HammerHitMetal
+    index: 21
+  - key: event:/SoundEffects/BellRing
+    index: 22
+  - key: event:/SoundEffects/StringPluck
+    index: 23
+  - key: event:/SoundEffects/PlaceObject(Neutral)
+    index: 24
+  - key: event:/SoundEffects/Crank
+    index: 25
+  - key: event:/SoundEffects/WoodHit
+    index: 26
+  - key: event:/SoundEffects/DoorSlam
+    index: 27
+  - key: event:/MusicTracks/MainTheme
+    index: 28
+  - key: event:/MusicTracks/CurrentGameTheme
+    index: 29
+--- !u!114 &36345489327250644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/FireWoosh
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/FireWoosh
+  Guid:
+    Data1: 1204127375
+    Data2: 1169052705
+    Data3: 2079844240
+    Data4: 1875913236
+  Banks:
+  - {fileID: -6570674763206450901}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1166376874863879193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/WoodPlace
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/WoodPlace
+  Guid:
+    Data1: -1533413558
+    Data2: 1167010800
+    Data3: 1816962481
+    Data4: -1441309307
+  Banks:
+  - {fileID: -6570674763206450901}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &2547793194418772089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,6 +971,42 @@ MonoBehaviour:
   Name: Master
   StudioPath: bank:/Master
   lastModified: 639069701535589134
+  FileSizes: []
+  Exists: 1
+--- !u!114 &3020038978146422170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/RedFlagBank.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: FMOD/Desktop/RedFlagBank.bank
+  Name: RedFlagBank
+  StudioPath: bank:/RedFlagBank
+  lastModified: 639073097870918249
+  FileSizes: []
+  Exists: 1
+--- !u!114 &3022335190212552305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MCFBank.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: FMOD/Desktop/MCFBank.bank
+  Name: MCFBank
+  StudioPath: bank:/MCFBank
+  lastModified: 639073097870732593
   FileSizes: []
   Exists: 1
 --- !u!114 &3106935810046521474
@@ -341,6 +1027,33 @@ MonoBehaviour:
   lastModified: 639069701535775115
   FileSizes: []
   Exists: 1
+--- !u!114 &3356845993902520179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/WoodHit
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/WoodHit
+  Guid:
+    Data1: 1976443641
+    Data2: 1295154826
+    Data3: -1605350481
+    Data4: 1792012603
+  Banks:
+  - {fileID: -6570674763206450901}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &3808917578779185000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,6 +1072,33 @@ MonoBehaviour:
   lastModified: 639064034831571705
   FileSizes: []
   Exists: 1
+--- !u!114 &3810873332172666993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mentor/Angry2(M)
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Mentor/Angry2(M)
+  Guid:
+    Data1: -686693141
+    Data2: 1182980024
+    Data3: 521487267
+    Data4: -2124785875
+  Banks:
+  - {fileID: -3471478279186377720}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &3838906841443767076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,6 +1120,143 @@ MonoBehaviour:
   Banks:
   - {fileID: 5779108154280034512}
   IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3868475963429479733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/CurrentGameTheme/CurrentTheme
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: CurrentTheme
+  StudioPath: 
+  Min: 0
+  Max: 4
+  Default: 0
+  ID:
+    data1: 2738509776
+    data2: 1686200952
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - CurrentTheme(Main)
+  - CurrentTheme(Minigame)
+  - CurrentTheme(Sad)
+  - CurrentTheme(BestFriend)
+  - CurrentTheme(RedFlag)
+  Exists: 1
+--- !u!114 &3935745365859005762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MusicTracks/MainTheme
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/MusicTracks/MainTheme
+  Guid:
+    Data1: 863173421
+    Data2: 1191744933
+    Data3: -1625324622
+    Data4: 1753204888
+  Banks:
+  - {fileID: -7511608834827293449}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 79340
+--- !u!114 &4620867803443199911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/StringPluck
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/StringPluck
+  Guid:
+    Data1: -61000996
+    Data2: 1184789119
+    Data3: 1071425409
+    Data4: 583230141
+  Banks:
+  - {fileID: -6570674763206450901}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4797502220256453894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/LavaFlow
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/LavaFlow
+  Guid:
+    Data1: 1394610820
+    Data2: 1106543990
+    Data3: 1238242186
+    Data4: 632633755
+  Banks:
+  - {fileID: -6570674763206450901}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5121749691975476493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/PickUpObject
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/PickUpObject
+  Guid:
+    Data1: 1772513549
+    Data2: 1303107814
+    Data3: -1345766217
+    Data4: 1122805101
+  Banks:
+  - {fileID: -6570674763206450901}
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
@@ -469,7 +1346,7 @@ MonoBehaviour:
   lastModified: 639064034832301411
   FileSizes: []
   Exists: 1
---- !u!114 &6285572130539231245
+--- !u!114 &6485726863194318807
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -479,17 +1356,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/FB minigame
+  m_Name: event:/Mentor/Confused1(M)
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/FB minigame
+  Path: event:/Mentor/Confused1(M)
   Guid:
-    Data1: 158400579
-    Data2: 1240320920
-    Data3: -253839744
-    Data4: -8801268
+    Data1: -1448398965
+    Data2: 1138742055
+    Data3: -237798235
+    Data4: 284928442
   Banks:
-  - {fileID: -7511608834827293449}
-  IsStream: 1
+  - {fileID: -3471478279186377720}
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
@@ -534,6 +1411,24 @@ MonoBehaviour:
   lastModified: 639060742928532040
   FileSizes: []
   Exists: 1
+--- !u!114 &7390791046133822515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/LoneWolfBank.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: FMOD/Desktop/LoneWolfBank.bank
+  Name: LoneWolfBank
+  StudioPath: bank:/LoneWolfBank
+  lastModified: 639073097870732593
+  FileSizes: []
+  Exists: 1
 --- !u!114 &7800558351372909233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,6 +1449,87 @@ MonoBehaviour:
   - Name: 
     Value: 902
   Exists: 1
+--- !u!114 &7944761708346232446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/CracklingFire
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/CracklingFire
+  Guid:
+    Data1: -1580020131
+    Data2: 1176681419
+    Data3: -201252949
+    Data4: -817875021
+  Banks:
+  - {fileID: -6570674763206450901}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8056444454885003644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/PlaceMetal
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/PlaceMetal
+  Guid:
+    Data1: 956276679
+    Data2: 1297501822
+    Data3: -1646097225
+    Data4: -229664031
+  Banks:
+  - {fileID: -6570674763206450901}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8723200181455534050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mentor/Confused3(M)
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Mentor/Confused3(M)
+  Guid:
+    Data1: 194397425
+    Data2: 1272149123
+    Data3: -689573216
+    Data4: -2028382221
+  Banks:
+  - {fileID: -3471478279186377720}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &8807834426625404065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,6 +1551,33 @@ MonoBehaviour:
   Banks:
   - {fileID: -386274078700831708}
   IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &9145935597373180690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundEffects/RockHit
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SoundEffects/RockHit
+  Guid:
+    Data1: 1836195931
+    Data2: 1162349138
+    Data3: -703789676
+    Data4: -2123343272
+  Banks:
+  - {fileID: -6570674763206450901}
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
