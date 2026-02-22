@@ -28,6 +28,13 @@ public class GameManager : MonoBehaviour
     public GameObject lake;
     public GameObject capitalStreets;
     public GameObject judithsHome;
+    public GameObject silasHome;
+    public GameObject village;
+    public GameObject trainingGrounds;
+    public GameObject manor;
+    public GameObject badlands;
+    public GameObject battlefield;
+
 
     //Character Handling
     public GameObject[] spPrefab = new GameObject[5]; 
@@ -234,7 +241,24 @@ public class GameManager : MonoBehaviour
             case "Judith's home":
                 Instantiate(judithsHome);
                 break;
-            
+            case "Silas's home":
+                Instantiate(silasHome);
+                break;
+            case "village":
+                Instantiate(village);
+                break;
+            case "training grounds":
+                Instantiate(trainingGrounds);
+                break;
+            case "manor":
+                Instantiate(manor);
+                break;
+            case "badlands":
+                Instantiate(badlands);
+                break;
+            case "battlefield":
+                Instantiate(battlefield);
+                break;
         }
     }
     // private void ChangeAffinity(string character, int modifier)
