@@ -266,7 +266,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 12426800422790551, guid: 2f8d62db11700a642a04152a8a3ee710, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.42086
+      value: 3.42
       objectReference: {fileID: 0}
     - target: {fileID: 12426800422790551, guid: 2f8d62db11700a642a04152a8a3ee710, type: 3}
       propertyPath: m_LocalPosition.y
@@ -308,53 +308,9 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 69092560}
-    - target: {fileID: 2171295745104780307, guid: 2f8d62db11700a642a04152a8a3ee710, type: 3}
-      propertyPath: m_Size.y
-      value: 1.414245
-      objectReference: {fileID: 0}
-    - target: {fileID: 2171295745104780307, guid: 2f8d62db11700a642a04152a8a3ee710, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.06397289
-      objectReference: {fileID: 0}
-    - target: {fileID: 2171295745104780307, guid: 2f8d62db11700a642a04152a8a3ee710, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.83
-      objectReference: {fileID: 0}
-    - target: {fileID: 2171295745104780307, guid: 2f8d62db11700a642a04152a8a3ee710, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 3923735702842901309, guid: 2f8d62db11700a642a04152a8a3ee710, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -3140473254058401808, guid: 5a6b028ff4d2a49e29b91739b9321bfe, type: 3}
     - target: {fileID: 4784760813319784402, guid: 2f8d62db11700a642a04152a8a3ee710, type: 3}
       propertyPath: m_Name
       value: Hammering Minigame
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784760813319784402, guid: 2f8d62db11700a642a04152a8a3ee710, type: 3}
-      propertyPath: m_TagString
-      value: minigame
-      objectReference: {fileID: 0}
-    - target: {fileID: 5156330950496423598, guid: 2f8d62db11700a642a04152a8a3ee710, type: 3}
-      propertyPath: currCountdownValue
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 5156330950496423598, guid: 2f8d62db11700a642a04152a8a3ee710, type: 3}
-      propertyPath: startCountdownValue
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 7892961651708205391, guid: 2f8d62db11700a642a04152a8a3ee710, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7892961651708205391, guid: 2f8d62db11700a642a04152a8a3ee710, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7892961651708205391, guid: 2f8d62db11700a642a04152a8a3ee710, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
