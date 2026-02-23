@@ -48,6 +48,7 @@ TagManager:
   - Score
   - ScoreBar
   - Ring2
+  - AnimationPos
   layers:
   - Default
   - TransparentFX
