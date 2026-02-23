@@ -1,12 +1,15 @@
 using UnityEngine;
 using System.Collections;
-using Unity.VisualScripting;
+using FMODUnity;
 public class CharacterManager : MonoBehaviour
 {
     [SerializeField] public SpriteRenderer rnd; 
     [SerializeField] public Sprite[] list; 
     [SerializeField] public GameObject obj; 
     
+    [field: Header("Voice Lines")]
+    public EventReference[] VoiceLines;
+
     public int currSp; 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,7 +27,6 @@ public class CharacterManager : MonoBehaviour
 
     public void ChangeSprite(int i)
     {
-        Debug.Log("Called");
         currSp = i; 
     }
 
@@ -41,6 +43,11 @@ public class CharacterManager : MonoBehaviour
             obj.transform.position = Vector3.MoveTowards(obj.transform.position, target, spd*Time.deltaTime); 
             yield return new WaitForEndOfFrame(); 
         }
+    }
+
+    public void PlayLine(int idx)
+    {
+        RuntimeManager.PlayOneShot(VoiceLines[3*idx + Random.Range(0,2)], transform.position);
     }
 
     void OnDestroy()

@@ -8,7 +8,7 @@ public class Stream : MonoBehaviour
     public Mold mold;
 
     public Molding_Minigame game;
-    //public ParticleSystem splashParticles; // Add optional particle system here
+    public ParticleSystem splashParticles; // Add optional particle system here
 
     [SerializeField] private float maxRange = 1000f; // UI distances are larger
     [SerializeField] private float minPourAngle = 45f;
@@ -27,6 +27,7 @@ public class Stream : MonoBehaviour
         else if (!shouldPour && isPouring)
         {
             EndPour();
+            splashParticles.Stop();
         }
 
         if (isPouring)
@@ -49,7 +50,7 @@ public class Stream : MonoBehaviour
     {
         isPouring = false;
         stream.enabled = false;
-        //if (splashParticles != null) splashParticles.Stop();
+        if (splashParticles != null) splashParticles.Stop();
     }
 
     void UpdateStreamPositions()
@@ -70,8 +71,8 @@ public class Stream : MonoBehaviour
         float distanceToTarget = Vector3.Distance(newEndPos, targetPos);
         if (distanceToTarget < 0.1f && hit.collider != null)
         {
-            //if (splashParticles != null && !splashParticles.isPlaying) splashParticles.Play();
-            //if (splashParticles != null) splashParticles.transform.position = hit.point;
+            if (splashParticles != null && !splashParticles.isPlaying) splashParticles.Play();
+            if (splashParticles != null) splashParticles.transform.position = hit.point;
 
             //fill mold
             if (hit.collider.CompareTag("Mold"))
@@ -87,7 +88,7 @@ public class Stream : MonoBehaviour
         else
         {
             //Debug.Log("I am hitting nothing");
-            //if (splashParticles != null) splashParticles.Stop();
+            if (splashParticles != null) splashParticles.Stop();
         }
     }
 

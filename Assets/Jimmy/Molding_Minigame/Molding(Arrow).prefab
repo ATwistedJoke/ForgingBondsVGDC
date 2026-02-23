@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 172625010533753942, guid: 992e6fccd4b3f794c90283132576424f, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 172625010533753942, guid: 992e6fccd4b3f794c90283132576424f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6301429047446442448, guid: 4a325bc66aaf7254a80f4316e94420f9, type: 3}
     - target: {fileID: 278560386355165012, guid: 992e6fccd4b3f794c90283132576424f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -64,6 +72,14 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 3405156673297468656, guid: 992e6fccd4b3f794c90283132576424f, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405156673297468656, guid: 992e6fccd4b3f794c90283132576424f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4226397978021778064, guid: f5bb7a62edb0e48c8993fe0db076e536, type: 3}
     - target: {fileID: 3872884014977027678, guid: 992e6fccd4b3f794c90283132576424f, type: 3}
       propertyPath: arrow_mold
       value: 
@@ -110,7 +126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7212466634946538434, guid: 992e6fccd4b3f794c90283132576424f, type: 3}
       propertyPath: m_Name
-      value: Molding_Minigame Variant
+      value: Molding(Arrow)
       objectReference: {fileID: 0}
     - target: {fileID: 7774934899715383280, guid: 992e6fccd4b3f794c90283132576424f, type: 3}
       propertyPath: m_SizeDelta.x
@@ -128,6 +144,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -474.1
       objectReference: {fileID: 0}
+    - target: {fileID: 7955890184475413204, guid: 992e6fccd4b3f794c90283132576424f, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7955890184475413204, guid: 992e6fccd4b3f794c90283132576424f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3140473254058401808, guid: 5a6b028ff4d2a49e29b91739b9321bfe, type: 3}
     - target: {fileID: 8738815980250155567, guid: 992e6fccd4b3f794c90283132576424f, type: 3}
       propertyPath: m_fontSize
       value: 80

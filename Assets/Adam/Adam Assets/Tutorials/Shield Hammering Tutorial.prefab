@@ -448,7 +448,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5461487231048208893}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 86995718f497b4e79bdb97c8e7c8386c, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 0e5e22fba443d49f8acd02817d9b34d5, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -509,8 +509,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.4660013, y: 16.402061}
-  m_SizeDelta: {x: 2849.506, y: 1417.955}
+  m_AnchoredPosition: {x: 1.292, y: 1.0004}
+  m_SizeDelta: {x: 1970.746, y: 1064.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6349653668016458588
 CanvasRenderer:
@@ -880,7 +880,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7377692025170285921}
   m_Layer: 0
-  m_Name: Hammering Tutorial
+  m_Name: Shield Hammering Tutorial
   m_TagString: Tutorial Video
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

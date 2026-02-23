@@ -20,9 +20,12 @@ public class CraftingOutput : MonoBehaviour
     public DragObject dragObject;
     public GameObject minigameHeader;
 
+    //Timing Calculation
+    public Timer timer;
+
     void Start()
     {
-        minigameHeader = GameObject.FindGameObjectWithTag("minigame");
+        //minigameHeader = GameObject.FindGameObjectWithTag("minigame");
         outputPos = transform;
         craftingRecipes[0] = new string[]{
                 "", "", "Pleiotium",
@@ -103,8 +106,8 @@ public class CraftingOutput : MonoBehaviour
         {
             if(compareArrays(recipe, curTable))
             {
-                instantiateCraftedItem(recipe[9]);
                 ClearGrid();
+                instantiateCraftedItem(recipe[9]);
             }
         }
     }
@@ -177,6 +180,7 @@ public class CraftingOutput : MonoBehaviour
         {
             Destroy(minigameHeader);
         }
+        Debug.Log(craftedObject);
         if(craftedObject != null)
         {
             craftedObject.transform.SetParent(minigameHeader.transform, true);
@@ -192,5 +196,20 @@ public class CraftingOutput : MonoBehaviour
             }
         }
         Array.Clear(curTable, 0, 9);
+    }
+
+    private void OnDestroy()
+    {
+        int elaspedTime = (int) (timer.startCountdownValue - timer.currCountdownValue); 
+        int result = 0; 
+        if(elaspedTime <= 45)
+        {
+            result = 2; 
+        }
+        else if(elaspedTime <= 90)
+        {
+            result = 1; 
+        }
+        GameManager.instance.GiveResult(result); 
     }
 }
