@@ -1,9 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.InputSystem.LowLevel;
-using Unity.VisualScripting;
-using UnityEngine.InputSystem.OSX;
 
 public class Molding_Minigame : MonoBehaviour
 {
