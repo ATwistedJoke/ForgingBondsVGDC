@@ -327,6 +327,7 @@ public class GameManager : MonoBehaviour
         else
         {
             sprite[MCAppearance].GetComponentInChildren<CharacterManager>().Move(-30, -6, 100);
+            sprite[MCAppearance].GetComponentInChildren<CharacterManager>().ChangeSprite(0);
         }
     }
 
