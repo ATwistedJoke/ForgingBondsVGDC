@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 5076e9f7eedeaa241a50fe364dd77b1c
+timeCreated: 1547092688
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 207048
+  packageName: POLYGON - Sampler Pack
+  packageVersion: 1.1.0
+  assetPath: Assets/SyntyStudios/PolygonPrototype/Materials/PolygonPrototype_Global_Grid_03.mat
+  uploadId: 645704

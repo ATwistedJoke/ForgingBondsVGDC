@@ -2,8 +2,52 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - minigame
+  - background
+  - Ores
+  - Boundary
+  - Bag
+  - Mold
+  - Crucible
+  - Iron
+  - Gold
+  - Mythril
+  - Tongs
+  - Fire
+  - SnapPoint
+  - Spike
+  - Morningstar Head
+  - Ball
+  - Morningstar
+  - Minigame
+  - Tutorial Video
+  - Plank
+  - Steel
+  - Bow
+  - Chain
+  - Crank
+  - Crossbow
+  - Crossbow Base
+  - Handle
+  - Shaft
+  - Stirrup
+  - String
+  - Pommel
+  - Ring
+  - Pleiotium
+  - Pleiotium Cylinder
+  - Stick
+  - Wood
+  - Hammer Event
+  - Diamond
+  - Hammer
+  - Hitbox
+  - Ingot
+  - Score
+  - ScoreBar
+  - Ring2
   layers:
   - Default
   - TransparentFX
@@ -41,3 +85,8 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: New Layer 1
+    uniqueID: 1890191263
+    locked: 0
+  m_RenderingLayers:
+  - Default
