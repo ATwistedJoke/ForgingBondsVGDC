@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Annejulia/Scenes/GameStart.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Annejulia/Scenes/MainMenu.unity
+    guid: 7f488ed031beddc409b8dcf329219c5c
+  - enabled: 1
+    path: Assets/Sri/Sri (updated)/Scenes/DialogueCreation.unity
+    guid: 509da3f36f0aea24d83e7473412e62b7
+  - enabled: 1
+    path: Assets/Annejulia/Scenes/Settings.unity
+    guid: 9190a1e6446fb6547a0173f38a4d1f3b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

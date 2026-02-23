@@ -1,21 +1,19 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
-using System.Collections.Generic;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class StartMenuController : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void OnStartClick()
     {
         // Load the main game scene
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainGameScene");
+        SceneManager.LoadScene("DialogueCreation");
     }
 
     public void OnSettingsClick()
     {
         // Load the settings scene
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Setting");
+        SceneManager.LoadScene("Settings");
     }
 
     public void OnExitClick()
