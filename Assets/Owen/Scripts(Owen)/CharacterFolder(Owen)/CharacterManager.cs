@@ -47,7 +47,7 @@ public class CharacterManager : MonoBehaviour
 
     public void PlayLine(int idx)
     {
-        RuntimeManager.PlayOneShot(VoiceLines[idx + Random.Range(0,2)], transform.position);
+        RuntimeManager.PlayOneShot(VoiceLines[3*idx + Random.Range(0,2)], transform.position);
     }
 
     void OnDestroy()

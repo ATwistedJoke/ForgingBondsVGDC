@@ -338,6 +338,10 @@ public class GameManager : MonoBehaviour
 
     public void VoiceLine(int idx, int line)
     {
+        if(idx == 0)
+        {
+            idx = MCAppearance;
+        }
         sprite[idx].GetComponentInChildren<CharacterManager>().PlayLine(line);
     }
 

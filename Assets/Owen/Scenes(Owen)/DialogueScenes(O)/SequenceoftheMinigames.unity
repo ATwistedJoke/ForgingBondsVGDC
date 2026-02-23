@@ -309,10 +309,10 @@ MonoBehaviour:
   - {fileID: 680431790705880569, guid: 8d43042f321424e529faa77874535997, type: 3}
   - {fileID: 8087954389772310151, guid: db4c5f2332f494f939bf1a5c51814dcb, type: 3}
   - {fileID: 3498458944537151172, guid: 6f07ba46510142545aeddb55b651424f, type: 3}
-  - {fileID: 7212466634946538434, guid: 992e6fccd4b3f794c90283132576424f, type: 3}
+  - {fileID: 1138786527375491409, guid: 5dddd6f7b85a11b4ebcc6686e4d8c161, type: 3}
   - {fileID: 1302685205932175881, guid: fcba56994667e461ab4031036947ae3c, type: 3}
   - {fileID: 4972818008384230929, guid: abd1e5a70917e4d5a93c923f7b5d08ab, type: 3}
-  - {fileID: 4460669743888560788, guid: eafe48e3ab69e466c8d38dcbcee76c26, type: 3}
+  - {fileID: 4460669743888560788, guid: 2f7bc2553931f447cb48451d224109b1, type: 3}
   blackBackground: {fileID: 0}
   map: {fileID: 0}
   entranceHall: {fileID: 0}

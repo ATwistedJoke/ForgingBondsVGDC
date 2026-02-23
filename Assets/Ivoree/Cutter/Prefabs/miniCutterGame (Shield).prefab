@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 3074662898049201392}
   m_Layer: 0
   m_Name: miniCutterGame (Shield)
-  m_TagString: Untagged
+  m_TagString: minigame
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -716,6 +716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baefb21b0d7f443388a325cf962b1856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
+  paintableRenderer: {fileID: 0}
   scoreMapRenderer: {fileID: 735614373713361793}
   liveScoreText: {fileID: 3660949535173470398}
   timerText: {fileID: 0}
@@ -724,6 +725,7 @@ MonoBehaviour:
   paintContainer: {fileID: 0}
   stages:
   - stageName: Shield Outline
+    paintableSprite: {fileID: 0}
     scoreMapSprite: {fileID: 9141321760507782296, guid: c9407d953a95e4d1894cbef82e07bd48, type: 3}
     prizeSprite: {fileID: -1857066140087164170, guid: f21e1c073ce3c40c88ca62225b673817, type: 3}
     targetColor: {r: 0, g: 1, b: 0, a: 0}

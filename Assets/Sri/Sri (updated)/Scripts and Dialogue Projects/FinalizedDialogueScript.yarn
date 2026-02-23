@@ -72,6 +72,7 @@ Presentation?
 A door could be heard opening to your right.
 <<MC true>>
 <<cs 0 3>>
+<<Voice 0 5>>
 {$playerName}: “Um…thank you, whoever you are?”
 Hearing no response back, you decide to listen to the voice’s instructions and head down the open hallway. 
 <<MC false>>
@@ -85,6 +86,7 @@ Following the noise, you trace it down to a closed room. Inside, you can hear th
     <<sp 1>>
     Inside, you see an older man overlooking the clumsy work of a younger blacksmith. The man’s eyes appear tired and disappointed, his mouth crooked in frustration.  
     <<cs 1 3>>
+    <<Voice 1 3>>
     {$mentorName}: “Kid, are you even thinking about this properly? You do that, and you have to reset a whole month’s worth of progress and…
     And you did it anyway, just wonderful.” 
     “Just go grab a bucket, kid, and clean up this mess.”
@@ -95,6 +97,7 @@ Following the noise, you trace it down to a closed room. Inside, you can hear th
     //<<mv 1 0 -8 50>>
     <<sp 1>>
     <<cs 1 3>>
+    <<Voice 1 3>>
     {$mentorName}: “Are you trying to burn down this place! What is wrong with you, kid? Grab a bucket, kid, and clean up this mess.”
     The door in front of you swings open with a loud bang. From inside, a young blacksmith runs out in tears, passing you without delay. 
     <<change_background "personal forge">>
@@ -2011,23 +2014,36 @@ And now, with careful consideration, it is time to make a decision.
 
 title: DecisionDay
 ---
+<<cs 0 0>>
 Whose commission do you take?
 -> Judith
     <<set $redFlagAffinity = $redFlagAffinity + 2>>
     <<set $route = 1>>
     Having made your decision, you send word to Judith to meet you at the guild’s commission room, where you intend to announce your plan.
     <<change_background "commissions room daytime">>
+    <<sp 2>>
+    <<cs 2 4>>
+    <<Voice 2 0>>
     {$redFlagName}: “Now, I wonder what this could be about.”
+    <<MC true>>
     {$playerName}: “You might have already guessed, but I wanted to announce to you my decision, Lady Sinclair.” 
     {$redFlagName}: “Oh, please, you can just call me Judith. There is no more need for formalities.” 
+    <<Voice 0 0>>
+    <<cs 0 1>>
     {$playerName}: “Then, if I may, Judith, would you allow me to take your commission?”
     {$redFlagName}: “I was waiting for you to say that. Now you can finally become mine.”
+    <<cs 0 2>>
+    <<Voice 0 5>>
     {$playerName}: “Uh…yeah, I’m yours, I guess?”
+    <<Voice 2 0>>
     {$redFlagName}: “You do not know how happy I am to hear that.”
     Judith looks at you with that same intoxicating smile that had captivated you before, making you feel that everything will be okay. 
     However, you can’t help but notice her crimson eyes looking at you somewhat differently, an obsession showing that she no longer bothers hiding.
+    <<cs 0 0>>
     {$playerName}: “I’ll begin tomorrow on your blueprint. I’ll send word of the progression to you, so if you ever have any suggestions, please tell me.”
     {$redFlagName}: “Do not worry, we will be in frequent contact.”
+    <<MC false>>
+    <<destroy 2>>
 -> Maeve
     <<set $bestFriendAffinity = $bestFriendAffinity + 2>>
     <<set $route = 2>>
@@ -2038,47 +2054,74 @@ Whose commission do you take?
     You open the door to the dark, dusty room and head to where the coal is stored. Picking them carefully with gloved hands, you eventually notice something shiny in between the rocks that you had not seen before. 
     Your heart freezes. 
     Lying there amongst the coal was that obsidian bracelet, clean from any dust.
+    <<MC true>>
+    <<cs 0 2>>
+    <<Voice 0 5>>
     -> Pick it up
         <<set $corruption = $corruption + 2>>
         Holding onto the bracelet, you feel overwhelming relief. 
         Finally, it is in your hands. All that is left is to give it to Maeve.
+        <<cs 0 0>>
         Leaving the room, you walk with empty eyes towards the commission room. The only thought you have is how she must wear it, or else.
         <<change_background "commissions room daytime">>
+        <<sp 3>>
+        <<cs 3 4>>
+        <<Voice 3 5>>
         {$bestFriendName}: “Is something the matter, {$playerName}?”
+        <<cs 0 3>>
+        <<Voice 0 1>>
         {$playerName}: “No…everything is going good. I invited you over for two things actually.”
+        <<cs 3 0>>
         {$bestFriendName}: “Two?”
+        <<cs 0 0>>
         {$playerName}: “First, I want to gift you something, Maeve. I have a bracelet that I really want you to wear.”
+        <<cs 3 4>>
+        <<Voice 3 3>>
         {$bestFriendName}: “A bracelet? I mean, I don’t dislike the gift but why now?”
         Approaching Maeve with the black bracelet in hand, you hold onto Maeve’s hand and the most sincere eyes you can muster.
+        <<cs 3 0>>
         {$playerName}: “I really want to show my appreciation to you, Maeve. Would you mind if I put this onto you?”
         -> Give her the Bracelet
             <<set $corruption = $corruption + 2>>
             <<set $corruptionRoute to true>>
             …
+            <<cs 3 4>>
             Before she could reject, you slot the bracelet onto her arm before she can react. 
             You have achieved what you wanted to see ever since you first saw that bracelet.
             It’s beautiful.
             Maeve looks up at you with surprise, unsure of what to say.
             …
+            <<cs 3 2>>
+            <<Voice 3 5>>
             {$bestFriendName}: “Why are you acting so weird, {$playerName}? It’s just a bracelet?”
             {$bestFriendName}: “Though I do like the way it looks.”
+            <<cs 3 0>>
             Maeve is still Maeve. At least, that’s what it seems. 
             Perhaps this was all a just an overreaction on your part all along.
+            <<cs 0 3>>
+            <<Voice 0 3>>
             ???: “Yes…a simple misunderstanding.”
             Troublesome.
             A voice now whispers delusions to you, but you it seems you can’t even recognize the danger of it. 
             ???: “And why should you? It’s not like you can tell the difference anymore. You are already past the point of returning.”
             A vile infection that cannot be removed, you truly have done it now.
             ???: “That hero-wannabe is awaiting your response, eyes full of ignorant admiration. You should move on from this and continue with your conversation.”
+            <<cs 3 0>>
+            <<Voice 3 5>>
             {$bestFriendName}: “So…what’s the second thing you wanted to talk about, {$playerName}?”
             ???: “Yes…what is that second thing, you wonder.”
             You wonder if you should even be continuing this farce. There is serious doubt that you are mentally sound enough to be handling pleiotium.
             ???: “Yet you cannot stop. Isn’t this your dream? To become the greatest Royal Blacksmith? You cannot stop now.”
+            <<cs 0 1>>
+            <<Voice 0 1>>
             {$playerName}: “Starting today, Maeve, me and you will be partners. I intend to build you the greatest shield, so will you become the strongest knight?”
             ???: “Your words please the girl. Now she can finally overcome her weakness. Shed what has been shackling her all along.”
             Your actions no longer matter in the eyes of your best friend. No…former best friend. She is no longer the same person you knew before.
             ???: “She is even better than before. Who cares for healthy relationships? Romance is about passion, about the drama. Now the two of you are linked closer than before.”
+            <<cs 0 0>>
             {$playerName}: “I’ll start tomorrow on your blueprint. You’ll hear word of the progression soon, so if you ever have any suggestions, please tell me.”
+            <<cs 3 1>>
+            <<Voice 3 1>>
             {$bestFriendName}: “I’ll be looking forward to it!”
             ???: “Perhaps now would be a good time to fuck?”
             No.
@@ -2087,93 +2130,191 @@ Whose commission do you take?
             Your thoughts become foggy, it seems the voice from earlier is now disappearing to somewhere in your subconsciousness. 
             You, {$playerName}, may not remember all of this the next day, but hopefully some part of you still does.
             ???: “The part of you that picked up that very same bracelet…”
+        <<MC false>>
+        <<destroy 3>>
         -> Stop this madness
             <<set $corruption = $corruption - 5>>
+            <<cs 0 3>>
+            <<Voice 0 2>>
             {$playerName}: “Destroy…Maeve destroy it now!”
+            <<cs 3 4>>
+            <<Voice 3 3>>
             {$bestFriendName}: “What—?”
+            <<Voice 0 2>>
             {$playerName}: “PLEASE, JUST DESTROY IT!”
+            <<cs 3 3>>
+            <<Voice 3 2>>
             Unsheathing her sword, Maeve swiftly slices the bracelet in half. 
             Landing onto the floor in two halves, the bracelet disappears into black smoke as if it had never existed.
+            <<cs 3 4>>
+            <<Voice 3 5>>
             {$bestFriendName}: “{$playerName}, what was that?”
+            <<cs 0 2>>
+            <<Voice 0 3>>
             {$playerName}: “I…don’t know. I think I got cursed.”
+            <<cs 3 4>>
+            <<Voice 3 5>>
             {$bestFriendName}: “From who?”
+            <<cs 0 4>>
+            <<Voice 0 2>>
             {$playerName}: “I’m not sure…but something wanted to give you this bracelet. I think whoever did this is after you, Maeve.”
+            <<cs 3 2>>
             Maeve looks at you with concern, unsure of what to say.
+            <<cs 0 0>>
+            <<Voice 0 1>>
             {$playerName}: “I’m so sorry, Maeve this happened. This wasn’t my intentions, I originally called you here to tell you that I am going to take your commission but suddenly all of this happened and now I don’t even know what the hell is happening to me.”
+            <<cs 3 0>>
             {$bestFriendName}: “It’s okay,{$playerName}, this wasn’t your fault.”
             {$bestFriendName}: “Besides, I didn’t know you were planning on building my shield?”
+            <<cs 0 4>>
+            <<Voice 0 4>>
             {$playerName}: “Oh. That was meant to be a surprise. I’m sorry.”
             {$bestFriendName}: “It’s fine, really. In fact, I’m happy you ended up choosing me.”
+            <<cs 0 1>>
+            <<Voice 0 0>>
             {$playerName}: “I swear to you, Maeve, that I will build you the greatest shield you have ever seen. Nothing will ever try to hurt us again.”
+            <<cs 3 1>>
+            <<Voice 3 0>>
             {$bestFriendName}: “And I swear in return that I will protect you no matter the cost.”
             Hugging after the emotional moment, the two of you take in these words to heart with renewed vigor. You will never fall for a demon’s trick again.
+        <<destroy 3>>
+        <<MC false>>
     -> Leave the room immediately
         <<set $corruption = $corruption - 5>>
         {$playerName}: [i]Nope. Fuck that.[/i]
         Leaving without your crate, you decide to take no chances with this evil bracelet that keeps following you.
         Exiting the room, you breath a sigh of relief. For some reason, you feel as if you had dodged a bullet with that one.
         <<change_background "commissions room daytime">>
+        <<sp 3>>
+        <<cs 3 4>>
+        <<Voice 3 3>>
         {$bestFriendName}: “Is something the matter, {$playerName}?”
+        <<cs 0 0>>
         {$playerName}: “No…everything is fine. I invited you over to talk about something, Maeve.”
         {$bestFriendName}: “Are you planning on taking my commission!”
+        <<cs 3 5>>
+        <<Voice 3 4>>
         {$bestFriendName}: “Ooo, wait, did I accidentally ruin the moment?”
+        <<cs 0 0>>
         {$playerName}: “Honestly.”
+        <<cs 0 1>>
+        <<Voice 0 0>>
         {$playerName}: “Yeah. But it’s fine! Starting today, me and you will be partners as I build your shield.”
+        <<cs 3 1>>
+        <<Voice 3 0>>
         {$bestFriendName}: “It’s a pleasure to be working with you.”
+        <<Voice 0 0>>
         {$playerName}: “The pleasure is all mine, Maeve.”
         {$playerName}: “I’ll start tomorrow on your blueprint. You’ll hear word of the progression soon, so if you ever have any suggestions, please tell me.”
+        <<Voice 3 0>>
         {$bestFriendName}: “I’ll look forward to it!”
+    <<destroy 3>>
+    <<MC false>>
     <<else>>
+        <<MC true>>
+        <<cs 0 0>>
         <<change_background "commissions room daytime">>
+        <<sp 3>>
+        <<cs 3 4>>
+        <<Voice 3 3>>
         {$bestFriendName}: “What’s the occasion, {$playerName}?”
         {$playerName}: “I invited you over to talk about something, Maeve.”
+        <<Voice 3 3>>
         {$bestFriendName}: “Are you planning on taking my commission!”
+        <<cs 3 5>>
+        <<Voice 3 4>>
         {$bestFriendName}: “Ooo, wait, did I accidentally ruin the moment?”
+        <<cs 0 0>>
         {$playerName}: “Honestly.”
+        <<cs 0 1>>
+        <<Voice 0 0>>
         {$playerName}: “Yeah. But it’s fine! Starting today, me and you will be partners as I build your shield.”
+        <<cs 3 1>>
+        <<Voice 3 0>>
         {$bestFriendName}: “It’s a pleasure to be working with you.”
+        <<Voice 0 0>>
         {$playerName}: “The pleasure is all mine, Maeve.”
         {$playerName}: “I’ll start tomorrow on your blueprint. You’ll hear word of the progression soon, so if you ever have any suggestions, please tell me.”
+        <<Voice 3 0>>
         {$bestFriendName}: “I’ll look forward to it!”
+    <<destroy 3>>
+    <<MC false>>
     <<endif>>
 -> Silas
     <<set $loneWolfAffinity = $loneWolfAffinity + 2>>
     <<set $route = 4>>
     Having made your decision, you send word to Silas to meet you at the guild’s commission room, where you intend to announce your plan.
     Entering the room with a now-healed leg, Silas no longer looked to be in pain as they walked. 
+    <<sp 4>>
+    <<cs 4 4>>
+    <<Voice 4 3>>
     {$loneWolfName}: “Is something the matter, {$playerName}?”
+    <<MC true>>
     {$playerName}: “No, there is no problem at all. In fact, there is only good news.” 
+    <<cs 4 8>>
+    <<Voice 4 5>>
     {$loneWolfName}: “Good news? What is it?”
     You shake your head, remembering that Silas is somehow even worse than you at reading social cues.
+    <<cs 0 1>>
+    <<Voice 0 0>>
     {$playerName}: “I called you here to ask you one question, Silas. Watching you these past weeks, I have found that your cause is noble and that you are a good person at heart. And so, I would like to ask you if you would allow me to take on your commission to support your efforts in protecting the kingdom.” 
+    <<cs 4 4>>
+    <<Voice 4 3>>
     {$loneWolfName}: “...”
+    <<cs 4 1>>
+    <<Voice 4 1>>
     {$loneWolfName}: “Thank you. I’m not sure how to put this into words, but…I appreciate that you are willing to work with me despite knowing my occupation.”
+    <<cs 4 0>>
     {$loneWolfName}: “I have seen hunters time and time again disregarded by Royal Blacksmiths for their lack of wealth. To be honest, I thought I would only obtain a pleiotium weapon due to Isham’s guilt over my parents. It hurts my pride to say, but I was always thankful he felt that way. If not for that…I most likely would have died long ago in a failed hunt.”
+    <<cs 4 1>>
     {$loneWolfName}: “So once again, thank you. This means a lot to me.”
+    <<cs 4 5>>
+    <<Voice 4 4>>
     {$loneWolfName}: “...sorry, I didn’t mean to drag this on for so long.”
+    <<cs 0 1>>
+    <<Voice 0 0>>
     {$playerName}: “No, that’s totally okay! I understand what you mean.”
+    <<cs 4 1>>
+    <<Voice 4 0>>
     {$playerName}: “I’m looking forward to this partnership!”
     Offering a hand to the surprised Silas, the two of you shake on it with smiles on both your faces. 
+    <<Voice 0 0>>
     {$playerName}: “I’ll be beginning tomorrow on your blueprint. I’ll send word of the progression to you, so if you ever have any suggestions, please tell me!”
+    <<Voice 4 0>>
     {$loneWolfName}: “I am truly grateful.”
 -> Isham
     <<set $mentorAffinity = $mentorAffinity + 2>>
     <<set $route = 3>>
     Having made your decision, you send word to Isham to meet you at the guild’s commission room, where you intend to announce your plan.
+    <<sp 1>>
+    <<cs 1 4>>
+    <<Voice 1 3>>
     {$mentorName}: “What’s the problem, rookie? You need help with deciding something about your commissions?"
+    <<MC true>>
+    <<Voice 0 0>>
     {$playerName}: “Actually, I already made up my mind on what I will choose.”
     {$mentorName}: “Oh? Would you mind telling me which one caught your fancy?”
     {$playerName}: “The commission I intend to take is yours, Isham.”
+    <<Voice 1 5>>
+    <<cs 1 8>>
     {$mentorName}: “Mine?” 
     {$mentorName}: “{$playerName}, I’m afraid I don’t follow. I do not have a commission I need made from an apprentice, I’m a smith myself.”
     {$playerName}: “Yes, but isn’t there one thing you need help with?”
     {$mentorName}: “You don’t mean….”
+    <<cs 0 1>>
+    <<Voice 0 0>>
     {$playerName}: “Yep! I have decided my first project will be to collaborate on your greatest wish, Isham.”
     {$mentorName}: “...”
+    <<cs 1 3>>
     {$mentorName}: “...”
+    <<cs 1 5>>
+    <<Voice 1 5>>
     {$mentorName}: “Are you serious?”
+    <<cs 0 0>>
     {$playerName}: “I’m serious. There is no better motivator than having someone by your side along the way.”
     {$mentorName}: “...ha.”
+    <<cs 1 1>>
+    <<Voice 1 1>>
     {$mentorName}: “Bwahahaha!”
     {$mentorName}: “Alright…alright sure, rookie.”
     {$mentorName}: “Blacksmiths working together on a Pleiotium weapon is both rare and not advised, but it is doable.  You’re going to need to prove yourself capable for this to work.”
@@ -2181,6 +2322,7 @@ Whose commission do you take?
     {$mentorName}: “Then, from now on, {$playerName}, we will work together not as senior and apprentice, but as partners.”
     {$playerName}: “I’ll be in your care, Isham.”
     {$mentorName}: “Then, with that settled, I’ll hand you the blueprint now. Today, we will handle distributions so that we can get started on the actual work next week.”
+    <<MC false>>
     Spending the next few hours planning for the future, you realize just how much Isham has been thinking about this project. Not a single detail overlooked, he consults you with an open mind on any problem he has already experienced. It’s only when dusk comes that the two of you finally draft up a plan of how to handle the weapon.
 -> None of them
     <<set $route = 0>>

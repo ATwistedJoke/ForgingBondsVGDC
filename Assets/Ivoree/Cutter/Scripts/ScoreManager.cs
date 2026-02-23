@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.SocialPlatforms.Impl;
 
 [System.Serializable]
 public struct PaintStage
@@ -55,6 +56,9 @@ public class ScoreManager : MonoBehaviour
     public Vector2 hotspot = new Vector2(0, 0);
 
     private Vector2 lastProcessedPos; 
+
+    //Score Chekcing
+    public float scoreCheck = 0;
 
     void Start()
     {
@@ -189,8 +193,9 @@ public class ScoreManager : MonoBehaviour
         isGameOver = true; 
         
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-        
         Destroy(transform.root.gameObject, closeDelay); 
+        GameObject rem = GameObject.FindGameObjectWithTag("minigame");
+        Destroy(rem);
     }
 
     bool IsMatch(Color c)
@@ -245,8 +250,9 @@ public class ScoreManager : MonoBehaviour
         float total = stages[currentStageIndex].totalTargets;
         if (total == 0) return;
 
-        float currentScore = goodHits - (badHits * penaltyMultiplier);
-        float percent = (currentScore / total) * 100f;
+        //float currentScore = goodHits - (badHits * penaltyMultiplier);
+        scoreCheck = goodHits - (badHits * penaltyMultiplier);
+        float percent = (/*currentScore*/ scoreCheck / total) * 100f;
         
         currentDisplayAccuracy = Mathf.Clamp(percent, 0f, 100f);
 
@@ -259,5 +265,20 @@ public class ScoreManager : MonoBehaviour
         {
             AdvanceStage();
         }
+    }
+
+    private void OnDestroy()
+    {
+        int result = 0; 
+        float accuracy = scoreCheck * 100f;
+        if(accuracy >= 90)
+        {
+            result = 2; 
+        }
+        else if(accuracy >= 70)
+        {
+            result = 1; 
+        }
+        GameManager.instance.GiveResult(result); 
     }
 }

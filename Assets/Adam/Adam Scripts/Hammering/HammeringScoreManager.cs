@@ -45,4 +45,16 @@ public class HammeringScoreManager : MonoBehaviour
             ingotRenderer.sprite = level2;
         }
     }
+
+    public void OnDestroy()
+    {
+        GameManager.instance.GiveResult(CalculateResult(score));
+    }
+
+    public int CalculateResult(int finalScore)
+    {
+        if(finalScore >= milestone3){ return 2;}
+        else if(finalScore >= milestone2){ return 1;}
+        return 0; 
+    }
 }
