@@ -42,22 +42,27 @@ Walking through the hall fills you with a sense of amazement at how such a build
 {$playerName}: [i]Wha–? Where is everyone?[/i]
 The front desk, covered in blue cloth, had no one behind it to welcome you. Instead, there was only a singular golden bell and what appeared to be three different colored buttons. 
 -> Ring the Bell
+    <<sfx 0>>
     A voice emerges from below the desk in response.
     “Welcome to the Royal Blacksmith Guild. If you are here as a guest, please press the green button. If you are here as an apprentice, please press the orange button. If you are here for a different reason, please press the blue button.”
 -> Press one of the buttons
+    <<sfx 1>>
     …Nothing happens. After more than enough minutes have passed, you consider that maybe you should have pressed the shiny, golden bell. Reaching out your hand, you decide to give it a try.
+    <<sfx 0>>
     A voice emerges from below the desk in response.
     “Welcome to the Royal Blacksmith Guild. If you are here as a guest, please press the green button. If you are here as an apprentice, please press the orange button. If you are here for a different reason, please press the blue button.”
 -> Wait for someone to come
     You choose to wait, hoping for someone to come.
     ...
     No one arrives. After more than enough minutes have passed, you consider that maybe you should have pressed the shiny, golden bell. Reaching out your hand, you decide to give it a try.
+    <<sfx 0>>
     A voice emerges from below the desk in response.
     “Welcome to the Royal Blacksmith Guild. If you are here as a guest, please press the green button. If you are here as an apprentice, please press the orange button. If you are here for a different reason, please press the blue button.”
 You stumble backwards in surprise, caught off guard by the mysterious voice. The hall around you was still empty, but somehow someone spoke when you pressed the bell.
 {$playerName}: [i]It sounded like it came from the desk itself?[/i]
 Approaching the desk once more, you try looking on the other side of the desk to see if someone is hiding underneath it. But once again, you find nothing. 
 It was only then that you recalled the words of the voice, which stated that an apprentice should press the orange button. Following its guidance, you decide that enough time has been wasted and press the mysterious button. 
+<<sfx 1>>
 ???: Thank you! If you are {$playerName}, please make way to the hallway on your right. A scheduled senior has been scheduled to guide you on your first day. If you are not {$playerName}, please press the blue button. 
 Presentation?
 -> Masc
@@ -65,6 +70,7 @@ Presentation?
 -> Fem
     <<Appearance 5>>
 <<place 0 -20 -6>>
+<<sfx 4>>
 A door could be heard opening to your right.
 <<MC true>>
 <<cs 0 3>>
@@ -73,12 +79,13 @@ A door could be heard opening to your right.
 Hearing no response back, you decide to listen to the voice’s instructions and head down the open hallway. 
 <<MC false>>
 <<change_background "hallway">>
+<<sfx 7>>
 Your steps echo in the large hallway. Ahead, you hear the sound of hammering on steel and the voices of people. 
 Following the noise, you trace it down to a closed room. Inside, you can hear the noises of a forge in use.
 -> Open the door
+    <<sfx 4>>
     You gently open the door. 
     <<change_background "personal forge">>
-    //<<mv 1 0 -6 50>>
     <<sp 1>>
     Inside, you see an older man overlooking the clumsy work of a younger blacksmith. The man’s eyes appear tired and disappointed, his mouth crooked in frustration.  
     <<cs 1 3>>
@@ -86,18 +93,21 @@ Following the noise, you trace it down to a closed room. Inside, you can hear th
     {$mentorName}: “Kid, are you even thinking about this properly? You do that, and you have to reset a whole month’s worth of progress and…
     And you did it anyway, just wonderful.” 
     “Just go grab a bucket, kid, and clean up this mess.”
+    <<sfx 7>>
     The young blacksmith runs out of the room, passing you with tears in his eyes. 
 -> Leave it alone
     You choose not to intrude. You should wait for your scheduled senior to find you.
+    <<vc 1 2>>
     But before you could make yourself scarce, you hear an angry shout from within the forge. 
-    //<<mv 1 0 -8 50>>
-    <<sp 1>>
     <<cs 1 3>>
     <<vc 1 2>>
     {$mentorName}: “Are you trying to burn down this place! What is wrong with you, kid? Grab a bucket, kid, and clean up this mess.”
+    <<sfx 5>>
     The door in front of you swings open with a loud bang. From inside, a young blacksmith runs out in tears, passing you without delay. 
+    <<sp 1>>
     <<change_background "personal forge">>
 {$mentorName}: “Ah, damn it, these apprentices can’t help but act rashly every time. Can they not think before acting for once!”
+<<vc 1 2>>
 The aged apprentice continues to grumble, only looking up from the ruined project after he wipes the sweat from his forehead. 
 You notice his deep eye bags, worn out from stress and lack of sleep. You feel unable to look away from those eyes, captivated by the look of a professional in your field. But as you continue staring, you notice that they are now looking back at you.
 <<cs 1 4>>
@@ -194,11 +204,13 @@ An official Royal Blacksmith needs to be strong for their work. That notion push
 {$playerName}: Just…a bit…further…
 The crate of coal, filled to the brim, blocks your field of view as you trudge through the hallway. 
 Suddenly, just as you think you might be reaching the end, you collide with something heavy in front of you with a large thud. 
+<<sfx 16>>
 Falling onto your back in surprise, the crate of coal that was in your hands lands onto the floor, its contents spilling all over the place.
-//<<mv 2 0 -6 50>>
 <<sp 2>>
 <<cs 2 4>>
+<<vc 2 3>>
 {$redFlagName}: “Oh dear, I’m so sorry. Are you alright?”
+<<cs 2 0>>
 Looking up, you are met with a gentle, smooth hand stemming from what could only be described as both a stunningly gorgeous and odd woman. 
 Donning elegant clothing and jewelry, her status was apparent to any perceiver. She would have looked like any regular, wealthy client the guild often gets if it weren’t for her eyes.
 <<set $redFlagName to "Wealthy Woman">>
@@ -208,35 +220,53 @@ A part of you finds them to be entrancing. The other terrifying.
 {$playerName}: “Oh, no, nothing’s wrong. Thank you.”
 Taking her hand, you snap out of your thoughts as you stand back up. You notice her clothes have become stained from the coal.
 <<cs 0 0>>
+<<vc 0 4>>
 {$playerName}: “I’m so sorry, I wasn’t watching where I was going. Do you need me to wash that for you, ma’am?”
 {$redFlagName}: Oh, this? No, it’s fine. In fact, how about I help you pick up this mess? You look like you need it. 
 <<MC true>>
 -> “No, I can do this myself.”
-    <<set $redFlagAffinity = $redFlagAffinity + 1>>        
+    <<cs 0 0>>
+    <<vc 0 4>>
+    “No, I can do this myself.”
+    <<set $redFlagAffinity = $redFlagAffinity + 1>> 
+    <<cs 2 1>>
+    <<vc 2 0>>       
     {$redFlagName}: “Ah, a tough [guy/girl/one], I see. No need to worry, dear, I don’t mind getting a bit dirty now and then.”
     <<cs 0 2>>
+    <<vc 0 3>>
     {$playerName}: “Really, it’s fin—”
     {$redFlagName}: “Too late! I made up my mind.” 
     Already on her knees, the woman looks up to you with a mischievous grin as she picks up the coal. 
     <<cs 0 3>>
     {$playerName}: “Ah…what the hell, let’s just get this picked up quick.”
 -> “Should you even be here?”
+    <<cs 0 2>>
+    <<vc 0 3>>
+    “Should you even be here?”
+    <<cs 0 3>>
+    <<cs 2 3>> 
+    <<vc 2 2>>
     <<set $redFlagAffinity = $redFlagAffinity - 1>>
     {$redFlagName}: “Now do you want me to help you, or are you just going to stand there and ask me these useless questions?”
-    <<cs 0 2>>
+    <<vc 0 5>>
     {$playerName}: “I would think that's a legitimate que–”
+    <<vc 2 2>>
     {$redFlagName}: “I’m already down here, you bore. Now, do you want to be here all day getting nothing done, or would you care to help out this lady pick up your spilt coal?” 
     Already on her knees, the woman looks up to you with a pout as she picks up the coal.
     <<cs 0 3>>
     {$playerName}: “Ah…what the hell, let’s just get this picked up quick.”
 -> “Thank you, that would be much appreciated.”
+    <<vc 2 0>>
     {$redFlagName}: “No problem, dear, I don’t mind getting a bit dirty now and then.”
     <<cs 0 3>>
     {$playerName}: “You're more easygoing than I imagined someone of your status.”
+    <<vc 2 1>>
     {$redFlagName}: “Not adhering to expectations is my definition of happiness. It’s only when you are free that you can see the good in what’s around you.” 
     Both on your knees, the woman looks towards you with a mischievous grin as she picks up the coal alongside you. 
     <<cs 0 1>>
     {$playerName}: “Now that philosophy is something someone of your status would say.”
+    <<cs 2 5>>
+    <<vc 2 4>>
     {$redFlagName}: “Shut it, will you?”
 <<MC false>>
 As the two of you finish picking up the remaining mess, you go to pick up the crate once more.
@@ -247,22 +277,29 @@ Before you could respond, the lady had already placed her hands on the other sid
 <<cs 2 0>>
 {$redFlagName}: “I’ve never seen a royal forge before. I always thought it would look more…impressive?”
 {$playerName}: “Well, I am only an apprentice. I don’t imagine they give those fancy ones to just about anyone.”
+<<vc 2 0>>
 {$redFlagName}: “Don’t sell yourself short. I see in you the potential to become a great Royal Blacksmith.”
+<<vc 0 5>>
 {$playerName}: “And how would you know that?”
 {$redFlagName}: “My trading company has collaborated before with the Royal Blacksmiths, and I would say you remind me just of them.”
 <<cs 0 3>>
+<<vc 0 5>>
 {$playerName}: “That is?”
+<<vc 2 0>>
+<<cs 2 0>>
 {$redFlagName}: “You have the eyes of someone with ambition. That look where you will do anything to become the best at what you do. I like that about you.”
+<<vc 0 3>>
 {$playerName}: “I never thought that way about myself. Do I really look like that to others?”
 {$redFlagName}: “Hmmm…I wouldn’t know. I wouldn’t call myself exactly normal, anyway, so you probably don’t have to worry about others seeing that part of you.”
 <<cs 0 0>>
+<<vc 0 5>>
 {$playerName}: “That’s a relief. Oh! I forgot to say, but thank you for the help. Would you mind if I were to ask for your name?”
 <<set $redFlagName to "Judith">>
 {$redFlagName}: “My name is Judith Sinclair. It’s a pleasure to meet you, {$playerName}. I hope to see you again soon.” 
+<<cs 2 1>>
 {$playerName}: “It’s nice to meet you, too, {$redFlagName}.”
-You exchange goodbyes with the odd lady who had left just as swiftly as she entered. It was only after you had returned to work, however, that you remembered something important. 
-//<<mv 2 0 -20 50>>
 <<destroy 2>>
+You exchange goodbyes with the odd lady who had left just as swiftly as she entered. It was only after you had returned to work, however, that you remembered something important. 
 You had not once given her your name.  
 You feel a shiver roll down your spine as you finish loading the coal into the furnace. You could only hope that she had learned your name through some reasonable way.
 After a few more long hours of hard work, you wipe off the last of your sweat as you finish completing your forge. All that remains is to obtain the Pleiotium and find a worthwhile commission.

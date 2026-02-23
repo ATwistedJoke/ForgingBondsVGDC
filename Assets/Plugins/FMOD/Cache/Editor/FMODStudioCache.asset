@@ -425,10 +425,10 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639073609972220890
+  lastModified: 639074016077835943
   FileSizes:
   - Name: 
-    Value: 6960
+    Value: 7150
   Exists: 1
 --- !u!114 &-7924905740203824981
 MonoBehaviour:
@@ -473,7 +473,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/MCMBank.bank
   Name: MCMBank
   StudioPath: bank:/MCMBank
-  lastModified: 639073609972134552
+  lastModified: 639073553064050720
   FileSizes: []
   Exists: 1
 --- !u!114 &-7856220074041311463
@@ -491,7 +491,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639068627694668702
+  lastModified: 639074016077796199
   FileSizes: []
   Exists: 1
 --- !u!114 &-7834028420007538764
@@ -620,7 +620,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Themes.bank
   Name: Themes
   StudioPath: bank:/Themes
-  lastModified: 639073995297585367
+  lastModified: 639074032402844371
   FileSizes: []
   Exists: 1
 --- !u!114 &-7328061319961655148
@@ -830,7 +830,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/BestFriendBank.bank
   Name: BestFriendBank
   StudioPath: bank:/BestFriendBank
-  lastModified: 639073609971833653
+  lastModified: 639073553065506027
   FileSizes: []
   Exists: 1
 --- !u!114 &-6774969871271357898
@@ -930,7 +930,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639073097871174692
+  lastModified: 639073102169515926
   FileSizes: []
   Exists: 1
 --- !u!114 &-6391940457666413527
@@ -1209,6 +1209,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-5087025925383583954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambience.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: FMOD/Desktop/Ambience.bank
+  Name: Ambience
+  StudioPath: bank:/Ambience
+  lastModified: 639074032405205683
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-5073875804947601695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1583,7 +1601,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/MentorBank.bank
   Name: MentorBank
   StudioPath: bank:/MentorBank
-  lastModified: 639073609972311775
+  lastModified: 639073553063443549
   FileSizes: []
   Exists: 1
 --- !u!114 &-3342625570283034748
@@ -2167,6 +2185,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-626506710258413479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Restaurant
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Ambience/Restaurant
+  Guid:
+    Data1: 1208392435
+    Data2: 1305646840
+    Data3: -716977017
+    Data4: -786875847
+  Banks:
+  - {fileID: -5087025925383583954}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 62184
 --- !u!114 &-611200605263372322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2336,6 +2381,7 @@ MonoBehaviour:
   - {fileID: -3471478279186377720}
   - {fileID: 3020038978146422170}
   - {fileID: -6570674763206450901}
+  - {fileID: -5087025925383583954}
   EditorEvents:
   - {fileID: -8984646911763158769}
   - {fileID: -9212603541481803218}
@@ -2469,13 +2515,16 @@ MonoBehaviour:
   - {fileID: -3322568067803985415}
   - {fileID: -1962042034581577267}
   - {fileID: -3543771372841636328}
+  - {fileID: 6410962283965476142}
+  - {fileID: 4284476282079928638}
+  - {fileID: -626506710258413479}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7856220074041311463}
   StringsBanks:
   - {fileID: -7989202825351334509}
   cacheVersion: 131858
-  cacheTime: 639073995297585367
+  cacheTime: 639074032405205683
   SerializableEventsDict:
   - key: event:/Mentor/Angry0(M)
     index: 0
@@ -2741,6 +2790,12 @@ MonoBehaviour:
     index: 130
   - key: event:/RedFlag/Happy3(R)
     index: 131
+  - key: event:/Ambience/MagicalAura
+    index: 132
+  - key: event:/Ambience/Market
+    index: 133
+  - key: event:/Ambience/Restaurant
+    index: 134
 --- !u!114 &36345489327250644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3135,7 +3190,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/RedFlagBank.bank
   Name: RedFlagBank
   StudioPath: bank:/RedFlagBank
-  lastModified: 639073609972400416
+  lastModified: 639073553064962505
   FileSizes: []
   Exists: 1
 --- !u!114 &3022335190212552305
@@ -3153,7 +3208,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/MCFBank.bank
   Name: MCFBank
   StudioPath: bank:/MCFBank
-  lastModified: 639073609972005685
+  lastModified: 639073553064498262
   FileSizes: []
   Exists: 1
 --- !u!114 &3044189686263700076
@@ -3498,6 +3553,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &4284476282079928638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Market
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Ambience/Market
+  Guid:
+    Data1: 1151579091
+    Data2: 1128252016
+    Data3: 1467123643
+    Data4: -1541056021
+  Banks:
+  - {fileID: -5087025925383583954}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 17580
 --- !u!114 &4527122008685327020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4025,6 +4107,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &6410962283965476142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/MagicalAura
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Ambience/MagicalAura
+  Guid:
+    Data1: -973579377
+    Data2: 1233925819
+    Data3: 1344661392
+    Data4: -1458746662
+  Banks:
+  - {fileID: -5087025925383583954}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 28032
 --- !u!114 &6417718565438945330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4217,7 +4326,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/LoneWolfBank.bank
   Name: LoneWolfBank
   StudioPath: bank:/LoneWolfBank
-  lastModified: 639073609971926505
+  lastModified: 639073553065921234
   FileSizes: []
   Exists: 1
 --- !u!114 &7430947062955570866
