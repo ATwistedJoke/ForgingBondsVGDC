@@ -82,7 +82,7 @@ Following the noise, you trace it down to a closed room. Inside, you can hear th
     <<sp 1>>
     Inside, you see an older man overlooking the clumsy work of a younger blacksmith. The man’s eyes appear tired and disappointed, his mouth crooked in frustration.  
     <<cs 1 3>>
-    <<vc 1 3>>
+    <<vc 1 2>>
     {$mentorName}: “Kid, are you even thinking about this properly? You do that, and you have to reset a whole month’s worth of progress and…
     And you did it anyway, just wonderful.” 
     “Just go grab a bucket, kid, and clean up this mess.”
@@ -93,7 +93,7 @@ Following the noise, you trace it down to a closed room. Inside, you can hear th
     //<<mv 1 0 -8 50>>
     <<sp 1>>
     <<cs 1 3>>
-    <<vc 1 3>>
+    <<vc 1 2>>
     {$mentorName}: “Are you trying to burn down this place! What is wrong with you, kid? Grab a bucket, kid, and clean up this mess.”
     The door in front of you swings open with a loud bang. From inside, a young blacksmith runs out in tears, passing you without delay. 
     <<change_background "personal forge">>
@@ -104,54 +104,58 @@ You notice his deep eye bags, worn out from stress and lack of sleep. You feel u
 {$mentorName}: “–! By the gods, why are you just standing there and staring at me?”
 <<MC true>>
 -> Sorry, I overheard the commotion that was happening earlier.
+    <<cs 0 3>>
+    <<vc 0 3>>
+    Sorry, I overheard the commotion that was happening earlier.
     <<cs 1 0>>
+    <<vc 1 5>>
     {$mentorName}: “Aye, that is fair. By any chance, are you new around here? Don’t recognize your face around these parts.”
+    <<cs 0 0>>
     {$playerName}: “Yes, today is my starting day as an official apprentice here. Would you know where I could find my scheduled senior?”
     <<set $mentorName to "Senior Blacksmith">>
     <<cs 1 4>>
-    {$mentorName}: “Ah, so you're that new apprentice, (MC NAME). I’ll be filling in as your senior for the first few weeks of your job. 
+    {$mentorName}: “Ah, so you're that new apprentice, {$playerName}. I’ll be filling in as your senior for the first few weeks of your job. 
     <<cs 0 1>>
+    <<vc 0 0>>
     {$playerName}: “It’s a pleasure to meet you, sir!”
 -> I was told at the front desk to find my scheduled senior. Would that be you?
+    <<cs 0 2>>
+    <<vc 0 5>>
+    I was told at the front desk to find my scheduled senior. Would that be you?
     <<set $mentorAffinity = $mentorAffinity + 1>>
     <<set $mentorName to "Senior Blacksmith">>
+    <<cs 1 4>>
     {$mentorName}: “Oh…ahem! Yes, that would be me. I’ll be filling in as your senior for the first few weeks of your job.”
     <<cs 0 1>>
+    <<vc 0 0>>
     {$playerName}: “It’s a pleasure to meet you, sir!”
     <<cs 1 0>>
     {$mentorName}: “You’re quick to the chase, aren’t ya?”
 -> I like your eyes, old man.
+    <<cs 0 4>>
+    <<vc 0 4>>
+    I like your eyes, old man.
     <<set $mentorAffinity = $mentorAffinity - 1>>
     <<cs 1 3>>
     {$mentorName}: “Alright, who put you up for this stunt? Was it Olivia? Or was it that dreaded Eliwood?
     <<cs 0 2>>
+    <<vc 0 5>>
     {$playerName}: “Um…who are those people?”
     <<cs 1 0>>
     {$mentorName}: “Are you new here, kid? Don’t tell me you're the new apprentice?”
     {$playerName}: “Would you be my scheduled senior?”
     <<set $mentorName to "Senior Blacksmith">>
     <<cs 1 7>>
+    <<vc 1 2>>
     {$mentorName}: “Curses…”
 <<cs 1 0>>
 <<MC false>>
 <<destroy 1>>
 {$mentorName}: “Alright then, with that established, would you be willing to share some of your skills with me?”
 {$mentorName}: “I need to judge your proficiency with the craft before I entrust you with any tasks.”
-//<<run_minigame 0 ResultTesting>>
 <<jump IntroductionPostTutorial>>
 ===
 
-title: ResultTesting
----
-<<if $result <= 0>>
-    NAY!
-<<elseif $result == 1>>
-    YAY!
-<<else>>
-    YEAH!
-<<endif>>
-<<jump IntroductionPostTutorial>>
-===
 title: IntroductionPostTutorial
 ---
 <<sp 1>>
@@ -161,19 +165,24 @@ title: IntroductionPostTutorial
 {$mentorName}: “But such a special title is often sought out by nobles desiring glory or status, so sometimes we end up with foolish apprentices like the one we saw back there. Now I ask you, because I don’t know you, what type of royal blacksmith do you hope to be?”
 {$playerName}: “I wish to be the one talked about in history, sir.”
 <<cs 1 1>>
+<<vc 1 0>>
 {$mentorName}: “Aye, that’s good to hear. Now, some advice, I suggest that you start trying to build some connections out there. Most apprentices hole themselves in their forge, but lose sight of the most important things about smithing. The commissioners themselves.” 
 <<cs 1 0>>
 {$mentorName}: “To stop being merely an apprentice and become an official Royal Blacksmith, you are going to need someone who brings out the best of your craft. Carefully consider what you want out of your work, and what commissions feel right to you.”
 <<cs 0 0>>
+<<vc 0 4>>
 {$playerName}: “Thank you, I’ll make sure to remember that.”
 {$mentorName}: “Good. Now, with that said, your first task here should be preparing your own personal forge. Organize and restock on what resources you will need for your work.”
 {$mentorName}: “Once you're done with that, go check the commission board near closing hours to see if anything sounds good to you. You’ll find requests for possible projects there.” 
 {$mentorName}: “I’ll be at my own forge if you have any more questions, so I’ll take my leave first. Get to work, apprentice.” 
 <<cs 0 3>>
+<<vc 0 3>>
 {$playerName}: “Wait! Before you go, could I get your name?”
 <<set $mentorName to "Isham">>
+<<vc 1 0>>
 {$mentorName}: “It’s not much, but you can call me Isham. I’m one of the head Royal Blacksmiths here. Now get going before you fall behind.
 <<cs 0 1>>
+<<vc 0 0>>
 {$playerName}: “Yes, sir!”
 <<destroy 1>>
 The day passes by quickly, with work on your forge seeming endless. Finally, you manage to clean the old forge up to your liking. 
@@ -188,6 +197,7 @@ Suddenly, just as you think you might be reaching the end, you collide with some
 Falling onto your back in surprise, the crate of coal that was in your hands lands onto the floor, its contents spilling all over the place.
 //<<mv 2 0 -6 50>>
 <<sp 2>>
+<<cs 2 4>>
 {$redFlagName}: “Oh dear, I’m so sorry. Are you alright?”
 Looking up, you are met with a gentle, smooth hand stemming from what could only be described as both a stunningly gorgeous and odd woman. 
 Donning elegant clothing and jewelry, her status was apparent to any perceiver. She would have looked like any regular, wealthy client the guild often gets if it weren’t for her eyes.
