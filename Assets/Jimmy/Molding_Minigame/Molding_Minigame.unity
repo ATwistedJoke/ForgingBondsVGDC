@@ -167,6 +167,86 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2791379959534333541, guid: c3ea50a896b9f59469fb9107a43e0846, type: 3}
+      propertyPath: m_text
+      value: jimmy da goat
+      objectReference: {fileID: 0}
+    - target: {fileID: 2791379959534333541, guid: c3ea50a896b9f59469fb9107a43e0846, type: 3}
+      propertyPath: m_fontStyle
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2791379959534333541, guid: c3ea50a896b9f59469fb9107a43e0846, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.19139372
+      objectReference: {fileID: 0}
+    - target: {fileID: 2791379959534333541, guid: c3ea50a896b9f59469fb9107a43e0846, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.19139372
+      objectReference: {fileID: 0}
+    - target: {fileID: 2791379959534333541, guid: c3ea50a896b9f59469fb9107a43e0846, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.21698111
+      objectReference: {fileID: 0}
+    - target: {fileID: 2791379959534333541, guid: c3ea50a896b9f59469fb9107a43e0846, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281413943
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355842340366009014, guid: c3ea50a896b9f59469fb9107a43e0846, type: 3}
+      propertyPath: perfect_pour_angle
+      value: 67
+      objectReference: {fileID: 0}
+    - target: {fileID: 6292722395133456035, guid: c3ea50a896b9f59469fb9107a43e0846, type: 3}
+      propertyPath: currentWeaponChoice
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816464877464260892, guid: c3ea50a896b9f59469fb9107a43e0846, type: 3}
+      propertyPath: m_text
+      value: jimmy da goat
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816464877464260892, guid: c3ea50a896b9f59469fb9107a43e0846, type: 3}
+      propertyPath: m_fontStyle
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816464877464260892, guid: c3ea50a896b9f59469fb9107a43e0846, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.19139372
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816464877464260892, guid: c3ea50a896b9f59469fb9107a43e0846, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.19139372
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816464877464260892, guid: c3ea50a896b9f59469fb9107a43e0846, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.21698111
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816464877464260892, guid: c3ea50a896b9f59469fb9107a43e0846, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281413943
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871556508539794009, guid: c3ea50a896b9f59469fb9107a43e0846, type: 3}
+      propertyPath: m_text
+      value: jimmy da goat
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871556508539794009, guid: c3ea50a896b9f59469fb9107a43e0846, type: 3}
+      propertyPath: m_fontStyle
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871556508539794009, guid: c3ea50a896b9f59469fb9107a43e0846, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.117746525
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871556508539794009, guid: c3ea50a896b9f59469fb9107a43e0846, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.117746525
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871556508539794009, guid: c3ea50a896b9f59469fb9107a43e0846, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.16981131
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871556508539794009, guid: c3ea50a896b9f59469fb9107a43e0846, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4280163883
+      objectReference: {fileID: 0}
     - target: {fileID: 7162945246573335666, guid: c3ea50a896b9f59469fb9107a43e0846, type: 3}
       propertyPath: m_Name
       value: Molding_Minigame

@@ -18,7 +18,9 @@ public class Stream : MonoBehaviour
     [SerializeField] private float maxRange = 250f; // UI distances are larger
     [SerializeField] private float minPourAngle = 45f;
     [SerializeField] private float streamSpeed = 500f; // Speed liquid falls
+    [SerializeField] private float fillspeed = 10f; //how fast liquid fills mold
     [SerializeField] private float streamZ = -1f; // Adjust this to show in front of UI
+    public float perfect_pour_angle;
 
     public bool isPouring;
 
@@ -110,7 +112,11 @@ public class Stream : MonoBehaviour
                 Mold hitMold = hit.collider.GetComponent<Mold>();
                 if (hitMold != null)
                 {
-                    hitMold.Fill(Time.deltaTime / 2f);
+                    if(CalculatePourAngle() == perfect_pour_angle)
+                    {
+                        fillspeed+=10; //bonus if perfect angle
+                    }
+                    hitMold.Fill(Time.deltaTime / fillspeed);
                 }
             }
         }
@@ -133,7 +139,7 @@ public class Stream : MonoBehaviour
     {
         float angle = crucible.transform.eulerAngles.z;
         if (angle > 180) {angle = 360 - angle;}
-        //Debug.Log(angle);
+        Debug.Log(angle);
         return angle;
     }
 }

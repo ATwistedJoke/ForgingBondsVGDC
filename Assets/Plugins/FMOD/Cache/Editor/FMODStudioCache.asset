@@ -425,7 +425,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639073609972220890
+  lastModified: 639074104594814042
   FileSizes:
   - Name: 
     Value: 6960
@@ -473,7 +473,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/MCMBank.bank
   Name: MCMBank
   StudioPath: bank:/MCMBank
-  lastModified: 639073609972134552
+  lastModified: 639074104594803270
   FileSizes: []
   Exists: 1
 --- !u!114 &-7856220074041311463
@@ -491,7 +491,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639068627694668702
+  lastModified: 639069701535589134
   FileSizes: []
   Exists: 1
 --- !u!114 &-7834028420007538764
@@ -620,7 +620,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Themes.bank
   Name: Themes
   StudioPath: bank:/Themes
-  lastModified: 639073097871819142
+  lastModified: 639074104595288170
   FileSizes: []
   Exists: 1
 --- !u!114 &-7328061319961655148
@@ -830,7 +830,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/BestFriendBank.bank
   Name: BestFriendBank
   StudioPath: bank:/BestFriendBank
-  lastModified: 639073609971833653
+  lastModified: 639074104594778056
   FileSizes: []
   Exists: 1
 --- !u!114 &-6774969871271357898
@@ -930,7 +930,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639073097871174692
+  lastModified: 639074104594909523
   FileSizes: []
   Exists: 1
 --- !u!114 &-6391940457666413527
@@ -1583,7 +1583,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/MentorBank.bank
   Name: MentorBank
   StudioPath: bank:/MentorBank
-  lastModified: 639073609972311775
+  lastModified: 639074104594849180
   FileSizes: []
   Exists: 1
 --- !u!114 &-3342625570283034748
@@ -2475,7 +2475,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -7989202825351334509}
   cacheVersion: 131858
-  cacheTime: 639073609972400416
+  cacheTime: 639074104595288170
   SerializableEventsDict:
   - key: event:/Mentor/Angry0(M)
     index: 0
@@ -3135,7 +3135,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/RedFlagBank.bank
   Name: RedFlagBank
   StudioPath: bank:/RedFlagBank
-  lastModified: 639073609972400416
+  lastModified: 639074104594849180
   FileSizes: []
   Exists: 1
 --- !u!114 &3022335190212552305
@@ -3153,7 +3153,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/MCFBank.bank
   Name: MCFBank
   StudioPath: bank:/MCFBank
-  lastModified: 639073609972005685
+  lastModified: 639074104594788228
   FileSizes: []
   Exists: 1
 --- !u!114 &3044189686263700076
@@ -4215,7 +4215,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/LoneWolfBank.bank
   Name: LoneWolfBank
   StudioPath: bank:/LoneWolfBank
-  lastModified: 639073609971926505
+  lastModified: 639074104594778056
   FileSizes: []
   Exists: 1
 --- !u!114 &7430947062955570866
