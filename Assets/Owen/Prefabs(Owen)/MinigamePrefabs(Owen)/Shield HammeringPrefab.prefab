@@ -972,7 +972,7 @@ MonoBehaviour:
   level1: {fileID: -3140473254058401808, guid: 5a6b028ff4d2a49e29b91739b9321bfe, type: 3}
   level2: {fileID: 8632184240233323364, guid: b80900de013514e13ab138e817679dd4, type: 3}
   level3: {fileID: 6901144194123654717, guid: 289525cd885084ebc8893b41d05027bf, type: 3}
-  level4: {fileID: -2738298633322499905, guid: 80cbe7e1073bb435b893300e34299248, type: 3}
+  level4: {fileID: -8381433963661848828, guid: c1b64bda7e4ad45f5b65b81561fd1995, type: 3}
   milestone1: 100
   milestone2: 250
   milestone3: 500
@@ -1285,8 +1285,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22454d25a4444dffb36d88c2525ed05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SmeltingTimer
-  currCountdownValue: 10
-  startCountdownValue: 10
+  currCountdownValue: 120
+  startCountdownValue: 120
   timerText: {fileID: 0}
   minigamePrefab: {fileID: 0}
 --- !u!1 &7475159590349391853
