@@ -25,7 +25,6 @@
 // 3 - Isham
 // 4 - Silas
 
-
 <<change_background "map">>
 In the Age of the Hammer and Anvil, when Craft defined a Nation’s power, a looming darkness sought to snuff out the light of their forges.
 But the surrounding nations were not idle. The Kingdom of Pladonia, a beacon of innovation and a stalwart defender of humanity, led the Alliance in waging war against the forces of evil.
@@ -600,7 +599,7 @@ Upon your arrival, a young guide welcomes you with reverence in his eyes. Talkin
 <<MC false>>
 Walking down the tunnel, you enter the brightly illuminated room, ready to challenge your first great hurdle. 
 <<Theme 1>>
-<<run_minigame 1 WeekTwoAfterMinigame>>
+<<run_minigame 0 WeekTwoAfterMinigame>>
 ===
 
 title: WeekTwoAfterMinigame
@@ -1185,8 +1184,8 @@ Once you are done with this step, you will have to decide on the commission you 
 Entering your forge, you load the coal once more into your cauldron, lighting the flames that will be necessary to begin your work. 
 Isham checks in now and then, offering advice when you need it. But he never sticks around long, not wanting to interrupt your focus while you prepare your forge.
 Then the time finally comes, and your preparations are completed. The smelting can begin.
-<<run_minigame 2 postSmeltingWeekThree>>
 <<Theme 1>>
+<<run_minigame 1 postSmeltingWeekThree>>
 ===
 
 title: postSmeltingWeekThree
@@ -1210,7 +1209,6 @@ title: postSmeltingWeekThree
     Having to work longer than you wish, your schedule has been shortened. Hindering your free time, you will have to think carefully from now on about what commission you wish to take.
     <<set $weekTwoResult = 0>>
     <<destroy 1>>
-    <<jump weekThreeInteractions>>
 <<elseif $result == 1>>
     <<MC true>>
     <<sp 1>>
@@ -1222,7 +1220,6 @@ title: postSmeltingWeekThree
     Having to work longer than you wish, your schedule has been shortened. Hindering your free time, you will have to think carefully from now on about what commission you wish to take.
     <<set $weekTwoResult = 1>>
     <<destroy 1>>
-    <<jump weekThreeInteractions>>
 <<else>>
     <<MC true>>
     <<sp 1>>
@@ -1234,8 +1231,8 @@ title: postSmeltingWeekThree
     Having to work longer than you wish, your schedule has been shortened. Hindering your free time, you will have to think carefully from now on about what commission you wish to take.
     <<set $weekTwoResult = 1>>
     <<destroy 1>>
-    <<jump weekThreeInteractions>>
 <<endif>>
+<<jump weekThreeInteractions>>
 ===
 
 title: smeltinggameBad
@@ -2229,19 +2226,21 @@ title: Week4PreMinigame
 <<change_background "personal forge">>
 In your forge at the dawn of day, you start the new week ready to begin shaping your chosen weapon.
 Determined to turn these ingots into something beautiful, you raise your hammer with intense focus. 
+<<Theme 1>>
 <<if $route == 1>> // Judith route
-//<<run_minigame judithMinigameIndex Week4PostMinigame>> 
+    <<run_minigame 2 Week4PostMinigame>> 
 <<elseif $route == 2>> // Maeve route
-//<<run_minigame maeveMinigameIndex Week4PostMinigame>> 
+    <<run_minigame 3 Week4PostMinigame>> 
 <<elseif $route == 3>> // Isham route
-//<<run_minigame ishamMinigameIndex Week4PostMinigame>> 
+    <<run_minigame 4 Week4PostMinigame>> 
 <<elseif $route == 4>> // Silas route
-//<<run_minigame silasMinigameIndex Week4PostMinigame>> 
+    <<run_minigame 5 Week4PostMinigame>> 
 <<endif>>
 ===
 
 title: Week4PostMinigame
 ---
+<<Theme 0>>
 <<if $result >= 2>> // Good performance
     <<set $mentorAffinity = $mentorAffinity + 1>>
     <<vc 0 0>>
@@ -2685,44 +2684,58 @@ In the next weeks, as you complete their weapon, you should decide carefully on 
 
 title: Week5PreMinigame
 ---
-<<if $route == 1>>
-Judith
+<<Theme 1>>
+<<if $route == 1>> // Judith route
+    <<run_minigame 2 Week5MinigameResult>> 
+<<elseif $route == 2>> // Maeve route
+    <<run_minigame 3 Week5MinigameResult>> 
+<<elseif $route == 3>> // Isham route
+    <<run_minigame 4 Week5MinigameResult>> 
+<<elseif $route == 4>> // Silas route
+    <<run_minigame 5 Week5MinigameResult>> 
 <<endif>>
 ===
 
 title: Week5MinigameResult
 ---
+<<Theme 0>>
 $result
 <<jump Week5PostMinigame>>
 ===
 
 title: Week5PostMinigame
 ---
-<<if $route == 1>>
-Judith
-<<endif>>
+Insert Week 5 Dialogue
+<<jump Week6PreMinigame>>
 ===
 
 title: Week6PreMinigame
 ---
-<<if $route == 1>>
-Judith
+<<Theme 1>>
+<<if $route == 1>> // Judith route
+    <<run_minigame 2 Week6MinigameResult>> 
+<<elseif $route == 2>> // Maeve route
+    <<run_minigame 3 Week6MinigameResult>> 
+<<elseif $route == 3>> // Isham route
+    <<run_minigame 4 Week6MinigameResult>> 
+<<elseif $route == 4>> // Silas route
+    <<run_minigame 5 Week6MinigameResult>> 
 <<endif>>
 ===
 title: Week6MinigameResult
 ---
+<<Theme 0>>
 $result
 <<jump Week6PostMinigame>>
 ===
 
 title: Week6PostMinigame
 ---
-<<if $route == 1>>
-Judith
-<<endif>>
+Insert Dialogue for Week 6
+<<jump SceneEnd>>
 ===
 
 title: SceneEnd
 ---
-Reached the End Point
+We've Reached the End!
 ===
