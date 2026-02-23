@@ -47,7 +47,7 @@ public class GameController : MonoBehaviour
         game_playing = false;
         StopAllCoroutines();
         //mouse.ResetMouse();
-
+        GameManager.instance.GiveResult(CalculateResult(score)); 
         GameObject rem = GameObject.FindGameObjectWithTag("minigame");
         Destroy(rem);
     }
@@ -78,11 +78,11 @@ public class GameController : MonoBehaviour
     GameObject ChooseOreByRarity()
     {
         float roll = Random.value;
-
+        
         // 70% Iron, 25% Gold, 5% Mythril
         if (roll < 0.7f)
             return iron_ore;
-        else if (roll < 0.95f)
+        else if (roll < 0.90f)
             return gold_ore;
         else
             return mythril_ore;
@@ -125,9 +125,22 @@ public class GameController : MonoBehaviour
 
 
     //random time till new ore is spawned
-    yield return new WaitForSeconds(Random.value * 2f);
+    yield return new WaitForSeconds(Random.value * 5f);
         }
     
     }
 
+    private int CalculateResult(int input)
+    {
+        int result = 0; 
+        if(input >= 50)
+        {
+            result++; 
+            if(input >= 70)
+            {
+                result++; 
+            }
+        }
+        return result; 
+    }
 }

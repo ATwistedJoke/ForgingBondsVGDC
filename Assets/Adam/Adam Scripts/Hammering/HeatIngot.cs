@@ -9,16 +9,14 @@ public class HeatIngot : MonoBehaviour
     public float coolSpeed = 5f; //how many seconds it takes to cool down
     private float curHeatTime = 0f;
     public float heatMin = 0f;
-    public float heatMax = 10f;
+    public float heatMax = 15f;
     private bool currentlyHeating = false;
 
     private SpriteRenderer spriteRenderer;
 
     public float heatMilestone1 = 2f;
     public float heatMilestone2 = 5f; //Used for ranges of heat levels
-    public Sprite evolution1;
-    public Sprite evolution2;
-    public Sprite evolution3;
+    public float heatMilestone3 = 12f;
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -79,22 +77,30 @@ public class HeatIngot : MonoBehaviour
 
     void changeSprite()
     {
-        if(heatLevel >= heatMilestone2)
+        if(heatLevel >= heatMilestone3)
         {
-            spriteRenderer.sprite = evolution3;
+            spriteRenderer.color = Color.red;
+        }
+        else if(heatLevel >= heatMilestone2)
+        {
+            spriteRenderer.color = Color.orange;
         }
         else if(heatLevel >= heatMilestone1)
         {
-            spriteRenderer.sprite = evolution2;
+            spriteRenderer.color = Color.yellow;
         }
         else
         {
-            spriteRenderer.sprite = evolution1;
+            spriteRenderer.color = Color.white;
         }
     }
     public int heatScore()
     {
-        if(heatLevel >= heatMilestone2)
+        if(heatLevel >= heatMilestone3)
+        {
+            return -1;
+        }
+        else if(heatLevel >= heatMilestone2)
         {
             return 2;
         }

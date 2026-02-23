@@ -32,6 +32,6 @@ public class StartMinigame : MonoBehaviour
         if(tutorialVideo != null){
             Destroy(tutorialVideo);
         }
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }
