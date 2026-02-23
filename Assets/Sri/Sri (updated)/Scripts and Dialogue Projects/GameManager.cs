@@ -1,7 +1,10 @@
 using System;
 using System.Collections;
+using FMODUnity;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Yarn;
 using Yarn.Unity;
 
 public class GameManager : MonoBehaviour
@@ -28,16 +31,20 @@ public class GameManager : MonoBehaviour
     public GameObject lake;
     public GameObject capitalStreets;
     public GameObject judithsHome;
+    public GameObject silasHome;
+    public GameObject village;
+    public GameObject trainingGrounds;
+    public GameObject manor;
+    public GameObject badlands;
+    public GameObject battlefield;
+
 
     //Character Handling
     public GameObject[] spPrefab = new GameObject[5]; 
     public GameObject[] sprite = new GameObject[5];
-
-    // int mentorAffinity = 0;
-    // int redFlagAffinity = 0;
-    // int bestFriendAffinity = 0;
-    // int loneWolfAffinity = 0;
-    // int corruptionValue = 0;
+    private int MCAppearance; 
+    private int xPosition = 0; 
+    private int yPosition = -4; 
 
     //store the minigame score here. 0 = bad, 1 = mediocre, 2 = good
     int resourceMinigameScore = 2;
@@ -59,61 +66,25 @@ public class GameManager : MonoBehaviour
             "load_scene",     // the name of the command
             LoadScene // the method to run
         );
-
         // dialogueRunner.AddCommandHandler<string, int>(
         //     "change_affinity",
         //     ChangeAffinity
         // );
-
-        dialogueRunner.AddCommandHandler<int, string>(
-            "run_minigame",
-            RunMinigame
-        );
-
-        dialogueRunner.AddCommandHandler<string>(
-            "change_background",
-            ChangeBackground
-        );
-
-        dialogueRunner.AddCommandHandler<int,int,int>(
-            "instance_sprite",
-            InstantiateChar
-        );
-
-        dialogueRunner.AddCommandHandler<int,int>(
-            "change_sprite",
-            SpriteChange
-        );
-
-        dialogueRunner.AddCommandHandler<int,int,int,int>(
-            "move_sprite",
-            MoveChar
-        );
-
-        dialogueRunner.AddCommandHandler<int>(
-            "destroy",
-            DestroyChar
-        );
-
-        dialogueRunner.AddCommandHandler(
-            "resource_result",
-            ResourceMinigameResult
-        );
-
-        dialogueRunner.AddCommandHandler(
-            "smelting_result",
-            SmeltingMinigameResult
-        );
-
-        dialogueRunner.AddCommandHandler<bool>(
-            "MC",
-            MCSpeak
-        );
-
-        // dialogueRunner.AddCommandHandler<int>(
-        //     "change_corruption",
-        //     ChangeCorruption
-        // );
+        dialogueRunner.AddCommandHandler<int, string>("run_minigame", RunMinigame);
+        dialogueRunner.AddCommandHandler<string>("change_background", ChangeBackground);
+        dialogueRunner.AddCommandHandler<int>("sp", InstantiateChar);
+        dialogueRunner.AddCommandHandler<int, int, int>("place", InstantiatePlace);
+        dialogueRunner.AddCommandHandler<int,int>("cs", SpriteChange);
+        dialogueRunner.AddCommandHandler<int,int,int,int>("mv", MoveChar);
+        dialogueRunner.AddCommandHandler<int>("destroy", DestroyChar);
+        dialogueRunner.AddCommandHandler("resource_result", ResourceMinigameResult);
+        dialogueRunner.AddCommandHandler("smelting_result", SmeltingMinigameResult);
+        dialogueRunner.AddCommandHandler<bool>("MC",MCSpeak);
+        dialogueRunner.AddCommandHandler<int>("Appearance", SetAppearance);
+        dialogueRunner.AddCommandHandler("SFX", PlayAudio);
+        dialogueRunner.AddCommandHandler<int,int>("vc", VoiceLine);
+        dialogueRunner.AddCommandHandler<float>("Theme", ChangeTheme);
+        // dialogueRunner.AddCommandHandler<int>("change_corruption",ChangeCorruption);
     }
 
     private IEnumerator ResourceMinigameResult()
@@ -223,7 +194,24 @@ public class GameManager : MonoBehaviour
             case "Judith's home":
                 Instantiate(judithsHome);
                 break;
-            
+            case "Silas's home":
+                Instantiate(silasHome);
+                break;
+            case "village":
+                Instantiate(village);
+                break;
+            case "training grounds":
+                Instantiate(trainingGrounds);
+                break;
+            case "manor":
+                Instantiate(manor);
+                break;
+            case "badlands":
+                Instantiate(badlands);
+                break;
+            case "battlefield":
+                Instantiate(battlefield);
+                break;
         }
     }
     // private void ChangeAffinity(string character, int modifier)
@@ -290,63 +278,76 @@ public class GameManager : MonoBehaviour
     }
 
     //Result Handling
-    public void GiveResult(int result, int threshold)
+    public void GiveResult(int result)
     {
-        if(result >= threshold)
-        {
-            variableStore.SetValue("$resultTest", 1);
-        }
-        else
-        {
-            variableStore.SetValue("$resultTest", 0);
-        }
+        variableStore.SetValue("$resultTest", result);
     }
 
     //Sprite Methods
-    private void InstantiateChar(int idx, int posX, int posY)
+    private void InstantiateChar(int idx)
     {
+        if(idx == 0){ idx = MCAppearance; }
         sprite[idx] = Instantiate(spPrefab[idx]);
-        sprite[idx].transform.position = new Vector2(posX, posY);  
+        sprite[idx].transform.position = new Vector2(xPosition, yPosition);  
+    }
+
+    private void InstantiatePlace(int idx, int posX, int posY)
+    {
+        if(idx == 0){ idx = MCAppearance; }
+        sprite[idx] = Instantiate(spPrefab[idx]);
+        sprite[idx].transform.position = new Vector2(posX, posY);
     }
     private void SpriteChange(int oIdx, int sIdx)
     {
+        if(oIdx == 0){ oIdx = MCAppearance; }
         CharacterManager image = sprite[oIdx].GetComponent<CharacterManager>(); 
         image.ChangeSprite(sIdx); 
     }
     private void MoveChar(int idx, int posX, int posY, int speed)
     {
         sprite[idx].GetComponentInChildren<CharacterManager>().Move(posX, posY, speed);
-        /*Vector3 target = new Vector3(posX,posY,0);
-        GameObject obj = sprite[idx]; 
-        StartCoroutine(MoveOverTime(obj,target,speed));*/
     }
     private void DestroyChar(int idx)
     {
+        if(idx == 0){ idx = MCAppearance; }
         Destroy(sprite[idx]);
         sprite[idx] = null; 
     }
 
-    private IEnumerator MoveOverTime(GameObject obj, Vector3 target, float spd)
+    private void SetAppearance(int idx)
     {
-        while(obj != null && obj.transform.position != target)
-        {
-            obj.transform.position = Vector3.MoveTowards(obj.transform.position, target, spd*Time.deltaTime); 
-            yield return new WaitForEndOfFrame(); 
-        }
-        Debug.Log("Done");
+        MCAppearance = idx; 
     }
-
     private void MCSpeak(bool speak)
     {
-        Vector3 target; 
         if (speak)
         {
-            target = new Vector3(-7,-6,0);
+            sprite[MCAppearance].GetComponentInChildren<CharacterManager>().Move(-7, -6, 100);
         }
         else
         {
-            target = new Vector3(-50,-6,0);
+            sprite[MCAppearance].GetComponentInChildren<CharacterManager>().Move(-30, -6, 100);
+            sprite[MCAppearance].GetComponentInChildren<CharacterManager>().ChangeSprite(0);
         }
-        StartCoroutine(MoveOverTime(sprite[0],target,50));
+    }
+
+    //Audio Implementation
+    public void PlayAudio()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.SFX[0], transform.position);
+    }
+
+    public void VoiceLine(int idx, int line)
+    {
+        if(idx == 0)
+        {
+            idx = MCAppearance;
+        }
+        sprite[idx].GetComponentInChildren<CharacterManager>().PlayLine(line);
+    }
+
+    public void ChangeTheme(float f)
+    {
+        AudioManager.instance.SetMusicArea(f);
     }
 }

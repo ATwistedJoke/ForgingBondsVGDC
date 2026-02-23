@@ -8,6 +8,7 @@ public class RotateSkillCheck : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Sprite nextSprite;            
 
+
     private bool hitSkillCheck = false;
 
     void Update()

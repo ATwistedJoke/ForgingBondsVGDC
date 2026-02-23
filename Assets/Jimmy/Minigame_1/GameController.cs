@@ -47,7 +47,7 @@ public class GameController : MonoBehaviour
         game_playing = false;
         StopAllCoroutines();
         //mouse.ResetMouse();
-
+        GameManager.instance.GiveResult(CalculateResult(score)); 
         GameObject rem = GameObject.FindGameObjectWithTag("minigame");
         Destroy(rem);
     }
@@ -130,4 +130,17 @@ public class GameController : MonoBehaviour
     
     }
 
+    private int CalculateResult(int input)
+    {
+        int result = 0; 
+        if(input >= 50)
+        {
+            result++; 
+            if(input >= 70)
+            {
+                result++; 
+            }
+        }
+        return result; 
+    }
 }

@@ -48,6 +48,7 @@ public class Molding_Minigame : MonoBehaviour
         StopAllCoroutines();
 
         game_container.SetActive(false);
+        GameManager.instance.GiveResult(CalculateResult(total_molds));
         GameObject rem = GameObject.FindGameObjectWithTag("minigame");
         Destroy(rem); 
     }
@@ -114,7 +115,6 @@ public class Molding_Minigame : MonoBehaviour
         {
             prefabToSpawn = morningstar_mold;
         }
-
         if (prefabToSpawn != null)
         {
             Mold new_mold = Instantiate(prefabToSpawn, game_container.transform);
@@ -122,5 +122,18 @@ public class Molding_Minigame : MonoBehaviour
             current_mold.game = this;
         }
 
-}
+    }
+    private int CalculateResult(int input)
+    {
+        int result = 0; 
+        if(input >= 4)
+        {
+            result++; 
+            if(input >= 8)
+            {
+                result++; 
+            }
+        }
+        return result; 
+    }
 }

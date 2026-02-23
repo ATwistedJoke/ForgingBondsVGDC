@@ -45,7 +45,7 @@ public class ReinforcingMinigame : MonoBehaviour
     
     // current state
     public float currentTime;
-    private int qualityScore = 0;
+    public int qualityScore = 0;
     private int segmentsCompleted = 0;
     private bool isMinigameActive = false;
     private ShieldSegment currentSegment;
@@ -438,6 +438,7 @@ public class ReinforcingMinigame : MonoBehaviour
     
     private void FailChallenge()
     {
+        currentTime -= 10; 
         CompleteChallenge(false);
     }
     
@@ -464,7 +465,19 @@ public class ReinforcingMinigame : MonoBehaviour
     }
     
 
-
+    private int ResultCalculation(int qualityScore)
+    {
+        int result = 0; 
+        if(qualityScore >= 60)
+        {
+            result++; 
+        }
+        if(qualityScore >= 80)
+        {
+            result++; 
+        }
+        return result; 
+    }
 
     
     private void EndMinigame()
@@ -473,6 +486,7 @@ public class ReinforcingMinigame : MonoBehaviour
         minigameCanvas.SetActive(false);
         
         OnMinigameComplete?.Invoke(qualityScore);
+        GameManager.instance.GiveResult(ResultCalculation(qualityScore)); 
         //Destroy(gameObject);
         GameObject rem = GameObject.FindGameObjectWithTag("minigame");
         Destroy(rem);

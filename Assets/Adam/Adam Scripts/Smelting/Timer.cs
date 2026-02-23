@@ -13,7 +13,6 @@ public class Timer : MonoBehaviour
     {
         timerText = GetComponent<TMP_Text>();
         timerText.text = "" + startCountdownValue;
-        minigamePrefab = GameObject.FindGameObjectWithTag("minigame");
         StartCoroutine(StartCountdown());
     }
 
@@ -27,6 +26,7 @@ public class Timer : MonoBehaviour
             currCountdownValue--;
             timerText.text = "" + currCountdownValue;
         }
+        minigamePrefab = GameObject.FindGameObjectWithTag("minigame");
         Destroy(minigamePrefab);
         Destroy(gameObject);
     }
