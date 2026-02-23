@@ -1,11 +1,6 @@
 using System.Collections;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.WSA;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using System.Runtime.CompilerServices;
 
 public class GameController : MonoBehaviour
 {

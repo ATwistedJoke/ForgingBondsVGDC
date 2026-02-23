@@ -31,46 +31,55 @@ title: Selection
 
 title: MiningMinigame
 ---
+<<Theme 1>>
 <<run_minigame 0 Selection>>
 ===
 
 title: SmeltingMinigame
 ---
+<<Theme 1>>
 <<run_minigame 1 Results>>
 ===
 
 title: HammeringMinigame
 ---
+<<Theme 1>>
 <<run_minigame 2 Selection>>
 ===
 
 title: ReinforcingMinigame
 ---
+<<Theme 1>>
 <<run_minigame 3 Results>>
 ===
 
 title: MoldingMinigame
 ---
+<<Theme 1>>
 <<run_minigame 4 Selection>>
 ===
 
 title: AssemblyMinigameMorningStar
 ---
+<<Theme 1>>
 <<run_minigame 5 Selection>>
 ===
 
 title: AssemblyMinigameCrossBow
 ---
+<<Theme 1>>
 <<run_minigame 6 Selection>>
 ===
 
 title: EtchingMinigame
 ---
+<<Theme 1>>
 <<run_minigame 7 Selection>>
 ===
 
 title: Results
 ---
+<<Theme 0>>
 <<if $resultTest <= 0>>
     BOO!
 <<elseif $resultTest == 1>>

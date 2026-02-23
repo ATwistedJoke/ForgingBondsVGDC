@@ -57,6 +57,7 @@ public class RotateHammer : MonoBehaviour
     public IEnumerator HammerSwing() //just so that the heat level doesn't change every frame
     {
         Hammer.transform.Rotate(0f, 0f, 120f);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.SFX[8], transform.position);
         yield return new WaitForSeconds(0.2f);
         Hammer.transform.Rotate(0f, 0f, -120f);
         hammerHitting = false;

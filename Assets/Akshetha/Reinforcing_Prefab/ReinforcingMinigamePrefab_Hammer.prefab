@@ -429,6 +429,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ReinforcingMinigamePrefab_Hammer
       objectReference: {fileID: 0}
+    - target: {fileID: 7613132806052327015, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
+      propertyPath: m_TagString
+      value: minigame
+      objectReference: {fileID: 0}
     - target: {fileID: 7722209915623018288, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
       propertyPath: m_SizeDelta.x
       value: 81.1474
