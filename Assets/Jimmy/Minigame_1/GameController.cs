@@ -79,10 +79,10 @@ public class GameController : MonoBehaviour
     {
         float roll = Random.value;
 
-        // 70% Iron, 25% Gold, 5% Mythril
+        // 70% Iron, 20% Gold, 10% Mythril
         if (roll < 0.7f)
             return iron_ore;
-        else if (roll < 0.95f)
+        else if (roll < 0.90f)
             return gold_ore;
         else
             return mythril_ore;
@@ -125,7 +125,7 @@ public class GameController : MonoBehaviour
 
 
     //random time till new ore is spawned
-    yield return new WaitForSeconds(Random.value * 2f);
+    yield return new WaitForSeconds(Random.value * 5f);
         }
     
     }

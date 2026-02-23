@@ -86,25 +86,6 @@ public class Ores : MonoBehaviour, IPointerClickHandler, IPointerUpHandler
     {
         mouse.SetDefault();
         Destroy(gameObject);
-        switch (oreType)
-        {
-            case OreType.Iron:
-                game.AddScore(10);
-                Debug.Log("+10 points to you!");
-                break;
-
-            case OreType.Gold:
-                game.AddScore(25);
-                Debug.Log("+25 points to you!");
-                break;
-
-            case OreType.Mythril:
-                game.AddScore(100);
-                Debug.Log("+100 points to you!");
-                break;
-
-        }
-
         Debug.Log("you probably should've got points rn");
     }
 

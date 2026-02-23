@@ -72,7 +72,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6, y: 27}
+  m_AnchoredPosition: {x: 59, y: 13}
   m_SizeDelta: {x: 75.39, y: 75.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &6324157582398051823
@@ -175,6 +175,8 @@ MonoBehaviour:
   maxTilt: 90
   minTilt: 0
   game_manager: {fileID: 3872884014977027678}
+  crucible_empty: {fileID: 0}
+  crucible_threshold: {fileID: 0}
   current_ore1: 0
   current_ore2: 0
   current_ore3: 0
@@ -1574,11 +1576,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9606a52df04fe024cac0c0d308805109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Molding_Minigame
+  currentWeaponChoice: 0
   total_molds: 0
   correct_mold: 0
   spawning: 0
   totalOreCount: 0
-  mold: {fileID: 8731919352137776645, guid: 94603c76912c6c94cae74896a0207383, type: 3}
+  arrow_mold: {fileID: 0}
+  morningstar_mold: {fileID: 0}
   crucible: {fileID: 7008791023300649588}
   game_container: {fileID: 969206931951700823}
   recipeGenerator: {fileID: 7540990634350529627}
@@ -1755,9 +1759,11 @@ MonoBehaviour:
   crucible: {fileID: 476975653011072992}
   mold: {fileID: 8731919352137776645, guid: 94603c76912c6c94cae74896a0207383, type: 3}
   game: {fileID: 3872884014977027678}
+  splashParticles: {fileID: 0}
   maxRange: 1000
   minPourAngle: 45
   streamSpeed: 500
+  isPouring: 0
 --- !u!1 &7170475604884009723
 GameObject:
   m_ObjectHideFlags: 0

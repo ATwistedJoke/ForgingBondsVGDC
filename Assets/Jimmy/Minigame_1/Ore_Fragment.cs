@@ -10,6 +10,10 @@ public class Ore_Fragment : MonoBehaviour
     
     public GameController game;
 
+    public int iron_add_score = 10;
+    public int gold_add_score = 25;
+    public int myth_add_score = 50;
+
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,7 +36,23 @@ public class Ore_Fragment : MonoBehaviour
     {
         
     if (collision.gameObject.CompareTag("Bag")) {
-       game.AddScore(20);
+            switch (ore)
+        {
+            case OreType.Iron:
+                game.AddScore(iron_add_score);
+                Debug.Log("+10 points to you!");
+                break;
+
+            case OreType.Gold:
+                game.AddScore(gold_add_score);
+                Debug.Log("+25 points to you!");
+                break;
+
+            case OreType.Mythril:
+                game.AddScore(myth_add_score);
+                Debug.Log("+50 points to you!");
+                break;
+        }
        Debug.Log("i am hitting this");
        Destroy(gameObject);
     }
