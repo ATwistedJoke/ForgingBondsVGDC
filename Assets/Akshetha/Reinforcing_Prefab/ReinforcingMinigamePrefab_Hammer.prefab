@@ -137,6 +137,37 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &9048709142959016997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 183610116344451257}
+  m_Layer: 0
+  m_Name: AnimationPos
+  m_TagString: AnimationPos
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &183610116344451257
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9048709142959016997}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -920, y: -757, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7417276526900589012}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4595684452973658914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -194,6 +225,10 @@ PrefabInstance:
       value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 1331408178409636711, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
+      propertyPath: MashNailPrefab
+      value: 
+      objectReference: {fileID: 7414624336764571090, guid: 2cf3c6d0cf59042bc9991488598865d5, type: 3}
+    - target: {fileID: 1331408178409636711, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
       propertyPath: totalTimeLimit
       value: 160
       objectReference: {fileID: 0}
@@ -213,6 +248,14 @@ PrefabInstance:
       propertyPath: segments.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1331408178409636711, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
+      propertyPath: AnimatedHammerPrefab
+      value: 
+      objectReference: {fileID: 1947793899223771873, guid: 1586f5c624e844fad9c5b115dc67fc5c, type: 3}
+    - target: {fileID: 1331408178409636711, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
+      propertyPath: ShieldAnimationPrefab
+      value: 
+      objectReference: {fileID: 2026383850864278325, guid: afbc505062daa45afa8beecd3189d61a, type: 3}
     - target: {fileID: 1331408178409636711, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
       propertyPath: 'segments.Array.data[0]'
       value: 
@@ -339,11 +382,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6424476243294909174, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1341.4783
+      value: 923.5323
       objectReference: {fileID: 0}
     - target: {fileID: 6424476243294909174, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1038.4281
+      value: 759.4652
       objectReference: {fileID: 0}
     - target: {fileID: 6424476243294909174, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
       propertyPath: m_LocalPosition.z
@@ -523,6 +566,9 @@ PrefabInstance:
     - {fileID: 2506421069278024175, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
     - {fileID: 7293880275929742581, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6424476243294909174, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 183610116344451257}
     - targetCorrespondingSourceObject: {fileID: 936381039711272223, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6485343198698234414}
@@ -588,6 +634,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02efc939491bf4e919b7cf5498dd5e8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Scen
+--- !u!4 &7417276526900589012 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6424476243294909174, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
+  m_PrefabInstance: {fileID: 4595684452973658914}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8056172970035206008 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5767527874089882714, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}

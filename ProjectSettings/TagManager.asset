@@ -49,6 +49,7 @@ TagManager:
   - ScoreBar
   - Ring2
   - AnimationPos
+  - Shield Animation
   layers:
   - Default
   - TransparentFX

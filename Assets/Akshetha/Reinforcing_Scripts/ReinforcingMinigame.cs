@@ -46,8 +46,8 @@ public class ReinforcingMinigame : MonoBehaviour
     public GameObject AnimationPos;
     public GameObject MashNailPrefab;
     public GameObject MashNail;
-    public GameObject ShieldAnimationPrefab;
-    public GameObject ShieldAnimation;
+    public GameObject WeaponAnimationPrefab;
+    public GameObject WeaponAnimation;
     private bool hammerHitting = false;
     private float maxNailDist = 1.0f;
     private Vector3 hitDist;
@@ -150,9 +150,18 @@ public class ReinforcingMinigame : MonoBehaviour
         AnimatedHammer.transform.localPosition = hammerPos;
         MashNail = Instantiate(MashNailPrefab, AnimationPos.transform);
         MashNail.transform.localPosition = nailPos;
-        ShieldAnimation = Instantiate(ShieldAnimationPrefab, AnimationPos.transform);
-        float shieldXPos = UnityEngine.Random.Range(-3, 1);
-        ShieldAnimation.transform.localPosition = new Vector3(shieldXPos, -1.5f, 0f);
+        WeaponAnimation = Instantiate(WeaponAnimationPrefab, AnimationPos.transform);
+        float weaponXPos;
+        if(WeaponAnimation.tag == "Shield Animation")
+        {
+            weaponXPos = UnityEngine.Random.Range(-3, 1);
+            WeaponAnimation.transform.localPosition = new Vector3(weaponXPos, -1.5f, 0f);
+        }
+        if(WeaponAnimation.tag == "Hammer")
+        {
+            weaponXPos = UnityEngine.Random.Range(-5, 0);
+            WeaponAnimation.transform.localPosition = new Vector3(weaponXPos, 0f, 0f);
+        }
 
         if (currentChallengeType == 1)
         {
@@ -515,9 +524,9 @@ public class ReinforcingMinigame : MonoBehaviour
         {
             Destroy(MashNail);
         }
-        if (ShieldAnimation)
+        if (WeaponAnimation)
         {
-            Destroy(ShieldAnimation);
+            Destroy(WeaponAnimation);
         }
         StopAllCoroutines();
     }

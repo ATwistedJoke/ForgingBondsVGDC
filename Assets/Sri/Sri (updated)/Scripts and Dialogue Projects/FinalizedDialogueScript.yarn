@@ -682,7 +682,9 @@ Entering the Guild with a grin on your face, you walk past the front desk that h
 It really is true that laziness is the greatest source of inspiration.
 <<change_background "personal forge">>
 <<sp 1>>
+<<sfx 4>>
 Entering your seniors’ forge, you are met by an already working Isham, hammering away at a new creation while deep in thought. 
+<<sfx 8>>
 <<cs 1 1>>
 Upon meeting eyes, Isham welcomes you with a voice much friendlier than when you had first arrived. 
 {$mentorName}: “I take it you came here to tell me you are finished?”
@@ -765,6 +767,7 @@ Leaving the vein, you carry your haul of Pleiotium out to be met with a worried 
 <<else>>
     <<cs 1 4>>
     <<MC true>>
+    <<sfx 11>>
     {$playerName}: “It was terrible, I fucked it up. I don’t know why it went so bad, but I should’ve—”
     {$mentorName}: “Calm down, rookie. Just take a breather, and tell me slowly. Did anything dangerous happen with the Pleiotium?”
     {$playerName}: “No…nothing dangerous.”
@@ -789,6 +792,7 @@ Do you wish to make up with Maeve?
 -> Yes 
     Wanting to catch up with an old friend, you let Maeve know your availability in advance. 
     <<change_background "restaurant">>
+    <<amb 1>>
     Departing upon hearing her response, you head to the address given after cleaning yourself up from the mines.
     The restaurant was a humble store with casual dining options, providing a nice, cozy atmosphere for customers. 
     <<sp 3>>
@@ -835,6 +839,7 @@ Do you wish to make up with Maeve?
         {$playerName}: “Did I say something wrong?”
         Almost yelling out in anger, Maeve stops herself as she notices the onlookers peeking at their table. Not wanting to ruin the mood further, the two of you continue eating in an awkward silence of your own devising.
         After paying the check, the two of you depart with a brief and formal goodbye, unsure when you will see each other again.
+    <<end 1>>
     <<destroy 3>>
     <<MC false>>
 -> No
@@ -847,6 +852,7 @@ Wanting to catch up with an old friend, you let Maeve know your availability in 
 Departing upon hearing her response, you head to the address given after cleaning yourself up from the mines.
 The restaurant was a humble store with casual dining options, providing a nice, cozy atmosphere for customers. 
 <<sp 3>>
+<<amb 1>>
 You see Maeve seated at a table for two, beckoning you to come with a waving hand. Taking your seat, you notice Maeve smiling at you, no uneasiness on her face as there was before.
 <<cs 3 1>>
 {$bestFriendName}: “Thank you for coming. I know you’ve been busy, but I wanted to tell you about our folks back from the village.”
@@ -889,10 +895,12 @@ Laughing over Maeve’s story, the two of you reminisce over the past over a del
     {$playerName}: “Did I say something wrong?”
     Almost yelling out in anger, Maeve stops herself as she notices the onlookers peeking at their table. Not wanting to ruin the mood further, the two of you continue eating in an awkward silence of your own devising.
     After paying the check, the two of you depart with a brief and formal goodbye, unsure when you will see each other again.
+<<end 1>>
 <<destroy 3>>
 <<MC false>>
 <<endif>>
 <<change_background "market">>
+<<amb 0>>
 With time still left in the day, you decide to head to the market in the town square to pick up some needed food for home. 
 The capital market was famous for its wide variety of stalls and fresh produce. It was also well known for its large crowds, which you now find yourself struggling to navigate through.
 Shifting through the waves of people, you finally stop at an open stall parked in front of a large merchant hall in the background. You begin viewing the catalogue of fresh vegetables for what you want for dinner.
@@ -930,6 +938,7 @@ Her words, ominously sincere, speak with fervent desire as she gazes upon you wi
 {$redFlagName}: “It would be a great opportunity for you to cultivate your craft as an apprentice. Not only could you witness the art of famous blacksmiths to learn from, but you will also be introduced to the most influential nobles in the kingdom. No apprentice could hope for more.”
 <<destroy 2>>
 Saying goodbye to the departing Judith, you leave the market in deep thought about the enticing offer she had presented. Her demeanor towards you, while weird, does offer a lot of benefits if you explore this relationship. Unsure yet if you should attend, you head back home for the day to rest and contemplate.
+<<end 0>>
 <<change_background "black background">>
 On the second day of the weekend, you realize you had forgotten the keys to your forge at work. Deciding it would be better to save yourself from the shame it would bring to be late to work, you decide to go back to the guild to find it.
 Yet no matter where you look, you cannot find the keys anywhere they could be. 
@@ -940,6 +949,7 @@ Inside, you notice a meticulously arranged room, with not a single tool out of p
 Not seeing your senior, you head back to the door to exit. But just as you were leaving, you noticed a peculiar blueprint lying on his desk.
 -> Read it
     <<set $readBlueprint to true>>
+    <<sfx 12>>
     Looking at the blueprint, you see the intricate designs of what can only be described as a warhammer. Notes left by Isham scatter the paper, and signs of repeated redrafting tell that this design was something your senior was deeply passionate about.
     Before you can read any further, you hear footsteps in the hallway outside. Backing away from the desk, you wait till the person outside is out of hearing before you exit the room.
     Whatever it is that you saw, you know Isham would not be happy if he caught you peering into his private writings. You wonder if you will ever bring this up to Isham, or if it will be a secret best left forgotten? 
@@ -948,6 +958,7 @@ Not seeing your senior, you head back to the door to exit. But just as you were 
     Deciding it to be rude to look at the man’s private writings, you choose to leave it alone. 
     Exiting the room before any misunderstandings could happen, you wonder how important the blueprint is to Isham. Is it something worth bringing up to your senior, or will it be a secret best left forgotten?
 <<change_background "hallway">>
+<<sfx 7>>
 However, on your way out, you meet eyes with Silas, the one Isham recommended for a commision. Standing still in the hallway in surprise, neither of you speaks until finally Silas opens their mouth.
 <<sp 4>>
 {$loneWolfName}: “Excuse me, what were you doing in Isham’s forge?”
@@ -1005,6 +1016,7 @@ Who do you wish to spend more time with?
     The manor, elaborately designed and grandiose in stature, was a sight to behold as you were led to the banquet hall inside. Within, you hear the sounds of eloquent music play from the instruments of skilled musicians as nobles danced in their luxurious outfits.
     The showcase would begin shortly after the ball had concluded.
     Watching the party, you find Judith approaching you with a smile.
+    <<sfx 7>>
     <<sp 2>>
     <<cs 2 1>>
     {$redFlagName}: “Why, it is so good to you have come, {$playerName}.”
@@ -1044,9 +1056,12 @@ Who do you wish to spend more time with?
     <<set $bestFriendAffinity = $bestFriendAffinity + 1>>
     <<change_background "market">>
     You decide that you wish to pay Maeve a visit at her home. Finding it rude to intrude without a gift, you stop by the market first to find something for Maeve. 
+    <<amb 0>>
     Remembering her love of sweet food, you decide to check out one of the dessert stalls. 
     The trip was short, and a delicious small chocolate cake was now boxed and ready to be gifted. 
     But as you begin to depart from the central market, you notice a peculiar piece of jewelry in the corner of your eye at a stall. Something about it draws your attention.
+    <<end 0>>
+    <<amb 2>>
     -> You got your cake already, no need for more.
     -> Wouldn’t hurt to look. Why not check it out?
         Unable to resist your curiosity, you decide to check out the stand selling the piece of jewelry. 
@@ -1054,8 +1069,10 @@ Who do you wish to spend more time with?
         You would have bought it on the spot if it weren’t for the exorbitant price it was listed at. No matter how you pleaded, the merchant would not relent. Not even accepting barter or a loan, there was nothing you could do to obtain the bracelet.
         Just why do you not have the money to afford a gift like this? If only you had more gold, more power, this would have never happened. A feeling of resentment lingers within you. 
         Perhaps it is time to leave. It would be better if this were forgotten. 
+    <<end 2>>
     <<change_background "black background">>
     Carrying the cake to Maeve’s home, you knock on her door to announce your arrival.
+    <<sfx 4>>
     <<sp 3>>
     <<cs 3 4>>
     {$bestFriendName}: “{$playerName}? What are you here for?”
@@ -1099,6 +1116,7 @@ Who do you wish to spend more time with?
     {$bestFriendName}: “Sorry, I wasn’t expecting any guests, so I didn’t have time to get tidy. I haven’t made dinner yet, so if you don’t mind, would you mind waiting for me for a bit while I finish that up?”
     {$playerName}: “Can I help you with cooking?”
     {$bestFriendName}: “Sure! Come here, and help me cut these.”
+    <<sfx 6>>
     Cooking together, your heart feels at ease being by her side. Without any trouble, the dish came along great as you set the table for dinner.
     Having a pleasant dinner with Maeve, you feel yourself growing closer to her as the two of you talk over food.
     <<cs 3 3>>
