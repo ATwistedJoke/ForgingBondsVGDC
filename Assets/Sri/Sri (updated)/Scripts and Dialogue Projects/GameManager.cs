@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
         dialogueRunner.AddCommandHandler<bool>("MC",MCSpeak);
         dialogueRunner.AddCommandHandler<int>("Appearance", SetAppearance);
         dialogueRunner.AddCommandHandler("SFX", PlayAudio);
-        dialogueRunner.AddCommandHandler<int,int>("Voice", VoiceLine);
+        dialogueRunner.AddCommandHandler<int,int>("vc", VoiceLine);
         dialogueRunner.AddCommandHandler<float>("Theme", ChangeTheme);
         // dialogueRunner.AddCommandHandler<int>("change_corruption",ChangeCorruption);
     }
