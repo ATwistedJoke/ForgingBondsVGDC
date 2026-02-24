@@ -24,7 +24,7 @@
 // 2 - Maeve
 // 3 - Isham
 // 4 - Silas
-
+<<place 0 -20 -6>>
 <<change_background "map">>
 In the Age of the Hammer and Anvil, when Craft defined a Nation’s power, a looming darkness sought to snuff out the light of their forges.
 But the surrounding nations were not idle. The Kingdom of Pladonia, a beacon of innovation and a stalwart defender of humanity, led the Alliance in waging war against the forces of evil.
@@ -716,7 +716,7 @@ Upon your arrival, a young guide welcomes you with reverence in his eyes. Talkin
     <<set $mentorAffinity = $mentorAffinity + 1>>
     <<cs 1 4>>
     {$mentorName}: “Master? Don’t get so attached, (lad, lass, pal), I’m only going to be your senior for just a few weeks.”
-    <<chane_sprite 0 0>>
+    <<cs 0 0>>
     {$playerName}: “Even then, I’ll still see you as my master.”
     <<cs 1 6>>
     {$mentorName}: “Just get in there, rookie, and do your thing.” 
@@ -734,7 +734,7 @@ Upon your arrival, a young guide welcomes you with reverence in his eyes. Talkin
     <<cs 0 4>>
     {$playerName}: “Alright, alright, I won’t mess this up. Trust me.”
     {$mentorName}: “Are you trying to jinx yourself? Just go, and please be careful.”
-<<destory_sprite 1>>
+<<destroy 1>>
 <<MC false>>
 Walking down the tunnel, you enter the brightly illuminated room, ready to challenge your first great hurdle. 
 <<Theme 1>>
@@ -782,6 +782,8 @@ Leaving the vein, you carry your haul of Pleiotium out to be met with a worried 
     The work after was harsh, but ultimately better than your initial try. Your return to the capital was delayed due to the overtime, leaving Isham bitter on the ride back about the work he had missed.
     You couldn’t help but wonder how open your schedule would have been if you had done it right the first time.
 <<set $weekOneResult = 0>>
+<<MC false>>
+<<destoy 1>>
 <<endif>>
 <<jump WeekTwoInteractions>>
 ===
@@ -879,7 +881,7 @@ Laughing over Maeve’s story, the two of you reminisce over the past over a del
     After finishing lunch, the two of you depart after paying the check and saying goodbye, promising to see each other sometime in the future.
 -> “All the time, it’s something I struggle to overcome time and time again. I find that thinking back to why I came here and what I want out of myself is what helps me the most.”
     <<set $bestFriendAffinity = $bestFriendAffinity + 1>>
-    <<css 3 4>>
+    <<cs 3 4>>
     {$bestFriendName}: “I never knew you had those thoughts, {$playerName}. You always seemed so engrossed in your work that I never knew you had doubts.”
     {$playerName}: “Likewise, Maeve. I remembered you pledging to me under the oak tree that you were going to surpass the Steelheart Knight. I still hope to see that Knight one day in action.”
     <<cs 3 5>>
@@ -1315,7 +1317,7 @@ title: postSmeltingWeekThree
     {$playerName}: “It’s…finished.”
     <<MC false>>
     <<cs  1 0>>
-    {$mentorName}: “Not bad, rookie. The smelting could use fine-tuning, but you did well for a first timer.”
+    {$mentorName}: “Not bad at all, rookie. The smelting could use fine-tuning, but you did well for a first timer.”
     Discussing with Isham on what could be improved, the two of you shortly went back to work to finish the smelting necessary for your project.
     Having to work longer than you wish, your schedule has been shortened. Hindering your free time, you will have to think carefully from now on about what commission you wish to take.
     <<set $weekTwoResult = 1>>

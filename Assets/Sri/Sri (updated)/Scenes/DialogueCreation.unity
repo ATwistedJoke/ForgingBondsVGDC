@@ -521,7 +521,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 969776835}
   prefabList:
   - {fileID: 3133478007704758121, guid: f157ec11b55fdd14fa5d835b1eace767, type: 3}
-  - {fileID: 563261661555335078, guid: 00621a4c476b9a74b83040e58c14573b, type: 3}
+  - {fileID: 680431790705880569, guid: 8d43042f321424e529faa77874535997, type: 3}
   - {fileID: 8087954389772310151, guid: ce95ff79b959a4c53ad080a62f4369bb, type: 3}
   - {fileID: 8087954389772310151, guid: e5ebff8f576f24feda1a51515ca5fcbf, type: 3}
   - {fileID: 8087954389772310151, guid: db4c5f2332f494f939bf1a5c51814dcb, type: 3}

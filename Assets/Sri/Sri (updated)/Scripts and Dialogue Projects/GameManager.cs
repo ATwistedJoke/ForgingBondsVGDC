@@ -282,7 +282,7 @@ public class GameManager : MonoBehaviour
     //Result Handling
     public void GiveResult(int result)
     {
-        variableStore.SetValue("$resultTest", result);
+        variableStore.SetValue("$result", result);
     }
 
     //Sprite Methods
