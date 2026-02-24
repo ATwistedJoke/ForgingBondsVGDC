@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+using FMODUnity;
 
 //functionality for shattering and breaking ore
 public class Ores : MonoBehaviour, IPointerClickHandler, IPointerUpHandler
@@ -12,18 +12,25 @@ public class Ores : MonoBehaviour, IPointerClickHandler, IPointerUpHandler
     public enum OreType { Iron, Gold, Mythril }
     public enum Ore_State { Untouched, Mining, Shatter }
     [SerializeField] public OreType oreType;
-
     [SerializeField] public Ore_Fragment ore_fragment;
-
     //physics variables for ore_fragments
     [SerializeField] private float fragmentForce = 6f;
     [SerializeField] private float horizontalSpread = 100f;
     [SerializeField] private float rotation_speed = 15f;
-
     [SerializeField] private Texture2D pickaxetexture;
     [SerializeField] private Texture2D pickaxe_on_ore;
 
+    [SerializeField] private EventReference ore_pick_sound; 
+    [SerializeField] private EventReference ore_break_sound;
 
+
+    void Start()
+    {
+        if (ore_pick_sound.IsNull)
+        {
+            Debug.Log("yea i dunno where this is bro");
+        }
+    }
     //ore, with each click, should break apart into fragments
     //based on position
     public void SpawnOre_Fragment()
@@ -63,6 +70,7 @@ public class Ores : MonoBehaviour, IPointerClickHandler, IPointerUpHandler
     public void Handle_Click()
     {
         Debug.Log("registering click");
+        AudioManager.instance.PlayOneShot(ore_pick_sound, transform.position);
         SpawnOre_Fragment();
         //handle mouse cursor change
         mouse.ChangeCursor();
@@ -83,27 +91,10 @@ public class Ores : MonoBehaviour, IPointerClickHandler, IPointerUpHandler
     public void Break()
     {
         mouse.SetDefault();
+        AudioManager.instance.PlayOneShot(ore_break_sound, transform.position);
+
         Destroy(gameObject);
-        switch (oreType)
-        {
-            case OreType.Iron:
-                game.AddScore(10);
-                Debug.Log("+10 points to you!");
-                break;
-
-            case OreType.Gold:
-                game.AddScore(25);
-                Debug.Log("+25 points to you!");
-                break;
-
-            case OreType.Mythril:
-                game.AddScore(100);
-                Debug.Log("+100 points to you!");
-                break;
-
-        }
-
-        Debug.Log("you probably should've got points rn");
+        Debug.Log("break");
     }
 
     //this is the way to handle clicks in unity ig

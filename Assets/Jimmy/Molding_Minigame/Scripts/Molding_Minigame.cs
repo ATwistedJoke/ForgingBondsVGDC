@@ -19,23 +19,31 @@ public class Molding_Minigame : MonoBehaviour
     public GameObject game_container;    
     public RecipeGenerator recipeGenerator;
     public Stream stream;
+    public GameObject tutorial;
 
     public float spawn_interval = 1.5f;
 
 
     private Mold current_mold;
-    void Start_Minigame(WeaponType type)
+    public void Start_Minigame(string type)
     {   
-        game_container.SetActive(true);
-        currentWeaponChoice = type;
-        
-    SpawnNewMold();
+        if(type == "Arrow")
+        {
+            currentWeaponChoice = WeaponType.Arrow;
+        }
+        else
+        {
+            currentWeaponChoice = WeaponType.Morningstar;
+        }
+        Destroy(tutorial);
+        game_container.SetActive(true);        
+        SpawnNewMold();
         
     }
 
     public void Start(){
 
-        Start_Minigame(currentWeaponChoice);
+        //Start_Minigame(currentWeaponChoice);
 
     }
 
