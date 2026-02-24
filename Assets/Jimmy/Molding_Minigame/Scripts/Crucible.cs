@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class Crucible : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class Crucible : MonoBehaviour
         { Molding_Minigame.OreType.Mythril, 0 }
     };
 
+    public Sprite crucible_empty;
+    public Sprite crucible_threshold;
+
     public int current_ore1;
     public int current_ore2;
     public int current_ore3;
@@ -30,6 +34,15 @@ public class Crucible : MonoBehaviour
         current_ore1 = contents[Molding_Minigame.OreType.Iron];
         current_ore2 = contents[Molding_Minigame.OreType.Gold];
         current_ore3 = contents[Molding_Minigame.OreType.Mythril];
+
+        if(game_manager.totalOreCount >= 3){
+            gameObject.GetComponent<Image>().sprite = crucible_threshold;
+        }
+        else
+        {
+            gameObject.GetComponent<Image>().sprite = crucible_empty;
+
+        }
         
     }
     //adds ore of specific type
@@ -46,6 +59,7 @@ public class Crucible : MonoBehaviour
         contents[Molding_Minigame.OreType.Iron] = 0;
         contents[Molding_Minigame.OreType.Gold] = 0;
         contents[Molding_Minigame.OreType.Mythril] = 0;
+        game_manager.totalOreCount = 0;
     }
 
     //triggered when ore is dropped into the crucible

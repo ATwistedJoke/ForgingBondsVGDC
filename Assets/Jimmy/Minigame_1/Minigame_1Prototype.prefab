@@ -27,11 +27,11 @@ Transform:
   m_GameObject: {fileID: 519219509121141144}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1280, y: -720, z: 0}
+  m_LocalPosition: {x: -1279.9999, y: -719.99994, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 9188165352116291322}
+  m_Father: {fileID: 5349882532538193143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6806365991217680657
 MonoBehaviour:
@@ -133,6 +133,7 @@ MonoBehaviour:
   iron_ore: {fileID: 3339458641758635812}
   gold_ore: {fileID: 903177003719932077}
   mythril_ore: {fileID: 6109446801933318976}
+  slight_offset: 50
   game_screen: {fileID: 9188165352116291322}
   minigame_1_panel: {fileID: 3955746569362973752}
   mouse: {fileID: 2249833416512133426}
@@ -283,6 +284,20 @@ MonoBehaviour:
   rotation_speed: 60
   pickaxetexture: {fileID: 0}
   pickaxe_on_ore: {fileID: 0}
+  ore_pick_sound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  ore_break_sound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!222 &1992410523607935781
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -699,6 +714,20 @@ MonoBehaviour:
   rotation_speed: 60
   pickaxetexture: {fileID: 0}
   pickaxe_on_ore: {fileID: 0}
+  ore_pick_sound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  ore_break_sound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!222 &1994799123135169683
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -936,6 +965,7 @@ RectTransform:
   - {fileID: 9188165352116291322}
   - {fileID: 2926206675714662540}
   - {fileID: 6152731608319368704}
+  - {fileID: 2368341550040658614}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1038,7 +1068,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2368341550040658614}
   - {fileID: 1433371786531999804}
   - {fileID: 8894997281971082843}
   - {fileID: 2020254058526088083}
@@ -1419,6 +1448,20 @@ MonoBehaviour:
   rotation_speed: 60
   pickaxetexture: {fileID: 0}
   pickaxe_on_ore: {fileID: 0}
+  ore_pick_sound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  ore_break_sound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!58 &6514668226770105507
 CircleCollider2D:
   m_ObjectHideFlags: 0

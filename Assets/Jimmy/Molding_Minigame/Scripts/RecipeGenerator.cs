@@ -43,9 +43,9 @@ public class RecipeGenerator : MonoBehaviour
         currentRecipe[Molding_Minigame.OreType.Mythril] = ore_3;
 
         //Update TextUI
-        textbox1.text = "Iron: " + ore_1;
-        textbox2.text = "Gold: " + ore_2;
-        textbox3.text = "Mythril: " + ore_3;
+        textbox1.text = "x" + ore_1;
+        textbox2.text = "x" + ore_2;
+        textbox3.text = "x" + ore_3;
 
 
         Debug.Log($"New Recipe: Iron {ore_1}, Gold {ore_2}, Mythril {ore_3}");
