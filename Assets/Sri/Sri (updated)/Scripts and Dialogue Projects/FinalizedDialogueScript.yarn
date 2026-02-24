@@ -677,14 +677,15 @@ title: PreMinigameWeek2
 The first week at the Royal Blacksmith Guild was incredibly busy. Full of tedious work, new learning opportunities, and introductions to an ensemble of other apprentices, your free time consisted of only sleeping and eating. 
 But all that work is about to pay off, for you have finally finished the preparations you need to begin what is known as the Ritual of Extraction.
 <<change_background "entrance hall">>
-<<sfx 4>>
 Entering the Guild with a grin on your face, you walk past the front desk that had given you so much trouble in the past. Turns out it was just an automated voice that Isham and some other Royal Blacksmiths built back in the day to manage the guild’s guests.
 It really is true that laziness is the greatest source of inspiration.
 <<change_background "personal forge">>
 <<sp 1>>
-<<sfx 8>>
+<<sfx 4>>
 Entering your seniors’ forge, you are met by an already working Isham, hammering away at a new creation while deep in thought. 
+<<sfx 8>>
 <<cs 1 1>>
+<<vc 1 0>>
 Upon meeting eyes, Isham welcomes you with a voice much friendlier than when you had first arrived. 
 {$mentorName}: “I take it you came here to tell me you are finished?”
 {$playerName}: “Yes, sir! I’m ready to begin.”
@@ -700,38 +701,53 @@ That is why, from extraction to refinement, only a singular trained Blacksmith i
 Hence, long ago, the Kingdom of Pladonia outlawed the usage of Pleiotium unless the Blacksmith is personally evaluated and trained. That is the origin of the Royal Blacksmiths and the Guild that manages them.
 Hearing the coachmen call out from outside, you feel the carriage come to a stop. You have arrived at your destination.
 <<change_background "mines">>
+<<sfx 7>>
 Leaving the carriage with your senior, you step out onto the mud roads of the mining village of Pleioridge. Overseeing the protection and management of the Royal Pleiotium Mines, the villagers consisted of soldiers and laborers here for work alongside their families. 
 Upon your arrival, a young guide welcomes you with reverence in his eyes. Talking endlessly about how amazing the Royal Blacksmiths are, he only stops when a frustrated Isham cuts him off. Without more delay, you are led down a series of tunnels carved out by miners to where a vein of Pleiotium ore had been discovered. 
 <<sp 1>>
+<<vc 1 1>>
 {$mentorName}: "Alright, rookie, we’ve arrived. I’m afraid I can’t go any further than this, but I’ll wait back here in case you need any help. Do you remember everything I told you about the Ritual of Extraction?"
 <<MC true>>
 -> “Of course. I’m ready, master.”
+    <<cs 0 1>>
+    <<vc 0 0>>
+    “Of course. I’m ready, master.”
     <<set $mentorAffinity = $mentorAffinity + 1>>
     <<cs 1 4>>
+    <<vc 1 4>>
     {$mentorName}: “Master? Don’t get so attached, (lad, lass, pal), I’m only going to be your senior for just a few weeks.”
     <<chane_sprite 0 0>>
     {$playerName}: “Even then, I’ll still see you as my master.”
     <<cs 1 6>>
     {$mentorName}: “Just get in there, rookie, and do your thing.” 
 -> “Eh…this seems like a lot of work, are you sure you can’t do it, senior?”
+    <<cs 0 2>>
+    <<vc 0 5>>
+    “Eh…this seems like a lot of work, are you sure you can’t do it, senior?”
     <<cs 0 4>>
     {$mentorName}: “I see someone’s in the mood to make jokes.”
     <<cs 0 3>>
     {$playerName}: “Like in a good or bad way?”
+    <<vc 1 2>>
     {$mentorName}: “That’s for you to decide.”
 -> “I just want to get this over with.”
-    <<cs 0 2>>
+    <<cs 0 4>>
+    <<vc 0 2>>
+    “I just want to get this over with.”
     <<cs 1 7>>
+    <<vc 1 2>>
     <<set $mentorAffinity = $mentorAffinity - 1>>
     {$mentorName}: “With an attitude like that, you're just begging to fuck this up.”
     <<cs 0 4>>
+    <<vc 0 1>>
     {$playerName}: “Alright, alright, I won’t mess this up. Trust me.”
+    <<vc 1 2>>
     {$mentorName}: “Are you trying to jinx yourself? Just go, and please be careful.”
-<<destroy 1>>
+<<destory_sprite 1>>
 <<MC false>>
 Walking down the tunnel, you enter the brightly illuminated room, ready to challenge your first great hurdle. 
 <<Theme 1>>
-<<run_minigame 1 WeekTwoAfterMinigame>>
+<<run_minigame 0 WeekTwoAfterMinigame>>
 ===
 
 title: WeekTwoAfterMinigame
@@ -743,6 +759,7 @@ Leaving the vein, you carry your haul of Pleiotium out to be met with a worried 
 //<<resource_result>>
 <<if $result == 2>>
         <<cs 0 1>>
+        <<vc 0 0>>
         <<MC true>>
         {$playerName}: “I say it went fairly well. Got myself a good supply.”
         <<cs 1 1>>
@@ -765,8 +782,11 @@ Leaving the vein, you carry your haul of Pleiotium out to be met with a worried 
     <<set $weekOneResult = 1>>
 <<else>>
     <<cs 1 4>>
+    <<vc 0 1>>
     <<MC true>>
+    <<sfx 11>>
     {$playerName}: “It was terrible, I fucked it up. I don’t know why it went so bad, but I should’ve—”
+    <<vc 0 2>>
     {$mentorName}: “Calm down, rookie. Just take a breather, and tell me slowly. Did anything dangerous happen with the Pleiotium?”
     {$playerName}: “No…nothing dangerous.”
     {$mentorName}: “Then it’s fine. Learn from this mistake, and apply yourself to be better next time. We will return to correct this, but it will require some overtime. Everything will be okay.”
@@ -776,56 +796,7 @@ Leaving the vein, you carry your haul of Pleiotium out to be met with a worried 
     You couldn’t help but wonder how open your schedule would have been if you had done it right the first time.
 <<set $weekOneResult = 0>>
 <<endif>>
-<<jump WeekTwoInteractions>>
-===
-
-title: resourcegameGood
----
-........ //for some reason this node starts on line 2
-<<cs 0 1>>
-<<MC true>>
-{$playerName}: “I say it went fairly well. Got myself a good supply.”
-<<cs 1 1>>
-{$mentorName}: “Thank the gods. Nice work, rookie.”
 <<destroy 1>>
-<<MC false>>
-The departure from the mines in triumph fills you with renewed confidence and excitement. Led back to the carriage, you can’t wait to see how the Pleiotium you harvested will turn out. 
-With no need to stay any longer in the village of Pleioridge, you depart back to the Capital with Isham.
-Your good work has rewarded you with an open schedule. With no overtime needed, you return to the Capital with extra free time ready to be spent.
-<<set $weekOneResult = 2>>
-<<jump WeekTwoInteractions>>
-===
-
-title: resourcegameMediocre
----
-........ //for some reason this node starts on line 2
-<<cs 0 0>>
-<<MC true>>
-{$playerName}: “It was okay. I could’ve done better.”
-{$mentorName}: “That’s alright, you don’t always get it right the first time. Just make sure to learn from this experience and do better the next time you come.”
-<<destroy 1>>
-<<MC false>>
-The departure from the mines leaves you in deep contemplation, wondering how you could improve your technique. Led back to a hut reserved for visiting blacksmiths, you go to sleep early to prepare for tomorrow. 
-Having to work longer than you wish, your return to the capital was delayed by a few more days.
-When it was finally time to leave the village, you couldn’t help but wonder how open your schedule would have been if you had done it right the first time.
-<<set $weekOneResult = 1>>
-<<jump WeekTwoInteractions>>
-===
-
-title: resourcegameBad
----
-........ //for some reason this node starts on line 2
-<<cs 1 4>>
-<<MC true>>
-{$playerName}: “It was terrible, I fucked it up. I don’t know why it went so bad, but I should’ve—”
-{$mentorName}: “Calm down, rookie. Just take a breather, and tell me slowly. Did anything dangerous happen with the Pleiotium?”
-{$playerName}: “No…nothing dangerous.”
-{$mentorName}: “Then it’s fine. Learn from this mistake, and apply yourself to be better next time. We will return to correct this, but it will require some overtime. Everything will be okay.”
-The departure from the mines consisted of only silence. Led back to a hut reserved for visiting blacksmiths, you go to sleep early on the verge of tears, swearing you will do better the next time. 
-The work after was harsh, but ultimately better than your initial try. Your return to the capital was delayed due to the overtime, leaving Isham bitter on the ride back about the work he had missed.
-You couldn’t help but wonder how open your schedule would have been if you had done it right the first time.
-<<MC false>>
-<<set $weekOneResult = 0>>
 <<jump WeekTwoInteractions>>
 ===
 
@@ -840,6 +811,7 @@ Do you wish to make up with Maeve?
 -> Yes 
     Wanting to catch up with an old friend, you let Maeve know your availability in advance. 
     <<change_background "restaurant">>
+    <<amb 1>>
     Departing upon hearing her response, you head to the address given after cleaning yourself up from the mines.
     The restaurant was a humble store with casual dining options, providing a nice, cozy atmosphere for customers. 
     <<sp 3>>
@@ -886,6 +858,7 @@ Do you wish to make up with Maeve?
         {$playerName}: “Did I say something wrong?”
         Almost yelling out in anger, Maeve stops herself as she notices the onlookers peeking at their table. Not wanting to ruin the mood further, the two of you continue eating in an awkward silence of your own devising.
         After paying the check, the two of you depart with a brief and formal goodbye, unsure when you will see each other again.
+    <<end>>
     <<destroy 3>>
     <<MC false>>
 -> No
@@ -898,6 +871,7 @@ Wanting to catch up with an old friend, you let Maeve know your availability in 
 Departing upon hearing her response, you head to the address given after cleaning yourself up from the mines.
 The restaurant was a humble store with casual dining options, providing a nice, cozy atmosphere for customers. 
 <<sp 3>>
+<<amb 1>>
 You see Maeve seated at a table for two, beckoning you to come with a waving hand. Taking your seat, you notice Maeve smiling at you, no uneasiness on her face as there was before.
 <<cs 3 1>>
 {$bestFriendName}: “Thank you for coming. I know you’ve been busy, but I wanted to tell you about our folks back from the village.”
@@ -922,7 +896,7 @@ Laughing over Maeve’s story, the two of you reminisce over the past over a del
     After finishing lunch, the two of you depart after paying the check and saying goodbye, promising to see each other sometime in the future.
 -> “All the time, it’s something I struggle to overcome time and time again. I find that thinking back to why I came here and what I want out of myself is what helps me the most.”
     <<set $bestFriendAffinity = $bestFriendAffinity + 1>>
-    <<cs 3 4>>
+    <<css 3 4>>
     {$bestFriendName}: “I never knew you had those thoughts, {$playerName}. You always seemed so engrossed in your work that I never knew you had doubts.”
     {$playerName}: “Likewise, Maeve. I remembered you pledging to me under the oak tree that you were going to surpass the Steelheart Knight. I still hope to see that Knight one day in action.”
     <<cs 3 5>>
@@ -940,10 +914,12 @@ Laughing over Maeve’s story, the two of you reminisce over the past over a del
     {$playerName}: “Did I say something wrong?”
     Almost yelling out in anger, Maeve stops herself as she notices the onlookers peeking at their table. Not wanting to ruin the mood further, the two of you continue eating in an awkward silence of your own devising.
     After paying the check, the two of you depart with a brief and formal goodbye, unsure when you will see each other again.
+<<end>>
 <<destroy 3>>
 <<MC false>>
 <<endif>>
 <<change_background "market">>
+<<amb 0>>
 With time still left in the day, you decide to head to the market in the town square to pick up some needed food for home. 
 The capital market was famous for its wide variety of stalls and fresh produce. It was also well known for its large crowds, which you now find yourself struggling to navigate through.
 Shifting through the waves of people, you finally stop at an open stall parked in front of a large merchant hall in the background. You begin viewing the catalogue of fresh vegetables for what you want for dinner.
@@ -981,6 +957,7 @@ Her words, ominously sincere, speak with fervent desire as she gazes upon you wi
 {$redFlagName}: “It would be a great opportunity for you to cultivate your craft as an apprentice. Not only could you witness the art of famous blacksmiths to learn from, but you will also be introduced to the most influential nobles in the kingdom. No apprentice could hope for more.”
 <<destroy 2>>
 Saying goodbye to the departing Judith, you leave the market in deep thought about the enticing offer she had presented. Her demeanor towards you, while weird, does offer a lot of benefits if you explore this relationship. Unsure yet if you should attend, you head back home for the day to rest and contemplate.
+<<end>>
 <<change_background "black background">>
 On the second day of the weekend, you realize you had forgotten the keys to your forge at work. Deciding it would be better to save yourself from the shame it would bring to be late to work, you decide to go back to the guild to find it.
 Yet no matter where you look, you cannot find the keys anywhere they could be. 
@@ -991,6 +968,7 @@ Inside, you notice a meticulously arranged room, with not a single tool out of p
 Not seeing your senior, you head back to the door to exit. But just as you were leaving, you noticed a peculiar blueprint lying on his desk.
 -> Read it
     <<set $readBlueprint to true>>
+    <<sfx 12>>
     Looking at the blueprint, you see the intricate designs of what can only be described as a warhammer. Notes left by Isham scatter the paper, and signs of repeated redrafting tell that this design was something your senior was deeply passionate about.
     Before you can read any further, you hear footsteps in the hallway outside. Backing away from the desk, you wait till the person outside is out of hearing before you exit the room.
     Whatever it is that you saw, you know Isham would not be happy if he caught you peering into his private writings. You wonder if you will ever bring this up to Isham, or if it will be a secret best left forgotten? 
@@ -999,6 +977,7 @@ Not seeing your senior, you head back to the door to exit. But just as you were 
     Deciding it to be rude to look at the man’s private writings, you choose to leave it alone. 
     Exiting the room before any misunderstandings could happen, you wonder how important the blueprint is to Isham. Is it something worth bringing up to your senior, or will it be a secret best left forgotten?
 <<change_background "hallway">>
+<<sfx 7>>
 However, on your way out, you meet eyes with Silas, the one Isham recommended for a commision. Standing still in the hallway in surprise, neither of you speaks until finally Silas opens their mouth.
 <<sp 4>>
 {$loneWolfName}: “Excuse me, what were you doing in Isham’s forge?”
@@ -1056,6 +1035,7 @@ Who do you wish to spend more time with?
     The manor, elaborately designed and grandiose in stature, was a sight to behold as you were led to the banquet hall inside. Within, you hear the sounds of eloquent music play from the instruments of skilled musicians as nobles danced in their luxurious outfits.
     The showcase would begin shortly after the ball had concluded.
     Watching the party, you find Judith approaching you with a smile.
+    <<sfx 7>>
     <<sp 2>>
     <<cs 2 1>>
     {$redFlagName}: “Why, it is so good to you have come, {$playerName}.”
@@ -1095,9 +1075,12 @@ Who do you wish to spend more time with?
     <<set $bestFriendAffinity = $bestFriendAffinity + 1>>
     <<change_background "market">>
     You decide that you wish to pay Maeve a visit at her home. Finding it rude to intrude without a gift, you stop by the market first to find something for Maeve. 
+    <<amb 0>>
     Remembering her love of sweet food, you decide to check out one of the dessert stalls. 
     The trip was short, and a delicious small chocolate cake was now boxed and ready to be gifted. 
     But as you begin to depart from the central market, you notice a peculiar piece of jewelry in the corner of your eye at a stall. Something about it draws your attention.
+    <<end>>
+    <<amb 2>>
     -> You got your cake already, no need for more.
     -> Wouldn’t hurt to look. Why not check it out?
         Unable to resist your curiosity, you decide to check out the stand selling the piece of jewelry. 
@@ -1105,8 +1088,10 @@ Who do you wish to spend more time with?
         You would have bought it on the spot if it weren’t for the exorbitant price it was listed at. No matter how you pleaded, the merchant would not relent. Not even accepting barter or a loan, there was nothing you could do to obtain the bracelet.
         Just why do you not have the money to afford a gift like this? If only you had more gold, more power, this would have never happened. A feeling of resentment lingers within you. 
         Perhaps it is time to leave. It would be better if this were forgotten. 
+    <<end>>
     <<change_background "black background">>
     Carrying the cake to Maeve’s home, you knock on her door to announce your arrival.
+    <<sfx 4>>
     <<sp 3>>
     <<cs 3 4>>
     {$bestFriendName}: “{$playerName}? What are you here for?”
@@ -1150,6 +1135,7 @@ Who do you wish to spend more time with?
     {$bestFriendName}: “Sorry, I wasn’t expecting any guests, so I didn’t have time to get tidy. I haven’t made dinner yet, so if you don’t mind, would you mind waiting for me for a bit while I finish that up?”
     {$playerName}: “Can I help you with cooking?”
     {$bestFriendName}: “Sure! Come here, and help me cut these.”
+    <<sfx 6>>
     Cooking together, your heart feels at ease being by her side. Without any trouble, the dish came along great as you set the table for dinner.
     Having a pleasant dinner with Maeve, you feel yourself growing closer to her as the two of you talk over food.
     <<cs 3 3>>
