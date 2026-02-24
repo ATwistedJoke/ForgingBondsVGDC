@@ -26,6 +26,7 @@
 // 4 - Silas
 <<place 0 -20 -6>>
 <<change_background "map">>
+<<jump PreMinigameWeek2>>
 In the Age of the Hammer and Anvil, when Craft defined a Nation’s power, a looming darkness sought to snuff out the light of their forges.
 But the surrounding nations were not idle. The Kingdom of Pladonia, a beacon of innovation and a stalwart defender of humanity, led the Alliance in waging war against the forces of evil.
 Under the lead of the heroic Steelheart Knight, they sought to protect the vulnerable and reclaim the lost lands of humanity.
