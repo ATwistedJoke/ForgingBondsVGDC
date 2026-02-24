@@ -657,6 +657,66 @@ PrefabInstance:
       propertyPath: <amb>k__BackingField.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3196310041621305953, guid: 6de06c48d5c9ca7409d4beb37567897e, type: 3}
+      propertyPath: <amb>k__BackingField.Array.data[0].Path
+      value: event:/Ambience/Market
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196310041621305953, guid: 6de06c48d5c9ca7409d4beb37567897e, type: 3}
+      propertyPath: <amb>k__BackingField.Array.data[1].Path
+      value: event:/Ambience/Restaurant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196310041621305953, guid: 6de06c48d5c9ca7409d4beb37567897e, type: 3}
+      propertyPath: <amb>k__BackingField.Array.data[2].Path
+      value: event:/Ambience/MagicalAura
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196310041621305953, guid: 6de06c48d5c9ca7409d4beb37567897e, type: 3}
+      propertyPath: <amb>k__BackingField.Array.data[0].Guid.Data1
+      value: 1151579091
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196310041621305953, guid: 6de06c48d5c9ca7409d4beb37567897e, type: 3}
+      propertyPath: <amb>k__BackingField.Array.data[0].Guid.Data2
+      value: 1128252016
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196310041621305953, guid: 6de06c48d5c9ca7409d4beb37567897e, type: 3}
+      propertyPath: <amb>k__BackingField.Array.data[0].Guid.Data3
+      value: 1467123643
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196310041621305953, guid: 6de06c48d5c9ca7409d4beb37567897e, type: 3}
+      propertyPath: <amb>k__BackingField.Array.data[0].Guid.Data4
+      value: -1541056021
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196310041621305953, guid: 6de06c48d5c9ca7409d4beb37567897e, type: 3}
+      propertyPath: <amb>k__BackingField.Array.data[1].Guid.Data1
+      value: 1208392435
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196310041621305953, guid: 6de06c48d5c9ca7409d4beb37567897e, type: 3}
+      propertyPath: <amb>k__BackingField.Array.data[1].Guid.Data2
+      value: 1305646840
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196310041621305953, guid: 6de06c48d5c9ca7409d4beb37567897e, type: 3}
+      propertyPath: <amb>k__BackingField.Array.data[1].Guid.Data3
+      value: -716977017
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196310041621305953, guid: 6de06c48d5c9ca7409d4beb37567897e, type: 3}
+      propertyPath: <amb>k__BackingField.Array.data[1].Guid.Data4
+      value: -786875847
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196310041621305953, guid: 6de06c48d5c9ca7409d4beb37567897e, type: 3}
+      propertyPath: <amb>k__BackingField.Array.data[2].Guid.Data1
+      value: -973579377
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196310041621305953, guid: 6de06c48d5c9ca7409d4beb37567897e, type: 3}
+      propertyPath: <amb>k__BackingField.Array.data[2].Guid.Data2
+      value: 1233925819
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196310041621305953, guid: 6de06c48d5c9ca7409d4beb37567897e, type: 3}
+      propertyPath: <amb>k__BackingField.Array.data[2].Guid.Data3
+      value: 1344661392
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196310041621305953, guid: 6de06c48d5c9ca7409d4beb37567897e, type: 3}
+      propertyPath: <amb>k__BackingField.Array.data[2].Guid.Data4
+      value: -1458746662
+      objectReference: {fileID: 0}
     - target: {fileID: 7701178690578293197, guid: 6de06c48d5c9ca7409d4beb37567897e, type: 3}
       propertyPath: m_Name
       value: AudioManager

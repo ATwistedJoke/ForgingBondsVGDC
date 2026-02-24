@@ -185,6 +185,7 @@ You notice his deep eye bags, worn out from stress and lack of sleep. You feel u
 title: IntroductionPostTutorial
 ---
 <<sp 1>>
+<<Theme 5>>
 {$mentorName}: “Welcome to the Royal Blacksmith Guild, apprentice. There are expectations with the job, so I’ll help you out as your senior on what you need to do.”
 {$mentorName}: “As you already know, being a Royal Blacksmith is far different than any regular blacksmithing job. We work with a rare metal not available to the public.”
 {$mentorName}: “It is our work with Pleiotium that holds us in such high status. And what we make with it can change the pages of history depending on how it’s handled.”
@@ -209,6 +210,7 @@ title: IntroductionPostTutorial
 <<vc 0 0>>
 {$playerName}: “Yes, sir!”
 <<destroy 1>>
+<<Theme 0>>
 The day passes by quickly, with work on your forge seeming endless. Finally, you manage to clean the old forge up to your liking. 
 The only thing left to do now is to restock fuel for your furnace from the coal bunker. 
 As you load a crate full of coal, you realize how heavy it is to carry. Still, you decide to try to carry it all in one trip. 
@@ -229,6 +231,7 @@ Falling onto your back in surprise, the crate of coal that was in your hands lan
 Looking up, you are met with a gentle, smooth hand stemming from what could only be described as both a stunningly gorgeous and odd woman. 
 Donning elegant clothing and jewelry, her status was apparent to any perceiver. She would have looked like any regular, wealthy client the guild often gets if it weren’t for her eyes.
 <<set $redFlagName to "Wealthy Woman">>
+<<Theme 4>>
 Staring right through you, her pupils devoid of warmth watch your every movement with an intense gaze. Her crimson irises remain firm, refusing to blink until you take her hand.   
 A part of you finds them to be entrancing. The other terrifying. 
 <<vc 2 5>>
@@ -312,6 +315,7 @@ Before you could respond, the lady had already placed her hands on the other sid
 You exchange goodbyes with the odd lady who had left just as swiftly as she entered. It was only after you had returned to work, however, that you remembered something important. 
 You had not once given her your name.  
 <<sfx 17>>
+<<Theme 0>>
 You feel a shiver roll down your spine as you finish loading the coal into the furnace. You could only hope that she had learned your name through some reasonable way.
 After a few more long hours of hard work, you wipe off the last of your sweat as you finish completing your forge. All that remains is to obtain the Pleiotium and find a worthwhile commission.
 You remember your senior’s words about how it would be a good idea to look at the commission board for possible requests. You decide that, with nothing else left to do for today, you would give it a look before the guild closes.
@@ -334,6 +338,7 @@ It is then that you see a familiar face from your past, one that you did not exp
 <<sp 3>>
 Entering the room with an uneasy look on her face and a paper in hand, you see Maeve, a childhood friend of yours from the same village you grew up in.
 <<set $bestFriendName to "Maeve">>
+<<Theme 3>>
 <<vc 0 3>>
 {$playerName}: “Maeve?”
 <<vc 3 3>>
@@ -528,6 +533,7 @@ Emerging from the shadows, the eccentric merchant from earlier walked with confi
 <<cs 2 0>>
 <<cs 3 0>>
 <<MC false>>
+<<Theme 0>>
 Hesitant about how to decide, your saving grace comes from a pair of approaching voices coming from the hallway. 
 <<mv 3 -6 -4 50>>
 <<mv 2 -2 -4 50>>
@@ -551,6 +557,7 @@ Entering the room, your senior stops in surprise, only noticing the company you 
 Watching your companions exchange greetings with your senior, you notice the person behind Isham watching you quietly in anticipation.
 {$mentorName}: “Oh, the shy one behind me is named Silas. Their parents and I knew each other way back in the day.”
 <<set $loneWolfName to "Silas">>
+<<Theme 6>>
 <<vc 4 0>>
 {$loneWolfName}: *nods head*
 {$mentorName}: “I’m hoping to find an apprentice skilled enough to handle their commission, and I thought of the work you had shown me earlier today.”
@@ -591,6 +598,7 @@ Feeling the weight of decisions only piling further, you think of how you could 
 <<cs 4 3>>
 <<MC false>>
 <<vc 0 0>>
+<<Theme 0>>
 {$mentorName}: “Awkward, they might be, I truly do believe the kid will go on to do great things. Consider them an option if you don’t already have one in mind.”
 <<cs 0 4>>
 {$playerName}: “It’s only my first day, I want to take my time gathering the resources I need before making such a big decision.”
@@ -662,6 +670,7 @@ By the time you know it, it’s already your second week on the job.
 
 title: PreMinigameWeek2
 ---
+<<Theme 0>>
 The first week at the Royal Blacksmith Guild was incredibly busy. Full of tedious work, new learning opportunities, and introductions to an ensemble of other apprentices, your free time consisted of only sleeping and eating. 
 But all that work is about to pay off, for you have finally finished the preparations you need to begin what is known as the Ritual of Extraction.
 <<change_background "entrance hall">>
@@ -817,6 +826,7 @@ You couldn’t help but wonder how open your schedule would have been if you had
 
 title: WeekTwoInteractions
 ---
+<<Theme 0>>
 <<change_background "map">>
 Returning to the guild, you drop off the Pleiotium you harvested at your forge and retire for the weekend. 
 You remember that Maeve had invited you for lunch once you were free. 
@@ -1044,6 +1054,7 @@ Thanking them for the reassurance, you swiftly exchange goodbyes with Silas as y
 Due to the result of your efforts, you have earned enough spare time on your weekend to meet with someone for the start of next week.
 Who do you wish to spend more time with?
 -> Judith 
+    <<Theme 4>>
     <<set $redFlagAffinity = $redFlagAffinity + 1>>
     <<change_background "banquet hall">>
     You decide that you will accept Judith’s invitation, attending her showcase, which she will be hosting tonight.
@@ -1087,6 +1098,7 @@ Who do you wish to spend more time with?
     Judith spent the rest of the showcase introducing you to the Royal Blacksmiths attending the showcase. No longer will you be some nobody apprentice, but a name to be respected. Judith was right, she can make you famous. Now it is merely up to you to decide if you wish to chase this glory. 
     Departing from the manor, you look back at it as you take the arranged carriage Juidth prepared for you. Will you be returning here again? And if so, will your dream become a reality with Judith’s help?
 -> Maeve
+    <<Theme 3>>
     <<set $bestFriendAffinity = $bestFriendAffinity + 1>>
     <<change_background "market">>
     You decide that you wish to pay Maeve a visit at her home. Finding it rude to intrude without a gift, you stop by the market first to find something for Maeve. 
@@ -1184,6 +1196,7 @@ Who do you wish to spend more time with?
     With an old friendship rekindled, maybe this reunion is the opportunity needed to advance this relationship to be more than just childhood friends. 
     Best friends? Perhaps even more? Who knows? All you know is that you're happy to be talking with Maeve once more.
 -> Silas
+    <<Theme 6>>
     <<set $loneWolfAffinity = $loneWolfAffinity + 1>>
     <<change_background "map">>
     Against what any rational apprentice would choose, you decide that you would join Silas on their hunt.
@@ -1239,6 +1252,7 @@ Who do you wish to spend more time with?
     Silas told you that a hunt could last up to days if not weeks, so the next time you will see them will be a while. Perhaps you should prepare a gift for them once they return? You decide you will ask Isham about this when you return.
     When you returned to the capital, night had already long settled.  
 -> Isham
+    <<<<Theme 5>>>>
     <<set $mentorAffinity = $mentorAffinity + 1>>
     <<change_background "commissions room nighttime">>
     You decide to spend time with Isham.
@@ -1301,6 +1315,7 @@ Who do you wish to spend more time with?
 <<else>>
 Unfortunately, working overtime at the mines has reduced the amount of time you have left in the day.
 <<endif>>
+<<Theme 0>>
 <<change_background "black background">>
 After a long day full of important decisions, you finally can return back to home.
 The end of the weekend passes by. Tomorrow will be the start of a new week. It will be the start of your smithing work, and perhaps a new week full of decisions to make.
@@ -1423,6 +1438,7 @@ Your hard work has earned you an open schedule this week. You will be able to sp
 
 title: weekThreeInteractions
 ---
+<<Theme 0>>
 <<sp 1>>
 <<cs 1 5>>
 Putting away the now smelted bars of Pleiotium, you start to close up your forge when Isham returns with a worried look. 
@@ -1739,6 +1755,7 @@ With time running out, you should carefully consider how you want to spend the r
 Due to the result of your efforts, you have earned enough spare time to spend it with one more person.
 Who do you wish to spend more time with?
 -> Judith 
+    <<Theme 4>>
     <<set $redFlagAffinity = $redFlagAffinity + 1>>
     Telling Maeve that you intend to head back now, the two of you row the boat back to shore to dock. Only after you return to the capital do you depart with Maeve, waving her goodbye.
     <<change_background "black background">>
@@ -1786,6 +1803,7 @@ Who do you wish to spend more time with?
     <<destroy 2>>
     <<MC false>>
 -> Maeve
+    <<Theme 3>>
     <<set $bestFriendAffinity = $bestFriendAffinity + 1>>
     You decide that you wish to spend more time on this fishing trip with Maeve. It would be a shame to end it so early. 
     <<sp 3>>
@@ -1863,6 +1881,7 @@ Who do you wish to spend more time with?
     <<MC false>>
     <<destroy 3>>
 -> Silas
+    <<Theme 6>>
     <<cs 0 0>>
     <<set $loneWolfAffinity = $loneWolfAffinity + 1>>
     Telling Maeve that you intend to head back now, the two of you row the boat back to shore to dock. Only after you return to the capital do you depart with Maeve, waving her goodbye.
@@ -1935,6 +1954,7 @@ Who do you wish to spend more time with?
     <<cs 0 0>>
     <<destroy 4>>
 -> Isham
+    <<Theme 5>>
     <<set $mentorAffinity = $mentorAffinity + 1>>
     Telling Maeve that you intend to head back now, the two of you row the boat back to shore to dock. Only after you return to the capital do you depart with Maeve, waving her goodbye.
     You decide then that you now wish to see Isham. 
@@ -2013,6 +2033,7 @@ Having to end the fishing trip early, you exchange goodbyes to Maeve as you head
 <<endif>> 
 With that, the week has come to an end.
 And now, with careful consideration, it is time to make a decision.
+<<Theme 0>>
 <<jump DecisionDay>>
 ===
 
@@ -2021,6 +2042,7 @@ title: DecisionDay
 <<cs 0 0>>
 Whose commission do you take?
 -> Judith
+    <<Theme 4>>
     <<set $redFlagAffinity = $redFlagAffinity + 2>>
     <<set $route = 1>>
     Having made your decision, you send word to Judith to meet you at the guild’s commission room, where you intend to announce your plan.
@@ -2049,6 +2071,7 @@ Whose commission do you take?
     <<MC false>>
     <<destroy 2>>
 -> Maeve
+    <<Theme 3>>
     <<set $bestFriendAffinity = $bestFriendAffinity + 2>>
     <<set $route = 2>>
     Having made your decision, you send word to Maeve to meet you at the guild’s commission room, where you intend to announce your plan.
@@ -2057,6 +2080,7 @@ Whose commission do you take?
     Deciding that you have enough time before Maeve arrives, you go out to the coal bunker with an empty crate to refill.
     You open the door to the dark, dusty room and head to where the coal is stored. Picking them carefully with gloved hands, you eventually notice something shiny in between the rocks that you had not seen before. 
     Your heart freezes. 
+    <<Theme 2>>
     Lying there amongst the coal was that obsidian bracelet, clean from any dust.
     <<MC true>>
     <<cs 0 2>>
@@ -2184,6 +2208,7 @@ Whose commission do you take?
         <<destroy 3>>
         <<MC false>>
     -> Leave the room immediately
+        <<Theme 3>>
         <<set $corruption = $corruption - 5>>
         {$playerName}: [i]Nope. Fuck that.[/i]
         Leaving without your crate, you decide to take no chances with this evil bracelet that keeps following you.
@@ -2245,6 +2270,7 @@ Whose commission do you take?
     <<MC false>>
     <<endif>>
 -> Silas
+    <<Theme 6>>
     <<set $loneWolfAffinity = $loneWolfAffinity + 2>>
     <<set $route = 4>>
     Having made your decision, you send word to Silas to meet you at the guild’s commission room, where you intend to announce your plan.
@@ -2287,6 +2313,7 @@ Whose commission do you take?
     <<vc 4 0>>
     {$loneWolfName}: “I am truly grateful.”
 -> Isham
+    <<Theme 5>>
     <<set $mentorAffinity = $mentorAffinity + 2>>
     <<set $route = 3>>
     Having made your decision, you send word to Isham to meet you at the guild’s commission room, where you intend to announce your plan.
@@ -2361,6 +2388,7 @@ title: Week4PreMinigame
 <<change_background "personal forge">>
 In your forge at the dawn of day, you start the new week ready to begin shaping your chosen weapon.
 Determined to turn these ingots into something beautiful, you raise your hammer with intense focus. 
+<<Theme 1>>
 <<if $route == 1>> // Judith route
     <<run_minigame 3 Week4PostMinigame>> 
 <<elseif $route == 2>> // Maeve route
@@ -2374,6 +2402,7 @@ Determined to turn these ingots into something beautiful, you raise your hammer 
 
 title: Week4PostMinigame
 ---
+<<Theme 0>>
 <<if $result >= 2>> // Good performance
     <<set $mentorAffinity = $mentorAffinity + 1>>
     <<vc 0 0>>
@@ -2394,6 +2423,7 @@ title: Week4PostMinigame
 <<endif>>
 Exiting the sweltering forge, you go out to grab some water.
 <<if $route == 1>> // Judith route
+    <<Theme 4>>
     Judith had invited you earlier to the Royal Training Grounds to gather data on the weapon, stating that watching the knights train could be useful. Agreeing, you plan to meet with her today.  
     Taking a quick shower, you change into a fresh pair of clothes before leaving the guild. 
     <<change_background "training grounds">>
@@ -2477,6 +2507,7 @@ Exiting the sweltering forge, you go out to grab some water.
     <<endif>>
     <<destroy 2>>
 <<elseif $route == 2>> // Maeve route
+    <<Theme 3>>
     <<sp 3>>
     Maeve would later come by that day to visit, wanting to see what your workplace was like.
     Providing her with a small tour of the forge, you were glad that you remembered to clean up the place before she arrived. 
@@ -2634,6 +2665,7 @@ Exiting the sweltering forge, you go out to grab some water.
     <<endif>>
     <<destroy 3>>
 <<elseif $route == 3>> // Isham route
+    <<Theme 5>>
     <<sp 1>>
     <<vc 1 0>>
     After a short break, you go to Isham’s forge to update him on your progress. 
@@ -2722,6 +2754,7 @@ Exiting the sweltering forge, you go out to grab some water.
         Having to return to work in the forge, you grumble in discontent as you finish the work necessary for this project. You can’t risk falling behind on such an important task as this.
     <<endif>>
 <<elseif $route == 4>> // Silas route
+    <<Theme 6>>
     <<sp 1>>
     <<vc 1 0>>
     After a short break, you go to Isham’s forge to update him on your progress. 
@@ -2817,7 +2850,9 @@ In the next weeks, as you complete their weapon, you should decide carefully on 
 
 title: Week5PreMinigame
 ---
+<<Theme 0>>
 Entering a new week, you return to your forge ready to resume your progress. Preparing your hammer, you lay out the materials you need to improve on your project's functionality.
+<<Theme 1>>
 <<if $route == 1>> // Judith
     <<run_minigame 6 Week5PostMinigame>>
 <<elseif $route == 2>> // Maeve
@@ -2831,6 +2866,7 @@ Entering a new week, you return to your forge ready to resume your progress. Pre
 
 title: Week5PostMinigame
 ---
+<<Theme 0>>
 <<if $result >= 2>> // good minigame
     <<set $mentorAffinity = $mentorAffinity + 1>>
     {$playerName}: “Another job well done.”
@@ -2848,6 +2884,7 @@ title: Week5PostMinigame
 <<endif>>
 Leaving the sweltering forge, you head to your guild’s waiting room to take a short rest.
 <<if $route == 1>> // Judith route
+    <<Theme 4>>
     <<if $result >= 2>>
         <<set $redFlagAffinity = $redFlagAffinity + 2>>
         Today, you intend to invite Judith to a play in the market that will be performed by famous traveling actors. 
@@ -2921,6 +2958,7 @@ Leaving the sweltering forge, you head to your guild’s waiting room to take a 
         Having to return to work in the forge, you grumble in discontent as you finish the work necessary for this project. You can’t risk falling behind so close to the end.
     <<endif>>
 <<elseif $route == 3>> // Isham Route
+    <<Theme 5>>
     <<if $result >= 2>>
         With your spare time, you stop by Isham’s forge to tell him about your success. Looking pleased, Isham lowers his hammer and suggests the two of you head to the market together here to pick up some necessary materials for the final touches of the project.
         <<change_background "market">>
@@ -2979,6 +3017,7 @@ Leaving the sweltering forge, you head to your guild’s waiting room to take a 
     {$loneWolfName}: “Hand me something now…or else we might all be killed.”
     <<jump Week5HunterChoice>>
 <<elseif $route == 4>> // Silas route
+    <<Theme 6>>
     As you are resting, however, you hear a commotion outside in the hallways.
     Curious, you step out to see what the commotion is.
     <<change_background "hallway">>
@@ -3071,6 +3110,7 @@ Leaving the sweltering forge, you head to your guild’s waiting room to take a 
     {$loneWolfName}: “Hand me something now…or else we might all be killed.”
     <<jump Week5HunterChoice>>
 <<elseif $route == 2>> // Maeve Route
+    <<Theme 3>>
     <<if $corruptionRoute == false>>
         <<if $result >= 2>>
             As you lie down on a chair, you find your thoughts wandering to Maeve. 
@@ -3158,6 +3198,7 @@ Leaving the sweltering forge, you head to your guild’s waiting room to take a 
 
 title: Week5HelpMaeveChoice
 ---
+<<Theme 2>>
 Observing your surroundings, you search for anything that could help Maeve in her battle. 
 -> Medicinal Herbs from the Healing Stand.
     Grabbing onto the herbs from the stand, you wait for Maeve to sustain an injury to help heal her afterwards.
@@ -3222,6 +3263,7 @@ Observing your surroundings, you search for anything that could help Maeve in he
 ===
 title: Week5HunterChoice
 ---
+<<Theme 2>>
 What will you hand the hunter to use?
 -> A blue axe wet to the touch.
     Taking the blue axe out of the box, the weapon almost slips out of your hand as you try to hand it to Silas.
@@ -3293,6 +3335,7 @@ What will you hand the hunter to use?
 
 title: Week5PostHunterChoice
 ---
+<<Theme 2>>
 {$mentorName}: “We should find out how to help the others before the Royal Knights arrive.”
 {$loneWolfName}: “I would agree, but I do not think we are alone in this room.”
 Standing alert to the hunter’s words, the three of you back into each other as you await another hand to appear. But what comes is not a monster like before. It is human laughter. A familiar one.
@@ -3338,7 +3381,7 @@ A great siege is coming. One that will no doubt be remembered in history.
 <<if $route == 3>> // Isham route
 <<change_background "black background">>
 Sitting beside the unconscious Isham, you swear to yourself that you will finish what he started.
-<<elseif $route == 2>> // Silas route
+<<elseif $route == 4>> // Silas route
 <<change_background "black background">>
 Sitting beside the unconscious Isham, you swear to yourself that you will complete this project before the attack.
 <<endif>>
@@ -3348,11 +3391,13 @@ You will create the strongest weapon.
 
 title: Week6PreMinigame
 ---
+<<Theme 0>>
 <<if $route == 1 || $route == 2>> // judith or maeve route
     <<change_background "personal forge">>
     Arriving at the guild the next day, you stare at your anvil with renewed determination. 
     Today, you will finish what you started.
     Raising your hammer, you begin the final step of your journey as an apprentice. 
+    <<Theme 1>>
     <<if $route == 1>>
         <<run_minigame 10 Week6PostMinigame>>
     <<else>>
@@ -3364,6 +3409,7 @@ Arriving at the destroyed guild the next day, you cross the wreckage from the at
 Today, you will avenge those who lost their lives that day of the attack.
 Raising your hammer, you begin the final step of your journey as an apprentice. 
 Finish what you started.
+<<Theme 1>>
 <<if $route == 3>>
         <<run_minigame 12 Week6PostMinigame>>
     <<else>>
@@ -3373,6 +3419,7 @@ Finish what you started.
 ===
 title: Week6MinigameResult
 ---
+<<Theme 0>>
 {$result}
 <<if $route == 1>>
     <<if $result >= 1>>
@@ -3403,18 +3450,22 @@ title: Week6PostMinigame
 <<if $route == 1>>
     <<if $redFlagAffinity >= 10>>
         <<cg 1>>
+        <<Theme 4>>
     <<endif>>
 <<elseif $route == 2>>
     <<if $bestFriendAffinity >= 10>>
         <<cg 2>>
+        <<Theme 3>>
     <<endif>>
 <<elseif $route == 3>>
     <<if $mentorAffinity >= 10>>
         <<cg 3>>
+        <<Theme 5>>
     <<endif>>
 <<elseif $route == 4>>
     <<if $bestFriendAffinity >= 10>>
         <<cg 4>>
+        <<Theme 6>>
     <<endif>>
 <<endif>>
 <<jump SceneEnd>>
