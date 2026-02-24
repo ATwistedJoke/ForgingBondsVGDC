@@ -292,14 +292,16 @@ MonoBehaviour:
 
     Jenna Hughes
 
-    Ric
-    Penales
+    Siyuan
+    Jiao
+
+    Vibha Kashyap
 
     Ryan Nguyen
 
-    Siyuan Jiao
+    Ric Penales
 
-    Vibha Kashyap'
+    Ivoree Sanchez'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8dced4a56348244a9337bd3150852b7, type: 2}
   m_sharedMaterial: {fileID: -1399652239823105176, guid: e8dced4a56348244a9337bd3150852b7, type: 2}
@@ -710,8 +712,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Game Design\nCurtis Bayne \n\nStory Writers\nLucas Ramirez\n\nVoice Actors\nBryan
-    Zeng\nRuby Lofton"
+  m_text: "Game Design\nCurtis Bayne \n\nStory Writers\nLucas Ramirez\n\nVoice Actors\nRuby
+    Lofton\nBryan Zeng"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8dced4a56348244a9337bd3150852b7, type: 2}
   m_sharedMaterial: {fileID: -1399652239823105176, guid: e8dced4a56348244a9337bd3150852b7, type: 2}
@@ -1463,8 +1465,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Team Lead\nOwen Atis\n\nProgramming \nAdam Levin\nAkshetha Vishnu Prasad
-    Dhiya\nAnnejulia Milian\nIvoree Sanchez\nJimmy Che\nSarashi Lopez\nSri Mente\n\n\n"
+  m_text: "Team Lead\nOwen Atis\n\nProgramming\nJimmy Che \nAdam Levin\nSarashi Lopez\nSri
+    Mente\nAnnejulia Milian\nIvoree Sanchez\nAkshetha Vishnu Prasad Dhiya\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8dced4a56348244a9337bd3150852b7, type: 2}
   m_sharedMaterial: {fileID: -1399652239823105176, guid: e8dced4a56348244a9337bd3150852b7, type: 2}

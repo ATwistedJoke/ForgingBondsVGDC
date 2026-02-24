@@ -4,13 +4,14 @@ using System.Collections;
 public class RotateHammer : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed = 180f;   // Degrees per second
-    private bool insideHitbox = false;
+    public bool insideHitbox = false;
     public GameObject skillCheck;
     public GameObject score;
     public GameObject Hammer;
     public HammeringScoreManager scoreManager;
-    private bool hammerHitting = false;
+    public bool hammerHitting = false;
     private int streak = 0;
+    public bool coroutineRunning = false; 
     void Start()
     {
         skillCheck = GameObject.FindGameObjectWithTag("Hitbox");
@@ -56,6 +57,7 @@ public class RotateHammer : MonoBehaviour
     }
     public IEnumerator HammerSwing() //just so that the heat level doesn't change every frame
     {
+        coroutineRunning = true; 
         Hammer.transform.Rotate(0f, 0f, 120f);
         AudioManager.instance.PlayOneShot(FMODEvents.instance.SFX[8], transform.position);
         yield return new WaitForSeconds(0.2f);
@@ -76,7 +78,7 @@ public class RotateHammer : MonoBehaviour
     {
         if (other.CompareTag("Hitbox"))
         {
-            insideHitbox = false;
+            insideHitbox = false; 
         }
     }
 }

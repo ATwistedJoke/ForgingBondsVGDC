@@ -1,6 +1,6 @@
 ﻿title: SoTM
 ---
-<<declare $resultTest = 0>>
+<<declare $results = 0>>
 Welcome to Sequence Of The Minigames (SOTM)
 We haven't yet fully implemented our completed Minigames into our main Dialogue Scene(s) so this Scene here is a collage of all our available Minigames at the current moment!
 <<jump Selection>>
@@ -8,7 +8,7 @@ We haven't yet fully implemented our completed Minigames into our main Dialogue 
 
 title: Selection
 ---
-{$resultTest}
+{$results}
 -> Mining - Jimmy
     <<jump MiningMinigame>>
 -> Smelting - Adam
@@ -80,9 +80,9 @@ title: EtchingMinigame
 title: Results
 ---
 <<Theme 0>>
-<<if $resultTest <= 0>>
+<<if $results <= 0>>
     BOO!
-<<elseif $resultTest == 1>>
+<<elseif $results == 1>>
     YAY!
 <<else>>
     YEAH!

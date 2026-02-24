@@ -49,6 +49,7 @@ public class HammeringScoreManager : MonoBehaviour
     public void OnDestroy()
     {
         GameManager.instance.GiveResult(CalculateResult(score));
+        Destroy(ingot);
     }
 
     public int CalculateResult(int finalScore)

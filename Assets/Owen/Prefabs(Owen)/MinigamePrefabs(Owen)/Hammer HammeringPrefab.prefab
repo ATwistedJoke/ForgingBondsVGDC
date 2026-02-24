@@ -1677,10 +1677,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RotateHammer
   rotationSpeed: 360
+  insideHitbox: 0
   skillCheck: {fileID: 0}
   score: {fileID: 0}
   Hammer: {fileID: 0}
   scoreManager: {fileID: 0}
+  hammerHitting: 0
+  coroutineRunning: 0
 --- !u!61 &5752736882229286180
 BoxCollider2D:
   m_ObjectHideFlags: 0
