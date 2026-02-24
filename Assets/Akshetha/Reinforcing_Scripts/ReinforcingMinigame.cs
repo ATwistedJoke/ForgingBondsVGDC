@@ -155,12 +155,12 @@ public class ReinforcingMinigame : MonoBehaviour
         if(WeaponAnimation.tag == "Shield Animation")
         {
             weaponXPos = UnityEngine.Random.Range(-3, 1);
-            WeaponAnimation.transform.localPosition = new Vector3(weaponXPos, -1.5f, 0f);
+            WeaponAnimation.transform.localPosition = new Vector3(weaponXPos, -2f, 0f);
         }
         if(WeaponAnimation.tag == "Hammer")
         {
-            weaponXPos = UnityEngine.Random.Range(-5, 0);
-            WeaponAnimation.transform.localPosition = new Vector3(weaponXPos, 0f, 0f);
+            weaponXPos = UnityEngine.Random.Range(-0.3f, 0.3f);
+            WeaponAnimation.transform.localPosition = new Vector3(weaponXPos, -1.85f, 0f);
         }
 
         if (currentChallengeType == 1)
