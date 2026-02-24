@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
     public GameObject badlands;
     public GameObject battlefield;
 
+    public GameObject[] EndingCGS;
+
 
     //Character Handling
     public GameObject[] spPrefab = new GameObject[5]; 
@@ -85,6 +87,8 @@ public class GameManager : MonoBehaviour
         dialogueRunner.AddCommandHandler<float>("Theme", ChangeTheme);
         dialogueRunner.AddCommandHandler<int>("amb", PlayAmbience);
         dialogueRunner.AddCommandHandler("end", EndAmbience);
+        dialogueRunner.AddCommandHandler<string>("scene", LoadScene);
+        dialogueRunner.AddCommandHandler<int>("cg", EndingScreen);
         // dialogueRunner.AddCommandHandler<int>("change_corruption",ChangeCorruption);
     }
 
@@ -211,6 +215,15 @@ public class GameManager : MonoBehaviour
                 Instantiate(battlefield);
                 break;
         }
+    }
+
+    private void EndingScreen(int idx)
+    {
+        foreach(GameObject background in GameObject.FindGameObjectsWithTag("background"))
+        {
+            Destroy(background);
+        }
+        Instantiate(EndingCGS[idx]);
     }
     // private void ChangeAffinity(string character, int modifier)
     // {

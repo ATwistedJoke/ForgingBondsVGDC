@@ -547,13 +547,18 @@ MonoBehaviour:
   mines: {fileID: 8899876282228281533, guid: cf877642148a8994084050709a831dc7, type: 3}
   market: {fileID: 2762722766935775714, guid: e45f47df37dcb714798fa865b53a5860, type: 3}
   lake: {fileID: 4079262541650156315, guid: 6ac8b4502898b4048a56a2dee85035a5, type: 3}
-  capitalStreets: {fileID: 0}
-  silasHome: {fileID: 8186667920271868256, guid: 61c8829a68d0ef544b8210ace4412535, type: 3}
+  capitalStreets: {fileID: 2762722766935775714, guid: e45f47df37dcb714798fa865b53a5860, type: 3}
+  silasHome: {fileID: 7517682027715810668, guid: a5ca67b097ec48646a2a07264f44de98, type: 3}
   village: {fileID: 4809872240012599412, guid: 4d8de6f2bf55b584fa83faaada1b1a5c, type: 3}
   trainingGrounds: {fileID: 7338618003114003176, guid: 4425932d28f476847bdb1a465499f4a8, type: 3}
-  manor: {fileID: 5230217231651422668, guid: 83577813e95a3d84a8f8a28863f35d97, type: 3}
+  manor: {fileID: 124545636327551345, guid: 2e2f6e5cdf866934785cdb6cd98a1b64, type: 3}
   badlands: {fileID: 777373440204403792, guid: b66f71a0079fcd549b89a146c3dc94a7, type: 3}
   battlefield: {fileID: 2606950781967880182, guid: b1764f295e7f6df459a3e549dd04ea34, type: 3}
+  EndingCGS:
+  - {fileID: 8838927272098791947, guid: e5e7a01a3bbe08944b381e210df96d23, type: 3}
+  - {fileID: 5134098626410033639, guid: 26104730001b1eb4f9e4a9517d181e57, type: 3}
+  - {fileID: 2747468234168347220, guid: 0365db74a1e37c8439c9e1a6af8d6486, type: 3}
+  - {fileID: 5033648366059993994, guid: 70b784d1fa6837c4698d92b0a3c37c7d, type: 3}
   spPrefab:
   - {fileID: 8348313698577223976, guid: 9256510e060fd63419bdd3be9aed82b0, type: 3}
   - {fileID: 5715942496463894622, guid: f37c5a5c2e6feba49b13de29ffbc7eef, type: 3}
@@ -647,6 +652,10 @@ PrefabInstance:
     - target: {fileID: 3170097798801944906, guid: 6de06c48d5c9ca7409d4beb37567897e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196310041621305953, guid: 6de06c48d5c9ca7409d4beb37567897e, type: 3}
+      propertyPath: <amb>k__BackingField.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7701178690578293197, guid: 6de06c48d5c9ca7409d4beb37567897e, type: 3}
       propertyPath: m_Name
