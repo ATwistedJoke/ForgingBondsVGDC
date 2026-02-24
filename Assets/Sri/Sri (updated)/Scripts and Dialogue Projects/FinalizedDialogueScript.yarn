@@ -70,16 +70,20 @@ Walking through the hall fills you with a sense of amazement at how such a build
 {$playerName}: [i]Wha–? Where is everyone?[/i]
 The front desk, covered in blue cloth, had no one behind it to welcome you. Instead, there was only a singular golden bell and what appeared to be three different colored buttons. 
 -> Ring the Bell
+    <<sfx 0>>
     A voice emerges from below the desk in response.
     “Welcome to the Royal Blacksmith Guild. If you are here as a guest, please press the green button. If you are here as an apprentice, please press the orange button. If you are here for a different reason, please press the blue button.”
 -> Press one of the buttons
+    <<sfx 1>>
     …Nothing happens. After more than enough minutes have passed, you consider that maybe you should have pressed the shiny, golden bell. Reaching out your hand, you decide to give it a try.
+    <<sfx 0>>
     A voice emerges from below the desk in response.
     “Welcome to the Royal Blacksmith Guild. If you are here as a guest, please press the green button. If you are here as an apprentice, please press the orange button. If you are here for a different reason, please press the blue button.”
 -> Wait for someone to come
     You choose to wait, hoping for someone to come.
     ...
     No one arrives. After more than enough minutes have passed, you consider that maybe you should have pressed the shiny, golden bell. Reaching out your hand, you decide to give it a try.
+    <<sfx 0>>
     A voice emerges from below the desk in response.
     “Welcome to the Royal Blacksmith Guild. If you are here as a guest, please press the green button. If you are here as an apprentice, please press the orange button. If you are here for a different reason, please press the blue button.”
 You stumble backwards in surprise, caught off guard by the mysterious voice. The hall around you was still empty, but somehow someone spoke when you pressed the bell.
@@ -101,16 +105,17 @@ A door could be heard opening to your right.
 Hearing no response back, you decide to listen to the voice’s instructions and head down the open hallway. 
 <<MC false>>
 <<change_background "hallway">>
+<<sfx 7>>
 Your steps echo in the large hallway. Ahead, you hear the sound of hammering on steel and the voices of people. 
 Following the noise, you trace it down to a closed room. Inside, you can hear the noises of a forge in use.
 -> Open the door
-    You gently open the door. 
+    You gently open the door.
+    <<sfx 4>> 
     <<change_background "personal forge">>
-    //<<mv 1 0 -6 50>>
     <<sp 1>>
     Inside, you see an older man overlooking the clumsy work of a younger blacksmith. The man’s eyes appear tired and disappointed, his mouth crooked in frustration.  
     <<cs 1 3>>
-    <<vc 1 3>>
+    <<vc 1 2>>
     {$mentorName}: “Kid, are you even thinking about this properly? You do that, and you have to reset a whole month’s worth of progress and…
     And you did it anyway, just wonderful.” 
     “Just go grab a bucket, kid, and clean up this mess.”
@@ -118,37 +123,47 @@ Following the noise, you trace it down to a closed room. Inside, you can hear th
 -> Leave it alone
     You choose not to intrude. You should wait for your scheduled senior to find you.
     But before you could make yourself scarce, you hear an angry shout from within the forge. 
-    //<<mv 1 0 -8 50>>
     <<sp 1>>
     <<cs 1 3>>
-    <<vc 1 3>>
+    <<vc 1 2>>
     {$mentorName}: “Are you trying to burn down this place! What is wrong with you, kid? Grab a bucket, kid, and clean up this mess.”
+    <<sfx 5>>
     The door in front of you swings open with a loud bang. From inside, a young blacksmith runs out in tears, passing you without delay. 
     <<change_background "personal forge">>
 {$mentorName}: “Ah, damn it, these apprentices can’t help but act rashly every time. Can they not think before acting for once!”
 The aged apprentice continues to grumble, only looking up from the ruined project after he wipes the sweat from his forehead. 
 You notice his deep eye bags, worn out from stress and lack of sleep. You feel unable to look away from those eyes, captivated by the look of a professional in your field. But as you continue staring, you notice that they are now looking back at you.
 <<cs 1 4>>
+<<vc 3>>
 {$mentorName}: “–! By the gods, why are you just standing there and staring at me?”
 <<MC true>>
 -> Sorry, I overheard the commotion that was happening earlier.
+    <<vc 0 3>>
+    Sorry, I overheard the commotion that was happening earlier.
     <<cs 1 0>>
     {$mentorName}: “Aye, that is fair. By any chance, are you new around here? Don’t recognize your face around these parts.”
     {$playerName}: “Yes, today is my starting day as an official apprentice here. Would you know where I could find my scheduled senior?”
     <<set $mentorName to "Senior Blacksmith">>
     <<cs 1 4>>
-    {$mentorName}: “Ah, so you're that new apprentice, (MC NAME). I’ll be filling in as your senior for the first few weeks of your job. 
+    <<vc 1 0>>
+    {$mentorName}: “Ah, so you're that new apprentice, {$playerName}. I’ll be filling in as your senior for the first few weeks of your job. 
     <<cs 0 1>>
     {$playerName}: “It’s a pleasure to meet you, sir!”
 -> I was told at the front desk to find my scheduled senior. Would that be you?
+    <<vc 0 5>>
+    <<cs 0 2>>
+    I was told at the front desk to find my scheduled senior. Would that be you?
     <<set $mentorAffinity = $mentorAffinity + 1>>
     <<set $mentorName to "Senior Blacksmith">>
+    <<vc 1 3>>
     {$mentorName}: “Oh…ahem! Yes, that would be me. I’ll be filling in as your senior for the first few weeks of your job.”
     <<cs 0 1>>
+    <<vc 0 0>>
     {$playerName}: “It’s a pleasure to meet you, sir!”
     <<cs 1 0>>
     {$mentorName}: “You’re quick to the chase, aren’t ya?”
 -> I like your eyes, old man.
+    {$mentorName}: ...
     <<set $mentorAffinity = $mentorAffinity - 1>>
     <<cs 1 3>>
     {$mentorName}: “Alright, who put you up for this stunt? Was it Olivia? Or was it that dreaded Eliwood?
@@ -159,13 +174,11 @@ You notice his deep eye bags, worn out from stress and lack of sleep. You feel u
     {$playerName}: “Would you be my scheduled senior?”
     <<set $mentorName to "Senior Blacksmith">>
     <<cs 1 7>>
+    <<vc 1 2>>
     {$mentorName}: “Curses…”
 <<cs 1 0>>
 <<MC false>>
 <<destroy 1>>
-{$mentorName}: “Alright then, with that established, would you be willing to share some of your skills with me?”
-{$mentorName}: “I need to judge your proficiency with the craft before I entrust you with any tasks.”
-//<<run_minigame 0 ResultTesting>>
 <<jump IntroductionPostTutorial>>
 ===
 
@@ -190,6 +203,7 @@ title: IntroductionPostTutorial
 {$mentorName}: “But such a special title is often sought out by nobles desiring glory or status, so sometimes we end up with foolish apprentices like the one we saw back there. Now I ask you, because I don’t know you, what type of royal blacksmith do you hope to be?”
 {$playerName}: “I wish to be the one talked about in history, sir.”
 <<cs 1 1>>
+<<vc 1 0>>
 {$mentorName}: “Aye, that’s good to hear. Now, some advice, I suggest that you start trying to build some connections out there. Most apprentices hole themselves in their forge, but lose sight of the most important things about smithing. The commissioners themselves.” 
 <<cs 1 0>>
 {$mentorName}: “To stop being merely an apprentice and become an official Royal Blacksmith, you are going to need someone who brings out the best of your craft. Carefully consider what you want out of your work, and what commissions feel right to you.”
@@ -198,11 +212,13 @@ title: IntroductionPostTutorial
 {$mentorName}: “Good. Now, with that said, your first task here should be preparing your own personal forge. Organize and restock on what resources you will need for your work.”
 {$mentorName}: “Once you're done with that, go check the commission board near closing hours to see if anything sounds good to you. You’ll find requests for possible projects there.” 
 {$mentorName}: “I’ll be at my own forge if you have any more questions, so I’ll take my leave first. Get to work, apprentice.” 
-<<cs 0 3>>
+<<cs 0 2>>
+<<vc 0 5>>
 {$playerName}: “Wait! Before you go, could I get your name?”
 <<set $mentorName to "Isham">>
 {$mentorName}: “It’s not much, but you can call me Isham. I’m one of the head Royal Blacksmiths here. Now get going before you fall behind.
 <<cs 0 1>>
+<<vc 0 0>>
 {$playerName}: “Yes, sir!”
 <<destroy 1>>
 The day passes by quickly, with work on your forge seeming endless. Finally, you manage to clean the old forge up to your liking. 
@@ -211,18 +227,23 @@ As you load a crate full of coal, you realize how heavy it is to carry. Still, y
 An official Royal Blacksmith needs to be strong for their work. That notion pushes you to make a reckless decision.
 <<change_background "hallway">>
 <<cs 0 4>>
+<<vc 0 2>>
 {$playerName}: Just…a bit…further…
 The crate of coal, filled to the brim, blocks your field of view as you trudge through the hallway. 
 Suddenly, just as you think you might be reaching the end, you collide with something heavy in front of you with a large thud. 
+<<sfx 16>>
 Falling onto your back in surprise, the crate of coal that was in your hands lands onto the floor, its contents spilling all over the place.
-//<<mv 2 0 -6 50>>
 <<sp 2>>
+<<cs 2 4>>
+<<vc 2 3>>
 {$redFlagName}: “Oh dear, I’m so sorry. Are you alright?”
+<<cs 2 0>>
 Looking up, you are met with a gentle, smooth hand stemming from what could only be described as both a stunningly gorgeous and odd woman. 
 Donning elegant clothing and jewelry, her status was apparent to any perceiver. She would have looked like any regular, wealthy client the guild often gets if it weren’t for her eyes.
 <<set $redFlagName to "Wealthy Woman">>
 Staring right through you, her pupils devoid of warmth watch your every movement with an intense gaze. Her crimson irises remain firm, refusing to blink until you take her hand.   
 A part of you finds them to be entrancing. The other terrifying. 
+<<vc 2 5>>
 {$redFlagName}: “Is something the matter?”
 {$playerName}: “Oh, no, nothing’s wrong. Thank you.”
 Taking her hand, you snap out of your thoughts as you stand back up. You notice her clothes have become stained from the coal.
@@ -231,7 +252,12 @@ Taking her hand, you snap out of your thoughts as you stand back up. You notice 
 {$redFlagName}: Oh, this? No, it’s fine. In fact, how about I help you pick up this mess? You look like you need it. 
 <<MC true>>
 -> “No, I can do this myself.”
-    <<set $redFlagAffinity = $redFlagAffinity + 1>>        
+    <<cs 0 4>>
+    <<cs 0 2>>
+    “No, I can do this myself.”
+    <<set $redFlagAffinity = $redFlagAffinity + 1>>
+    <<cs 0 1>>    
+    <<vc 0 0>>    
     {$redFlagName}: “Ah, a tough [guy/girl/one], I see. No need to worry, dear, I don’t mind getting a bit dirty now and then.”
     <<cs 0 2>>
     {$playerName}: “Really, it’s fin—”
@@ -240,7 +266,11 @@ Taking her hand, you snap out of your thoughts as you stand back up. You notice 
     <<cs 0 3>>
     {$playerName}: “Ah…what the hell, let’s just get this picked up quick.”
 -> “Should you even be here?”
+    <<cs 0 2>>
+    <<vc 0 5>>
     <<set $redFlagAffinity = $redFlagAffinity - 1>>
+    <<cs 2 3>>
+    <<vc 2 2>>
     {$redFlagName}: “Now do you want me to help you, or are you just going to stand there and ask me these useless questions?”
     <<cs 0 2>>
     {$playerName}: “I would think that's a legitimate que–”
@@ -249,6 +279,10 @@ Taking her hand, you snap out of your thoughts as you stand back up. You notice 
     <<cs 0 3>>
     {$playerName}: “Ah…what the hell, let’s just get this picked up quick.”
 -> “Thank you, that would be much appreciated.”
+    <<cs 0 1>>
+    <<vc 0 0>>
+    “Thank you, that would be much appreciated.”
+    <<vc 0 0>>
     {$redFlagName}: “No problem, dear, I don’t mind getting a bit dirty now and then.”
     <<cs 0 3>>
     {$playerName}: “You're more easy going than I imagined someone of your status.”
@@ -256,79 +290,96 @@ Taking her hand, you snap out of your thoughts as you stand back up. You notice 
     Both on your knees, the woman looks towards you with a mischievous grin as she picks up the coal alongside you. 
     <<cs 0 1>>
     {$playerName}: “Now that philosophy is something someone of your status would say.”
+    <<cs 2 5>>
+    <<vc 2 2>>
     {$redFlagName}: “Shut it, will you?”
 <<MC false>>
+<<cs 0 0>>
 As the two of you finish picking up the remaining mess, you go to pick up the crate once more.
 {$redFlagName}: “Let me help you carry this so you don’t go bumping into any more people. And this time I’m not taking no for an answer.”
 Before you could respond, the lady had already placed her hands on the other side of a crate. Deciding it's best not to argue any longer, you go along with her whims until you reach your forge.
 <<change_background "personal forge">>
-<<cs 0 0>>
-<<cs 2 0>>
+<<cs 2 4>>
+<<vc 2 3>>
 {$redFlagName}: “I’ve never seen a royal forge before. I always thought it would look more…impressive?”
 {$playerName}: “Well, I am only an apprentice. I don’t imagine they give those fancy ones to just about anyone.”
+<<cs 2 0>>
 {$redFlagName}: “Don’t sell yourself short. I see in you the potential to become a great Royal Blacksmith.”
 {$playerName}: “And how would you know that?”
 {$redFlagName}: “My trading company has collaborated before with the Royal Blacksmiths, and I would say you remind me just of them.”
 <<cs 0 3>>
+<<vc 0 5>>
 {$playerName}: “That is?”
 {$redFlagName}: “You have the eyes of someone with ambition. That look where you will do anything to become the best at what you do. I like that about you.”
 {$playerName}: “I never thought that way about myself. Do I really look like that to others?”
 {$redFlagName}: “Hmmm…I wouldn’t know. I wouldn’t call myself exactly normal, anyway, so you probably don’t have to worry about others seeing that part of you.”
 <<cs 0 0>>
+<<vc 0 3>>
 {$playerName}: “That’s a relief. Oh! I forgot to say, but thank you for the help. Would you mind if I were to ask for your name?”
 <<set $redFlagName to "Judith">>
+<<vc 2 0>>
 {$redFlagName}: “My name is Judith Sinclair. It’s a pleasure to meet you, {$playerName}. I hope to see you again soon.” 
 {$playerName}: “It’s nice to meet you, too, {$redFlagName}.”
-You exchange goodbyes with the odd lady who had left just as swiftly as she entered. It was only after you had returned to work, however, that you remembered something important. 
-//<<mv 2 0 -20 50>>
 <<destroy 2>>
+You exchange goodbyes with the odd lady who had left just as swiftly as she entered. It was only after you had returned to work, however, that you remembered something important. 
 You had not once given her your name.  
+<<sfx 17>>
 You feel a shiver roll down your spine as you finish loading the coal into the furnace. You could only hope that she had learned your name through some reasonable way.
 After a few more long hours of hard work, you wipe off the last of your sweat as you finish completing your forge. All that remains is to obtain the Pleiotium and find a worthwhile commission.
 You remember your senior’s words about how it would be a good idea to look at the commission board for possible requests. You decide that, with nothing else left to do for today, you would give it a look before the guild closes.
 <<change_background "commissions room nighttime">>
+<<sfx 7>>
 Leaving your forge, you enter the Commission's room within the guild. Here, commissions from customers unable to personally request a Royal Blacksmith are instead placed onto a guild board for apprentices to view. 
 The guild will require apprentices to choose from among these requests to complete. Once chosen, an apprentice is obligated to fulfill the request in an allotted time unless there is an exemption to be made.
 The guild will then judge the apprentice's work and the customer’s review to determine their skillset. If judged high enough to be at the skill level of a Royal Blacksmith, the apprentice will have the opportunity to take the Royal Blacksmith Exam for promotion. 
 Walking up to the commission board, you look at the handful of requests pinned to it, littered with a wide variety of trinkets requested. Most of them are simple designs that don’t pique your attention, while others seem long, tedious, and lackluster to do. 
 But one among them stands out to you. A morningstar, one with a blueprint attached to the request so intricately designed that you can’t help but be drawn to it.
 When you read the name of the commissioner, however, your excitement instantly drops. 
+<<vc 0 2>>
 {$playerName}: [i]{$redFlagName}...of course she would request something as odd as this.[/i]
 <<cs 0 3>>
+<<sfx 4>>
 Reading more into the peculiar request she made, you do not notice the noise of a door opening behind you.
 {$bestFriendName}: “...what am…doing wrong…”
 You turn backwards, startled by the quiet grumbling voice. 
 It is then that you see a familiar face from your past, one that you did not expect to see so soon when you came to the Royal Capital.
-//<<mv 3 0 -6 50>>
 <<sp 3>>
 Entering the room with an uneasy look on her face and a paper in hand, you see Maeve, a childhood friend of yours from the same village you grew up in.
 <<set $bestFriendName to "Maeve">>
+<<vc 0 3>>
 {$playerName}: “Maeve?”
+<<vc 3 3>>
+<<cs 3 4>>
 {$bestFriendName}: “Eek!”
 {$bestFriendName}: “{$playerName}!? Gosh, you scared me. What are you doing here?”
+<<vc 0 0>>
 You fail to suppress a chuckle as you watch your best friend from years before stumble in surprise. 
-<<cs 0 1>>
 {$playerName}: “Sorry, I didn’t mean to scare you. It’s been so long, Maeve.”
 <<cs 3 2>>
+<<vc 3 1>>
 {$bestFriendName}: “Yeah, it has…”
 An awkward silence follows her words, as both of you realize the wall that had formed between you over the years of no contact.
-<<cs 0 2>>
 {$playerName}: “So uh, what brings you here?”
 <<cs 3 0>>
 {$bestFriendName}: “Oh, I’m just posting a commission here at the board. What about you? Did you finally manage to achieve your dream of working at the Royal Blacksmith Guild?”
-<<cs 0 0>>
 {$playerName}: “Yes, though I only just started as an apprentice. It’s actually my first day on the job. How is your dream going, Maeve?”
+<<cs 3 2>>
 {$bestFriendName}: “It’s going…fine.”
 <<MC true>>
 -> “What do you mean by just 'fine'?”
+    <<cs 0 2>>
+    <<vc 0 5>>
+    “What do you mean by just 'fine'?”
     <<set $bestFriendAffinity = $bestFriendAffinity - 1>>
     <<cs 3 3>>
+    <<vc 3 2>>
     {$bestFriendName}: “It just is, alright? It’s none of your business anyway.”
     <<cs 0 2>>
     {$playerName}: “What do you mean by none of my business? Maeve, I’m your friend. I want to know what’s bothering you.”
     {$bestFriendName}: “Nothing is bothering me right now, {$playerName}. I told you, it's fine. Can we drop this now? We finally meet after so long, I don’t want it to be like this.”
     {$playerName}: “I’m sorry, I didn’t mean to make you upset.”
     <<cs 3 2>>
+    <<vc 3 1>>
     {$bestFriendName}: “No…this is my fault. I shouldn’t have taken my anger out on you.”
     A silence forms between the two of you, both worried that their next words will only worsen the situation. No longer able to take it, Maeve moves past you to the board, placing her commission onto it. 
     <<cs 3 0>>
@@ -337,6 +388,7 @@ An awkward silence follows her words, as both of you realize the wall that had f
         <<set $bestFriendAffinity = $bestFriendAffinity + 1>>
         <<set $rejectedLunch to false>>
         <<cs 3 1>>
+        <<vc 3 0>>
         {$bestFriendName}: “That’s great! I know just the restaurant to go to. They have an incredible menu that's also affordable.”
         Seeing Maeve so full of life compared to how she was earlier brings a smile to your face. A part of you feels that you made the right decision in accepting her invitation. 
         But as you open your mouth to respond to her suggestion, you catch a glimpse of a pair of familiar crimson eyes in your peripheral vision, staring at you in the darkly lit room. 
@@ -345,6 +397,7 @@ An awkward silence follows her words, as both of you realize the wall that had f
         <<set $bestFriendAffinity = $bestFriendAffinity - 1>>
         <<set $rejectedLunch to true>>
         <<cs 3 2>>
+        <<vc 3 1>>
         {$bestFriendName}: “Oh…I’m sorry, I just…”
         {$bestFriendName}: “I just thought things could be like how they used to.”
         Maeve looks at you on the verge of tears. What she thought was an old friend she could lean on was someone she no longer recognized. 
@@ -358,6 +411,7 @@ An awkward silence follows her words, as both of you realize the wall that had f
         <<set $bestFriendAffinity = $bestFriendAffinity + 1>>
         <<set $rejectedLunch to false>>
         <<cs 3 1>>
+        <<vc 3 0>>
         {$bestFriendName}: “That’s great! I know just the restaurant to go to. They have an incredible menu that's also affordable.”
         Seeing Maeve so full of life compared to how she was earlier brings a smile to your face. A part of you feels that you made the right decision in accepting her invitation. 
         But as you open your mouth to respond to her suggestion, you catch a glimpse of a pair of familiar crimson eyes in your peripheral vision, staring at you in the darkly lit room. 
@@ -366,14 +420,18 @@ An awkward silence follows her words, as both of you realize the wall that had f
         <<set $bestFriendAffinity = $bestFriendAffinity - 1>>
         <<set $rejectedLunch to true>>
         <<cs 3 2>>
+        <<vc 3 1>>
         {$bestFriendName}: “Oh…I’m sorry, I just…”
         {$bestFriendName}: “I just thought things could be like how they used to.”
         Maeve looks at you on the verge of tears. What she thought was an old friend she could lean on was someone she no longer recognized. 
         You steel your heart, preparing to respond to her. But before you open your mouth, you catch a glimpse of a pair of familiar crimson eyes in your peripheral vision, staring at you in the darkly lit room. 
         {$redFlagName}: “How cruel, {$playerName}. To reject such a nice lady so brutally. I didn’t know you had it in you.”
 -> “What commission are you hoping to have made?”
+    <<cs 0 2>>
+    <<vc 0 5>>
     <<set $bestFriendAffinity = $bestFriendAffinity + 1>>
     <<cs 3 1>>
+    <<vc 3 0>>
     {$bestFriendName}: “Oh, this? I was hoping to have a shield made for me here at the guild. I was gifted this sword made from Pleotium by my master, and it's incredible. I was hoping to get a shield made from the same material.”
     <<cs 0 3>>
     {$playerName}: “Wow, a Pleotium sword? Could I see it?”
@@ -382,6 +440,7 @@ An awkward silence follows her words, as both of you realize the wall that had f
     Maeve moves past you to the board, placing her commission onto it for you to look. 
     {$playerName}: “I didn’t know you could draw that well, Maeve. It’s amazing.”
     <<cs 3 5>>
+    <<vc 3 4>>
     {$bestFriendName}: “It’s just something I picked up recently as a hobby on the side. It’s nothing special.” 
     <<cs 0 0>>
     {$playerName}: “It really has been a while since we last talked, hasn’t it? I feel like there’s so much I want to ask.”
@@ -391,6 +450,7 @@ An awkward silence follows her words, as both of you realize the wall that had f
         <<set $bestFriendAffinity = $bestFriendAffinity + 1>>
         <<set $rejectedLunch to false>>
         <<cs 3 1>>
+        <<vc 3 0>>
         {$bestFriendName}: “That’s great! I know just the restaurant to go to. They have an incredible menu that's also affordable.”
         Seeing Maeve so full of life compared to how she was earlier brings a smile to your face. A part of you feels that you made the right decision in accepting her invitation. 
         But as you open your mouth to respond to her suggestion, you catch a glimpse of a pair of familiar crimson eyes in your peripheral vision, staring at you in the darkly lit room. 
@@ -399,12 +459,12 @@ An awkward silence follows her words, as both of you realize the wall that had f
         <<set $bestFriendAffinity = $bestFriendAffinity - 1>>
         <<set $rejectedLunch to true>>
         <<cs 3 2>>
+        <<vc 3 1>>
         {$bestFriendName}: “Oh…I’m sorry, I just…”
         {$bestFriendName}: “I just thought things could be like how they used to.”
         Maeve looks at you on the verge of tears. What she thought was an old friend she could lean on was someone she no longer recognized. 
         You steel your heart, preparing to respond to her. But before you open your mouth, you catch a glimpse of a pair of familiar crimson eyes in your peripheral vision, staring at you in the darkly lit room. 
         {$redFlagName}: “How cruel, {$playerName}. To reject such a nice lady so brutally. I didn’t know you had it in you.”
-//<<mv 2 4 -6 50>>
 <<place 2 4 -4>>
 Emerging from the shadows, the eccentric merchant from earlier walked with confidence towards the pair with a troublesome grin. Dressed in the same outfit from earlier, the coal stains that had ruined her clothes were now mysteriously gone. 
 {$redFlagName}: “I apologize for overhearing your conversation, but I can only wait for so long to use that board behind you.”
@@ -412,14 +472,19 @@ Emerging from the shadows, the eccentric merchant from earlier walked with confi
 {$bestFriendName}: “{$playerName}, who is this person?”
 <<MC true>>
 -> “They helped me earlier today when I dropped a crate of coal.”
+    <<vc 0 5>>
+    “They helped me earlier today when I dropped a crate of coal.”
     <<cs 2 1>>
     {$redFlagName}: “You have nothing to worry about, little lioness. There’s nothing between me and your (man/woman/partner).”
     <<cs 3 5>>
+    <<vc 3 4>>
     {$bestFriendName}: “We are not like that, ma’am. We are simply-”
     <<cs 2 1>>
+    <<vc 2 0>>
     {$redFlagName}: “Oh, don’t be such a bore. I’m simply teasing.”
-    Judith then turns her attention back to you, approaching until she is only a couple of feet away from you.
     <<mv 2 -5 -4 50>>
+    <<cs 3 4>>
+    Judith then turns her attention back to you, approaching until she is only a couple of feet away from you.
     {$redFlagName}: “Assuming you are planning on taking the Royal Blacksmith Exam in the coming weeks, dear, I have come here with a proposal that would interest you greatly.” 
     <<cs 0 0>>
     {$playerName}: “And what would that proposal entail?”
@@ -427,24 +492,35 @@ Emerging from the shadows, the eccentric merchant from earlier walked with confi
     {$redFlagName}: “If you would be willing to take on my commission, I will use my connections with the Royal Blacksmiths to put in a good word for you. If completed within the time needed and built in good quality, I will ensure you will have the opportunity to take the coming Royal Blacksmith Exam this year.”
     The room falls quiet at the offer. You admit that there is much to be gained from accepting her proposal, but you aren’t naive enough to believe that such generosity would not come with a catch.
 -> “They are an acquaintance of mine.”
+    <<vc 0 0>>
+    <<cs 0 1>>
+    “They are an acquaintance of mine.”
     <<set $redFlagAffinity = $redFlagAffinity + 1>>
     <<cs 3 4>>
     {$bestFriendName}: “She is?”
-    <<cs 2 0>>
+    <<cs 2 1>>
+    <<vc 2 0>>
     {$redFlagName}: “We met over a daringly risque encounter, I might add.”
+    <<vc 3 3>>
     {$bestFriendName}: “Risque???”
     <<cs 0 1>>
     {$playerName}: “If that’s what you call bumping into someone with a crate full of coal just earlier today.”
+    <<cs 2 3>>
     {$redFlagName}: “Tch, no fun. The little lioness here was actually falling for it.”
+    <<cs 0 2>>
     {$playerName}: “What are you here for, Judith?”
     {$redFlagName}: “Straight to the point, I see.”
+    <<vc 2 0>>
     {$redFlagName}: “I have come here with a proposal that would interest you greatly, {$playerName}. Assuming you are planning on taking the Royal Blacksmith Exam in the coming weeks, dear, I suggest you hear what I have to say.” 
     {$playerName}: “And what would that proposal entail?”
     {$redFlagName}: “If you would be willing to take on my commission, I will use my connections with the Royal Blacksmiths to put in a good word for you. If completed within the time needed and built in good quality, I will ensure you will have the opportunity to take the coming Royal Blacksmith Exam this year.”
     The room falls quiet at the offer. You admit that there is much to be gained from accepting her proposal, but you aren’t naive enough to believe that such generosity would not come with a catch.
 -> “I don’t know this person.”
+    <<cs 0 0>>
+    <<vc 0 2>>
+    “I don’t know this person.”
     <<set $redFlagAffinity = $redFlagAffinity - 1>>
-    <<cs 2 0>>
+    <<cs 2 3>>
     {$redFlagName}: “I do not like liars, {$playerName}.”
     In between her words, you notice an icy glare evaluating you, judging your worth.
     {$redFlagName}: “You will need to be more honest if you want to become a Royal Blacksmith. Trust is the most important virtue in trade. I suggest you learn that soon, if assuming, you do indeed plan to take the exam.”
@@ -453,8 +529,10 @@ Emerging from the shadows, the eccentric merchant from earlier walked with confi
     {$redFlagName}: “Then you should not antagonize your key to that future.”
     <<cs 0 2>>
     {$playerName}: “What do you mean?”
+    <<cs 2 0>>
     {$redFlagName}: “What I mean, dear, is that I am here with a proposal that would interest you greatly.” 
     <<cs 0 3>>
+    <<vc 0 3>>
     {$playerName}: “And what would that proposal entail?”
     {$redFlagName}: “If you would be willing to take on my commission, I will use my connections with the Royal Blacksmiths to put in a good word for you. If completed within the time needed and built in good quality, I will ensure you will have the opportunity to take the coming Royal Blacksmith Exam this year.”
     The room falls quiet at the offer. You admit that there is much to be gained from accepting her proposal, but you aren’t naive enough to believe that such generosity would not come with a catch.
@@ -469,11 +547,14 @@ That is, until you recognize the voice to be that of your senior blacksmith, Ish
 <<place 1 2 -4>>
 <<place 4 6 -4>>
 {$mentorName}: “...has potential, but I’ll need to see (his/her/their) work more before deciding.”
+<<vc 4 0>>
 {$loneWolfName}: “Thank you for your help, Isham.”
 {$mentorName}: “There’s no need to thank me, Silas. I owe a great debt to your parents. This is the least I could do for their child.”
 <<cs 1 4>>
+<<vc 4 3>>
 {$mentorName}: “{$playerName}? What are you doing here so late? It’s already closing time.”
 Entering the room, your senior stops in surprise, only noticing the company you had after he called your name. 
+<<cs 1 8>>
 {$mentorName}: “Are they bothering you, (lad, lass, pal)? They wouldn’t dare to take advantage of a rookie apprentice, would they?”
 <<cs 0 3>>
 {$playerName}: “No, no, I know these people, sir. They are simply here to place their commission at the guild.”
@@ -482,20 +563,30 @@ Entering the room, your senior stops in surprise, only noticing the company you 
 Watching your companions exchange greetings with your senior, you notice the person behind Isham watching you quietly in anticipation.
 {$mentorName}: “Oh, the shy one behind me is named Silas. Their parents and I knew each other way back in the day.”
 <<set $loneWolfName to "Silas">>
+<<vc 4 0>>
 {$loneWolfName}: *nods head*
 {$mentorName}: “I’m hoping to find an apprentice skilled enough to handle their commission, and I thought of the work you had shown me earlier today.”
 Feeling the weight of decisions only piling further, you think of how you could buy yourself more time without rejecting a possible offer. But before you could respond, Silas broke the silence.
 {$loneWolfName}: “Smith, do you truly believe you are good enough for the job?”
 <<MC true>>
 -> “I do not doubt my skills, dear customer. I will do my best on whichever commission I choose.”
+    <<vc 0 0>>
+    <<cs 1 0>>
+    “I do not doubt my skills, dear customer. I will do my best on whichever commission I choose.”
     <<set $loneWolfAffinity = $loneWolfAffinity + 1>>
     <<set $mentorAffinity = $mentorAffinity + 1>>
     <<cs 4 1>>
+    <<vc 4 0>>
     Silas nods their head in content, looking pleased with your response. 
 -> “I have only just started the job, but I will try my best on whatever commission I take.”
+    <<cs 0 4>>
+    <<vc 0 1>>
     <<set $bestFriendAffinity = $bestFriendAffinity + 1>>
+    <<cs 4 0>>
     Silas nods their head in understanding, then promptly looks away once more.
 -> “Who are you to be asking this? I am not interested in helping some nobody.”
+    <<cs 0 0>>
+    <<vc 0 2>>
     <<set $loneWolfAffinity = $loneWolfAffinity - 1>>
     <<set $mentorAffinity = $mentorAffinity - 1>>
     <<set $bestFriendAffinity = $bestFriendAffinity - 1>>
@@ -504,22 +595,26 @@ Feeling the weight of decisions only piling further, you think of how you could 
     <<cs 2 1>>
     <<cs 3 3>>
     <<cs 4 3>>
+    <<vc 4 2>>
     Silas shakes their head in disappointment, no longer bothering to pay attention to your haughtiness. 
 <<cs 1 3>>
 <<cs 2 1>>
 <<cs 3 3>>
 <<cs 4 3>>
 <<MC false>>
+<<vc 0 0>>
 {$mentorName}: “Awkward, they might be, I truly do believe the kid will go on to do great things. Consider them an option if you don’t already have one in mind.”
 <<cs 0 4>>
 {$playerName}: “It’s only my first day, I want to take my time gathering the resources I need before making such a big decision.”
 {$mentorName}: “Wise choice. It’s good not to be too hasty with the craft we do.”
 Finishing your conversation with your senior, you notice an impatient Judith awaiting your attention.
+<<vc 2 0>>
 {$redFlagName}: “Well, if you two are done, I believe it is about time I take my leave. Do make sure to consider my proposal, dear. 
 Judith then departs, waving goodbye with a smile that seems dishonest in intention.
 <<destroy 2>>
 After her, Silas announces their departure, leaving with a small but brief goodbye to Isham. As they walk out of the room, you notice them glance back at you briefly, as if about to say something. Watching them falter, you decide to wave them goodbye. 
 {$playerName}: “Have a good night!”
+<<vc 4 4>>
 {$loneWolfName}: “...you too.”
 <<destroy 4>>
 Silas then departs in a hurry, but you notice on the corner of their lips a small smile form. 
@@ -527,10 +622,12 @@ With their departure, you turn your attention to the one who has been waiting al
 {$playerName}: “It feels as if a storm came and went. I’m sorry, Maeve, for having you wait so long.”
 <<cs 3 0>>
 {$bestFriendName}: “There is no need, I know that work can get hectic.”
+<<vc 3 0>>
 {$bestFriendName}: “I’ll leave you be now, but I hope that later we can meet outside of work. There is so much we need to talk about.”
 Exchanging goodbyes, you wave to Maeve as she exits the room with an anxious look on her face. You wonder what could be upsetting her so dearly.
 <<destroy 3>>
 <<cs 1 1>>
+<<vc 0 0>>
 {$mentorName}: “By the gods, how did you get so popular already? Most apprentices take months if not years to find someone worth their time, but it looks like you already found yourself some worthwhile options.”
 {$playerName}: “You really think so?”
 <<cs 1 0>>
@@ -541,12 +638,15 @@ You nod along with your senior, finding his observations to be logically sound. 
 {$mentorName}: “With that said, I understand that this makes it all the harder to decide. But out of all the options, is there anyone who interests you the most so far?”
 <<MC true>>
 -> “I’m not sure, I would like to get to know them all better first.”
+    <<vc 1 0>>
     {$mentorName}: “A dull but wise decision, there is still time before a decision must be made.”
 -> “I know Maeve like the back of my hand. Sure, we haven’t talked in a while, but I know that if there’s anyone out there who could do her commission right, it’s me.”
+    <<vc 1 0>>
     {$mentorName}: “It is good to value these life-long bonds, for they are the most precious things you could have. Be good to the girl. She looks to be in need of a friend.”
 -> “Something about Judith interests me. I want to know what’s going on behind that smile.”
     His eyes question you, but Isham can’t help but smile at your response.
-    <<cs 1 1>>
+    <<cs 1 5>>
+    <<vc 1 5>>
     {$mentorName}: “Your curiosity is going to get you in trouble one day, rookie. I understand the ambition, but remember to be cautious of a merchant’s tongue. They know how to get what they want.”
 -> “You attested to Silas’s skill. My greatest wish is to get acknowledged as a Royal Blacksmith and become famous across the lands.”
     <<set $loneWolfAffinity = $loneWolfAffinity + 1>>
@@ -557,6 +657,7 @@ You nod along with your senior, finding his observations to be logically sound. 
 -> “The one who interests me most is you. What would you desire, Isham?”
     <<set $mentorAffinity = $mentorAffinity + 1>>
     <<cs 1 6>>
+    <<vc 1 4>>
     {$mentorName}: “It be best, rookie, not to joke around too much. I dislike being made a fool of.”
     Despite his words, you notice that Isham’s ears were red as he turned away from you. Perhaps he did not mind your comment, afterall. 
 <<MC false>>
@@ -576,10 +677,12 @@ title: PreMinigameWeek2
 The first week at the Royal Blacksmith Guild was incredibly busy. Full of tedious work, new learning opportunities, and introductions to an ensemble of other apprentices, your free time consisted of only sleeping and eating. 
 But all that work is about to pay off, for you have finally finished the preparations you need to begin what is known as the Ritual of Extraction.
 <<change_background "entrance hall">>
+<<sfx 4>>
 Entering the Guild with a grin on your face, you walk past the front desk that had given you so much trouble in the past. Turns out it was just an automated voice that Isham and some other Royal Blacksmiths built back in the day to manage the guild’s guests.
 It really is true that laziness is the greatest source of inspiration.
 <<change_background "personal forge">>
 <<sp 1>>
+<<sfx 8>>
 Entering your seniors’ forge, you are met by an already working Isham, hammering away at a new creation while deep in thought. 
 <<cs 1 1>>
 Upon meeting eyes, Isham welcomes you with a voice much friendlier than when you had first arrived. 
@@ -624,7 +727,7 @@ Upon your arrival, a young guide welcomes you with reverence in his eyes. Talkin
     <<cs 0 4>>
     {$playerName}: “Alright, alright, I won’t mess this up. Trust me.”
     {$mentorName}: “Are you trying to jinx yourself? Just go, and please be careful.”
-<<destory_sprite 1>>
+<<destroy 1>>
 <<MC false>>
 Walking down the tunnel, you enter the brightly illuminated room, ready to challenge your first great hurdle. 
 <<Theme 1>>
@@ -819,7 +922,7 @@ Laughing over Maeve’s story, the two of you reminisce over the past over a del
     After finishing lunch, the two of you depart after paying the check and saying goodbye, promising to see each other sometime in the future.
 -> “All the time, it’s something I struggle to overcome time and time again. I find that thinking back to why I came here and what I want out of myself is what helps me the most.”
     <<set $bestFriendAffinity = $bestFriendAffinity + 1>>
-    <<css 3 4>>
+    <<cs 3 4>>
     {$bestFriendName}: “I never knew you had those thoughts, {$playerName}. You always seemed so engrossed in your work that I never knew you had doubts.”
     {$playerName}: “Likewise, Maeve. I remembered you pledging to me under the oak tree that you were going to surpass the Steelheart Knight. I still hope to see that Knight one day in action.”
     <<cs 3 5>>
