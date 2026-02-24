@@ -1273,17 +1273,11 @@ MonoBehaviour:
   paintContainer: {fileID: 677428722906929554}
   stages:
   - stageName: Painting Block
-    paintableSprite: {fileID: 7781202394294830402, guid: c29f57134a963482aab9b1ef51357ea3, type: 3}
-    scoreMapSprite: {fileID: -8638421506506822070, guid: f52dc3bad37224aefbc0d33277a9ba88, type: 3}
-    prizeSprite: {fileID: 1269588076273163515, guid: 030c50a738c93483899c0547af914408, type: 3}
+    paintableSprite: {fileID: 1519817961887976341, guid: 7a175b177e5de4397b3fbe5a0a7dd297, type: 3}
+    scoreMapSprite: {fileID: 9141321760507782296, guid: c9407d953a95e4d1894cbef82e07bd48, type: 3}
+    prizeSprite: {fileID: -1857066140087164170, guid: f21e1c073ce3c40c88ca62225b673817, type: 3}
     targetColor: {r: 0, g: 1, b: 0, a: 0}
-    totalTargets: 2000
-  - stageName: Painting Block
-    paintableSprite: {fileID: -6950486346419376927, guid: 7aa83ae97160d416ab970de904760b2b, type: 3}
-    scoreMapSprite: {fileID: -7469740316118452663, guid: a526a227f899b4a6d8921866622b7420, type: 3}
-    prizeSprite: {fileID: 1302723820812287101, guid: 8d0c3473489554a799fe42e7342b06fa, type: 3}
-    targetColor: {r: 0, g: 1, b: 0, a: 0}
-    totalTargets: 1000
+    totalTargets: 50
   timeLimit: 60
   closeDelay: 5
   flashStartTime: 10
@@ -1305,7 +1299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7519919525268844542}
   m_Layer: 0
-  m_Name: miniCutterGame (ShieldTest)
+  m_Name: miniCutterGame (MorningStarTest)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

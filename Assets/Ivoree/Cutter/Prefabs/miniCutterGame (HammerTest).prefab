@@ -460,8 +460,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3074662898049201392}
   m_Layer: 0
-  m_Name: miniCutterGame (Hammer)
-  m_TagString: minigame
+  m_Name: miniCutterGame (HammerTest)
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1287,7 +1287,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.71585, y: 1.07327, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3074662898049201392}
@@ -1313,21 +1313,21 @@ MonoBehaviour:
   paintContainer: {fileID: 8219214349623619403}
   stages:
   - stageName: Painting Block
-    paintableSprite: {fileID: 1535134168725310428, guid: bcf596c9b94c848a6aa8be214b7bb792, type: 3}
-    scoreMapSprite: {fileID: 7040346865362410759, guid: 797ab7056168e4b8e81a13b9fb6f6e62, type: 3}
-    prizeSprite: {fileID: 1269588076273163515, guid: 04cec831107d84d4ab7c95e3ffaeb115, type: 3}
+    paintableSprite: {fileID: -6950486346419376927, guid: 126b84a7e1d0d4887a3cc9ce9e5f4509, type: 3}
+    scoreMapSprite: {fileID: 1535134168725310428, guid: 47111cbcd0e444df7be9e3cc8815ec03, type: 3}
+    prizeSprite: {fileID: -7469740316118452663, guid: 8b18be78711d2417b9f9db7fa283ab18, type: 3}
     targetColor: {r: 0, g: 1, b: 0, a: 0}
     totalTargets: 50
   - stageName: Painting Hammer
-    paintableSprite: {fileID: 1269588076273163515, guid: 04cec831107d84d4ab7c95e3ffaeb115, type: 3}
-    scoreMapSprite: {fileID: -8638421506506822070, guid: 36e9eb5062474412d82bcb5fa8d4bab4, type: 3}
-    prizeSprite: {fileID: -7469740316118452663, guid: ea3999b653ebd4166a91b8174e0dd252, type: 3}
+    paintableSprite: {fileID: -7469740316118452663, guid: 8b18be78711d2417b9f9db7fa283ab18, type: 3}
+    scoreMapSprite: {fileID: 7040346865362410759, guid: 078b2bfd6c1434d9ca3b871b04416889, type: 3}
+    prizeSprite: {fileID: -7469740316118452663, guid: 8b18be78711d2417b9f9db7fa283ab18, type: 3}
     targetColor: {r: 0, g: 1, b: 0, a: 1}
     totalTargets: 50
   - stageName: Painting Engravings
-    paintableSprite: {fileID: 7781202394294830402, guid: 05418bc46fbaa4be9a9a1cdf08fcb3b5, type: 3}
-    scoreMapSprite: {fileID: -6950486346419376927, guid: a4abe31ecc30c4b64b3f04feb716607a, type: 3}
-    prizeSprite: {fileID: 8416243949045666254, guid: db83160e9f7fb4b63bdf72d1058c7cbe, type: 3}
+    paintableSprite: {fileID: -7469740316118452663, guid: 8b18be78711d2417b9f9db7fa283ab18, type: 3}
+    scoreMapSprite: {fileID: 1269588076273163515, guid: 97213d79113444760ba124be449d05ed, type: 3}
+    prizeSprite: {fileID: 7781202394294830402, guid: 1fa0a1b0b948346ac9fc01cf3ba0379d, type: 3}
     targetColor: {r: 0, g: 1, b: 0, a: 0}
     totalTargets: 50
   timeLimit: 60
