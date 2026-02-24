@@ -1,6 +1,6 @@
 ﻿title: VariableCreation
 ---
-<<declare $playerName = "Calkeus">>
+<<declare $playerName = "Ash">>
 <<declare $mentorName = "Blacksmith">>
 <<declare $redFlagName = "Woman">>
 <<declare $bestFriendName = "Woman">>
@@ -180,6 +180,7 @@ title: ResultTesting
 <<endif>>
 <<jump IntroductionPostTutorial>>
 ===
+
 title: IntroductionPostTutorial
 ---
 <<sp 1>>
@@ -250,7 +251,7 @@ Taking her hand, you snap out of your thoughts as you stand back up. You notice 
 -> “Thank you, that would be much appreciated.”
     {$redFlagName}: “No problem, dear, I don’t mind getting a bit dirty now and then.”
     <<cs 0 3>>
-    {$playerName}: “You're more easygoing than I imagined someone of your status.”
+    {$playerName}: “You're more easy going than I imagined someone of your status.”
     {$redFlagName}: “Not adhering to expectations is my definition of happiness. It’s only when you are free that you can see the good in what’s around you.” 
     Both on your knees, the woman looks towards you with a mischievous grin as she picks up the coal alongside you. 
     <<cs 0 1>>
