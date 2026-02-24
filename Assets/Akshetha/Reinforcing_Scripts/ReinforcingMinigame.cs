@@ -256,14 +256,15 @@ public class ReinforcingMinigame : MonoBehaviour
     }
     private void RotateHammer(Quaternion target)
     {
+        
         float speed = -1 * (hammerHoldRot - 45f);
         
         float step = speed * Time.deltaTime;
-
         AnimatedHammer.transform.rotation = Quaternion.RotateTowards(AnimatedHammer.transform.rotation, target, step);
     }
     private void SmoothHammerSwing(Quaternion target)
     {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.SFX[8], transform.position);
         hammerHitting = true;
         while(Mathf.Abs(Quaternion.Dot(AnimatedHammer.transform.rotation, target)) < 0.9999f)
         {
@@ -364,6 +365,7 @@ public class ReinforcingMinigame : MonoBehaviour
     {
         hammerHitting = true;
         AnimatedHammer.transform.Rotate(0f, 0f, 120f);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.SFX[8], transform.position);
         yield return new WaitForSeconds(0.05f);
         AnimatedHammer.transform.Rotate(0f, 0f, -120f);
         hammerHitting = false;
