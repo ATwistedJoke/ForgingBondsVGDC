@@ -475,7 +475,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3416868783655305253, guid: 52571f68872914e24837210513edea1d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7262066351540048079, guid: 52571f68872914e24837210513edea1d, type: 3}
@@ -520,11 +521,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneCommands
   dialogueRunner: {fileID: 969776835}
   prefabList:
-  - {fileID: 5018181964906641661, guid: cb14ae3d6312fa34aa7baf33cf301f92, type: 3}
-  - {fileID: 3133478007704758121, guid: f157ec11b55fdd14fa5d835b1eace767, type: 3}
-  - {fileID: 563261661555335078, guid: 00621a4c476b9a74b83040e58c14573b, type: 3}
-  - {fileID: 4784760813319784402, guid: 2f8d62db11700a642a04152a8a3ee710, type: 3}
-  - {fileID: 4784760813319784402, guid: 2f8d62db11700a642a04152a8a3ee710, type: 3}
+  - {fileID: 6873735868910783707, guid: 113f669c38f7dea4aafe158ed88c6e88, type: 3}
+  - {fileID: 680431790705880569, guid: 8d43042f321424e529faa77874535997, type: 3}
+  - {fileID: 8087954389772310151, guid: ce95ff79b959a4c53ad080a62f4369bb, type: 3}
+  - {fileID: 8087954389772310151, guid: e5ebff8f576f24feda1a51515ca5fcbf, type: 3}
+  - {fileID: 8087954389772310151, guid: db4c5f2332f494f939bf1a5c51814dcb, type: 3}
+  - {fileID: 8087954389772310151, guid: 3148b4570541b405d8d44d8776e187aa, type: 3}
+  - {fileID: 8957110024584072919, guid: a90fb673d91e0b7489bd35f921922f05, type: 3}
+  - {fileID: 7194465485810495492, guid: 644eec2bca85e4099b33786be82f45bb, type: 3}
+  - {fileID: 6224081725339266373, guid: c094b59ca98474e7da9cf4ae1269af2d, type: 3}
+  - {fileID: 3680374866363922152, guid: 583d4ace149cc574aad2e9fde3a4b41f, type: 3}
+  - {fileID: 1302685205932175881, guid: fcba56994667e461ab4031036947ae3c, type: 3}
+  - {fileID: 8167611419009273798, guid: 5698e4fafb9764798a852c9b5432dee4, type: 3}
+  - {fileID: 4460669743888560788, guid: 2f7bc2553931f447cb48451d224109b1, type: 3}
+  - {fileID: 8087954389772310151, guid: 3148b4570541b405d8d44d8776e187aa, type: 3}
   blackBackground: {fileID: 615436763202117382, guid: 870922a9e0462114dbf5124a38aaa52f, type: 3}
   map: {fileID: 4568741467112566366, guid: b659acc32dd1ddd47b2f2e6a6d9631ad, type: 3}
   entranceHall: {fileID: 6892071920074951963, guid: d05780ba17c24284ab4a7e9b2a7d258b, type: 3}
@@ -538,11 +548,11 @@ MonoBehaviour:
   mines: {fileID: 8899876282228281533, guid: cf877642148a8994084050709a831dc7, type: 3}
   market: {fileID: 2762722766935775714, guid: e45f47df37dcb714798fa865b53a5860, type: 3}
   lake: {fileID: 4079262541650156315, guid: 6ac8b4502898b4048a56a2dee85035a5, type: 3}
-  capitalStreets: {fileID: 0}
-  silasHome: {fileID: 8186667920271868256, guid: 61c8829a68d0ef544b8210ace4412535, type: 3}
+  capitalStreets: {fileID: 2762722766935775714, guid: e45f47df37dcb714798fa865b53a5860, type: 3}
+  silasHome: {fileID: 7517682027715810668, guid: a5ca67b097ec48646a2a07264f44de98, type: 3}
   village: {fileID: 4809872240012599412, guid: 4d8de6f2bf55b584fa83faaada1b1a5c, type: 3}
   trainingGrounds: {fileID: 7338618003114003176, guid: 4425932d28f476847bdb1a465499f4a8, type: 3}
-  manor: {fileID: 5230217231651422668, guid: 83577813e95a3d84a8f8a28863f35d97, type: 3}
+  manor: {fileID: 124545636327551345, guid: 2e2f6e5cdf866934785cdb6cd98a1b64, type: 3}
   badlands: {fileID: 777373440204403792, guid: b66f71a0079fcd549b89a146c3dc94a7, type: 3}
   battlefield: {fileID: 2606950781967880182, guid: b1764f295e7f6df459a3e549dd04ea34, type: 3}
   spPrefab:
