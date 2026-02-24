@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using FMODUnity;
 
 public class Stream : MonoBehaviour
 {
@@ -24,6 +25,19 @@ public class Stream : MonoBehaviour
 
     public bool isPouring;
 
+    [SerializeField] private EventReference liquid_pour;
+
+    private FMOD.Studio.EventInstance pourInstance;
+      void Start()
+    {
+        
+    // Create the instance once when the scene loads
+    if (!liquid_pour.IsNull)
+    {
+        pourInstance = AudioManager.instance.CreateGameInstance(liquid_pour);
+    }
+
+    }
     void Update()
     {
 
@@ -55,10 +69,14 @@ public class Stream : MonoBehaviour
         isPouring = true;
         stream.enabled = true;
         stream.positionCount = 2;
-        // Start both points at the tip so it "grows" out
+         //how you create a looping sound i guess
+        pourInstance.start();
 
+        // Start both points at the tip so it "grows" out
         stream.SetPosition(0, tipping_point.position);
         stream.SetPosition(1, tipping_point.position);
+
+        
     }
 
     void EndPour()
@@ -66,6 +84,8 @@ public class Stream : MonoBehaviour
         isPouring = false;
         stream.positionCount = 0;
         stream.enabled = false;
+        //hopefully stop looping sound
+        pourInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         Debug.Log("stream should be disabled");
         if (splashParticles != null) splashParticles.Stop();
     }
@@ -112,9 +132,9 @@ public class Stream : MonoBehaviour
                 Mold hitMold = hit.collider.GetComponent<Mold>();
                 if (hitMold != null)
                 {
-                    if(CalculatePourAngle() == perfect_pour_angle)
+                    while(CalculatePourAngle() == perfect_pour_angle)
                     {
-                        fillspeed+=10; //bonus if perfect angle
+                        fillspeed-=5; //bonus if perfect angle
                     }
                     hitMold.Fill(Time.deltaTime / fillspeed);
                 }
@@ -139,7 +159,9 @@ public class Stream : MonoBehaviour
     {
         float angle = crucible.transform.eulerAngles.z;
         if (angle > 180) {angle = 360 - angle;}
-        Debug.Log(angle);
-        return angle;
+        int angle_to_int = Mathf.FloorToInt(angle);
+        
+        Debug.Log(angle_to_int);
+        return angle_to_int;
     }
 }
