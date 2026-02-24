@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class SmeltBarController : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class SmeltBarController : MonoBehaviour
     public BoxCollider2D greenBarCollider;
     public RectTransform greenBarRenderer;
     // Update is called once per frame
+    void Awake()
+    {
+        StartCoroutine(PlayFireWoosh());
+    }
     void FixedUpdate()
     {
         greenBar.flexibleWidth -= greenBarWidthDecrease;
@@ -37,4 +42,11 @@ public class SmeltBarController : MonoBehaviour
             }
         }
     }
+    public IEnumerator PlayFireWoosh() 
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.SFX[6], transform.position);
+        yield return new WaitForSeconds(4.0f);
+        StartCoroutine(PlayFireWoosh());
+    }
+
 }
