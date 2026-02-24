@@ -9,7 +9,7 @@ public class RotateHammer : MonoBehaviour
     public GameObject score;
     public GameObject Hammer;
     public HammeringScoreManager scoreManager;
-    private bool hammerHitting = false;
+    public bool hammerHitting = false;
     private int streak = 0;
     void Start()
     {

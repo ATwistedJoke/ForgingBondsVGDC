@@ -26,6 +26,8 @@ public class TriggerSkillCheck : MonoBehaviour
         {
             if (ingotInPos)
             {
+                skillCheck.GetComponentInChildren<RotateHammer>().hammerHitting = false;
+                skillCheck.GetComponentInChildren<RotateHammer>().Hammer.transform.rotation = Quaternion.Euler(0,0,-45);
                 skillCheck.SetActive(false);
             }
         }
