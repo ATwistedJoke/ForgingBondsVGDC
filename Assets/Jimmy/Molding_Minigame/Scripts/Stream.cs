@@ -1,4 +1,3 @@
-using FMODUnity;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,19 +23,7 @@ public class Stream : MonoBehaviour
     public float perfect_pour_angle;
 
     public bool isPouring;
-    [SerializeField] private EventReference liquid_pour;
-    private FMOD.Studio.EventInstance pourInstance;
 
-    void Start()
-    {
-        
-    // Create the instance once when the scene loads
-    if (!liquid_pour.IsNull)
-    {
-        pourInstance = AudioManager.instance.CreateGameInstance(liquid_pour);
-    }
-
-    }
     void Update()
     {
 
@@ -70,9 +57,6 @@ public class Stream : MonoBehaviour
         stream.positionCount = 2;
         // Start both points at the tip so it "grows" out
 
-        //how you create a looping sound i guess
-        pourInstance.start();
-
         stream.SetPosition(0, tipping_point.position);
         stream.SetPosition(1, tipping_point.position);
     }
@@ -83,9 +67,6 @@ public class Stream : MonoBehaviour
         stream.positionCount = 0;
         stream.enabled = false;
         Debug.Log("stream should be disabled");
-
-        //hopefully stop looping sound
-        pourInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         if (splashParticles != null) splashParticles.Stop();
     }
 
@@ -133,7 +114,7 @@ public class Stream : MonoBehaviour
                 {
                     if(CalculatePourAngle() == perfect_pour_angle)
                     {
-                        fillspeed-=5; //bonus if perfect angle
+                        fillspeed+=10; //bonus if perfect angle
                     }
                     hitMold.Fill(Time.deltaTime / fillspeed);
                 }
