@@ -668,7 +668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 417b4b5df302442ccab00b0672946a3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StartMinigame
-  minigame: {fileID: 4784760813319784402, guid: 2f8d62db11700a642a04152a8a3ee710, type: 3}
+  minigame: {fileID: 4784760813319784402, guid: 3b0716a5cb9e34631b6beab1ed753c8d, type: 3}
   timer: {fileID: 0}
   spawnPoint: {fileID: 0}
   CanvasTransform: {fileID: 0}

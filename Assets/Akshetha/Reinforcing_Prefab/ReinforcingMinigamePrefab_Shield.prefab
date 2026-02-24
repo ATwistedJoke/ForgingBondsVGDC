@@ -230,6 +230,37 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &4654334334209381046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9134520346092524941}
+  m_Layer: 0
+  m_Name: AnimationPos
+  m_TagString: AnimationPos
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9134520346092524941
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4654334334209381046}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1337.946, y: -1035.9629, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6005819296206466197}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5923252253609949891
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,6 +411,10 @@ PrefabInstance:
       value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 1331408178409636711, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
+      propertyPath: MashNailPrefab
+      value: 
+      objectReference: {fileID: 7414624336764571090, guid: 2cf3c6d0cf59042bc9991488598865d5, type: 3}
+    - target: {fileID: 1331408178409636711, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
       propertyPath: totalTimeLimit
       value: 160
       objectReference: {fileID: 0}
@@ -395,6 +430,14 @@ PrefabInstance:
       propertyPath: qualityScoreText
       value: 
       objectReference: {fileID: 3933778824144199848}
+    - target: {fileID: 1331408178409636711, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
+      propertyPath: AnimatedHammerPrefab
+      value: 
+      objectReference: {fileID: 1947793899223771873, guid: 1586f5c624e844fad9c5b115dc67fc5c, type: 3}
+    - target: {fileID: 1331408178409636711, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
+      propertyPath: WeaponAnimationPrefab
+      value: 
+      objectReference: {fileID: 2026383850864278325, guid: afbc505062daa45afa8beecd3189d61a, type: 3}
     - target: {fileID: 1331408178409636711, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
       propertyPath: 'segments.Array.data[0]'
       value: 
@@ -645,7 +688,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7613132806052327015, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
       propertyPath: m_Name
-      value: ReinforcingMinigamePrefab_Shield Variant
+      value: ReinforcingMinigamePrefab_Shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 7613132806052327015, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
+      propertyPath: m_TagString
+      value: minigame
       objectReference: {fileID: 0}
     - target: {fileID: 7722209915623018288, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
       propertyPath: m_SizeDelta.x
@@ -741,6 +788,9 @@ PrefabInstance:
     - {fileID: 2506421069278024175, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
     - {fileID: 7293880275929742581, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6424476243294909174, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 9134520346092524941}
     - targetCorrespondingSourceObject: {fileID: 936381039711272223, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8769409547765312877}
@@ -812,6 +862,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02efc939491bf4e919b7cf5498dd5e8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Scen
+--- !u!4 &6005819296206466197 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6424476243294909174, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}
+  m_PrefabInstance: {fileID: 752285644097969763}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6519743061866531385 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5767527874089882714, guid: dd95c5b45b6cb486a8e3cba78eaeab74, type: 3}

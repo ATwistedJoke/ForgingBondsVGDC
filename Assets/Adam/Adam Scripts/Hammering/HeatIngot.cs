@@ -1,5 +1,8 @@
 using UnityEngine;
 using System.Collections;
+using FMOD.Studio;
+using FMODUnity;
+using System.Collections.Generic;
 
 public class HeatIngot : MonoBehaviour
 {
@@ -17,9 +20,11 @@ public class HeatIngot : MonoBehaviour
     public float heatMilestone1 = 2f;
     public float heatMilestone2 = 5f; //Used for ranges of heat levels
     public float heatMilestone3 = 12f;
+    private EventInstance instance;
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        instance = RuntimeManager.CreateInstance(FMODEvents.instance.SFX[2]);
     }
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Fire"))
@@ -38,12 +43,14 @@ public class HeatIngot : MonoBehaviour
     public IEnumerator HeatingCooldown() //just so that the heat level doesn't change every frame
     {
         curHeatTime = heatSpeed;
+        instance.start();
         while (curHeatTime > 0)
         {
             yield return new WaitForSeconds(0.2f);
             curHeatTime -= 0.2f;
             if (!currentlyHeating)
             {
+                instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
                 yield break;
             }
         }
@@ -51,6 +58,7 @@ public class HeatIngot : MonoBehaviour
         {
             heatLevel++;
         }
+        instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         changeSprite();
         StartCoroutine(HeatingCooldown());
     }

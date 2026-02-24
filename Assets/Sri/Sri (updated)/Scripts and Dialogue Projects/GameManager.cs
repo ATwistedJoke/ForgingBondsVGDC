@@ -80,9 +80,11 @@ public class GameManager : MonoBehaviour
         dialogueRunner.AddCommandHandler("smelting_result", SmeltingMinigameResult);
         dialogueRunner.AddCommandHandler<bool>("MC",MCSpeak);
         dialogueRunner.AddCommandHandler<int>("Appearance", SetAppearance);
-        dialogueRunner.AddCommandHandler("SFX", PlayAudio);
+        dialogueRunner.AddCommandHandler<int>("sfx", PlayAudio);
         dialogueRunner.AddCommandHandler<int,int>("vc", VoiceLine);
         dialogueRunner.AddCommandHandler<float>("Theme", ChangeTheme);
+        dialogueRunner.AddCommandHandler<int>("amb", PlayAmbience);
+        dialogueRunner.AddCommandHandler("end", EndAmbience);
         // dialogueRunner.AddCommandHandler<int>("change_corruption",ChangeCorruption);
     }
 
@@ -328,11 +330,20 @@ public class GameManager : MonoBehaviour
     }
 
     //Audio Implementation
-    public void PlayAudio()
+    public void PlayAudio(int idx)
     {
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.SFX[0], transform.position);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.SFX[idx], transform.position);
     }
 
+    public void PlayAmbience(int idx)
+    {
+        AudioManager.instance.InitializeAmbience(FMODEvents.instance.amb[idx]);
+    }
+
+    public void EndAmbience()
+    {
+        AudioManager.instance.StopAmbience();
+    }
     public void VoiceLine(int idx, int line)
     {
         if(idx == 0)

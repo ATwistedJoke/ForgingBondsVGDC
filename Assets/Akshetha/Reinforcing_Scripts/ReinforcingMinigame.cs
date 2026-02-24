@@ -40,6 +40,24 @@ public class ReinforcingMinigame : MonoBehaviour
     [SerializeField] private float mercy = 0.3f; 
     [SerializeField] private float pressure = 8f;
     
+    //Animations
+    public GameObject AnimatedHammerPrefab;
+    public GameObject AnimatedHammer;
+    public GameObject AnimationPos;
+    public GameObject MashNailPrefab;
+    public GameObject MashNail;
+    public GameObject WeaponAnimationPrefab;
+    public GameObject WeaponAnimation;
+    private bool hammerHitting = false;
+    private float maxNailDist = 1.0f;
+    private Vector3 hitDist;
+    private Vector3 hammerPos;
+    private Vector3 nailPos;
+    private float hammerHoldRot;
+    private SpriteRenderer hammerRenderer;
+    public Quaternion targetRotation; 
+    public Quaternion initialAnimatedHammerState;
+
     // call back to gamemanager
     public Action<int> OnMinigameComplete;
     
@@ -76,7 +94,12 @@ public class ReinforcingMinigame : MonoBehaviour
         
         minigameCanvas.SetActive(true);
         challengePanel.SetActive(false);
-        
+
+        AnimationPos = GameObject.FindGameObjectWithTag("AnimationPos");
+        hammerPos = new Vector3(-0.1f, -0.5f, 0f);
+        nailPos = new Vector3(-1.4f, -0.62f, 0f);
+        hammerHoldRot = 90f;
+        targetRotation = Quaternion.Euler(0f, 0f, hammerHoldRot);
         
         UpdateQualityUI();
         UpdateTimerUI();
@@ -123,6 +146,23 @@ public class ReinforcingMinigame : MonoBehaviour
         isChallengeActive = true;
         challengePanel.SetActive(true);
         
+        AnimatedHammer = Instantiate(AnimatedHammerPrefab, AnimationPos.transform);
+        AnimatedHammer.transform.localPosition = hammerPos;
+        MashNail = Instantiate(MashNailPrefab, AnimationPos.transform);
+        MashNail.transform.localPosition = nailPos;
+        WeaponAnimation = Instantiate(WeaponAnimationPrefab, AnimationPos.transform);
+        float weaponXPos;
+        if(WeaponAnimation.tag == "Shield Animation")
+        {
+            weaponXPos = UnityEngine.Random.Range(-6f, 3f);
+            WeaponAnimation.transform.localPosition = new Vector3(weaponXPos, -1.6f, 0f);
+        }
+        if(WeaponAnimation.tag == "Hammer")
+        {
+            weaponXPos = UnityEngine.Random.Range(-0.3f, 0.3f);
+            WeaponAnimation.transform.localPosition = new Vector3(weaponXPos, -1.85f, 0f);
+        }
+
         if (currentChallengeType == 1)
         {
             StartType1Challenge();
@@ -140,6 +180,10 @@ public class ReinforcingMinigame : MonoBehaviour
     //hold and release
     private void StartType1Challenge()
     {
+        AnimatedHammer.transform.Rotate(0, 0, 90f);
+        initialAnimatedHammerState = Quaternion.Euler(0f, 0f, 90f);
+        hammerRenderer = AnimatedHammer.GetComponent<SpriteRenderer>();
+        hitDist = new Vector3(0f, maxNailDist / 5, 0f);
         challengeTimer = type1TimeLimit;
         type1SuccessfulPresses = 0;
         challengeInstructionText.text = $"Press SPACE when the color changes\n{type1SuccessfulPresses}/{type1RequiredPresses} successful presses\nTime left: {challengeTimer:F1}s";
@@ -167,10 +211,12 @@ public class ReinforcingMinigame : MonoBehaviour
                     if (progress >= perfectStart && progress <= perfectEnd)
                     {
                         challengeProgressBar.color = Color.pink;
+                        hammerRenderer.color = Color.pink;
                     }
                     else
                     {
                         challengeProgressBar.color = Color.red;
+                        hammerRenderer.color = Color.red;
                     }
                 }
                 
@@ -183,6 +229,9 @@ public class ReinforcingMinigame : MonoBehaviour
     {
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
+            if(!hammerHitting){
+                SmoothHammerSwing(initialAnimatedHammerState);
+            }
             float barProgress = challengeProgressBar.fillAmount;
             
             float perfectStart = 0.45f;
@@ -190,6 +239,7 @@ public class ReinforcingMinigame : MonoBehaviour
             
             if (barProgress >= perfectStart && barProgress <= perfectEnd)
             {
+                MashNail.transform.position -= hitDist;
                 type1SuccessfulPresses++;
                 UpdateGame1Text();
                 
@@ -204,7 +254,30 @@ public class ReinforcingMinigame : MonoBehaviour
             }
         }
     }
-    
+    private void RotateHammer(Quaternion target)
+    {
+        
+        float speed = -1 * (hammerHoldRot - 45f);
+        
+        float step = speed * Time.deltaTime;
+        AnimatedHammer.transform.rotation = Quaternion.RotateTowards(AnimatedHammer.transform.rotation, target, step);
+    }
+    private void SmoothHammerSwing(Quaternion target)
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.SFX[8], transform.position);
+        hammerHitting = true;
+        while(Mathf.Abs(Quaternion.Dot(AnimatedHammer.transform.rotation, target)) < 0.9999f)
+        {
+            float speed = (hammerHoldRot - 45f) / 0.5f;
+        
+            float step = speed * Time.deltaTime;
+
+            AnimatedHammer.transform.rotation = Quaternion.RotateTowards(AnimatedHammer.transform.rotation, target, step);
+
+
+        }
+        hammerHitting = false;
+    }
     private void UpdateGame1Text()
     {
         challengeInstructionText.text = $"Press SPACE when the color changes \n{type1SuccessfulPresses}/{type1RequiredPresses} successful presses\n\nOnly {challengeTimer:F1}s left";
@@ -215,6 +288,10 @@ public class ReinforcingMinigame : MonoBehaviour
         while (isChallengeActive && currentChallengeType == 1 && challengeTimer > 0)
         {
             challengeTimer -= Time.deltaTime;
+            if (!hammerHitting)
+            {
+                RotateHammer(targetRotation);
+            }
             UpdateGame1Text();
             yield return null;
         }
@@ -235,6 +312,7 @@ public class ReinforcingMinigame : MonoBehaviour
         type2RequiredPresses = UnityEngine.Random.Range(minPresses, maxPresses2 + 1);
         type2PressCount = 0;
         challengeTimer = timeLimit2;
+        hitDist = new Vector3(0f, maxNailDist / type2RequiredPresses, 0f);
                 
         challengeInstructionText.text = $"MASH SPACEBAR!!!\n{type2PressCount}/{type2RequiredPresses} presses";
         
@@ -259,6 +337,7 @@ public class ReinforcingMinigame : MonoBehaviour
         // time gone
         if (challengeTimer <= 0 && isChallengeActive && currentChallengeType == 2)
         {
+            hammerHitting = false;
             FailChallenge();
         }
     }
@@ -269,12 +348,27 @@ public class ReinforcingMinigame : MonoBehaviour
         {
             type2PressCount++;
             UpdateGame2Text();
-            
+            MashNail.transform.position -= hitDist;
+            if (!hammerHitting)
+            {
+                StartCoroutine(HammerSwing());
+            }
             if (type2PressCount >= type2RequiredPresses)
             {
+                hammerHitting = false;
                 CompleteChallenge(true);
             }
         }
+    }
+
+    public IEnumerator HammerSwing() //just so that the heat level doesn't change every frame
+    {
+        hammerHitting = true;
+        AnimatedHammer.transform.Rotate(0f, 0f, 120f);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.SFX[8], transform.position);
+        yield return new WaitForSeconds(0.05f);
+        AnimatedHammer.transform.Rotate(0f, 0f, -120f);
+        hammerHitting = false;
     }
     
     private void UpdateGame2Text()
@@ -292,6 +386,10 @@ public class ReinforcingMinigame : MonoBehaviour
     //new part starts here
     private void StartType3Challenge()
     {
+        AnimatedHammer.transform.Rotate(0, 0, 90f);
+        initialAnimatedHammerState = Quaternion.Euler(0f, 0f, 90f);
+        hammerRenderer = AnimatedHammer.GetComponent<SpriteRenderer>();
+        hitDist = new Vector3(0f, maxNailDist / 1, 0f);
         type3IsHolding = false;
         type3HoldStartTime = 0f;
         type3CurrentHoldDuration = 0f;
@@ -338,6 +436,10 @@ public class ReinforcingMinigame : MonoBehaviour
         if (type3IsHolding && Keyboard.current.spaceKey.isPressed)
         {
             type3CurrentHoldDuration = Time.time - type3HoldStartTime;
+            if (!hammerHitting)
+            {
+                RotateHammer(targetRotation);
+            }
             UpdateGame3Text();
             
             if (challengeProgressBar != null)
@@ -352,14 +454,17 @@ public class ReinforcingMinigame : MonoBehaviour
                 if (type3CurrentHoldDuration >= minTarget && type3CurrentHoldDuration <= maxTarget)
                 {
                     challengeProgressBar.color = Color.green;
+                    hammerRenderer.color = Color.green;
                 }
                 else if (type3CurrentHoldDuration > maxTarget)
                 {
                     challengeProgressBar.color = Color.blue;
+                    hammerRenderer.color = Color.blue;
                 }
                 else
                 {
                     challengeProgressBar.color = Color.purple;
+                    hammerRenderer.color = Color.purple;
                 }
             }
         }
@@ -367,6 +472,10 @@ public class ReinforcingMinigame : MonoBehaviour
         //track release
         if (Keyboard.current.spaceKey.wasReleasedThisFrame && type3IsHolding && !type3HasReleased)
         {
+            if (!hammerHitting)
+            {
+                SmoothHammerSwing(initialAnimatedHammerState);
+            }
             type3IsHolding = false;
             type3HasReleased = true;
             
@@ -376,6 +485,7 @@ public class ReinforcingMinigame : MonoBehaviour
             
             if (type3CurrentHoldDuration >= minTarget && type3CurrentHoldDuration <= maxTarget)
             {
+                MashNail.transform.position -= hitDist;
                 CompleteChallenge(true);
             }
             else
@@ -390,7 +500,6 @@ public class ReinforcingMinigame : MonoBehaviour
         string holdText = type3IsHolding ? $"Holding: {type3CurrentHoldDuration:F2}s" : "Press SPACE to start";
         challengeInstructionText.text = $"Hold SPACE for exactly {targetHoldTime:F1}s\n{holdText}\n\nOnly {challengeTimer:F1}s left";
     }
-    
     
     private void HandleChallengeInput()
     {
@@ -407,12 +516,26 @@ public class ReinforcingMinigame : MonoBehaviour
             HandleType3Input();
         }
     }
-    
+    private IEnumerator CoroutineEndDelay()
+    {
+        yield return new WaitForSeconds(0.25f);
+        if(AnimatedHammer){
+            Destroy(AnimatedHammer);
+        }
+        if (MashNail)
+        {
+            Destroy(MashNail);
+        }
+        if (WeaponAnimation)
+        {
+            Destroy(WeaponAnimation);
+        }
+        StopAllCoroutines();
+    }
     private void CompleteChallenge(bool success)
     {
         isChallengeActive = false;
-        StopAllCoroutines();
-        
+        StartCoroutine(CoroutineEndDelay());
         if (success)
         {
             // mark as complete

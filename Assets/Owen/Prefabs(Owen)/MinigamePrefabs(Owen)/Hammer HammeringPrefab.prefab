@@ -1285,8 +1285,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22454d25a4444dffb36d88c2525ed05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SmeltingTimer
-  currCountdownValue: 150
-  startCountdownValue: 150
+  currCountdownValue: 120
+  startCountdownValue: 120
   timerText: {fileID: 0}
   minigamePrefab: {fileID: 0}
 --- !u!1 &7475159590349391853

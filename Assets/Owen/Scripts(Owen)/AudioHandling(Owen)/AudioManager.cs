@@ -11,6 +11,8 @@ public class AudioManager : MonoBehaviour
 
     private EventInstance musicEventInstance; 
 
+    private EventInstance ambienceEventInstance; 
+
     private void Start()
     {
         InitializeMusic(FMODEvents.instance.music);
@@ -32,6 +34,8 @@ public class AudioManager : MonoBehaviour
         RuntimeManager.PlayOneShot(sound, worldPos);
     }
 
+
+
     public EventInstance CreateGameInstance(EventReference eventReference)
     {
         EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference); 
@@ -44,6 +48,16 @@ public class AudioManager : MonoBehaviour
         musicEventInstance.setParameterByName("CurrentTheme", value);
     }
 
+    public void InitializeAmbience(EventReference ambienceEventReference)
+    {
+        ambienceEventInstance = CreateGameInstance(ambienceEventReference);
+        ambienceEventInstance.start(); 
+    }
+
+    public void StopAmbience()
+    {
+        ambienceEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE); 
+    }
     private void InitializeMusic(EventReference musicEventReference)
     {
         musicEventInstance = CreateGameInstance(musicEventReference);
