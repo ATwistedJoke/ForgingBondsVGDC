@@ -26,8 +26,7 @@
 // 4 - Silas
 
 //<<jump IntroductionPreTutorial>>
-<<place 0 0 0>>
-<<jump IntroductionPostTutorial>>
+<<jump IntroductionPreTutorial>>
 ===
 
 title: VariableReset
@@ -718,7 +717,7 @@ Upon your arrival, a young guide welcomes you with reverence in his eyes. Talkin
 <<MC false>>
 Walking down the tunnel, you enter the brightly illuminated room, ready to challenge your first great hurdle. 
 <<Theme 1>>
-<<run_minigame 1 WeekTwoAfterMinigame>>
+<<run_minigame 0 WeekTwoAfterMinigame>>
 ===
 
 title: WeekTwoAfterMinigame
@@ -1318,7 +1317,7 @@ Once you are done with this step, you will have to decide on the commission you 
 Entering your forge, you load the coal once more into your cauldron, lighting the flames that will be necessary to begin your work. 
 Isham checks in now and then, offering advice when you need it. But he never sticks around long, not wanting to interrupt your focus while you prepare your forge.
 Then the time finally comes, and your preparations are completed. The smelting can begin.
-<<run_minigame 2 postSmeltingWeekThree>>
+<<run_minigame 1 postSmeltingWeekThree>>
 <<Theme 1>>
 ===
 
@@ -2363,13 +2362,13 @@ title: Week4PreMinigame
 In your forge at the dawn of day, you start the new week ready to begin shaping your chosen weapon.
 Determined to turn these ingots into something beautiful, you raise your hammer with intense focus. 
 <<if $route == 1>> // Judith route
-//<<run_minigame judithMinigameIndex Week4PostMinigame>> 
+    <<run_minigame 3 Week4PostMinigame>> 
 <<elseif $route == 2>> // Maeve route
-//<<run_minigame maeveMinigameIndex Week4PostMinigame>> 
+    <<run_minigame 4 Week4PostMinigame>> 
 <<elseif $route == 3>> // Isham route
-//<<run_minigame ishamMinigameIndex Week4PostMinigame>> 
+    <<run_minigame 5 Week4PostMinigame>> 
 <<elseif $route == 4>> // Silas route
-//<<run_minigame silasMinigameIndex Week4PostMinigame>> 
+    <<run_minigame 6 Week4PostMinigame>> 
 <<endif>>
 ===
 
@@ -2820,13 +2819,13 @@ title: Week5PreMinigame
 ---
 Entering a new week, you return to your forge ready to resume your progress. Preparing your hammer, you lay out the materials you need to improve on your project's functionality.
 <<if $route == 1>> // Judith
-//<<run_minigame judithMinigame2Index Week5PostMinigame>>
+    <<run_minigame 6 Week5PostMinigame>>
 <<elseif $route == 2>> // Maeve
-//<<run_minigame maeveMinigame2Index Week5PostMinigame>>
+    <<run_minigame 7 Week5PostMinigame>>
 <<elseif $route == 3>> // Isham
-//<<run_minigame ishamMinigame2Index Week5PostMinigame>>
+    <<run_minigame 8 Week5PostMinigame>>
 <<elseif $route == 4>> // Silas
-//<<run_minigame silasMinigame2Index Week5PostMinigame>>
+    <<run_minigame 9 Week5PostMinigame>>
 <<endif>>
 ===
 
@@ -3350,18 +3349,26 @@ You will create the strongest weapon.
 title: Week6PreMinigame
 ---
 <<if $route == 1 || $route == 2>> // judith or maeve route
-<<change_background "personal forge">>
-Arriving at the guild the next day, you stare at your anvil with renewed determination. 
-Today, you will finish what you started.
-Raising your hammer, you begin the final step of your journey as an apprentice. 
-//<<run_minigame correspondingMingiameIndex Week6PostMinigame>>
+    <<change_background "personal forge">>
+    Arriving at the guild the next day, you stare at your anvil with renewed determination. 
+    Today, you will finish what you started.
+    Raising your hammer, you begin the final step of your journey as an apprentice. 
+    <<if $route == 1>>
+        <<run_minigame 10 Week6PostMinigame>>
+    <<else>>
+        <<run_minigame 11 Week6PostMinigame>>
+    <<endif>>
 <<elseif $route == 3 || $route == 4>> // isham or silas route
 <<change_background "personal forge">>
 Arriving at the destroyed guild the next day, you cross the wreckage from the attack to reach your forge. There is no more time for hesitation. 
 Today, you will avenge those who lost their lives that day of the attack.
 Raising your hammer, you begin the final step of your journey as an apprentice. 
 Finish what you started.
-//<<run_minigame correspondingMingiameIndex Week6PostMinigame>>
+<<if $route == 3>>
+        <<run_minigame 12 Week6PostMinigame>>
+    <<else>>
+        <<run_minigame 13 Week6PostMinigame>>
+    <<endif>>
 <<endif>>
 ===
 title: Week6MinigameResult
