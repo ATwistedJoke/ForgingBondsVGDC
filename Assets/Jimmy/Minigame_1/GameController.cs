@@ -23,21 +23,24 @@ public class GameController : MonoBehaviour
 
     public GameObject minigame_1_panel;
     public MouseManager mouse;
+    public GameObject tutorial;
     //placeholder for testing of end of minigame
     public Button end_game;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-    Start_Minigame_1();
+    // void Start()
+    // {
+    // Start_Minigame_1();
         
-    }
+    // }
 
     public void Start_Minigame_1()
     {
+        Debug.Log("minigame should start");
         minigame_1_panel.SetActive(true);
         StartCoroutine(SpawnRandomOre());
+        Destroy(tutorial);
     }
 
     public void End_Minigame()

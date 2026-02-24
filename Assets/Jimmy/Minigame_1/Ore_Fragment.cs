@@ -1,5 +1,5 @@
-using UnityEditor.Callbacks;
 using UnityEngine;
+using FMODUnity;
 
 public class Ore_Fragment : MonoBehaviour
 {
@@ -13,6 +13,8 @@ public class Ore_Fragment : MonoBehaviour
     public int iron_add_score = 10;
     public int gold_add_score = 25;
     public int myth_add_score = 50;
+    [SerializeField] private EventReference pick_up_sound;
+
 
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -53,6 +55,8 @@ public class Ore_Fragment : MonoBehaviour
                 Debug.Log("+50 points to you!");
                 break;
         }
+    AudioManager.instance.PlayOneShot(pick_up_sound, transform.position);
+
        Debug.Log("i am hitting this");
        Destroy(gameObject);
     }
