@@ -839,7 +839,7 @@ Do you wish to make up with Maeve?
         {$playerName}: “Did I say something wrong?”
         Almost yelling out in anger, Maeve stops herself as she notices the onlookers peeking at their table. Not wanting to ruin the mood further, the two of you continue eating in an awkward silence of your own devising.
         After paying the check, the two of you depart with a brief and formal goodbye, unsure when you will see each other again.
-    <<end 1>>
+    <<end>>
     <<destroy 3>>
     <<MC false>>
 -> No
@@ -895,7 +895,7 @@ Laughing over Maeve’s story, the two of you reminisce over the past over a del
     {$playerName}: “Did I say something wrong?”
     Almost yelling out in anger, Maeve stops herself as she notices the onlookers peeking at their table. Not wanting to ruin the mood further, the two of you continue eating in an awkward silence of your own devising.
     After paying the check, the two of you depart with a brief and formal goodbye, unsure when you will see each other again.
-<<end 1>>
+<<end>>
 <<destroy 3>>
 <<MC false>>
 <<endif>>
@@ -938,7 +938,7 @@ Her words, ominously sincere, speak with fervent desire as she gazes upon you wi
 {$redFlagName}: “It would be a great opportunity for you to cultivate your craft as an apprentice. Not only could you witness the art of famous blacksmiths to learn from, but you will also be introduced to the most influential nobles in the kingdom. No apprentice could hope for more.”
 <<destroy 2>>
 Saying goodbye to the departing Judith, you leave the market in deep thought about the enticing offer she had presented. Her demeanor towards you, while weird, does offer a lot of benefits if you explore this relationship. Unsure yet if you should attend, you head back home for the day to rest and contemplate.
-<<end 0>>
+<<end>>
 <<change_background "black background">>
 On the second day of the weekend, you realize you had forgotten the keys to your forge at work. Deciding it would be better to save yourself from the shame it would bring to be late to work, you decide to go back to the guild to find it.
 Yet no matter where you look, you cannot find the keys anywhere they could be. 
@@ -1060,7 +1060,7 @@ Who do you wish to spend more time with?
     Remembering her love of sweet food, you decide to check out one of the dessert stalls. 
     The trip was short, and a delicious small chocolate cake was now boxed and ready to be gifted. 
     But as you begin to depart from the central market, you notice a peculiar piece of jewelry in the corner of your eye at a stall. Something about it draws your attention.
-    <<end 0>>
+    <<end>>
     <<amb 2>>
     -> You got your cake already, no need for more.
     -> Wouldn’t hurt to look. Why not check it out?
@@ -1069,7 +1069,7 @@ Who do you wish to spend more time with?
         You would have bought it on the spot if it weren’t for the exorbitant price it was listed at. No matter how you pleaded, the merchant would not relent. Not even accepting barter or a loan, there was nothing you could do to obtain the bracelet.
         Just why do you not have the money to afford a gift like this? If only you had more gold, more power, this would have never happened. A feeling of resentment lingers within you. 
         Perhaps it is time to leave. It would be better if this were forgotten. 
-    <<end 2>>
+    <<end>>
     <<change_background "black background">>
     Carrying the cake to Maeve’s home, you knock on her door to announce your arrival.
     <<sfx 4>>
