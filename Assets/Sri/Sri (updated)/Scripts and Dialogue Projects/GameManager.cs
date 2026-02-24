@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour
     public GameObject market;
     public GameObject lake;
     public GameObject capitalStreets;
-    public GameObject judithsHome;
     public GameObject silasHome;
     public GameObject village;
     public GameObject trainingGrounds;
@@ -192,9 +191,6 @@ public class GameManager : MonoBehaviour
                 break;
             case "capital streets":
                 Instantiate(capitalStreets);
-                break;
-            case "Judith's home":
-                Instantiate(judithsHome);
                 break;
             case "Silas's home":
                 Instantiate(silasHome);
