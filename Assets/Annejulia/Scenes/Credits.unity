@@ -711,7 +711,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Game Design\nCurtis Bayne \n\nStory Writers\nLucas Ramirez\n\nVoice Actors\nBryan
-    Zeng"
+    Zeng\nRuby Lofton"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8dced4a56348244a9337bd3150852b7, type: 2}
   m_sharedMaterial: {fileID: -1399652239823105176, guid: e8dced4a56348244a9337bd3150852b7, type: 2}
