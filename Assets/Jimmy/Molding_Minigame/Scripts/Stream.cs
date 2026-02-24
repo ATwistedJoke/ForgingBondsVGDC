@@ -132,7 +132,7 @@ public class Stream : MonoBehaviour
                 Mold hitMold = hit.collider.GetComponent<Mold>();
                 if (hitMold != null)
                 {
-                    if(CalculatePourAngle() == perfect_pour_angle)
+                    while(CalculatePourAngle() == perfect_pour_angle)
                     {
                         fillspeed-=5; //bonus if perfect angle
                     }
@@ -159,7 +159,9 @@ public class Stream : MonoBehaviour
     {
         float angle = crucible.transform.eulerAngles.z;
         if (angle > 180) {angle = 360 - angle;}
-        Debug.Log(angle);
-        return angle;
+        int angle_to_int = Mathf.FloorToInt(angle);
+        
+        Debug.Log(angle_to_int);
+        return angle_to_int;
     }
 }

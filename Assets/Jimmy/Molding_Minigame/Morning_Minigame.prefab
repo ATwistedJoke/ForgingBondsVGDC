@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5329100290291116644, guid: d7d23ae23ec5afe45a6c010ae00ccba2, type: 3}
       propertyPath: m_Name
-      value: Molding_Minigame Variant
+      value: Morning_Minigame
       objectReference: {fileID: 0}
     - target: {fileID: 6198930408353523977, guid: d7d23ae23ec5afe45a6c010ae00ccba2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
