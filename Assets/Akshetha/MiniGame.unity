@@ -471,10 +471,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ReinforceHammerPrefab
       objectReference: {fileID: 0}
-    - target: {fileID: 5215034890758171299, guid: 6f07ba46510142545aeddb55b651424f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -922
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
