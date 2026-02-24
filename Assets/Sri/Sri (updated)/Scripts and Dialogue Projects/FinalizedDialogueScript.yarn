@@ -1,4 +1,4 @@
-﻿title: IntroductionPreTutorial
+﻿title: VariableCreation
 ---
 <<declare $playerName = "Calkeus">>
 <<declare $mentorName = "Blacksmith">>
@@ -25,7 +25,34 @@
 // 3 - Isham
 // 4 - Silas
 
+//<<jump IntroductionPreTutorial>>
+<<jump IntroductionPreTutorial>>
+===
 
+title: VariableReset
+---
+<<set $playerName = "Calkeus">>
+<<set $mentorName = "Blacksmith">>
+<<set $redFlagName = "Woman">>
+<<set $bestFriendName = "Woman">>
+<<set $loneWolfName = "Stranger">>
+<<set $mentorAffinity = 0>>
+<<set $redFlagAffinity = 0>>
+<<set $loneWolfAffinity = 0>>
+<<set $bestFriendAffinity = 0>>
+<<set $corruption = 0>>
+<<set $corruptionRoute to false>>
+<<set $rejectedLunch to true>>
+<<set $readBlueprint to false>>
+<<set $weekOneResult = 0>>
+<<set $weekTwoResult = 0>>
+<<set $result = 0>>
+<<set $route = 0>>
+<<jump IntroductionPreTutorial>>
+===
+
+title: IntroductionPreTutorial
+---
 <<change_background "map">>
 In the Age of the Hammer and Anvil, when Craft defined a Nation’s power, a looming darkness sought to snuff out the light of their forges.
 But the surrounding nations were not idle. The Kingdom of Pladonia, a beacon of innovation and a stalwart defender of humanity, led the Alliance in waging war against the forces of evil.
@@ -291,7 +318,7 @@ An awkward silence follows her words, as both of you realize the wall that had f
 <<cs 0 0>>
 {$playerName}: “Yes, though I only just started as an apprentice. It’s actually my first day on the job. How is your dream going, Maeve?”
 {$bestFriendName}: “It’s going…fine.”
-<<MC true>>>>
+<<MC true>>
 -> “What do you mean by just 'fine'?”
     <<set $bestFriendAffinity = $bestFriendAffinity - 1>>
     <<cs 3 3>>
@@ -1613,7 +1640,7 @@ Who do you wish to spend more time with?
     Against better judgment, you decide to take up Judith’s invitation and visit her manor.
     With anxious footsteps, you step out of the arranged carriage she prepared in front of the gates of the main entrance.  
     What did she want out of this invite? What will she do with you? These thoughts both leave you nervous and excited as you enter the open gates.
-    //<<change_background "Judith's home">>
+    <<change_background "manor">>
     Stepping into the manor, you are greeted by maids and butlers lined up for your arrival. Welcoming you, they lead you to the dining room, already prepared with lavish dishes.
     Seated at the center, Judith welcomes you with a smile as she ushers you to take a seat.
     <<sp 2>>
@@ -1770,7 +1797,7 @@ Who do you wish to spend more time with?
     There is no response. 
     <<MC true>>
     -> Open the door.
-        //<<change_background "Silas's home">>
+        <<change_background "Silas's home">>
         You carefully open the door.
         <<sp 4>>
         <<cs 4 7>>
@@ -2287,7 +2314,7 @@ Exiting the sweltering forge, you go out to grab some water.
         <<cs 0 0>>
         {$playerName}: “Sure, I have time to spare. I’ve never done an art tour, much less look at any paintings before.”
         And so, after a quick stop by the guild, you leave with Judith back to her manor.
-        //<<change_background "manor">>
+        <<change_background "manor">>
         Within, Judith leads you to a hallway lined with paintings while holding your hand. 
         {$redFlagName}: “...and this here is the ‘The Adoration of the Metal’ made by Sentile da Fabiro, said to be made when the artist had witnessed the Steelheart Knight’s liberation of a city once taken over by monsters.”
         <<vc 0 0>>
@@ -2685,28 +2712,550 @@ In the next weeks, as you complete their weapon, you should decide carefully on 
 
 title: Week5PreMinigame
 ---
-<<if $route == 1>>
-Judith
+Entering a new week, you return to your forge ready to resume your progress. Preparing your hammer, you lay out the materials you need to improve on your project's functionality.
+<<if $route == 1>> // Judith
+//<<run_minigame judithMinigame2Index Week5PostMinigame>>
+<<elseif $route == 2>> // Maeve
+//<<run_minigame maeveMinigame2Index Week5PostMinigame>>
+<<elseif $route == 3>> // Isham
+//<<run_minigame ishamMinigame2Index Week5PostMinigame>>
+<<elseif $route == 4>> // Silas
+//<<run_minigame silasMinigame2Index Week5PostMinigame>>
 <<endif>>
-===
-
-title: Week5MinigameResult
----
-$result
-<<jump Week5PostMinigame>>
 ===
 
 title: Week5PostMinigame
 ---
-<<if $route == 1>>
-Judith
+<<if $result >= 2>> // good minigame
+<<set $mentorAffinity = $mentorAffinity + 1>>
+{$playerName}: “Another job well done.”
+After finishing your work, you wipe the sweat from your head, feeling proud of your accomplishments.
+Your hard work has earned you an open schedule this week. You will be able to spend more time with your commissioner this week as a result.
+<<elseif $result == 1>> // mediocre minigame
+{$playerName}: “Not horrible.”
+Your work was not bad, but you wouldn’t call it good either.
+Having to work longer than you wish, your schedule will have less free time than desired. 
+<<elseif $result <= 0>> // bad minigame
+<<set $mentorAffinity = $mentorAffinity - 1>>
+{$playerName}: “Gods, how did I fuck that up?”
+Looks like correcting this mess will take you longer than you wish.
+Due to your mistake, your schedule has been shortened.
 <<endif>>
+Leaving the sweltering forge, you head to your guild’s waiting room to take a short rest.
+<<if $route == 1>> // Judith route
+<<if $result >= 2>>
+<<set $redFlagAffinity = $redFlagAffinity + 2>>
+Today, you intend to invite Judith to a play in the market that will be performed by famous traveling actors. 
+Hoping that she will accept, you send a letter to the noble lady’s manor while preparing yourself for the date.
+It does not take long for Judith herself to respond with a yes.
+<<change_background "market">>
+{$redFlagName}: “Bolder by the week, dear, I’m happy you are no longer shy about inviting me out on a date.”
+{$playerName}: “I’m always the one being led around, so I thought it would be good to try out a change.”
+{$redFlagName}: “I like the change, dear, we should do this more often. Now, may I ask what type of play we will be watching?”
+{$playerName}: “Of course, today we will be watching the story of the Steelheart Knight and the Iron Crusade. I heard the actor Rudy Tavick will be starring in this one.”
+{$redFlagName}: “The Steelheart Knight, huh…”
+Noticing Judith seemingly displeased with the idea, you consider asking if she would prefer to leave. But before you can, a crowd begins to settle around the two of you as they cheer for the actors now on stage.
+Actor 1: “In this Age of the Hammer and Anvil, where Craft defines a Nation’s power, a looming darkness once sought to snuff out the light of our forges.”
+The play would go to retell the events of the Iron Crusade and the Steelheart Knight, using impressive costuming and special effects to wow the audience with a story they have heard many times before.
+Having a fun time, you laugh and shed tears along the way of the public play. 
+Yet when you look over to Judith, you can tell immediately that she was not anything but happy.
+{$redFlagName}: “…”
+{$playerName}: “Is something the matter?”
+{$redFlagName}: “Huh? Oh, uh, nothing’s wrong?”
+{$redFlagName}: “I was thinking about something not important.”
+-> “Does it have to do with the crowded location?”
+    <<set $redFlagAffinity = $redFlagAffinity - 1>>
+    {$redFlagName}: “What, no, why do you think that I am bothered by a place like this?”
+    {$playerName}: “Well…you are a noble lady, it wouldn’t surprise me if you don’t like being in crowds like this.”
+    {$redFlagName}: “Is that really how I look in your eyes?”
+    {$playerName}: “No, no, that’s not what I meant!”
+    {$redFlagName}: “Then why—!” 
+    {$redFlagName}: “Ha…”
+    {$redFlagName}: “Sorry, dear, I didn’t mean to get mad at you like that.”
+    {$redFlagName}: “Truthfully, it’s only the story that I detest."
+-> “Does it have to do with actors?”
+    {$redFlagName}: “The actors? Oh no, I have no problem with them personally.”
+    {$redFlagName}: “It’s the story that I detest."
+-> “Does it have to do with the Steelheart Knight?”
+    <<set $redFlagAffinity = $redFlagAffinity + 1>>
+    {$redFlagName}: “The Steelheart Knight? Yes, I suppose you are right about that. I’m surprised you managed to catch on to that.”
+    {$redFlagName}: “Though I am not mad because it is the Steelheart Knight being depicted, but because of how he is represented."
+{$playerName}: “What do you mean?”
+{$redFlagName}: “…”
+“I suppose it is fine to share with you this detail about me. Come, I would like to share something private away from the ears of others.”
+//<<change_background "capital streets">>
+Leading you away from the crowds, Judith brings you to a corner of a street away from all others.
+Once she confirms no one else is around, she reaches into her dress to remove a pocket watch of hers.
+{$redFlagName}: “I think…it would be easiest to just show you.”
+Revealing a hidden compartment on the watch, she takes out a folded piece of paper from it.
+{$playerName}: “What is that?”
+{$redFlagName}: “When my father served with the royal knights, he was able to get a painting of him done by a unique Pleiotium tool that could capture the paintings it took to be both life-like and copyable.”
+{$redFlagName}: “This here is one of those, a hidden painting I have of both my father and me before everything went wrong.”
+Handing you the odd, tiny painting that was copied onto a piece of thin paper, you open it up to a shocking surprise.
+{$playerName}: “Your father was the Steelheart Knight?!”
+{$redFlagName}: “Shhh! But yes, that is the truth.”
+{$playerName}: “But I thought the Steelheart Knight no longer had any living relatives after an accident claimed the lives of his family in a fire?”
+{$redFlagName}: “That’s only what the crown wants you to believe in.”
+{$redFlagName}: “The truth was that he was betrayed by the kingdom of Pladonia, backstabbed by those he was saving.”
+{$redFlagName}: “That accident that took the rest of my family after? Those were assassins, hoping to cover all loose ends. But I survived.”
+{$playerName}: “But I don’t understand, why would they kill the hero that could have ended the threat of the Iron Monsters forever?”
+{$redFlagName}: “Because the kingdom needed them. Do you know why there has not been a war between humans since the Great Iron Invasion? It’s because there is nothing that unites humans more than a shared fear.”
+{$redFlagName}: “The Steelheart Knight had the capability of ending the Young Iron King, but before he could reach the demon’s domain, he was murdered by the Royal Knights that he once fought side by side with.”
+{$playerName}: “How do you know this to be true?”
+{$redFlagName}: “One of the traitors became stricken with guilt and confessed to the truth of the incident to my mother. But before we could bring this to court, a fire was lit at our home that night to burn down the remaining evidence of the crime.”
+{$redFlagName}: “After that, history became rewritten to make the Steelheart Knight into some martyr for Pladonia’s cause.”
+{$redFlagName}: “I cannot stand by it any longer. If you wanted the truth for why I commissioned this weapon from you, dear, it is not because I wanted a memorial of his death but rather to avenge it.”
+{$redFlagName}: “I know you to be someone once inspired by my father, so I plead to you now. Help me take my revenge against this kingdom that is rotten to its core.”
+{$playerName}: “I’m not sure what to say, Judith…I’m a royal blacksmith, even if still an apprentice. I promise not to tell a soul of your story, but I need time before I can make such a huge decision like treason against the crown.”
+{$redFlagName}: “Thank you, I hope to hear your response soon.”
+Leaving Judith on the street, you run back home before the realization of your reality shattering around you.
+What does it mean to be serving a kingdom that committed such an evil? Will you be quitting the Royal Blacksmith Guild, the place that had once been the goal of your dreams? And most importantly, does Judith even love you, or was this all a way for her to recruit you?
+The week comes to an end, but you find yourself having a hard time sleeping. What will be your response when you see Judith again?
+<<else>>
+Unfortunately, you have little time remaining.
+Having to return to work in the forge, you grumble in discontent as you finish the work necessary for this project. You can’t risk falling behind so close to the end.
+<<endif>>
+<<elseif $route == 3>> // Isham Route
+<<if $result >= 2>>
+With your spare time, you stop by Isham’s forge to tell him about your success. Looking pleased, Isham lowers his hammer and suggests the two of you head to the market together here to pick up some necessary materials for the final touches of the project.
+<<change_background "market">>
+Agreeing, the two of you spend time shopping side by side.
+As you walk together, you realize this is a chance for you to grow your relationship with Isham. Looking at his hand, you…
+-> Hold onto it
+    <<set $mentorAffinity = $mentorAffinity + 1>>
+    Reaching out your hand, you slide your fingers between his, feeling the heat of his palm rise upon doing so.
+    {$mentorName}: “Oh…”
+    Despite not saying a word, the two of you smile in joy as you walk hand in hand back to the guild. 
+-> Ignore those thoughts
+    Shaking your head, you chase away those thoughts as you return to the guild with Isham.
+<<else>>
+Unfortunately, you have little time remaining.
+Having to return to work in the forge, you grumble in discontent as you finish the work necessary for this project. You can’t risk falling behind so close to the end.
+<<endif>>
+<<change_background "personal forge">>
+Later that day, you hear a knock on the door of your forge.
+Opening it, you see Silas out of breath, awaiting you.
+{$playerName}: “What’s wrong, Silas?”
+{$loneWolfName}: “I must warn you two first…earlier today…I encountered–”
+{$playerName}: “Whoa, whoa, get some air first before speaking.”
+{$loneWolfName}: “There’s no time! I encountered cultists near the city’s walls.”
+{$playerName}: “Cultists? Are you okay, Silas?”
+{$loneWolfName}: “They did not harm me, but neither could I capture them. I warned the knights of the threat, and they told me to prepare immediately in case of an attack! We must warn Isham!”
+With haste, the two of you head down the hallway to knock on the door of Isham’s forge. Entering, you and Silas proceed to tell the bad news to your senior.
+{$mentorName}: “We should prepare in case of evacuation at once. I’ll tell the other smiths to ready their equipment in case of an attack. We don’t know what the cult’s goals are, but they have a history of targeting pleiotium. We must remain vigilant.”
+But it was too late.
+Just as Isham finishes speaking, a violent crash is heard in the entrance hall of the guild building.
+Then came the screams. 
+<<change_background "hallway">>
+Stepping out into the hallway, the three of you witness fleeing blacksmiths crying of an attack. 
+Catching onto one of the runners, Isham looks at the man with fear in his eyes.
+{$mentorName}: “Speak, Thomas! What is it?”
+{$mentorName}: “I-IT IS IRON MONSTERS, SIR! Please, just let me go!” 
+{$mentorName}: “Damn it! Go, boy! Save what you can and get out of here!”
+{$loneWolfName}: “I will stay and fight, Isham. Take {$playerName} with you and leave.”
+{$mentorName}: “You are still young, Silas. You should be the one to protect {$playerName}. Besides, I cannot abandon this place.”
+While the two fight over who should remain and who should protect you, you sneak off into the forge to fetch Isham’s prototype weapons.
+<<change_background "personal forge">>
+Refusing to be looked down on as weak, you push past your fears of danger to help protect the guild you call home. 
+But this box of failed prototypes…which of these could actually prove useful?
+Unsure, you decide to take the whole box with you. Surely something in here can help fight off the Iron Monsters.
+<<change_background "hallway">>
+{$playerName}: “I’m back!”
+{$mentorName}: “What are you doing leaving in the middle of this?”
+{$loneWolfName}: “Please do not do that again.”
+{$playerName}: “I’m sorry, but I brought your weapons, Isham!”
+{$mentorName}: “Those old things? They might not even work!”
+{$playerName}: “It’s worth a try!”
+{$mentorName}: “Gods be damned, we are going to die.”
+{$loneWolfName}: “One is coming! Get ready!”
+From the corner of the hallway, an ugly, large hand made of blackened metal loomed over the three of you with a wretched clawing of the walls. 
+Its hands are decorated with sharp, barbed silver wiring, tied around it as if it had wrapped in a seal before emerging. An unnerving deep growl could be heard from out of sight as each of its sharpened nails slowly grates back down the hall. 
+{$mentorName}: “By the gods, what is that thing…”
+{$loneWolfName}: “Hand me something now…or else we might all be killed.”
+<<jump Week5HunterChoice>>
+<<elseif $route == 4>> // Silas route
+As you are resting, however, you hear a commotion outside in the hallways.
+Curious, you step out to see what the commotion is.
+<<change_background "hallway">>
+{$loneWolfName}: “...where can I find them. I need to know where {$playerName} is.”
+{$playerName}: “What’s wrong, Silas?”
+{$loneWolfName}: “Oh, thank the gods, I need to ask you a favor. You are still in contact with that friend of yours in the Royal Knight Order, right? I need you to arrange a meeting with her immediately.”
+{$playerName}: “What for?”
+{$loneWolfName}: “Earlier today, while trailing a potential Iron Monster sighting, I had encountered cultists near the city’s walls.”
+{$playerName}: “Cultists? Are you okay, Silas?”
+{$loneWolfName}: “They did not harm me, but neither could I capture them. I must warn the knights that there are cultists in the city, and that they might be planning something.”
+<<if $result >= 2>>
+{$playerName}: “Of course, let me come with you to the Royal Castle. I could get you in to meet with Maeve. She will be able to help.”
+{$loneWolfName}: “That would be appreciated.”
+<<change_background "training grounds">>
+Approaching the castle with Silas, you look upon the large gates of the Royal Castle ahead. Behind them will be where you will be going, the barracks and training ground of the Royal Knights. 
+While nobles are allowed to enter to watch the Knights, they typically are not expected to nor encouraged. Blacksmiths, however, are always welcome to enter. 
+Noticing Silas feeling nervous about the whole affair, you decide to hold onto their hand as you lead them to where Maeve works.
+Entering the grounds, you spot Maeve training with another Knight.
+As you approach the two, you wave to Maeve, who looks back at you in surprise.
+{$bestFriendName}: “{$playerName}, what are you doing here?”
+{$playerName}: “We need your help with something urgent. Can we talk?”
+Noticing your nervous expression, Maeve calls off her practice with her fellow knight to talk with the two of you in private.
+{$bestFriendName}: “So what’s wrong? And who are you?”
+{$loneWolfName}: “My name is Silas. I am a hunter that lives outside the city walls and am currently contracted with {$playerName} on a commission. While working, I came across a group of cultists near the city.”
+{$bestFriendName}: “Cultists? Are you sure it was they belonged to the Cult of the True King’s Courtiers, not some pagans?”
+{$loneWolfName}: “I would never mistake one of them. Besides, I have evidence.”
+Pulling out a loose piece of bloody cloth, on it was the broken anvil that symbolized the cult. 
+{$bestFriendName}: “By the gods…we must alert the royal family. We do know what their intentions could be, but if they are acting so brazenly that they would be caught by a hunter of all things, it means they are already close to achieving their goals.”
+{$bestFriendName}: “Thank you, Silas, for what you did here for us. May I ask you to protect {$playerName} in my stead? Soon, I fear, chaos may arrive here at the capital.”
+{$loneWolfName}: “I will. Thank you, Dame Maeve.”
+//<<change_background "capital streets">>
+Departing with Maeve, you and Silas make way back to the Guild to tell Isham about the news. 
+{$loneWolfName}: “On the day I was sick, I could vaguely remember someone attending to me while I was in bed.”
+Pausing mid return, Silas faces you with a sincere expression.
+{$loneWolfName}: “Were you the one who visited me that day?”
+-> “I’m sorry, I don’t know what you are talking about.”
+    {$loneWolfName}: “O-Oh…I must have been hallucinating then.”
+    {$loneWolfName}: “I’m sorry, I don’t know why I thought it was you.”
+-> “Yes, I was worried about you that day and intruded.”
+    <<set $loneWolfAffinity = $loneWolfAffinity + 3>>
+    {$loneWolfName}: “...”
+    {$loneWolfName}: “...t-thanks.”
+    {$playerName}: “Sorry, I couldn’t quite hear you there?”
+    {$loneWolfName}: “...”
+    {$loneWolfName}: “T-THANK YOU!”
+    Staring at each other in surprise, you chuckle to the blushing Silas as you make way back to the guild. 
+    You wish moments like these could last forever.
+<<else>>
+{$playerName}: “Of course, I’ll write you a personal voucher on your credibility. Show it at the Royal Castle gates and tell them that you wish to see Dame Maeve. She will be able to help.”
+As much as you want to go, you still have tasks left to work on for the weapon. Getting distracted now would only compromise your promise to Silas.
+{$loneWolfName}: “Thank you.”
+<<change_background "black background">>
+Time goes by, and eventually you hear Silas return.
+<<change_background "personal forge">>
+{$loneWolfName}: “I talked with Dame Maeve, and the situation is serious. We will need to prepare evacuations.”
+{$playerName}: “Let me come with you to tell Isham. I can do that at the very least.”
+Nodding their head, the two of you leave for the hallway side by side.
+<<endif>>
+<<change_background "personal forge">>
+Knocking on the door of Isham’s forge, you and Silas enter to tell the news to your senior.
+{$mentorName}: “We should prepare in case of evacuation at once. I’ll tell the other smiths to ready their equipment in case of an attack. We don’t know what the cult’s goals are, but they have a history of targeting pleiotium. We must remain vigilant.”
+But it was too late.
+Just as Isham finishes speaking, a violent crash is heard in the entrance hall of the guild building.
+Then came the screams. 
+<<change_background "hallway">>
+Stepping out into the hallway, the three of you witness fleeing blacksmiths crying of an attack. 
+Catching onto one of the runners, Isham looks at the man with fear in his eyes.
+{$mentorName}: “Speak, Thomas! What is it?”
+{$mentorName}: “I-IT IS IRON MONSTERS, SIR! Please, just let me go!” 
+{$mentorName}: “Damn it! Go, boy! Save what you can and get out of here!”
+{$loneWolfName}: “I will stay and fight, Isham. Take {$playerName} with you and leave.”
+{$mentorName}: “You are still young, Silas. You should be the one to protect {$playerName}. Besides, I cannot abandon this place.”
+While the two fight over who should remain and who should protect you, you sneak off into the forge to fetch Isham’s prototype weapons.
+<<change_background "personal forge">>
+Refusing to be looked down on as weak, you push past your fears of danger to help protect the guild you call home. 
+But this box of failed prototypes…which of these could actually prove useful?
+Unsure, you decide to take the whole box with you. Surely something in here can help fight off the Iron Monsters.
+<<change_background "hallway">>
+{$playerName}: “I’m back!”
+{$mentorName}: “What are you doing leaving in the middle of this?”
+{$loneWolfName}: “Please do not do that again.”
+{$playerName}: “I’m sorry, but I brought your weapons, Isham!”
+{$mentorName}: “Those old things? They might not even work!”
+{$playerName}: “It’s worth a try!”
+{$mentorName}: “Gods be damned, we are going to die.”
+{$loneWolfName}: “One is coming! Get ready!”
+From the corner of the hallway, an ugly, large hand made of blackened metal loomed over the three of you with a wretched clawing of the walls. 
+Its hands are decorated with sharp, barbed silver wiring, tied around it as if it had wrapped in a seal before emerging. An unnerving deep growl could be heard from out of sight as each of its sharpened nails slowly grates back down the hall. 
+{$mentorName}: “By the gods, what is that thing…”
+{$loneWolfName}: “Hand me something now…or else we might all be killed.”
+<<jump Week5HunterChoice>>
+<<elseif $route == 2>> // Maeve Route
+<<if $corruptionRoute == false>>
+<<if $result >= 2>>
+As you lie down on a chair, you find your thoughts wandering to Maeve. 
+What does she want to be painted on the crest of her shield? A standard, royal design of the knight order, or something unique about her family or self.
+Curious, you decide that with your spare time, you will go to Maeve’s house to ask.
+<<change_background "maeve's room">>
+{$playerName}: “Oh, hey {$playerName}, what’s the occasion?”
+-> Flirt, you have the time.
+    <<set $bestFriendAffinity = $bestFriendAffinity + 2>>
+    {$playerName}: “Hey.”
+    Placing your hand on her shoulder, you try your best at flirting with Maeve.
+    {$playerName}: “I finished work, want to…”
+    {$playerName}: “Want to eat supper together?”
+    {$bestFriendName}: “Supper…hahahaha.”
+    {$bestFriendName}: “Sure, we can eat, but it's way too early in the day for supper, just so you know.”
+    {$playerName}: “Ah, right…I guess being in that forge for so long is making me lose my senses.”
+    {$bestFriendName}: “Just come in, you goof.”
+    Entering inside, the two of you look at each other with eyes lost in thought. Next thing you know, the two of you are suddenly at each other’s lips. 
+    One thing leads to the other, and now you find yourself lying under her sheets drenched in sweat, unsure of what to do.
+    {$playerName}: “What did I come here for again?”
+    Thinking back on it, you were to suppose to ask her about what she wants to be painted as her crest.
+    Maybe you should ask her that soon before you run out of time. That is, after Maeve wakes up from her nap.
+    …
+    Cleaned up and now ready to leave, Maeve shows you the way to an artist she is friends with. 
+    It took some time, but you managed to finally get out of bed with Maeve to head to the market.
+-> Focus on the shield.
+    {$playerName}: “I mid-designing the shield right now, and I realized I haven’t asked you about what you wanted to do about the art. Do you have an artist in mind for something personal or should I just put the standard Royal Knight Crest on it?”
+    {$bestFriendName}: “Oh, right, I forgot to tell you about that. Here come in, I was preparing lunch. I have artist I know who will be working at the market later today we can catch. She will be doing the art for the design I have.
+    Stepping into her house, you take a seat at the table as you go on to enjoy a nice lunch with your friend.
+    When the time finally comes, you and Maeve depart from her home side by side towards the market. 
+<<else>>
+As you lie down on a chair, you find your thoughts wandering to Maeve. 
+What would she have wanted painted on the crest of her shield? A standard, royal design of the knight order, or something unique about her family or self.
+Unfortunately, you have little time remaining to go out and ask her. You will just have to send a letter to inquire what she wants and await the final decision.
+Having to return to work in the forge, you grumble in discontent as you finish the work necessary for this project. You can’t risk falling behind so close to the end.
+Later that day, you get a response from Maeve in letter about how she can meet you at the market. There she wants to introduce you to the artist she is friends with that will be doing the paintjob.
+Deciding to take a break from work, you depart from the guild to meet her.
+<<endif>> // minigame result
+<<change_background "market">>
+There, you are brought to a small stall in which Maeve stated the artist worked. 
+Meeting Eleanor, you are surprised to see such an impressive collection of samples from a street artist of little renown. 
+“...and I’m hoping for the design to include Mt. Relon from back home in the background. That way, I can always remember what I’m fighting for before battle.”
+////////////////////////////////////////// left off here
+Elanor: “That will be all I need. Thank you, Dame Maeve.”
+{$bestFriendName}: “No, thank you, Eleanor.”
+Waiting for the two to finish discussing the art commision, your eyes wander to your surroundings.
+The market was more crowded than usual, with many out shopping for the incoming holidays. 
+Becoming slowly interested with the passing crowds, you hear the conversation with the artist ending behind you. But before you could look away, you notice an odd scene in the corner of your eyes.
+Dressed in lavish clothes, a passing merchant accidentally drops a coin from his pocket.
+This would be nothing weird, if not for the reaction that occurred righ after. 
+A look of horror as if he had dropped something precious, the merchant desperately chases the rolling coin. Bumping into people one by one, the man runs in your direction where the coin finally stops right before your feet.
+{$playerName}: “Let me get that for you, sir.”
+Merchant: “STOP! Leave that coin alone!”
+Yet it was too late. You notice on the side of the coin a symbol that freezes your heart. 
+The symbol of the Cult of the True King’s Courtiers. 
+Heretics who align with the Iron Monsters and seek to destroy the kingdoms of man.
+{$playerName}: “...”
+Merchant: “...”
+{$bestFriendName}: “Is something the matter, MC?”
+Merchant: “Get out of the way, you scum!”
+Pushing you from the coin, the Merchant quickly seizes the coin into a tight grip. 
+{$playerName}: “Maeve, he’s a cultist! Stop him!”
+Unsheathing her sword, Maeve quickly swings the blade to cut off the man’s head at your word. Yet before he died, the cultist managed to crush the coin within his hands. 
+Watching as the man’s head falls to the floor, you feel a shiver roll down your spine as you see the shattered coin turn to dust.
+Something was coming.
+{$bestFriendName}: “Damn it! It’s an attack! Everyone, get out of here!”
+Her words, however, were too late. Hearing a violent crash come from within the market, you witness an ugly, large hand made of blackened metal emerge from the ground. Looming over the people at twice their size, the Iron Monster begins to dig itself out of the ground in an uncontrollable rage. 
+Its hands are decorated with sharp, barbed silver wiring, tied around it as if it had wrapped in a seal before emerging. An unnerving deep growl could be heard from out of sight as each of its sharpened nails slowly digs into the floor around it.
+{$playerName}: “By the gods, what is that thing?”
+Then came the screams. 
+People around the Iron Monster are attacked with violent force as the hand blindly swipes at those around it. 
+{$bestFriendName}: “Stand back, I’ll handle this. Go and find help while I try to buy time.”
+{$playerName}: “I can’t abandon you, Maeve.”
+{$bestFriendName}: “Don’t worry, MC, I will be fine.”
+Smiling before facing the rampaging Iron Monster, you watch her charge fearlessly towards it, sword in hand.
+Will you run?
+{$playerName}: [i]“...I cannot.”[/i]
+Then you must find a way to save her.
+<<jump Week5HelpMaeveChoice>>
+<<endif>> 
+////////////////// add not corruption maeve route here 
+<<endif>> // routes one
+//week 5 end dialogue here
+===
+
+title: Week5HelpMaeveChoice
+---
+Observing your surroundings, you search for anything that could help Maeve in her battle. 
+-> Medicinal Herbs from the Healing Stand.
+    Grabbing onto the herbs from the stand, you wait for Maeve to sustain an injury to help heal her afterwards.
+    …
+    Seeing Maeve be grabbed by the large hand, you realise in horror that there is nothing you can do to heal someone after they are squashed to mush.
+    Not even yourself.
+    Do you wish to retry?
+    -> Yes
+        <<jump Week5HelpMaeveChoice>>
+    -> No
+        <<jump VariableReset>>
+-> A Sword from the Armory Stand.
+    Grabbing onto a sword of your own, you charge into battle to help support Maeve against the monster. 
+    Unfortunately, your skills at dodging are lacking heavily in comparison to those of a Knight. 
+    When it comes time to evade, you are caught by the swing of the large hand, which Maeve handles with ease. There is no coming back from that one.
+    Do you wish to retry?
+    -> Yes
+        <<jump Week5HelpMaeveChoice>>
+    -> No
+        <<jump VariableReset>>
+-> Rope from the Adventurer Stand.
+    Grabbing onto the rope, you head towards Maeve with the intention of handing it to her.
+    Perhaps if she has the strength, she could possibly tie down the Iron Monster using the rope to…
+    To…
+    This isn’t going to help. All you did was just waste the only time you have to help her.
+    Do you wish to retry?
+    -> Yes
+        <<jump Week5HelpMaeveChoice>>
+    -> No
+        <<jump VariableReset>>
+-> Powder from the Alchemy Stand.
+    Quickly looking for a black powder you remembered hearing to be explosive, you trash the abandoned alchemy stand until you find something that looks like it.
+    Taking the sealed jar of powder with you, you also make sure to grab a torch along the way to light it.
+    Arriving at where Maeve is fighting the emerging Iron Monster, you sneak past the distracted two to get into throwing range of the Monster. Once you do, you chuck the jar of powder next to the base of the hand, which shatters upon impact.
+    Then you throw the torch.
+    The explosion that comes after shatters the metal scales and barbed wiring of the beast, revealing a fleshy interior open to strike. 
+    All Maeve has to do is strike it with her sword to slay the Iron Monster.
+    Closing your eyes, you tense in anticipation of the fall. But the moment never comes. 
+    Feeling someone run into you at high speed, you feel the wind knocked out of you as you land on the floor. 
+    {$bestFriendName}: “I got you…I got you. You're safe.”
+    Opening your eyes, you see Maeve on top of you in distress. 
+    Despite wishing to comfort her in the moment, you are forced to alert Maeve to the still living problem.
+    {$playerName}: “Quick! While it’s down, kill it!”
+    {$bestFriendName}: “There’s no more need. They’re here now.”
+    Looking behind her, you notice a group of armoured figures arriving at the scene. It is the Royal Knights!
+    {$playerName}: “Oh, thank goodness.”
+    Feeling your eyes grow heavy, you feel your body become light as the adrenaline wears off.
+    But as you are fall unconcious, you notice in your last waking moments someone frowning from the shadows of the market. 
+    A pair of crimson eyes, staring at you with hatred so poignant that her eyes looked like the flames of hell.
+    <<change_background "black background">>
+    Those were the last things you saw before everything turned to darkness.
+    That night, you awake to a sleeping Maeve by your bedside.  
+    Whispers spread amongst the people of the capital about the attack on the Market. Supposedly, the cult had announced that today was only the beginning of the end for the Kingdom of Pladonia. 
+    <<change_background "badlands">>
+    Evidence of an incoming horde twice the size of the Great Iron Invasion had been spotted leaving the Badlands.
+    Tearing through the countryside, it will take less than a week for the horde to arrive at the Royal Capital.
+    Attempting to save as many people as possible, the Royal Knights and Hunters of the kingdom are spread thin across the nation to evacuate as many civilians behind the city walls. 
+    A great siege is coming. One that will no doubt be remembered in history.
+    <<change_background "black background">>
+    Lying beside the sleeping Maeve, you swear to yourself that you will complete this project before the attack.
+    You will create the strongest shield for Maeve.
+===
+title: Week5HunterChoice
+---
+What will you hand the hunter to use?
+-> A blue axe wet to the touch.
+    Taking the blue axe out of the box, the weapon almost slips out of your hand as you try to hand it to Silas.
+    {$loneWolfName}: “Thank you. Isham, what are the enchantments on this weapon?”
+    {$mentorName}: “Oh no.”
+    {$playerName}: “Oh no?”
+    {$mentorName}: “It’s a failed prototype! That Fosite only has the enchantment of slipping! We need to run now—”
+    Yet his words came too late. Slipping out of their hands, the axe lands on the floor with a loud clang, alerting the monster.
+    Trying to run, the three of you are caught in one fell swoop by the gigantic monster’s hand.
+    <<change_background "black background">>
+    A fatal mistake. It takes only a moment for the monster to crush all life out of you. 
+    Do you wish to retry?
+    -> Yes
+        <<jump Week5HunterChoice>>
+    -> No
+        <<jump VariableReset>>
+-> An unstable warhammer, wrapped tightly with metal wiring.
+    Taking the wrapped warhammer, you notice the unstable pleiotium is on the verge of exploding.
+    {$playerName}: “Silas! Unwrap this on my command and toss it at the monster!”
+    {$mentorName}: “You are going to use that as a bomb!? Are you crazy?”
+    {$loneWolfName}: “Understood.”
+    Before Isham could protest any further, you toss the hammer to Silas, who awaits your command. Watching the approaching hand, you wait until you can see the end of its arm enter the hallway before ordering the hunter to unwrap it.
+    {$playerName}: “NOW! TOSS IT!”
+    Throwing the weapon with all their might, you watch as Silas lands the warhammer next to the monster’s emerged shoulder. The next second later, a Pleioburst shakes the building with a large explosion as you hear the monster cry out in pain.
+    Falling over from the recoil, you quickly rise to look at Isham with shock.
+    {$playerName}: “Why did you even have this stored at the guild???”
+    {$mentorName}: “...”
+    {$loneWolfName}: “Let’s answer that question later after we escape.”
+    Fleeing from the hallway, you head down the only way you can towards the commission room.
+-> An odd metal pipe connected to a trigger and a handguard. Looks to be a crossbow without the bow.
+    Taking out the odd weapon from the box, you look at the metal shaft in confusion.
+    {$playerName}: “How does this bow work?”
+    {$mentorName}: “A bow? I never made a bow?”
+    {$loneWolfName}: “If it looks like a bow, I can work it to be a bow. Hand it to me!”
+    Tossing Silas the strange weapon, you watch as Silas fiddles with the trigger and barrel.
+    {$mentorName}: “That weapon! Run, Silas! That weapon has no ammunition that works with it! It’s a failed invention!”
+    Yet his words came too late. 
+    The three of you are caught in one fell swoop by the gigantic monster’s hand before you could even run.
+    <<change_background "black background">>
+    A fatal mistake. It takes only a moment for the monster to crush all life out of you. 
+    Do you wish to retry?
+    -> Yes
+        <<jump Week5HunterChoice>>
+    -> No
+        <<jump VariableReset>>
+-> A deck of cards overflowing with enchantments.
+    Pulling out the deck of cards from the box, you decide to believe that in the multitude of enchantments forged within it, one might hold the key to your escape.
+    {$playerName}: “How does this thing work, Isham!?”
+    {$mentorName}: “Those cards…I’m not sure this is a good idea!”
+    {$playerName}: “Just tell me!”
+    {$mentorName}: “Just take out a card from the deck and reveal by word what you get!”
+    {$playerName}: “Alright, here I go!”
+    {$playerName}: “It’s uh, Four of Swords!”
+    {$mentorName}: “Reversed?!”
+    {$playerName}: “Yeah-Oh.”
+    Suddenly feeling really tired, an intense burnout over your work floods your senses. Maybe this guild would be better off destroyed?
+    {$loneWolfName}: “Draw another!”
+    {$playerName}: “A Chariot! Also Reversed!”
+    Reading out the card, you feel a sudden sense of nausea as you lose all sense of control and direction. Before passing out, you see both Isham and Silas stumble to the floor as they also fall prey to the enchantment.
+    …
+    <<change_background "commissions room daytime">>
+    Awakening, you feel a strange headache as you rise within a different room. Looking to your side, you notice both Silas and Isham looking just as confused.
+    {$loneWolfName}: “That actually worked?”
+    {$mentorName}: “We got lucky, but we are not out of the clear yet!”
+    {$playerName}: “Do we keep trying with the cards?”
+    {$mentorName}: “Those cards are…not something we should dare to try again. A failed product, corrupted by trying to add too many enchantments into one pleiotium item.”
+<<jump Week5PostHunterChoice>>
+===
+
+title: Week5PostHunterChoice
+---
+{$mentorName}: “We should find out how to help the others before the Royal Knights arrive.”
+{$loneWolfName}: “I would agree, but I do not think we are alone in this room.”
+Standing alert to the hunter’s words, the three of you back into each other as you await another hand to appear. But what comes is not a monster like before. It is human laughter. A familiar one.
+{$redFlagName}: “Such keen senses. I underestimated you, hunter.”
+Unveiling herself from what can only be described as invisibility, Judith emerged to you next to an Iron Monster made of thin, white chainmail.
+{$redFlagName}: “Really forced my hand here, dear. First, you dared to reject my offer, and now you attempt to ruin my plans before they can even get started?”
+{$playerName}: “I think finding out you were a cultist makes me even more confident in my decision.”
+{$redFlagName}: “Oh, how I wish you could have been mine. A shame that I must kill you now.”
+Upon her words, the lizard-like Iron Monster by her side moved towards you, baring its venomous fangs. 
+{$redFlagName}: “Now be good and die with the rest of these royal lapdogs.”
+As the beast jumps towards you with an open jaw, you can only raise your hands in self-defense in a helpless attempt to save yourself.
+Closing your eyes, you tense in anticipation of the bite. But the moment never comes. 
+{$loneWolfName}: “Isham, NO!”
+{$mentorName}: “I’m sorry, I-I can’t let you do that.”
+Opening your eyes, you see a wounded Isham standing in your way. 
+{$redFlagName}: “Oh, playing the hero, I see?”
+{$redFlagName}: “What is some old smith going to do?”
+But the blacksmith does not respond. Falling over unconscious, you hear Silas yell out in anger.
+Firing arrows at Judith, they are blocked by some type of barrier around Judith that stops the incoming projectiles. 
+After seeing Silas pull out a knife in response to get closer to the cultist, you look away from the fight to attend to the injured Isham. 
+Please be okay, please be okay, please!
+Checking his pulse, you realize he is still alive, but that the poison is spreading quickly in his blood.
+Without immediate treatment, Isham may even die.
+{$playerName}: “No no no no no…”
+Just then, you hear it. Human voices coming from the hallways outside. 
+The Royal Knights have arrived.
+{$redFlagName}: “Damn those traitorous bastards.”
+Realizing their imminent arrival as well, Judith orders the Iron Monster to stop fighting the enraged hunter and help her retreat from the guild.
+{$redFlagName}: “Goodbye, dear! This won’t be the last you have seen of me!”
+{$loneWolfName}: “DAMN IT!”
+Before Silas can stop her, Judith disappears from thin air along with the Iron Monster before the Royal Knights enter the room.
+{$bestFriendName}: “By the gods…what happened here?”
+{$playerName}: “Over here! He needs help! He’s been poisoned!”
+As the Knights enter the room to carry out Isham, you follow them along with Silas through the destroyed guild.
+<<change_background "black background">>
+That night, you spend it beside Isham’s hospital bed with Silas, awaiting the cleric’s diagnosis.  
+Whispers spread amongst the people of the capital about the attack on the Royal Blacksmith Guild. Supposedly, the cult had announced that today was only the beginning of the end for the Kingdom of Pladonia. 
+<<change_background "badlands">>
+Evidence of an incoming horde twice the size of the Great Iron Invasion had been spotted leaving the Badlands.
+Tearing through the countryside, it will take less than a week for the horde to arrive at the Royal Capital.
+Attempting to save as many people as possible, the Royal Knights and Hunters of the kingdom are spread thin across the nation to evacuate as many civilians behind the city walls. 
+A great siege is coming. One that will no doubt be remembered in history.
+<<if $route == 3>> // Isham route
+<<change_background "black background">>
+Sitting beside the unconscious Isham, you swear to yourself that you will finish what he started.
+<<elseif $route == 2>> // Silas route
+<<change_background "black background">>
+Sitting beside the unconscious Isham, you swear to yourself that you will complete this project before the attack.
+<<endif>>
+You will create the strongest weapon.
+/////// put Week 5 end dialogue here
 ===
 
 title: Week6PreMinigame
 ---
-<<if $route == 1>>
-Judith
+<<if $route == 1 || $route == 2>> // judith or maeve route
+<<change_background "personal forge">>
+Arriving at the guild the next day, you stare at your anvil with renewed determination. 
+Today, you will finish what you started.
+Raising your hammer, you begin the final step of your journey as an apprentice. 
+//<<run_minigame correspondingMingiameIndex Week6PostMinigame>>
+<<elseif $route == 3 || $route == 4>> // isham or silas route
+<<change_background "personal forge">>
+Arriving at the destroyed guild the next day, you cross the wreckage from the attack to reach your forge. There is no more time for hesitation. 
+Today, you will avenge those who lost their lives that day of the attack.
+Raising your hammer, you begin the final step of your journey as an apprentice. 
+Finish what you started.
+//<<run_minigame correspondingMingiameIndex Week6PostMinigame>>
 <<endif>>
 ===
 title: Week6MinigameResult

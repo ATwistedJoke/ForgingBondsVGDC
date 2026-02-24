@@ -464,7 +464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: startNode
-      value: IntroductionPreTutorial
+      value: VariableCreation
       objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: yarnProject
@@ -539,11 +539,10 @@ MonoBehaviour:
   market: {fileID: 2762722766935775714, guid: e45f47df37dcb714798fa865b53a5860, type: 3}
   lake: {fileID: 4079262541650156315, guid: 6ac8b4502898b4048a56a2dee85035a5, type: 3}
   capitalStreets: {fileID: 0}
-  judithsHome: {fileID: 0}
-  silasHome: {fileID: 0}
+  silasHome: {fileID: 8186667920271868256, guid: 61c8829a68d0ef544b8210ace4412535, type: 3}
   village: {fileID: 4809872240012599412, guid: 4d8de6f2bf55b584fa83faaada1b1a5c, type: 3}
   trainingGrounds: {fileID: 7338618003114003176, guid: 4425932d28f476847bdb1a465499f4a8, type: 3}
-  manor: {fileID: 0}
+  manor: {fileID: 5230217231651422668, guid: 83577813e95a3d84a8f8a28863f35d97, type: 3}
   badlands: {fileID: 777373440204403792, guid: b66f71a0079fcd549b89a146c3dc94a7, type: 3}
   battlefield: {fileID: 2606950781967880182, guid: b1764f295e7f6df459a3e549dd04ea34, type: 3}
   spPrefab:
