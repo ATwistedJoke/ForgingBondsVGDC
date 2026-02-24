@@ -1,4 +1,12 @@
 ﻿<Solution>
+  <Project Path="YarnSpinner.Unity.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="YarnSpinner.Unity.Editor.csproj" />
+  <Project Path="FMODUnityResonanceEditor.csproj" />
+  <Project Path="FMODUnityEditor.csproj" />
+  <Project Path="FMODUnity.csproj" />
+  <Project Path="FMODUnityHaptics.csproj" />
+  <Project Path="Gentleland.Utils.SteampunkUI.csproj" />
   <Project Path="Gentleland.SteampunkUI.DemoAndExample.csproj" />
+  <Project Path="FMODUnityResonance.csproj" />
 </Solution>

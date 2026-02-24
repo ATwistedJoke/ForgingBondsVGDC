@@ -1,0 +1,231 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7701178690578293197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3170097798801944906}
+  - component: {fileID: 1906583719653373184}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3170097798801944906
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7701178690578293197}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 91.69859, y: 154.82707, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 956663575159404462}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1906583719653373184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7701178690578293197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acab7ceabc98b6c43afc60f7ff2cc99b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+--- !u!1 &8702156702559713049
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 956663575159404462}
+  - component: {fileID: 3196310041621305953}
+  m_Layer: 0
+  m_Name: FMODEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &956663575159404462
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8702156702559713049}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3170097798801944906}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3196310041621305953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8702156702559713049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c7b4a00f07f874282afe02a9ba579c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FMODEvents
+  <SFX>k__BackingField:
+  - Guid:
+      Data1: 1788064978
+      Data2: 1184284575
+      Data3: 996132017
+      Data4: 836031351
+    Path: event:/SoundEffects/BellRing
+  - Guid:
+      Data1: -333294326
+      Data2: 1211820382
+      Data3: 213849754
+      Data4: -1442103599
+    Path: event:/SoundEffects/ButtonClick
+  - Guid:
+      Data1: -1580020131
+      Data2: 1176681419
+      Data3: -201252949
+      Data4: -817875021
+    Path: event:/SoundEffects/CracklingFire
+  - Guid:
+      Data1: 1403710443
+      Data2: 1236467070
+      Data3: 416600735
+      Data4: -964673946
+    Path: event:/SoundEffects/Crank
+  - Guid:
+      Data1: 1020098212
+      Data2: 1094494664
+      Data3: 1938393732
+      Data4: 1669131334
+    Path: event:/SoundEffects/DoorOpen
+  - Guid:
+      Data1: 736066812
+      Data2: 1190821807
+      Data3: -1274984550
+      Data4: 1085309769
+    Path: event:/SoundEffects/DoorSlam
+  - Guid:
+      Data1: 1204127375
+      Data2: 1169052705
+      Data3: 2079844240
+      Data4: 1875913236
+    Path: event:/SoundEffects/FireWoosh
+  - Guid:
+      Data1: 336375922
+      Data2: 1183187838
+      Data3: 1877863354
+      Data4: -480509728
+    Path: event:/SoundEffects/Footsteps
+  - Guid:
+      Data1: 783849422
+      Data2: 1074819203
+      Data3: -1027982419
+      Data4: -1497336820
+    Path: event:/SoundEffects/HammerHitMetal
+  - Guid:
+      Data1: 1394610820
+      Data2: 1106543990
+      Data3: 1238242186
+      Data4: 632633755
+    Path: event:/SoundEffects/LavaFlow
+  - Guid:
+      Data1: 1834349575
+      Data2: 1141047549
+      Data3: 1254214051
+      Data4: -1535705617
+    Path: event:/SoundEffects/MetalPipe
+  - Guid:
+      Data1: -2047144352
+      Data2: 1257498555
+      Data3: 2074691968
+      Data4: 1537055033
+    Path: event:/SoundEffects/MetalScratch
+  - Guid:
+      Data1: 1772513549
+      Data2: 1303107814
+      Data3: -1345766217
+      Data4: 1122805101
+    Path: event:/SoundEffects/PickUpObject
+  - Guid:
+      Data1: 956276679
+      Data2: 1297501822
+      Data3: -1646097225
+      Data4: -229664031
+    Path: event:/SoundEffects/PlaceMetal
+  - Guid:
+      Data1: 846362076
+      Data2: 1229703931
+      Data3: 1433616264
+      Data4: -1594138379
+    Path: event:/SoundEffects/PlaceObject(Neutral)
+  - Guid:
+      Data1: 949611115
+      Data2: 1181773210
+      Data3: 967463046
+      Data4: -1198023873
+    Path: event:/SoundEffects/RockBreak
+  - Guid:
+      Data1: -1467178298
+      Data2: 1247714362
+      Data3: -998805833
+      Data4: -714928353
+    Path: event:/SoundEffects/RockFalling
+  - Guid:
+      Data1: 1836195931
+      Data2: 1162349138
+      Data3: -703789676
+      Data4: -2123343272
+    Path: event:/SoundEffects/RockHit
+  - Guid:
+      Data1: -61000996
+      Data2: 1184789119
+      Data3: 1071425409
+      Data4: 583230141
+    Path: event:/SoundEffects/StringPluck
+  - Guid:
+      Data1: 638121771
+      Data2: 1171852626
+      Data3: 281173682
+      Data4: 1453113146
+    Path: event:/SoundEffects/WoodFiling
+  - Guid:
+      Data1: 1976443641
+      Data2: 1295154826
+      Data3: -1605350481
+      Data4: 1792012603
+    Path: event:/SoundEffects/WoodHit
+  - Guid:
+      Data1: -1533413558
+      Data2: 1167010800
+      Data3: 1816962481
+      Data4: -1441309307
+    Path: event:/SoundEffects/WoodPlace
+  <music>k__BackingField:
+    Guid:
+      Data1: 290664653
+      Data2: 1257602660
+      Data3: 1538575287
+      Data4: 1179551674
+    Path: event:/MusicTracks/CurrentGameTheme
