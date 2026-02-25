@@ -3,6 +3,7 @@ using System.Collections;
 using FMODUnity;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using Yarn;
 using Yarn.Unity;
@@ -52,6 +53,8 @@ public class GameManager : MonoBehaviour
     int smeltingMinigameScore = 2;
 
     public InMemoryVariableStorage variableStore;  
+
+    public GameObject eventSys; 
 
     public void Awake() {
         if(instance != null && instance != this)
@@ -269,7 +272,10 @@ public class GameManager : MonoBehaviour
         yield return null;
 
         dialogueRunner.Stop();
-
+        if(idx == 0 || idx == 6 || idx == 9)
+        {
+            eventSys.SetActive(false);
+        }
         GameObject prefabToSpawn = prefabList[idx];
 
         if(prefabToSpawn == null)
@@ -284,7 +290,7 @@ public class GameManager : MonoBehaviour
         {
             yield return null;
         }
-
+        eventSys.SetActive(true);
         dialogueRunner.StartDialogue(dialogueNode);
     }
 
