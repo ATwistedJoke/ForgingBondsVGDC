@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 
@@ -6,9 +7,9 @@ using TMPro;
 public struct PaintStage
 {
     public string stageName;       
-    public Sprite paintableSprite; // NEW: The visual grey outline they actually look at
-    public Sprite scoreMapSprite;  // The hidden green/red answer key for math
-    public Sprite prizeSprite;     // The colored image you steal the color from
+    public Sprite paintableSprite; 
+    public Sprite scoreMapSprite;  
+    public Sprite prizeSprite;     
     public Color targetColor;      
     public float totalTargets;     
 }
@@ -16,8 +17,8 @@ public struct PaintStage
 public class ScoreManager : MonoBehaviour
 {
     [Header("1. Assign These")]
-    public SpriteRenderer paintableRenderer; // NEW: Drag your 'greyShield' object here!
-    public SpriteRenderer scoreMapRenderer;  // Drag your 'ScoreMap' object here!
+    public SpriteRenderer paintableRenderer; 
+    public SpriteRenderer scoreMapRenderer;  
     public TextMeshProUGUI liveScoreText;   
     public TextMeshProUGUI timerText;
     public GameObject rulesPopupPanel; 
@@ -55,6 +56,11 @@ public class ScoreManager : MonoBehaviour
     public Vector2 hotspot = new Vector2(0, 0);
 
     private Vector2 lastProcessedPos; 
+
+    [Header("5. Victory Animation")]
+    [Tooltip("Drag all the frames of your victory animation here!")]
+    public Sprite[] victoryFrames; 
+    public float frameRate = 0.05f; // How fast the animation plays (lower is faster)
 
     void Start()
     {
@@ -153,8 +159,8 @@ public class ScoreManager : MonoBehaviour
         visitedPixels.Clear();
 
         if (liveScoreText != null) liveScoreText.text = $"Accuracy: 0.0%";
-	timeRemaining = timeLimit;
-	
+        timeRemaining = timeLimit;
+        
         Debug.Log($"Starting Stage: {currentStage.stageName}");
     }
 
@@ -190,7 +196,33 @@ public class ScoreManager : MonoBehaviour
         
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         
-        Destroy(transform.root.gameObject, closeDelay); 
+        // Launch the Coroutine to handle the animation and destruction sequence
+        StartCoroutine(VictorySequence()); 
+    }
+
+    private IEnumerator VictorySequence()
+    {
+        // 1. First, instantly show the fully colored final stage
+        if (paintableRenderer != null && stages.Length > 0)
+        {
+            paintableRenderer.sprite = stages[currentStageIndex].prizeSprite;
+        }
+
+        // 2. Play the victory animation if you put frames in the Inspector
+        if (victoryFrames != null && victoryFrames.Length > 0 && paintableRenderer != null)
+        {
+            for (int i = 0; i < victoryFrames.Length; i++)
+            {
+                paintableRenderer.sprite = victoryFrames[i];
+                yield return new WaitForSeconds(frameRate); // Wait a fraction of a second before flipping the page
+            }
+        }
+
+        // 3. The animation is done! Now wait for your agreed Inspector delay
+        yield return new WaitForSeconds(closeDelay);
+
+        // 4. Destroy the game
+        Destroy(transform.root.gameObject);
     }
 
     bool IsMatch(Color c)
@@ -222,7 +254,8 @@ public class ScoreManager : MonoBehaviour
         Color c = scoreTexture.GetPixel(pixelCoord.x, pixelCoord.y);
         if (c.a < 0.1f) return;
 
-	Debug.Log($"I see Color: {c}. I am looking for: {stages[currentStageIndex].targetColor}");
+        // Wiretap commented out to stop console spam!
+        // Debug.Log($"I see Color: {c}. I am looking for: {stages[currentStageIndex].targetColor}");
 
         if (IsMatch(c)) 
         {
