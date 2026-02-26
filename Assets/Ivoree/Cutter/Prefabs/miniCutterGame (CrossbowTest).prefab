@@ -895,7 +895,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -250}
+  m_AnchoredPosition: {x: 4, y: 8}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1426857478364748581
@@ -1289,6 +1289,8 @@ MonoBehaviour:
   badHits: 0
   brushCursor: {fileID: 2800000, guid: c0eaad73652944b748e708a023a9dfe3, type: 3}
   hotspot: {x: 0, y: 0}
+  victoryFrames: []
+  frameRate: 0.05
 --- !u!1 &8167611419009273798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,7 +1302,7 @@ GameObject:
   - component: {fileID: 7519919525268844542}
   m_Layer: 0
   m_Name: miniCutterGame (CrossbowTest)
-  m_TagString: Untagged
+  m_TagString: minigame
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
