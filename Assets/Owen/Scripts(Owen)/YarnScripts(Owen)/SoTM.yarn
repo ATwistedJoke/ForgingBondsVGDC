@@ -54,7 +54,7 @@ title: Assembly
 -> Morningstar
     <<run_minigame 10 Selection>>
 -> Crossbow
-    <<run_minigame 13 dialogueNode>>
+    <<run_minigame 13 Selection>>
 ===
 
 title: EtchingMinigame

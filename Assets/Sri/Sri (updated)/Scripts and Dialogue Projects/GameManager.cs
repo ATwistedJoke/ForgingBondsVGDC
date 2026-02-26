@@ -238,10 +238,10 @@ public class GameManager : MonoBehaviour
         yield return null;
 
         dialogueRunner.Stop();
-        if(idx == 0 || idx == 6 || idx == 9)
-        {
-            eventSys.SetActive(false);
-        }
+        //if(idx == 0 || idx == 6 || idx == 9)
+        //{
+        //    eventSys.SetActive(false);
+        //}
         GameObject prefabToSpawn = prefabList[idx];
 
         if(prefabToSpawn == null)
@@ -256,7 +256,7 @@ public class GameManager : MonoBehaviour
         {
             yield return null;
         }
-        eventSys.SetActive(true);
+        //eventSys.SetActive(true);
         dialogueRunner.StartDialogue(dialogueNode);
     }
 
