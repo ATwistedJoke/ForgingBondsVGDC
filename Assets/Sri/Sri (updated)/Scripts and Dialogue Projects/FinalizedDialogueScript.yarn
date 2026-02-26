@@ -2753,6 +2753,8 @@ Exiting the sweltering forge, you go out to grab some water.
     <<else>> // didnt do good on minigame
         Unfortunately, that is all the time you have.
         Having to return to work in the forge, you grumble in discontent as you finish the work necessary for this project. You can’t risk falling behind on such an important task as this.
+        <<destroy 1>>
+        <<destroy 4>>
     <<endif>>
 <<elseif $route == 4>> // Silas route
     <<Theme 6>>
@@ -2789,7 +2791,6 @@ Exiting the sweltering forge, you go out to grab some water.
         {$playerName}: “How was your mentor, Isham?”
         <<cs 1 0>>
         {$mentorName}: “Old Catherine was a nutjob, that’s for sure. Obsessed with her work as a blacksmith, she befriended Silas’s parents only because she thought they were worthy enough for her skills.”
-        
         {$playerName}: “Sounds a bit like you, does it not?”
         <<cs 1 4>>
         <<vc 1 3>>
@@ -2840,6 +2841,8 @@ Exiting the sweltering forge, you go out to grab some water.
     <<else>> // didnt do good on minigame
         Unfortunately, that is all the time you have.
         Having to return to work in the forge, you grumble in discontent as you finish the work necessary for this project. You can’t risk falling behind on such an important task as this.
+        <<destroy 1>>
+        <<destroy 4>>
     <<endif>>
 <<endif>>
 <<MC false>>
