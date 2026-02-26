@@ -34,7 +34,7 @@
 
 title: VariableReset
 ---
-<<set $playerName = "Calkeus">>
+<<set $playerName = "Ashe">>
 <<set $mentorName = "Blacksmith">>
 <<set $redFlagName = "Woman">>
 <<set $bestFriendName = "Woman">>
