@@ -85,6 +85,8 @@ public class ScoreManager : MonoBehaviour
         Cursor.visible = true; 
         
         gameIsActive = true;
+        transform.parent.position = new Vector3(0,0,0);
+
         Debug.Log("Game Started!");
     }
 
