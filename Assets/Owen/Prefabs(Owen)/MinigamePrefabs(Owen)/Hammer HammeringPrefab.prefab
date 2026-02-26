@@ -1681,6 +1681,7 @@ MonoBehaviour:
   score: {fileID: 0}
   Hammer: {fileID: 0}
   scoreManager: {fileID: 0}
+  hammerHitting: 0
 --- !u!61 &5752736882229286180
 BoxCollider2D:
   m_ObjectHideFlags: 0
