@@ -1,6 +1,6 @@
 ﻿title: VariableCreation
 ---
-<<declare $playerName = "Calkeus">>
+<<declare $playerName = "Ash">>
 <<declare $mentorName = "Blacksmith">>
 <<declare $redFlagName = "Woman">>
 <<declare $bestFriendName = "Woman">>
