@@ -62,18 +62,14 @@ public class GameManager : MonoBehaviour
             Destroy(this);  
         }
         instance = this; 
-        DontDestroyOnLoad(dialogueRunner);
-
+        //DontDestroyOnLoad(dialogueRunner);
+        //eventSys.SetActive(true); 
         variableStore = FindAnyObjectByType<InMemoryVariableStorage>(); 
         
         dialogueRunner.AddCommandHandler<string>(
             "load_scene",     // the name of the command
             LoadScene // the method to run
         );
-        // dialogueRunner.AddCommandHandler<string, int>(
-        //     "change_affinity",
-        //     ChangeAffinity
-        // );
         dialogueRunner.AddCommandHandler<int, string>("run_minigame", RunMinigame);
         dialogueRunner.AddCommandHandler<string>("change_background", ChangeBackground);
         dialogueRunner.AddCommandHandler<int>("sp", InstantiateChar);
@@ -92,7 +88,6 @@ public class GameManager : MonoBehaviour
         dialogueRunner.AddCommandHandler("end", EndAmbience);
         dialogueRunner.AddCommandHandler<string>("scene", LoadScene);
         dialogueRunner.AddCommandHandler<int>("cg", EndingScreen);
-        // dialogueRunner.AddCommandHandler<int>("change_corruption",ChangeCorruption);
     }
 
     private IEnumerator ResourceMinigameResult()
@@ -143,6 +138,10 @@ public class GameManager : MonoBehaviour
 
     private void LoadScene(string sceneName) 
     {
+        /*if(sceneName == "MainMenu")
+        {
+            eventSys.SetActive(false); 
+        }*/
         SceneManager.LoadScene(sceneName);
     }
 
@@ -228,39 +227,6 @@ public class GameManager : MonoBehaviour
         }
         Instantiate(EndingCGS[idx]);
     }
-    // private void ChangeAffinity(string character, int modifier)
-    // {
-    //     if(character == "mentor")
-    //     {
-    //         mentorAffinity += modifier;
-    //         Debug.Log("Affinity for "+ character + " changed to " + mentorAffinity);
-    //     }
-    //     else if(character == "red flag")
-    //     {
-    //         redFlagAffinity += modifier;
-    //         Debug.Log("Affinity for "+ character + " changed to " + redFlagAffinity);
-    //     }
-    //     else if(character == "best friend")
-    //     {
-    //         bestFriendAffinity += modifier;
-    //         Debug.Log("Affinity for "+ character + " changed to " + bestFriendAffinity);
-    //     }
-    //     else if(character == "lone wolf")
-    //     {
-    //         loneWolfAffinity += modifier;
-    //         Debug.Log("Affinity for "+ character + " changed to " + loneWolfAffinity);
-    //     }
-    // }
-
-    // private void ChangeCorruption(int modifier)
-    // {
-    //     corruptionValue += modifier;
-    // }
-
-    // private void CheckCorruption()
-    // {
-    //     if(corruptionValue == 1)
-    // }
 
     private void RunMinigame(int idx, string dialogueNode)
     {

@@ -10,6 +10,10 @@ public class StartMenuController : MonoBehaviour
         SceneManager.LoadScene("DialogueCreation");
     }
 
+    public void OnMinigameClick()
+    {
+        SceneManager.LoadScene("SequenceoftheMinigames");
+    }
     public void OnSettingsClick()
     {
         // Load the settings scene
