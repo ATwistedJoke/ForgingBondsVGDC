@@ -144,7 +144,7 @@ public class ReinforcingMinigame : MonoBehaviour
         currentChallengeType = UnityEngine.Random.Range(1, 4);
         
         isChallengeActive = true;
-        challengePanel.SetActive(true);
+        //challengePanel.SetActive(true);
         
         AnimatedHammer = Instantiate(AnimatedHammerPrefab, AnimationPos.transform);
         AnimatedHammer.transform.localPosition = hammerPos;

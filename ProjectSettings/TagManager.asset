@@ -50,6 +50,7 @@ TagManager:
   - Ring2
   - AnimationPos
   - Shield Animation
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
