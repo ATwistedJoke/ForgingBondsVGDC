@@ -253,7 +253,7 @@ Taking her hand, you snap out of your thoughts as you stand back up. You notice 
     <<set $redFlagAffinity = $redFlagAffinity + 1>>
     <<cs 0 1>>    
     <<vc 0 0>>    
-    {$redFlagName}: “Ah, a tough [guy/girl/one], I see. No need to worry, dear, I don’t mind getting a bit dirty now and then.”
+    {$redFlagName}: “Ah, a tough cookie, I see. No need to worry, dear, I don’t mind getting a bit dirty now and then.”
     <<cs 0 2>>
     {$playerName}: “Really, it’s fin—”
     {$redFlagName}: “Too late! I made up my mind.” 
@@ -1215,8 +1215,8 @@ Who do you wish to spend more time with?
     {$playerName}: “Sure, what is it?”
     {$bestFriendName}: “I know you have a lot of other options regarding commissions that would be far better than mine, especially like that of the merchant lady from last week. But if it isn’t a burden, could you at least consider making mine? I feel like this shield was meant to be made by you.”
     {$playerName}: “I’ll definitely consider it, Maeve. I will make sure to tell you if I can accept.”
-    <<destroy 3>>
     Seeing Maeve respond with a happy nod, you depart from home before it gets any later.
+    <<destroy 3>>
     With an old friendship rekindled, maybe this reunion is the opportunity needed to advance this relationship to be more than just childhood friends. 
     Best friends? Perhaps even more? Who knows? All you know is that you're happy to be talking with Maeve once more.
 -> Silas
