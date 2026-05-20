@@ -130,10 +130,10 @@ public class Molding_Minigame : MonoBehaviour
     private int CalculateResult(int input)
     {
         int result = 0; 
-        if(input >= 4)
+        if(input >= 2)
         {
             result++; 
-            if(input >= 8)
+            if(input >= 4)
             {
                 result++; 
             }

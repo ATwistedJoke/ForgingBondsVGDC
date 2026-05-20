@@ -74,8 +74,8 @@ public class SmeltingController : MonoBehaviour
     void OnDestroy()
     {
         int result = 0; 
-        if(score >= 35){ result = 2;}
-        else if(score >= 20) { result = 1;}
+        if(score >= 25){ result = 2;}
+        else if(score >= 15) { result = 1;}
         GameManager.instance.GiveResult(result);
     }
 }

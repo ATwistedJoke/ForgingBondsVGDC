@@ -131,10 +131,10 @@ public class GameController : MonoBehaviour
     private int CalculateResult(int input)
     {
         int result = 0; 
-        if(input >= 50)
+        if(input >= 30)
         {
             result++; 
-            if(input >= 70)
+            if(input >= 50)
             {
                 result++; 
             }
