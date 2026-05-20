@@ -1,0 +1,66 @@
+﻿title: SoTM
+---
+Select through any number of minigames to play. 
+<<jump Selection>>
+===
+
+title: Selection
+---
+-> Mining - Jimmy
+    <<jump MiningMinigame>>
+-> Smelting - Adam
+    <<jump SmeltingMinigame>>
+-> Hammering - Adam, AnneJulia
+    <<jump HammeringMinigames>>
+-> Reinforcing - Akshetha
+    <<jump ReinforcingMinigame>>
+-> Molding - Jimmy
+    <<jump MoldingMinigame>>
+-> Assembly(Morningstar) - Adam
+    <<jump Assembly>>
+-> Etching - Ivoree
+    <<jump EtchingMinigame>>
+-> Return
+    <<scene "MainMenu">>
+===
+
+title: MiningMinigame
+---
+<<run_minigame 0 Selection>>
+===
+
+title: SmeltingMinigame
+---
+<<run_minigame 1 Selection>>
+===
+
+title: HammeringMinigames
+---
+<<run_minigame 4 Selection>>
+===
+
+title: ReinforcingMinigame
+---
+<<run_minigame 7 Selection>>
+===
+
+title: MoldingMinigame
+---
+<<run_minigame 9 Selection>>
+===
+
+title: Assembly
+---
+-> Morningstar
+    <<run_minigame 10 Selection>>
+-> Crossbow
+    <<run_minigame 13 Selection>>
+===
+
+title: EtchingMinigame
+---
+-> Shield
+    <<run_minigame 11 Selection>>
+-> Hammer
+    <<run_minigame 12 Selection>>
+===

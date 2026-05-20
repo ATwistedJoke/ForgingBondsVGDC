@@ -1,0 +1,45 @@
+﻿title: SPYarn
+---
+Hello!
+This is a script testing the use of Sprites at the current moment. Does that make sense?
+-> Yeah!
+    I love the Enthusiasm
+-> Duh...
+    Fair enough, it's a test Scene after all...
+<<instance_sprite 1 0 0>>
+This is the sprite of the Mentor. 
+Is it there? 
+-> Yep
+    Good it works. 
+-> Nope
+    Uh Oh
+Ok, let's change sprites now, just press space to cycle through the sprite list. 
+<<change_sprite 1 1>>
+Happy
+<<change_sprite 1 2>>
+Sad
+<<change_sprite 1 3>>
+Angry
+<<change_sprite 1 4>>
+Shocked
+<<change_sprite 1 5>>
+Scared
+<<change_sprite 1 6>>
+Shy
+<<change_sprite 1 0>>
+Neutral 
+
+Let's try moving the sprite and stuff. 
+<<move_sprite 1 7 0 10>>
+
+Now that the sprites have cycled manually, let's deleting the sprite. 
+<<destroy_sprite 1>>
+
+Is it destroyed? 
+-> Yes
+    sweet
+-> No 
+    shoot
+
+Ok that's it for now. 
+===
