@@ -1,22 +1,41 @@
 ﻿title: VariableCreation
 ---
+//Character Info
 <<declare $playerName = "Ash">>
+<<declare $Chara = 0>>
+
 <<declare $mentorName = "Blacksmith">>
-<<declare $redFlagName = "Woman">>
-<<declare $bestFriendName = "Woman">>
-<<declare $loneWolfName = "Stranger">>
+<<declare $Isham = 1>>
 <<declare $mentorAffinity = 0>>
+
+<<declare $redFlagName = "Woman">>
+<<declare $Judith = 2>>
 <<declare $redFlagAffinity = 0>>
-<<declare $loneWolfAffinity = 0>>
+
+<<declare $bestFriendName = "Woman">>
+<<declare $Maeve = 3>>
 <<declare $bestFriendAffinity = 0>>
+
+<<declare $loneWolfName = "Stranger">>
+<<declare $Silas= 4>>
+<<declare $loneWolfAffinity = 0>>
+
+//Maeve Specific Route
 <<declare $corruption = 0>>
 <<declare $corruptionRoute to false>>
+
+//Event Check Variables
 <<declare $rejectedLunch to true>>
 <<declare $readBlueprint to false>>
+
+//Route/Week Result variables
 <<declare $weekOneResult = 0>>
 <<declare $weekTwoResult = 0>>
 <<declare $result = 0>>
 <<declare $route = 0>>
+
+//Expression
+
 
 // Route Numbers: 
 // 0 - None

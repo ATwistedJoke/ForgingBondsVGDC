@@ -270,13 +270,16 @@ public class GameManager : MonoBehaviour
     private void InstantiateChar(int idx)
     {
         if(idx == 0){ idx = MCAppearance; }
+        if(sprite[idx] != null){ return; }
         sprite[idx] = Instantiate(spPrefab[idx]);
         sprite[idx].transform.position = new Vector2(xPosition, yPosition);  
+        Debug.Log(idx); 
     }
 
     private void InstantiatePlace(int idx, int posX, int posY)
     {
         if(idx == 0){ idx = MCAppearance; }
+        if(sprite[idx] != null){ return; }
         sprite[idx] = Instantiate(spPrefab[idx]);
         sprite[idx].transform.position = new Vector2(posX, posY);
     }
