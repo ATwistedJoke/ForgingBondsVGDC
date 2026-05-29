@@ -50,7 +50,7 @@ public class RotateHammer : MonoBehaviour
     {
         rotationSpeed *= -1;
         float randomAngle = Random.Range(0f, 360f);
-        skillCheck.transform.rotation = transform.rotation = Quaternion.Euler(0f, 0f, randomAngle);
+        skillCheck.transform.rotation = Quaternion.Euler(0f, 0f, randomAngle);
         scoreManager.addScore(streak);
         // TODO: your success logic here (play sound, change sprite, etc.)
     }
