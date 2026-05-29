@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Yarn;
 using Yarn.Unity;
 
@@ -56,6 +57,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject eventSys; 
 
+    public GameObject ResetButton;
+
     public void Awake() {
         if(instance != null && instance != this)
         {
@@ -88,6 +91,8 @@ public class GameManager : MonoBehaviour
         dialogueRunner.AddCommandHandler("end", EndAmbience);
         dialogueRunner.AddCommandHandler<string>("scene", LoadScene);
         dialogueRunner.AddCommandHandler<int>("cg", EndingScreen);
+        dialogueRunner.AddCommandHandler("reset", ResetGame);
+        dialogueRunner.AddCommandHandler<bool>("button", setButton);
     }
 
     private IEnumerator ResourceMinigameResult()
@@ -286,7 +291,9 @@ public class GameManager : MonoBehaviour
     private void SpriteChange(int oIdx, int sIdx)
     {
         if(oIdx == 0){ oIdx = MCAppearance; }
+        if(sprite[oIdx] == null){ return; }
         CharacterManager image = sprite[oIdx].GetComponent<CharacterManager>(); 
+        if(image.list[oIdx] == null){ return; }
         image.ChangeSprite(sIdx); 
     }
     private void MoveChar(int idx, int posX, int posY, int speed)
@@ -296,6 +303,7 @@ public class GameManager : MonoBehaviour
     private void DestroyChar(int idx)
     {
         if(idx == 0){ idx = MCAppearance; }
+        if(sprite[idx] == null){ return; }
         Destroy(sprite[idx]);
         sprite[idx] = null; 
     }
@@ -316,6 +324,19 @@ public class GameManager : MonoBehaviour
             sprite[MCAppearance].GetComponentInChildren<CharacterManager>().ChangeSprite(0);
         }
     }
+
+    public void ResetGame()
+    {
+        StartCoroutine(ResetLogic()); 
+    }
+
+    private IEnumerator ResetLogic()
+    {
+        yield return null;
+        dialogueRunner.Stop(); 
+        dialogueRunner.StartDialogue("VariableReset");
+    }
+    private void setButton(bool val){ ResetButton.GetComponent<Button>().interactable = val; }
 
     //Audio Implementation
     public void PlayAudio(int idx)
