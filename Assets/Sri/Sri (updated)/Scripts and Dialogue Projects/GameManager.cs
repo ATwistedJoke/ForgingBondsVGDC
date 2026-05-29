@@ -293,7 +293,7 @@ public class GameManager : MonoBehaviour
         if(oIdx == 0){ oIdx = MCAppearance; }
         if(sprite[oIdx] == null){ return; }
         CharacterManager image = sprite[oIdx].GetComponent<CharacterManager>(); 
-        if(image.list[oIdx] == null){ return; }
+        if(image.list[sIdx] == null){ return; }
         image.ChangeSprite(sIdx); 
     }
     private void MoveChar(int idx, int posX, int posY, int speed)
@@ -327,6 +327,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetGame()
     {
+        StopAllCoroutines(); 
         StartCoroutine(ResetLogic()); 
     }
 
@@ -334,9 +335,20 @@ public class GameManager : MonoBehaviour
     {
         yield return null;
         dialogueRunner.Stop(); 
+        for(int i = 0; i < sprite.Length; i++)
+        {
+            if(sprite[i] != null)
+            {
+                Destroy(sprite[i]);
+                sprite[i] = null; 
+            }
+        }
         dialogueRunner.StartDialogue("VariableReset");
     }
-    private void setButton(bool val){ ResetButton.GetComponent<Button>().interactable = val; }
+    private void setButton(bool val)
+    { 
+        ResetButton.GetComponent<Button>().interactable = val; 
+    }
 
     //Audio Implementation
     public void PlayAudio(int idx)

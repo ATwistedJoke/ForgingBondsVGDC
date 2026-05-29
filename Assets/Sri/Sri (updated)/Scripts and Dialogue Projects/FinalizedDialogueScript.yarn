@@ -111,23 +111,25 @@ Walking through the hall fills you with a sense of amazement at how such a build
 <<button false>>
 The front desk, covered in blue cloth, had no one behind it to welcome you. Instead, there was only a singular golden bell and what appeared to be three different colored buttons. 
 -> Ring the Bell
+    <<button true>>
     <<sfx 0>>
     A voice emerges from below the desk in response.
     “Welcome to the Royal Blacksmith Guild. If you are here as a guest, please press the green button. If you are here as an apprentice, please press the orange button. If you are here for a different reason, please press the blue button.”
 -> Press one of the buttons
+    <<button true>>
     <<sfx 1>>
     …Nothing happens. After more than enough minutes have passed, you consider that maybe you should have pressed the shiny, golden bell. Reaching out your hand, you decide to give it a try.
     <<sfx 0>>
     A voice emerges from below the desk in response.
     “Welcome to the Royal Blacksmith Guild. If you are here as a guest, please press the green button. If you are here as an apprentice, please press the orange button. If you are here for a different reason, please press the blue button.”
 -> Wait for someone to come
+    <<button true>>
     You choose to wait, hoping for someone to come.
     ...
     No one arrives. After more than enough minutes have passed, you consider that maybe you should have pressed the shiny, golden bell. Reaching out your hand, you decide to give it a try.
     <<sfx 0>>
     A voice emerges from below the desk in response.
     “Welcome to the Royal Blacksmith Guild. If you are here as a guest, please press the green button. If you are here as an apprentice, please press the orange button. If you are here for a different reason, please press the blue button.”
-<<button true>>
 You stumble backwards in surprise, caught off guard by the mysterious voice. The hall around you was still empty, but somehow someone spoke when you pressed the bell.
 {$playerName}: [i]It sounded like it came from the desk itself?[/i]
 Approaching the desk once more, you try looking on the other side of the desk to see if someone is hiding underneath it. But once again, you find nothing. 
@@ -154,6 +156,7 @@ Your steps echo in the large hallway. Ahead, you hear the sound of hammering on 
 <<button false>>
 Following the noise, you trace it down to a closed room. Inside, you can hear the noises of a forge in use.
 -> Open the door
+    <<button true>>
     You gently open the door.
     <<sfx 4>> 
     <<change_background "personal forge">>
@@ -166,6 +169,7 @@ Following the noise, you trace it down to a closed room. Inside, you can hear th
     “Just go grab a bucket, kid, and clean up this mess.”
     The young blacksmith runs out of the room, passing you with tears in his eyes. 
 -> Leave it alone
+    <<button true>>
     You choose not to intrude. You should wait for your scheduled senior to find you.
     But before you could make yourself scarce, you hear an angry shout from within the forge. 
     <<sp 1>>
@@ -184,6 +188,7 @@ You notice his deep eye bags, worn out from stress and lack of sleep. You feel u
 {$mentorName}: “–! By the gods, why are you just standing there and staring at me?”
 <<MC true>>
 -> Sorry, I overheard the commotion that was happening earlier.
+    <<button true>>
     <<vc 0 3>>
     Sorry, I overheard the commotion that was happening earlier.
     <<cs {$Isham} {$neutral}>>
@@ -196,6 +201,7 @@ You notice his deep eye bags, worn out from stress and lack of sleep. You feel u
     <<cs {$Chara} {$happy}>>
     {$playerName}: “It’s a pleasure to meet you, sir!”
 -> I was told at the front desk to find my scheduled senior. Would that be you?
+    <<button true>>
     <<vc 0 5>>
     <<cs {$Chara} {$sad}>>
     I was told at the front desk to find my scheduled senior. Would that be you?
@@ -209,6 +215,7 @@ You notice his deep eye bags, worn out from stress and lack of sleep. You feel u
     <<cs {$Isham} {$neutral}>>
     {$mentorName}: “You’re quick to the chase, aren’t ya?”
 -> I like your eyes, old man.
+    <<button true>>
     {$mentorName}: ...
     <<set $mentorAffinity = $mentorAffinity - 1>>
     <<cs {$Isham} {$mad}>>
