@@ -8,7 +8,7 @@ public class TimerMinigame1 : MonoBehaviour
 
     public bool TimerOn = false;
 
-    public float time = 180f;
+    public float time = 90f;
 
     public GameController gameManager;
 

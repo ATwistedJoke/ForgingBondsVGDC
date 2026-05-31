@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 1856710971174491702}
     - target: {fileID: 1983971605005913658, guid: bdbd50edcc4fa514a95778f158e33154, type: 3}
       propertyPath: list.Array.size
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1983971605005913658, guid: bdbd50edcc4fa514a95778f158e33154, type: 3}
       propertyPath: 'list.Array.data[0]'
@@ -104,6 +104,10 @@ PrefabInstance:
       propertyPath: 'list.Array.data[8]'
       value: 
       objectReference: {fileID: 7790548160245194530, guid: e3f6fe84089e72849b7b4a996cffc31b, type: 3}
+    - target: {fileID: 1983971605005913658, guid: bdbd50edcc4fa514a95778f158e33154, type: 3}
+      propertyPath: 'list.Array.data[9]'
+      value: 
+      objectReference: {fileID: -1141390790074824272, guid: 43c4d977a49d9d148a64a624b322eaa6, type: 3}
     - target: {fileID: 1983971605005913658, guid: bdbd50edcc4fa514a95778f158e33154, type: 3}
       propertyPath: VoiceLines.Array.size
       value: 18
